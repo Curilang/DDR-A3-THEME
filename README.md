@@ -11,7 +11,6 @@ Edit from Inori's DDR A20 Theme.
 
 🚫 Not for the purpose of insulting another person/company/project
 
-
 # FOLDER'S NAME TO HAVE ARCADE GROUP SORT LIST
 
 • 01 - DDR 1st
