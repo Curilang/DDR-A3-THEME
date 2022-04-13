@@ -11,7 +11,9 @@ Edit from Inori's DDR A20 Theme.
 
 🚫 Not for the purpose of insulting another person/company/project
 
-# FOLDER'S NAME TO HAVE ARCADE GROUP SORT LIST
+# HOW TO GET ARCADE GROUP SORT LIST
+
+You have to rename your groups like this:
 
 • 01 - DDR 1st
 
