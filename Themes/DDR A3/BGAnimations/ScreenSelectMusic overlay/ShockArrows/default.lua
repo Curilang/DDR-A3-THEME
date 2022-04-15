@@ -66,7 +66,7 @@ end;
 t[#t+1] = Def.ActorFrame {	
 	--shockarrowªí¥Üicon
 	CreatPanelDisplayShockArrowIcon(iPN, "Mines", 'RadarCategory_Mines')..{
-		InitCommand=cmd(x,0;y,0);
+		InitCommand=cmd(x,0;y,-18);
 	}
 };
 return t;
