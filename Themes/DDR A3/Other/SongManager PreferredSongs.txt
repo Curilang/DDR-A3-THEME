@@ -7,6 +7,7 @@
 20 - DDR A3\Drive My Heart
 20 - DDR A3\Fleur
 20 - DDR A3\GRADIUS REMIX (UUDDLRLRBA Ver.)
+20 - DDR A3\Let's DANCE aROUND!!
 20 - DDR A3\Like A Star
 20 - DDR A3\Pump Pump Pump
 20 - DDR A3\SAYONARA disco light
@@ -20,26 +21,26 @@
 19 - DDR GRAND PRIX\Kaibutsu
 19 - DDR GRAND PRIX\Gurenge
 19 - DDR GRAND PRIX\Gunjou
-19 - DDR GRAND PRIX\Connect
+13 - DDR X3 VS 2ndMIX\Connect
 19 - DDR GRAND PRIX\Sakuranbo
 19 - DDR GRAND PRIX\Joyful
-19 - DDR GRAND PRIX\JoJo ~Sono Chi no Sadame~
-19 - DDR GRAND PRIX\Tsukematsukeru
+14 - DDR 2013\JoJo ~Sono Chi no Sadame~
+14 - DDR 2013\Tsukematsukeru
 19 - DDR GRAND PRIX\Dry flower
 19 - DDR GRAND PRIX\Natsumatsuri
 19 - DDR GRAND PRIX\Byoushin wo kamu
-19 - DDR GRAND PRIX\Heavy Rotation
-19 - DDR GRAND PRIX\PORIRIZUMU
-19 - DDR GRAND PRIX\Maji LOVE 1000%
+13 - DDR X3 VS 2ndMIX\Heavy Rotation
+11 - DDR X\PORIRIZUMU
+14 - DDR 2013\Maji LOVE 1000%
 19 - DDR GRAND PRIX\Yoru ni kakeru
 19 - DDR GRAND PRIX\Luka luka night fever
 19 - DDR GRAND PRIX\Renai revolution 21
 19 - DDR GRAND PRIX\Wasurena
-19 - DDR GRAND PRIX\BRIGHT STREAM
-19 - DDR GRAND PRIX\LOVE & JOY -Risk Junk MIX-
+14 - DDR 2013\BRIGHT STREAM
+14 - DDR 2013\LOVE & JOY -Risk Junk MIX-
 19 - DDR GRAND PRIX\only my railgun
 19 - DDR GRAND PRIX\Pretender
-19 - DDR GRAND PRIX\resonance
+12 - DDR X2\resonance
 19 - DDR GRAND PRIX\Trickster
 19 - DDR GRAND PRIX\10nen sakura
 
@@ -1332,19 +1333,3 @@
 
 16 - DDR A\Lesson by DJ
 18 - DDR A20 PLUS\LET'S CHECK YOUR LEVEL!
-
----MOD SONGS
-
-User\Eros and Apollo
-User\Flugel
-User\MAWARU
-User\MAWARU 2
-User\MAWARU 3 ~SURViVOR~
-User\MAWARU 4
-User\MAWARU FINALE
-User\MAWARU RIDES AGAIN
-User\MAWARU! SETSUGETSUKA!
-User\MAWARUCHI SURVIVER
-User\MEGALOVANIA
-User\Perfect Cherry Storm
-User\The Medley of Kirby SSDX
