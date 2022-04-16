@@ -1,21 +1,20 @@
 local t = Def.ActorFrame{}
 
 --Sound
-t[#t+1] = LoadActor(THEME:GetPathS("ScreenStageInformation","Stef")) .. {		
-	OnCommand=cmd(queuecommand,"Play");
-	PlayCommand=cmd(play);
+t[#t+1] = Def.ActorFrame{
+	OnCommand=function(s) s:queuecommand("Play") end,
+	PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("ScreenStageInformation","StageSound")) end,
 };
 
---Sound
-t[#t+1] = LoadActor(THEME:GetPathS("","DoorClose")) .. {
-		OnCommand=cmd(sleep,0.3;queuecommand,"Play");
-		PlayCommand=cmd(play);
+t[#t+1] = Def.ActorFrame{
+	OnCommand=function(s) s:sleep(0.3):queuecommand("Play") end,
+	PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("","DoorClose")) end,
 };
 
 t[#t+1] = LoadActor(THEME:GetPathS("ScreenStageInformation","Jksh")) .. {	
 	OnCommand=cmd(sleep,1.55;queuecommand,"Play");
 	PlayCommand=cmd(play);
-	};
+};
 
 t[#t+1] = LoadActor("doors_normal");
 

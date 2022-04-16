@@ -1,8 +1,4 @@
 return Def.ActorFrame{
-	LoadActor(THEME:GetPathS("","DoorOpen")) .. {
-		OnCommand=cmd(queuecommand,"Play");
-		PlayCommand=cmd(play);
-	};
 	LoadActor(THEME:GetPathB("","_door/"..Model().."scsh_back_04"))..{
 		InitCommand=function(s) s:FullScreen():diffusealpha(1) end,
 		OnCommand=function(s) s:sleep(0.3):linear(0.1):diffusealpha(0) end,

@@ -6,6 +6,10 @@ else
 end
 
 return Def.ActorFrame {
+	Def.ActorFrame{
+		OnCommand=function(s) s:queuecommand("Play") end,
+		PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("","DoorOpen")) end,
+	};
 	LoadActor(THEME:GetPathS("ScreenEvaluation","Swoosh"))..{
 		OnCommand=cmd(queuecommand,"Play");
 		PlayCommand=cmd(play);

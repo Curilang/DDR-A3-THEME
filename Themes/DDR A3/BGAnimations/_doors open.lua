@@ -1,7 +1,7 @@
 return Def.ActorFrame{
-	LoadActor(THEME:GetPathS("","DoorOpen")) .. {
-		OnCommand=cmd(queuecommand,"Play");
-		PlayCommand=cmd(play);
+	Def.ActorFrame{
+		OnCommand=function(s) s:queuecommand("Play") end,
+		PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("","DoorOpen")) end,
 	};
 	LoadActor(THEME:GetPathB("","_door/"..Model().."scsh_back_01"))..{
 		InitCommand=function(s) s:FullScreen():diffusealpha(1) end,
