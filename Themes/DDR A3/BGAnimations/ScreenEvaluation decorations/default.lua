@@ -147,17 +147,32 @@ else
 	};
 end;
 
-for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
-	t[#t+1] = LoadActor(THEME:GetPathB("GameDecoration","3 Stars"))..{
-		InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-56 or _screen.cx+271,_screen.cy-14):zoom(0.667) end,
-		OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -700 or 700) end,
-	};
-end;
+local StageIndex = GAMESTATE:GetCurrentStageIndex()
+local FinalStage = PREFSMAN:GetPreference("SongsPerPlay")
 
-t[#t+1] = LoadActor(THEME:GetPathB("GameDecoration","9 Stars"))..{
-	InitCommand=function(s) s:xy(_screen.cx,_screen.cy+184):zoom(0.667) end,
-	OffCommand=function(s) s:linear(0.2):diffusealpha(0) end,
-};
+if (StageIndex == FinalStage+1) or (StageIndex == FinalStage+2) then
+
+else
+	for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
+		t[#t+1] = LoadActor(THEME:GetPathB("GameDecoration","3 Stars"))..{
+			InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-56 or _screen.cx+271,_screen.cy-14):zoom(0.667) end,
+			OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -700 or 700) end,
+		};
+	end;
+
+	t[#t+1] = LoadActor(THEME:GetPathB("GameDecoration","9 Stars"))..{
+		InitCommand=function(s) s:xy(_screen.cx,_screen.cy+184):zoom(0.667) end,
+		OffCommand=function(s) s:linear(0.2):diffusealpha(0) end,
+	};
+end
+
+if (GAMESTATE:HasEarnedExtraStage() and GAMESTATE:IsExtraStage()) then
+	t[#t+1] = LoadActor("Extra");
+elseif (GAMESTATE:HasEarnedExtraStage() and GAMESTATE:IsExtraStage2()) then
+	t[#t+1] = LoadActor("Encore");
+end
+
+
 
 t[#t+1] = Def.ActorFrame{
         Name="Jacket";

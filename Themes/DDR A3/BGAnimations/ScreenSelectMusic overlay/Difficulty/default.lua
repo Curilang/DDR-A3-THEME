@@ -1,6 +1,6 @@
 local pn = ...
 
-local yspacing = 38;
+local yspacing = 31;
 
 local DiffList = Def.ActorFrame{};
 

@@ -18,48 +18,51 @@ t[#t+1] = LoadActor(THEME:GetPathS("ScreenStageInformation","Jksh")) .. {
 
 t[#t+1] = LoadActor("doors_normal");
 
-t[#t+1] = Def.ActorFrame {
-	InitCommand=cmd(setsize,300,300;x,_screen.cx;y,_screen.cy+12);
-	LoadActor("jacket-bg")..{
-		OnCommand=cmd(
-			zoomy,0.0129;diffusealpha,0;zoomx,1.3;
-			sleep,1.2;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;zoomy,0.0645;
-			sleep,0.017;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;zoomy,0.1741;
-			sleep,0.033;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;zoomy,0.2806;zoomx,1.265;
-			sleep,0.017;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;zoomy,0.407;zoomx,1.245;
-			sleep,0.017;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;zoomy,0.527;zoomx,1.201;
-			sleep,0.017;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;zoomy,0.7;zoomx,1.126;
-			sleep,0.034;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;zoomy,0.790;zoomx,1.116;
-			sleep,0.017;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;zoomy,0.952;zoomx,1.066;
-			sleep,0.017;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;
-		);
+
+t[#t+1] = Def.ActorFrame{
+	Name="Jacket",
+	InitCommand=function(s) s:setsize(300,300):xy(_screen.cx,_screen.cy+12) end,
+	Def.Sprite{
+		Texture=THEME:GetPathB("","_door/jacket frame"),
+		OnCommand=function(s) 
+			s:zoomy(0.0129):zoomx(1.3):diffusealpha(0)
+			:sleep(1.2):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0):zoomy(0.0645)
+			:sleep(0.017):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0):zoomy(0.1741)
+			:sleep(0.033):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0):zoomy(0.2806):zoomx(1.265)
+			:sleep(0.017):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0):zoomy(0.407):zoomx(1.245)
+			:sleep(0.017):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0):zoomy(0.527):zoomx(1.201)
+			:sleep(0.017):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0):zoomy(0.7):zoomx(1.126)
+			:sleep(0.017):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0):zoomy(0.790):zoomx(1.116)
+			:sleep(0.017):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0):zoomy(0.952):zoomx(1.066)
+			:sleep(0.017):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0)
+		end,
 	};
-	LoadActor("jacket-bg")..{
-		InitCommand=cmd(diffusealpha,0);
-		OnCommand=cmd(
-			sleep,1.5;zoomy,1.033;zoomx,1.033;
-			sleep,0.034;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;
-			sleep,0.016;diffusealpha,1;
-			sleep,0.018;diffusealpha,0;
-			sleep,0.017;diffusealpha,1;
-			sleep,0.016;diffusealpha,0;
-			sleep,0.018;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;
-			sleep,0.016;diffusealpha,1;
-			sleep,0.018;diffusealpha,0;
-			sleep,0.150;diffusealpha,1;
-			sleep,0.017;diffusealpha,0;
-		);
+	Def.Sprite{
+		Texture=THEME:GetPathB("","_door/jacket frame"),
+		OnCommand=function(s) s:diffusealpha(0)
+			:sleep(1.5):zoomy(1.033):zoomx(1.033)
+			:sleep(0.034):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0)
+			:sleep(0.016):diffusealpha(1)
+			:sleep(0.018):diffusealpha(0)
+			:sleep(0.017):diffusealpha(1)
+			:sleep(0.016):diffusealpha(0)
+			:sleep(0.018):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0)
+			:sleep(0.016):diffusealpha(1)
+			:sleep(0.018):diffusealpha(0)
+			:sleep(0.150):diffusealpha(1)
+			:sleep(0.017):diffusealpha(0)
+		end,
 	};
 };
 
@@ -73,7 +76,6 @@ t[#t+1] = Def.Sprite {
 		if song then
 			s:Load(GetJacketPath(song))
 		end;
-		--s:setsize(0,0)
 		s:setsize(300,300)
 	end;
 };
