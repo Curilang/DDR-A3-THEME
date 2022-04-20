@@ -30,16 +30,24 @@ return Def.ActorFrame{
 			OnCommand=function(s) s:sleep(0.6):linear(0.1):y(SCREEN_TOP+61):diffusealpha(1) end, 
 		};
 		LoadActor(THEME:GetPathB("","_door/center_circle"))..{
-			InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.55):rotationz(360):diffusealpha(0.5) end,
+			InitCommand=function(s) s:zoom(0.347):y(_screen.cy-2.2):rotationz(45):diffusealpha(0):fadeleft(0.1) end,
+			OnCommand=function(s) s:sleep(0.6):linear(0.7):rotationz(0):zoom(0.447):diffusealpha(0.5) end,
+		};
+		LoadActor(THEME:GetPathB("","_door/center_circle"))..{
+			InitCommand=function(s) s:zoom(0.647):y(_screen.cy-2.2):rotationz(0):diffusealpha(0):fadeleft(0.1) end,
+			OnCommand=function(s) s:sleep(0.6):linear(0.7):rotationz(45):zoom(0.447):diffusealpha(0.5):linear(0.1):diffusealpha(0) end,
 		};
 		LoadActor(THEME:GetPathB("","_door/center_outline"))..{
-			InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.55):diffusealpha(0.5) end,
+			InitCommand=function(s) s:zoom(0.3):y(_screen.cy-2.2):diffusealpha(0) end,
+			OnCommand=function(s) s:sleep(0.6):linear(0.55):diffusealpha(0.5):zoom(0.447) end,
 		};
-		LoadActor(THEME:GetPathB("","_door/center_line"))..{
-			InitCommand=function(s) s:zoomx(0):zoomy(0.447):y(_screen.cy-2.2):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.25):zoomx(0.447):diffusealpha(1) end,
+		LoadActor(THEME:GetPathB("","_door/center_lines_up"))..{
+			InitCommand=function(s) s:zoomx(0.347):zoomy(0.447):y(_screen.cy-2.2):diffusealpha(0) end,
+			OnCommand=function(s) s:sleep(1.1):linear(0.2):zoomx(0.447):diffusealpha(1) end,
+		};
+		LoadActor(THEME:GetPathB("","_door/center_lines_center"))..{
+			InitCommand=function(s) s:zoomx(0.4):zoomy(0.447):y(_screen.cy-2.2):diffusealpha(0) end,
+			OnCommand=function(s) s:sleep(1.2):linear(0.2):zoomx(0.447):diffusealpha(1) end,
 		};
 		LoadActor(THEME:GetPathB("","_door/cosh_burst_flare"))..{
 			InitCommand=cmd(zoom,0.53;x,13;y,SCREEN_TOP+25;blend,Blend.Add;);

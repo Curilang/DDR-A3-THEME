@@ -42,7 +42,13 @@ return Def.ActorFrame{
 			LoadActor(THEME:GetPathB("","_door/center_circle"))..{
 				InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2):diffusealpha(0.5) end,
 			};
-			LoadActor(THEME:GetPathB("","_door/center_line"))..{
+			LoadActor(THEME:GetPathB("","_door/center_outline"))..{
+				InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2):diffusealpha(0.5) end,
+			};
+			LoadActor(THEME:GetPathB("","_door/center_lines_up"))..{
+				InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2):diffusealpha(1) end,
+			};
+			LoadActor(THEME:GetPathB("","_door/center_lines_center"))..{
 				InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2):diffusealpha(1) end,
 			};
 		};

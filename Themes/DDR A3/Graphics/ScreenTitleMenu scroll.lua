@@ -5,8 +5,8 @@ return Def.ActorFrame {
 		Text=gc:GetText();
 		InitCommand=cmd(y,100;uppercase,true;shadowlength,2;strokecolor,Color("Black");zoom,1.5);
 		OnCommand=cmd();
-		GainFocusCommand=cmd(stoptweening;diffusealpha,1;diffuseshift;effectcolor1,color("#FFFD86");effectcolor2,Color("White");effectperiod,2;);
-		LoseFocusCommand=cmd(stopeffect;diffusealpha,0);
+		GainFocusCommand=cmd(stoptweening;linear,0.1;zoom,1.5;diffusealpha,1;);
+		LoseFocusCommand=cmd(stopeffect;linear,0.1;zoom,1;diffusealpha,0;);
 	};
 
 };
