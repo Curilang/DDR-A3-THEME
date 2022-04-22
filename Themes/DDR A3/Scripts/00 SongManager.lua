@@ -1375,6 +1375,7 @@ function DanceStageSong()
 	
 ----------------------------------------------------------------------------- DDR A3
 
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "アユミ☆マジカルショータイム"												then return "(X) DANCING RAYS"				--Ayumi Magical Showtime		
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "↑↑↓↓←→←→BA"														then return "(X) DANCING RAYS"				--Ue ue shita shita hidari migi hidari migi BA		
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Anthurium"														then return "(X2) CLUB"			
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Dance Phenomena"												then return "(X) DANCING RAYS"
