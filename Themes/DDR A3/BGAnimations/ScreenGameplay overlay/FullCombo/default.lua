@@ -86,7 +86,7 @@ end
 
 local t = Def.ActorFrame{};
 
-t[#t+1] = LoadActor("Combo_Splash")..{
+t[#t+1] = LoadActor(THEME:GetPathS("ScreenGameplay","ComboSplash"))..{
 	OffCommand=function(s)
 		if IsFullCombo() then
 			s:play()
