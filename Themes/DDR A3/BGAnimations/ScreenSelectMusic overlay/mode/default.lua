@@ -36,6 +36,21 @@ return Def.ActorFrame {
 		end
 	};
 	Def.Sprite{
+		Texture=THEME:GetPathG("", "_shared/Style"),
+		InitCommand=function(s) s:xy(160,61):zoom(0.55):pause():queuecommand("Set") end,
+		SetCommand=function(self)
+			if (GAMESTATE:GetNumPlayersEnabled() == 1 and GAMESTATE:GetNumSidesJoined() == 1) then
+				self:setstate(0);
+			elseif (GAMESTATE:GetCurrentStyle():GetStyleType() == "StyleType_TwoPlayersTwoSides") then
+				self:setstate(1);
+			elseif (GAMESTATE:GetCurrentStyle():GetStepsType() == 'StepsType_Dance_Double') then
+				self:setstate(2);
+			end;
+		end;
+		OnCommand=function(s) s:zoomy(0):sleep(0.3):linear(0.1):zoomy(0.55) end,
+	};
+	
+	Def.Sprite{
 		InitCommand=function(s) s:xy(99,30.5) end,
 		OnCommand=function(self)
 			if GAMESTATE:GetPlayMode() == 'PlayMode_Regular' then

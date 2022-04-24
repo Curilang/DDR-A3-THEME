@@ -4,7 +4,7 @@ local t = Def.ActorFrame{};
 for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 	local Award = STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetStageAward()
 	t[#t+1] = Def.ActorFrame {
-		InitCommand=function(s) s:player(pn):x(pn== PLAYER_1 and _screen.cx-297 or _screen.cx+330):y(_screen.cy-80):zoom(0) end,
+		InitCommand=function(s) s:player(pn):x(pn== PLAYER_1 and _screen.cx-297 or _screen.cx+380):y(_screen.cy-80):zoom(0) end,
 		OnCommand=function(s) s:linear(0.2):zoom(1):spin():effectmagnitude(0,0,170) end,
 		OffCommand=function(s) s:linear(0.2):zoom(0) end,
 		Def.Sprite{
@@ -36,7 +36,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 	};
 	local Grade = STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetGrade()
 	t[#t+1] = Def.Sprite{
-		InitCommand=function(s) s:player(pn):x(pn== PLAYER_1 and _screen.cx-378 or _screen.cx+248):y(_screen.cy-98):zoom(0):queuecommand("Set") end,
+		InitCommand=function(s) s:player(pn):x(pn== PLAYER_1 and _screen.cx-378 or _screen.cx+302):y(_screen.cy-98):zoom(0):queuecommand("Set") end,
 		OnCommand=function(s) s:linear(0.2):zoom(1) end,
 		OffCommand=function(s) s:linear(0.2):zoom(0) end,
 		SetCommand=function(s)

@@ -1,5 +1,5 @@
 local t = Def.ActorFrame{}
-
+ 
 --Sound
 t[#t+1] = Def.ActorFrame{
 	OnCommand=function(s) s:queuecommand("Play") end,
@@ -11,9 +11,9 @@ t[#t+1] = Def.ActorFrame{
 	PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("","DoorClose")) end,
 };
 
-t[#t+1] = LoadActor(THEME:GetPathS("ScreenStageInformation","Jksh")) .. {	
-	OnCommand=cmd(sleep,1.55;queuecommand,"Play");
-	PlayCommand=cmd(play);
+t[#t+1] = Def.ActorFrame{
+	OnCommand=function(s) s:sleep(1.55):queuecommand("Play") end,
+	PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("ScreenStageInformation","JacketSound")) end,
 };
 
 t[#t+1] = LoadActor("doors_normal");

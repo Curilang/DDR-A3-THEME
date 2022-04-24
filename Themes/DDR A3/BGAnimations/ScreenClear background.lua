@@ -3,6 +3,7 @@ return Def.ActorFrame {
 		OnCommand=function(self)
 		Language()
 		Model()
+		SelectMusicBGM()
 		local coins = GAMESTATE:GetCoins()
 			if coins >= 1 then
 				GAMESTATE:InsertCoin(-coins)

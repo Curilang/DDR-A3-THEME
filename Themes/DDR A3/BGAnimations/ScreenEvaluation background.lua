@@ -1,7 +1,7 @@
 local Sound
 local SoundTime
 
-if (GAMESTATE:HasEarnedExtraStage() and GAMESTATE:IsExtraStage()) or (GAMESTATE:HasEarnedExtraStage() and GAMESTATE:IsExtraStage2()) then
+if (GAMESTATE:HasEarnedExtraStage() and GAMESTATE:IsExtraStage()) or (GAMESTATE:HasEarnedExtraStage() and GAMESTATE:IsExtraStage2()) or (StreamingMode())then
 	Sound = THEME:GetPathS("","_silent")
 	SoundTime = 1
 else	

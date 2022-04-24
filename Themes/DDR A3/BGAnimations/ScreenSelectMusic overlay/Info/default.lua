@@ -30,7 +30,7 @@ return Def.ActorFrame{
 	Name="SongArtist Bar";
 	InitCommand=cmd(xy,-90,-7);
 		LoadActor(Model().."info")..{
-			InitCommand=function(s) s:x(-20):y(25):zoom(0.5) end,
+			InitCommand=function(s) s:x(12):y(25):zoom(0.5) end,
 		};
 		LoadFont("_arial black 28px")..{
 		Name="Title";

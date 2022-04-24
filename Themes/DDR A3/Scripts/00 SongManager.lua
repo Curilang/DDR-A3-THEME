@@ -621,7 +621,7 @@ function DanceStageSong()
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "only my railgun" 												then return "(X) CRYSTALDIUM"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Pierce The Sky" 												then return "(REPLICANT) LIGHT BLUE"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Pluto The First" 												then return "(2014) BOOM DARK"
-	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Poseidon(kors k mix)" 											then return "(X2) WHITE MOVIE"
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Poseidon (kors k mix)" 											then return "(X2) WHITE MOVIE"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "POSSESSION" 													then return "(REPLICANT) LIGHT PURPLE"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "real-high-SPEED" 												then return "(X2) BOOM LIGHT"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "resonance" 														then return "(X2) CYBER"

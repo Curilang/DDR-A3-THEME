@@ -590,3 +590,77 @@ function OptionRowGoldenLeague()
 	setmetatable( t, t );
 	return t;
 end
+
+function OptionRowStreamMode()
+	local t = {
+		Name = "StreamMode";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = true;
+		ExportOnChange = true;
+		Choices = {"Normal", "Silent", };
+		LoadSelections = function(self, list, pn)
+			if ReadPrefFromFile("OptionRowStreamMode") ~= nil then
+				if GetUserPref("OptionRowStreamMode")=='Normal' then
+					list[1] = true
+				elseif GetUserPref("OptionRowStreamMode")=='Silent' then
+					list[2] = true
+				else
+					list[1] = true
+				end
+			else
+				WritePrefToFile("OptionRowStreamMode",'Normal');
+				list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			if list[1] then
+				WritePrefToFile("OptionRowStreamMode",'Normal');
+			elseif list[2] then
+				WritePrefToFile("OptionRowStreamMode",'Silent');
+			else
+				WritePrefToFile("OptionRowStreamMode",'Normal');
+			end;
+			THEME:ReloadMetrics();
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end
+
+function OptionRowJudgementAnimation()
+	local t = {
+		Name = "JudgementAnimation";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = true;
+		ExportOnChange = true;
+		Choices = {"Normal", "Simple", };
+		LoadSelections = function(self, list, pn)
+			if ReadPrefFromFile("OptionRowJudgementAnimation") ~= nil then
+				if GetUserPref("OptionRowJudgementAnimation")=='Normal' then
+					list[1] = true
+				elseif GetUserPref("OptionRowJudgementAnimation")=='Simple' then
+					list[2] = true
+				else
+					list[1] = true
+				end
+			else
+				WritePrefToFile("OptionRowJudgementAnimation",'Normal');
+				list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			if list[1] then
+				WritePrefToFile("OptionRowJudgementAnimation",'Normal');
+			elseif list[2] then
+				WritePrefToFile("OptionRowJudgementAnimation",'Simple');
+			else
+				WritePrefToFile("OptionRowJudgementAnimation",'Normal');
+			end;
+			THEME:ReloadMetrics();
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end

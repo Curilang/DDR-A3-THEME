@@ -31,7 +31,7 @@ return Def.ActorFrame{
 	--Background
 	Def.Sprite{
 		Name="DefaultFrame";
-		Texture="scre_tab_base",
+		Texture="base",
 		InitCommand=function(s) s:setsize(FRAME_WIDTH,FRAME_HEIGHT):diffusealpha(0.7) end,
 	};
 

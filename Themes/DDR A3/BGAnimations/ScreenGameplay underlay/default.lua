@@ -6,6 +6,5 @@ else
 end;
 
 return Def.ActorFrame{ 
-	LoadActor(loader); 
-	--LoadActor("AHORA")..{ InitCommand=function(s) s:FullScreen() end, };	
+	LoadActor(loader); 	
 };

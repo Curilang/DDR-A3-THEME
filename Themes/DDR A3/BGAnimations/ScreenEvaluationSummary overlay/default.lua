@@ -146,25 +146,45 @@ for pn in ivalues(PlayerNumber) do
 					
 				end;
 				
-				Def.BitmapText{
-					Font="_impact 32px",
-					InitCommand=function(s) s:horizalign(right):x(pn==PLAYER_1 and -220 or 297):zoom(0.72):y(-32)
-						local style = GAMESTATE:GetCurrentStyle()
-						if style:GetStyleType() == "StyleType_OnePlayerTwoSides" then
-							s:settext("DOUBLE")
-						elseif style:GetStyleType() == "StyleType_OnePlayerOneSide" then
-							s:settext("SINGLE")
-						elseif style:GetStyleType() == "StyleType_TwoPlayersTwoSides" then
-							s:settext("VERSUS")
-						end
-					end,
+				Def.Sprite{
+					Texture=THEME:GetPathG("", "_shared/Style"),
+					InitCommand=function(s) s:horizalign(right):x(pn==PLAYER_1 and -210 or 297):zoom(0.667):y(-38):pause():queuecommand("Set") end,
 					OnCommand=function(s)
 						s:zoomy(0);
 						s:sleep(0.45+(i-mStages)*-0.1);
 						s:linear(0.4); 
 						s:zoomy(0.72);
 					end,
+					SetCommand=function(self)
+					local style = GAMESTATE:GetCurrentStyle()
+						if style:GetStyleType() == "StyleType_OnePlayerOneSide" then
+							self:setstate(0);
+						elseif style:GetStyleType() == "StyleType_TwoPlayersTwoSides" then
+							self:setstate(1);
+						elseif style:GetStyleType() == "StyleType_OnePlayerTwoSides" then
+							self:setstate(2);
+						end;
+					end;
 				};
+				-- Def.BitmapText{
+					-- Font="_impact 32px",
+					-- InitCommand=function(s) s:horizalign(right):x(pn==PLAYER_1 and -220 or 297):zoom(0.72):y(-32)
+						-- local style = GAMESTATE:GetCurrentStyle()
+						-- if style:GetStyleType() == "StyleType_OnePlayerTwoSides" then
+							-- s:settext("DOUBLE")
+						-- elseif style:GetStyleType() == "StyleType_OnePlayerOneSide" then
+							-- s:settext("SINGLE")
+						-- elseif style:GetStyleType() == "StyleType_TwoPlayersTwoSides" then
+							-- s:settext("VERSUS")
+						-- end
+					-- end,
+					-- OnCommand=function(s)
+						-- s:zoomy(0);
+						-- s:sleep(0.45+(i-mStages)*-0.1);
+						-- s:linear(0.4); 
+						-- s:zoomy(0.72);
+					-- end,
+				-- };
 				-- Label
 				LoadActor( "BannerCenter" ) .. {
 					InitCommand=function(s) s:horizalign(right):setsize(250,45):fadeleft(0.3) end,

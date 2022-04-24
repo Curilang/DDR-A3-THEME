@@ -388,6 +388,62 @@ function FilterReadPref(pn)
 	return ReadPrefFromFile("OptionRowScreenFilter"..ToEnumShortString(pn)); 
 end
 
+function StreamingMode()
+	if GetUserPref("OptionRowStreamMode")=='Silent' then
+		return true
+	end
+end
+
+function StreamingSound(item)
+	if GetUserPref("OptionRowStreamMode")=='Silent' then
+		return THEME:GetPathS("","_silent")
+	else
+		return item
+	end 
+end
+
+function JudgmentZoom()
+	if GetUserPref("OptionRowJudgementAnimation")=='Simple' then
+		return 0.34
+	else
+		return 0.37
+	end
+end
+
+function JudgmentYP()
+	if GetUserPref("OptionRowJudgementAnimation")=='Simple' then
+		return 0
+	else
+		return 2
+	end
+end
+
+function JudgmentYM()
+	if GetUserPref("OptionRowJudgementAnimation")=='Simple' then
+		return 0
+	else
+		return -2
+	end
+end
+
+function SelectMusicBGM()
+	local Music = THEME:GetAbsolutePath("Sounds/ScreenSelectMusic music (loop).redir")
+	local file = RageFileUtil.CreateRageFile()
+
+	
+	if GetUserPref("OptionRowStreamMode")=='Silent' then
+		file:Open(Music,2)
+		file:Write("_silent")
+		file:Close()
+		file:destroy()
+	else
+		file:Open(Music,2)
+		file:Write("_systembgm2 (loop)")
+		file:Close()
+		file:destroy()
+	end
+end
+
 function JudgmentTransformCommand( self, params )
 	local x = 0
 	local y = -76

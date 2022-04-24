@@ -32,7 +32,7 @@ end
 
 for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 	t[#t+1] = Def.Sprite{
-		Texture="eamu/"..Language().."scre_eamu_base00",
+		Texture="eamu/"..Language().."exp",
 		InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-212.5 or _screen.cx+212.5,_screen.cy+179):zoom(0.6) end,
 		OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -700 or 700)  end,
 	};
@@ -50,7 +50,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
         };
     };
 	t[#t+1] = Def.ActorFrame{
-        InitCommand=function(s) s:zoom(0.667):xy(pn==PLAYER_1 and _screen.cx-209 or _screen.cx+209,_screen.cy-32) end,
+        InitCommand=function(s) s:zoom(0.667):xy(pn==PLAYER_1 and _screen.cx-200 or _screen.cx+200,_screen.cy-42) end,
         OffCommand=function(s) s:sleep(0.2):linear(0.2):diffusealpha(0) end,
         Def.RollingNumbers{
             File="ScreenEvaluation ScoreNumber",
@@ -68,43 +68,53 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
         };
     };
 	t[#t+1] = LoadActor("Grade")..{
-		InitCommand=cmd(zoom,0.667;draworder,11;x,_screen.cx-262.5;y,_screen.cy-210.5);
+		InitCommand=cmd(zoom,0.667;draworder,11;x,_screen.cx-282;y,_screen.cy-210.5);
 		OffCommand=cmd(sleep,0.2;linear,0.2;diffusealpha,0);
 	};
     t[#t+1] = Def.ActorFrame{
         Name="StepsDisplay",
-        InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-133 or _screen.cx+133,_screen.cy-201):zoom(0.667) end,
+        InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-153 or _screen.cx+153,_screen.cy-201):zoom(0.667) end,
         OffCommand=function(s) s:linear(0.25):diffusealpha(0) end,
+        Def.Sprite{
+			Texture=THEME:GetPathG("", "_shared/Style"),
+			InitCommand=function(s) s:xy(2,5):zoom(0.55):pause():queuecommand("Set") end,
+			SetCommand=function(self)
+				local style = GAMESTATE:GetCurrentStyle()
+				if style:GetStyleType() == "StyleType_OnePlayerOneSide" then
+					self:setstate(0);
+				elseif style:GetStyleType() == "StyleType_TwoPlayersTwoSides" then
+					self:setstate(1);
+				elseif style:GetStyleType() == "StyleType_OnePlayerTwoSides" then
+					self:setstate(2);
+				end;
+			end;
+		};
+		-- Def.BitmapText{
+            -- Font="_impact 32px",
+            -- InitCommand=function(s)
+				-- s:x(2):zoom(0.79)
+                -- local style = GAMESTATE:GetCurrentStyle()
+					-- if style:GetStyleType() == "StyleType_OnePlayerTwoSides"  then s:settext("DOUBLE");
+                -- elseif style:GetStyleType() == "StyleType_OnePlayerOneSide"   then s:settext("SINGLE");
+                -- elseif style:GetStyleType() == "StyleType_TwoPlayersTwoSides" then s:settext("VERSUS");
+                -- end;
+            -- end,
+        -- };
         Def.BitmapText{
             Font="_impact 32px",
             InitCommand=function(self)
-				self:x(2)
-				self:zoom(0.79)
-                local style = GAMESTATE:GetCurrentStyle()
-                if style:GetStyleType() == "StyleType_OnePlayerTwoSides" then
-                    self:settext("DOUBLE");
-                elseif style:GetStyleType() == "StyleType_OnePlayerOneSide" then
-                    self:settext("SINGLE");
-                elseif style:GetStyleType() == "StyleType_TwoPlayersTwoSides" then
-                    self:settext("VERSUS");
-                end;
-            end,
-        };
-        Def.BitmapText{
-            Font="_impact 32px",
-            InitCommand=function(self)
-                self:x(3):y(25):zoom(0.79)
+                self:x(3):y(31):zoom(0.74)
                 local diffname = GAMESTATE:GetCurrentSteps(pn):GetDifficulty();
 				self:settext(THEME:GetString("CustomDifficulty",ToEnumShortString(diffname)));
 				self:diffuse(GameColor.Difficulty[diffname])
             end,
         };
 		Def.BitmapText{
-            Font="_impact 32px",
+            Font="EvaluationMeter",
             InitCommand=function(self)
-                self:y(55):x(3):shadowlength(0):zoom(1.1):diffuse(color("White"))
+                self:xy(-3,52):shadowlength(0):zoom(0.34):diffuse(color("White"))
                 local meter = GAMESTATE:GetCurrentSteps(pn):GetMeter();
-				self:settext(meter);
+				self:settext(meter)
             end,
         };
     };

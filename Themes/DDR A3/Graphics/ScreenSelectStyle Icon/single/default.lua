@@ -41,6 +41,10 @@ t[#t+1] = Def.ActorFrame{
     LoadActor(Language().."title")..{
 		InitCommand=cmd(x,10);
 	};
+	Def.Sprite{
+		Texture=THEME:GetPathG("", "_shared/Style"),
+		InitCommand=function(s) s:x(120):zoom(0.667):pause():setstate(0) end,
+	};
   };
   LoadActor(THEME:GetPathG("ScreenSelectStyle","icon/"..Model().."bottom"))..{
     InitCommand=cmd(zoom,0.5;y,86);

@@ -10,12 +10,16 @@ return Def.ActorFrame {
 		OnCommand=function(s) s:queuecommand("Play") end,
 		PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("","DoorOpen")) end,
 	};
-	LoadActor(THEME:GetPathS("ScreenEvaluation","Swoosh"))..{
-		OnCommand=cmd(queuecommand,"Play");
-		PlayCommand=cmd(play);
+	Def.ActorFrame{
+		OnCommand=function(s) s:queuecommand("Play") end,
+		PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("ScreenEvaluation","Swoosh")) end,
 	};
-	LoadActor(THEME:GetPathS("ScreenEvaluation","Score"))..{
-		StartTransitioningCommand=cmd(stop;sleep,0.5;play);
+	Def.ActorFrame{
+		OnCommand=function(s) s:queuecommand("Play") end,
+		PlayCommand=function(s) 
+			local sound = THEME:GetPathS("ScreenEvaluation","Score")
+			SOUND:PlayOnce(StreamingSound(sound)) 
+		end,
 	};
 	LoadActor(Door);
 };
