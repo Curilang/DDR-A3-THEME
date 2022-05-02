@@ -444,6 +444,24 @@ function SelectMusicBGM()
 	end
 end
 
+function MenuTimer()
+	local TimerNumbers = THEME:GetAbsolutePath("Fonts/MenuTimer numbers.redir")
+	local file = RageFileUtil.CreateRageFile()
+
+	
+	if GetCurrentModel() == "Blue" then
+		file:Open(TimerNumbers,2)
+		file:Write("BlueTimerNumbers")
+		file:Close()
+		file:destroy()
+	else
+		file:Open(TimerNumbers,2)
+		file:Write("GoldTimerNumbers")
+		file:Close()
+		file:destroy()
+	end
+end
+
 function JudgmentTransformCommand( self, params )
 	local x = 0
 	local y = -76

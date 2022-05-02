@@ -4,6 +4,7 @@ return Def.ActorFrame {
 		Language()
 		Model()
 		SelectMusicBGM()
+		MenuTimer()
 		local coins = GAMESTATE:GetCoins()
 			if coins >= 1 then
 				GAMESTATE:InsertCoin(-coins)
