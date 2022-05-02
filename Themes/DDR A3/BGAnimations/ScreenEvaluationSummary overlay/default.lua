@@ -148,12 +148,12 @@ for pn in ivalues(PlayerNumber) do
 				
 				Def.Sprite{
 					Texture=THEME:GetPathG("", "_shared/Style"),
-					InitCommand=function(s) s:horizalign(right):x(pn==PLAYER_1 and -210 or 297):zoom(0.667):y(-38):pause():queuecommand("Set") end,
+					InitCommand=function(s) s:horizalign(right):x(pn==PLAYER_1 and -212 or 332):zoom(0.5):y(-33):pause():queuecommand("Set") end,
 					OnCommand=function(s)
 						s:zoomy(0);
 						s:sleep(0.45+(i-mStages)*-0.1);
 						s:linear(0.4); 
-						s:zoomy(0.72);
+						s:zoomy(0.5);
 					end,
 					SetCommand=function(self)
 					local style = GAMESTATE:GetCurrentStyle()

@@ -90,20 +90,20 @@ end;
 
 for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 t[#t+1]=Def.ActorFrame{
-	LoadActor(Model().."diff base")..{
+	LoadActor(Model().."diff")..{
 		InitCommand=function(self)
-			self:x(pn == PLAYER_1 and cx-438-ox or cx+438+ox);
-			self:y(SCREEN_BOTTOM+40)
+			self:x(pn == PLAYER_1 and cx-434-ox or cx+434+ox);
+			self:y(SCREEN_BOTTOM+35)
 			self:zoomx(pn == PLAYER_1 and 1 or -1)
 		end;
 		OnCommand=function(self)
 			self:sleep(SleepOffset+0.2):linear(0.05)
-			self:x(pn == PLAYER_1 and cx-438 or cx+438);
+			self:x(pn == PLAYER_1 and cx-434 or cx+434);
 		end;
 	};
 	Def.Sprite{
 		Texture ="diff 1x6",
-		InitCommand=function(s) s:y(SCREEN_BOTTOM+37)
+		InitCommand=function(s) s:y(SCREEN_BOTTOM+35)
 		s:x(pn == PLAYER_1 and cx-552-ox or cx+552+ox)
 		s:draworder(110):pause():queuecommand("Set") end,
 		SetCommand=function(self)
@@ -127,7 +127,7 @@ t[#t+1]=Def.ActorFrame{
 			s:sleep(SleepOffset+0.2):linear(0.05)
 			s:x(pn == PLAYER_1 and cx-552 or cx+552) end,
 	};
-	LoadActor(Model().."best base")..{
+	LoadActor(Model().."best")..{
 		InitCommand=function(self)
 			self:x(pn == PLAYER_1 and cx-436-ox or cx+436+ox);
 			self:y(SCREEN_BOTTOM+86)

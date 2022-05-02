@@ -2,7 +2,7 @@ local t = Def.ActorFrame{};
 
 if not GAMESTATE:IsEventMode() then
 	t[#t+1] = LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."three"))..{
-		InitCommand=cmd(x,-2.3;y,1;zoom,1);
+		InitCommand=cmd(x,-1.8;y,0;zoom,0.5);
 	};
 	t[#t+1] = Def.ActorFrame{
 	InitCommand=function(s) s:xy(0.5,0.5) end, 

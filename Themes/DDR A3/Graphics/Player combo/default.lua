@@ -135,9 +135,8 @@ local t = Def.ActorFrame {
 		    Label_X =  -26;
 		end
 
---10 to 100
 		if iCombo > 9 then
-		param.Zoom = scale( iCombo, 0, 4, 0.40, 0.40 );
+		param.Zoom = scale( iCombo, 0, 4, 0.39, 0.39 );
 		param.Zoom = clamp( param.Zoom, 0.39, 0.39 );
 			Number_X = -9;
 			Number_Y = 5;

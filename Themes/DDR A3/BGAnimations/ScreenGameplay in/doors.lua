@@ -73,7 +73,7 @@ return Def.ActorFrame{
 		};
 		
 	};
-	LoadActor(THEME:GetPathB("","_door/cosh_burst_flare_blue.png"))..{
+	LoadActor(THEME:GetPathB("","_door/flare_center.png"))..{
 			InitCommand=cmd(Center;FullScreen;blend,Blend.Add;diffusealpha,0.5);
 			OnCommand=cmd(linear,0.45;diffusealpha,0;zoom,6*1);
 		};

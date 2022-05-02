@@ -138,5 +138,5 @@ function SelectStage()
 end
 
 function ThemeNumber()
-	return "ST,SM,JA,SS,FS,CU,SA,GD,BM,SP,MD,GL" 
+	return "ST,SM,JA,SS,FS,CU,SA,GD,BM,SP,MD,GL"
 end

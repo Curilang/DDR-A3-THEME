@@ -14,9 +14,7 @@ return Def.ActorFrame {
 	
 	Def.Sprite{
 		Texture=THEME:GetPathB("","_door/purple_light"),
-		InitCommand=function(s) s:xy(_screen.cx-5,-10)
-		--:blend(('BlendMode_Add'))
-		:diffusealpha(0):zoom(0.667):queuecommand("Animate") end,
+		InitCommand=function(s) s:xy(_screen.cx-5,-10):diffusealpha(0):zoom(0.667):queuecommand("Animate") end,
 		AnimateCommand=function(s) s:diffusealpha(1):linear(0.85):diffusealpha(0.65):linear(0.85):diffusealpha(1):queuecommand("Animate") end,
 	};
 	

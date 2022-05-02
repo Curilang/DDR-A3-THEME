@@ -1,37 +1,36 @@
 local AnimPlayed = true
 
 return Def.ActorFrame{
-  InitCommand=cmd(xy,_screen.cx,_screen.cy-274);
-  CurrentSongChangedMessageCommand=function(s)
-    if GAMESTATE:GetCurrentSong() then
-      s:queuecommand("Show"):queuecommand("Set")
-    else
-      s:queuecommand("Hide")
-    end
-  end,
-  ShowCommand=function(s)
-    if AnimPlayed == false then 
-      s:diffusealpha(0):linear(0.05):diffusealpha(0.75)
-      :linear(0.1):diffusealpha(0.25):linear(0.1):diffusealpha(1)
-      s:queuecommand("UpdateShow")
-    end
-  end,
-  UpdateShowCommand=function(s) AnimPlayed = true end,
-  HideCommand=function(s)
-    if AnimPlayed == true then
-      s:diffusealpha(1):sleep(0.05):diffusealpha(0):sleep(0.05):diffusealpha(0.5)
-      :sleep(0.05):diffusealpha(0):sleep(0.05):diffusealpha(0.25):sleep(0.05)
-      :linear(0.05):diffusealpha(0)
-      s:queuecommand("UpdateHide")
-    end
-  end,
-  UpdateHideCommand=function(s) AnimPlayed = false end,
+	InitCommand=cmd(xy,_screen.cx,_screen.cy-274);
+	CurrentSongChangedMessageCommand=function(s)
+		if GAMESTATE:GetCurrentSong() then
+			s:queuecommand("Show"):queuecommand("Set")
+		else
+			s:queuecommand("Hide")
+		end
+	end,
+	ShowCommand=function(s)
+		if AnimPlayed == false then 
+			s:diffusealpha(0):linear(0.05):diffusealpha(0.75)
+			s:linear(0.1):diffusealpha(0.25):linear(0.1):diffusealpha(1)
+			s:queuecommand("UpdateShow")
+		end
+	end,
+	UpdateShowCommand=function(s) AnimPlayed = true end,
+	HideCommand=function(s)
+		if AnimPlayed == true then
+			s:diffusealpha(1):sleep(0.05):diffusealpha(0):sleep(0.05):diffusealpha(0.5)
+			s:sleep(0.05):diffusealpha(0):sleep(0.05):diffusealpha(0.25):sleep(0.05)
+			s:linear(0.05):diffusealpha(0)
+			s:queuecommand("UpdateHide")
+		end
+	end,
+	UpdateHideCommand=function(s) AnimPlayed = false end,
+	
 	Def.ActorFrame{
 	Name="SongArtist Bar";
 	InitCommand=cmd(xy,-90,-7);
-		LoadActor(Model().."info")..{
-			InitCommand=function(s) s:x(12):y(25):zoom(0.5) end,
-		};
+		LoadActor(Model().."info")..{ InitCommand=function(s) s:x(12):y(25):zoom(0.5) end, };
 		LoadFont("_arial black 28px")..{
 		Name="Title";
 			InitCommand=cmd(x,-235;zoom,0.8;halign,0;maxwidth,560;diffuse,color("White"));
@@ -58,52 +57,55 @@ return Def.ActorFrame{
 		};
 	};
 	Def.ActorFrame{
-    Name="BPMBar";
-    InitCommand=cmd(xy,-20,44);
-	LoadActor("BPM")..{
-      InitCommand=cmd(xy,90,10);
-    };
-    Def.Sprite{
-  		Texture="_meter 2x2.png";
-  		InitCommand=cmd(xy,58,16;effectclock,'beatnooffset';SetAllStateDelays,1);
-  	};
-    LoadFont("Bpm")..{
-    	InitCommand=cmd(zoom,1.4;xy,148,1);
-    	SetCommand=function(self)
-    		local song = GAMESTATE:GetCurrentSong();
-    		if song then
-    			local bpmtext;
-    			bpmtext = song:GetDisplayBpms();
-    			if bpmtext[1] == bpmtext[2] then
-    				bpmtext = round(bpmtext[1],0);
-    			else
-    				bpmtext = string.format("%d\nx%3d",round(bpmtext[1],0),round(bpmtext[2],0));
-    			end
-    			self:horizalign(right);
-    			self:vertalign(top);
-    			self:settext(bpmtext);
-    			self:visible(true);
-    		else
-    			self:visible(false);
-    		end
-    	end;
-    };
-  };
-	LoadActor(Model().."jacket")..{
-		InitCommand=function(s) s:x(250):y(15):zoom(0.5) end,
-	};
-    Def.Sprite{
-		InitCommand=function(s) s:x(244):y(17) end,
-		SetCommand=function(s)
-		local song = GAMESTATE:GetCurrentSong()
-			if song then
-				if (GAMESTATE:IsExtraStage()) and song:GetDisplayFullTitle() == "ENDYMION" then
-					s:Load(THEME:GetPathG("","ENDYMION"))
+		Name="BPMBar";
+		InitCommand=cmd(xy,-20,44);
+			LoadActor("BPM")..{ InitCommand=function(s) s:xy(90,10) end, };
+			
+			Def.Sprite{
+				Texture="_meter 2x2.png";
+				InitCommand=cmd(xy,58,16;effectclock,'beatnooffset';SetAllStateDelays,1);
+			};
+    
+		LoadFont("Bpm")..{
+			InitCommand=cmd(zoom,1.4;xy,148,1);
+			SetCommand=function(self)
+				local song = GAMESTATE:GetCurrentSong();
+				if song then
+					local bpmtext;
+					bpmtext = song:GetDisplayBpms();
+						if bpmtext[1] == bpmtext[2] then
+							bpmtext = round(bpmtext[1],0);
+						else
+							bpmtext = string.format("%d\nx%3d",round(bpmtext[1],0),round(bpmtext[2],0));
+						end
+					self:horizalign(right);
+					self:vertalign(top);
+					self:settext(bpmtext);
+					self:visible(true);
 				else
-					s:Load(GetJacketPath(song))
+					self:visible(false);
 				end
-				s:setsize(150,150)
+			end;
+		};
+	};
+	
+	Def.ActorFrame{
+		Name="BPMBar";
+			LoadActor(Model().."jacket")..{ InitCommand=function(s) s:x(250):y(15):zoom(0.5) end, };
+			
+			Def.Sprite{
+				InitCommand=function(s) s:x(244):y(17) end,
+				SetCommand=function(s)
+				local song = GAMESTATE:GetCurrentSong()
+					if song then
+					if (GAMESTATE:IsExtraStage()) and song:GetDisplayFullTitle() == "ENDYMION" then
+						s:Load(THEME:GetPathG("","ENDYMION"))
+					else
+						s:Load(GetJacketPath(song))
+					end
+					s:setsize(150,150)
+				end
 			end
-		end
-    };
+		};
+	};
 };

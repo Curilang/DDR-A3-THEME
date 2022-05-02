@@ -4,7 +4,7 @@ local t = Def.ActorFrame{};
 if not GAMESTATE:IsEventMode() then
 	--base
 	t[#t+1] = LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."nine"))..{
-		InitCommand=cmd(y,-1);
+		InitCommand=cmd(zoom,0.5;y,-1);
 	};
 	
 	t[#t+1] = Def.ActorFrame{

@@ -1,5 +1,8 @@
 local t = Def.ActorFrame{};
 
+local StageIndex = GAMESTATE:GetCurrentStageIndex()
+local FinalStage = PREFSMAN:GetPreference("SongsPerPlay")
+
 t[#t+1] = Def.ActorFrame{
     StandardDecorationFromFile("Header","Header");
 	StandardDecorationFromFile("StageDisplay","StageDisplay");
@@ -139,6 +142,16 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 			OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -300 or 300) end,
         };
 	};
+	
+	if (StageIndex == FinalStage+1) or (StageIndex == FinalStage+2) then
+	else
+		for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
+			t[#t+1] = LoadActor(THEME:GetPathB("GameDecoration","3 Stars"))..{
+				InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-54 or _screen.cx+278,_screen.cy-10):zoom(0.667) end,
+				OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -700 or 700) end,
+			};
+		end;
+	end;
 end;
 
 if #GAMESTATE:GetEnabledPlayers() == 1 then
@@ -157,18 +170,11 @@ else
 	};
 end;
 
-local StageIndex = GAMESTATE:GetCurrentStageIndex()
-local FinalStage = PREFSMAN:GetPreference("SongsPerPlay")
+
 
 if (StageIndex == FinalStage+1) or (StageIndex == FinalStage+2) then
 
 else
-	for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
-		t[#t+1] = LoadActor(THEME:GetPathB("GameDecoration","3 Stars"))..{
-			InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-56 or _screen.cx+271,_screen.cy-14):zoom(0.667) end,
-			OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -700 or 700) end,
-		};
-	end;
 
 	t[#t+1] = LoadActor(THEME:GetPathB("GameDecoration","9 Stars"))..{
 		InitCommand=function(s) s:xy(_screen.cx,_screen.cy+184):zoom(0.667) end,

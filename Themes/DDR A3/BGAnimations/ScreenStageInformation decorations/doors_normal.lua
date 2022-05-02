@@ -49,8 +49,8 @@ return Def.ActorFrame{
 			InitCommand=function(s) s:zoomx(0.4):zoomy(0.447):y(_screen.cy-2.2):diffusealpha(0) end,
 			OnCommand=function(s) s:sleep(1.2):linear(0.2):zoomx(0.447):diffusealpha(1) end,
 		};
-		LoadActor(THEME:GetPathB("","_door/cosh_burst_flare"))..{
-			InitCommand=cmd(zoom,0.53;x,13;y,SCREEN_TOP+25;blend,Blend.Add;);
+		LoadActor(THEME:GetPathB("","_door/flare.png"))..{
+			InitCommand=cmd(zoom,0.4;x,-5;y,SCREEN_TOP+12;blend,Blend.Add;);
 			OnCommand=cmd(diffusealpha,0;sleep,1.034;linear,0.3;diffusealpha,1;diffuseshift;effectcolor1,color("1,1,1,1");effectcolor2,color("1,1,1,0.9");effectperiod,0.02);
 		};
 		LoadActor(THEME:GetPathG("ScreenWithMenuElements","header/"..GetCurrentModel().."/base"))..{

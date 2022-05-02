@@ -46,28 +46,24 @@ return Def.ActorFrame{
 		InitCommand=cmd(x,_screen.cx;y,_screen.cy;blend,Blend.Add);
 		OnCommand=function(s) s:diffusealpha(0):zoom(1):sleep(AnimationSleep+0.035):linear(0.264):diffusealpha(1):zoom(0.667) end,
 	};
-	Def.ActorFrame{
-	InitCommand=function(s) s:zoom(0.635):xy(155,88) end,
-		Def.Sprite{
-			InitCommand=function(s) s:diffusealpha(0):Center():Load(THEME:GetPathB("ScreenGameplay","failed/FAILED")) end,
-			OnCommand=function(s) 
-				s:zoom(0.5):sleep(AnimationSleep):linear(0):diffusealpha(1):linear(0.2):diffusealpha(1)
-				s:zoomx(1):zoomy(1.15):linear(0.05):diffusealpha(1)
-				s:zoomx(1.1):zoomy(1.5):linear(0.1):diffusealpha(1)
-				s:zoomx(1.15):zoomy(1.15):linear(0.1)
-				s:zoomx(1.1):zoomy(1.1):linear(0.1)
-				s:zoomx(1.05):zoomy(1.05) 
-			end,
-		};
-		Def.Sprite{
-			InitCommand=function(s) s:diffusealpha(0):Center():Load(THEME:GetPathB("ScreenGameplay","failed/FAILED")) end,
-			OnCommand=function(s) 
-				s:zoom(2.5):sleep(AnimationSleep):linear(0):diffusealpha(0.3):linear(0.2):diffusealpha(1)
-				s:zoomx(1):zoomy(1.15):linear(0.05):diffusealpha(0.3)
-				s:zoomx(1.1):zoomy(1.5):linear(0.1):diffusealpha(0.3)
-				s:zoomx(2.5):zoomy(2.3):linear(0.5):diffusealpha(0)
-				s:zoomx(4):zoomy(3.45) 
-			end,
-		};
+	Def.Sprite{
+		InitCommand=function(s) s:diffusealpha(0):Center():Load(THEME:GetPathB("ScreenGameplay","failed/FAILED")) end,
+		OnCommand=function(s) 
+			s:sleep(AnimationSleep+0.035):diffusealpha(1):zoom(0)
+			s:linear(0.1):zoom(0.418)
+			s:linear(0.1):diffusealpha(1):zoomx(0.62):zoomy(0.64)
+			s:linear(0.1):diffusealpha(1):zoomx(0.69):zoomy(0.71)
+			s:linear(0.1):zoom(0.667)
+		end,
+	};
+	Def.Sprite{
+		InitCommand=function(s) s:diffusealpha(0):Center():Load(THEME:GetPathB("ScreenGameplay","failed/FAILED")) end,
+		OnCommand=function(s) 
+			s:sleep(AnimationSleep+0.035):diffusealpha(0):zoom(0)
+			s:linear(0.1):zoom(1.2)
+			s:linear(0.1):diffusealpha(0.5):zoomx(0.62):zoomy(0.64)
+			s:linear(0.1):diffusealpha(0.5):zoomx(0.72):zoomy(0.74)
+			s:linear(0.1):diffusealpha(0):zoom(0.92)
+		end,
 	};
 };

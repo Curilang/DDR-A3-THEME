@@ -58,7 +58,7 @@ return Def.ActorFrame {
 	
 	--Left
 	LoadActor(ReadyToLoad())..{
-		InitCommand=function(s) s:xy(_screen.cx,_screen.cy) end,
+		InitCommand=function(s) s:Center() end,
 		OnCommand=function(self)
 			self:diffusealpha(1):zoom(0)
 			self:linear(0.1):zoom(0.418)
@@ -71,7 +71,7 @@ return Def.ActorFrame {
 	
 	--Right
 	LoadActor(ReadyToLoad())..{
-		InitCommand=function(s) s:xy(_screen.cx,_screen.cy):blend(Blend.Add) end,
+		InitCommand=function(s) s:Center():blend(('BlendMode_Add')) end,
 		OnCommand=function(s) 
 			s:diffusealpha(0):zoom(0)
 			s:linear(0.1):zoom(1.2)

@@ -39,9 +39,9 @@ local function DrawDiffListItem(diff)
         InitCommand=function(s) s:setsize(26,25):diffuse(CustomDifficultyToColor(diff)) end,
       };
       Def.BitmapText{
-        Font="_geo 95 20px",
+        Font="_impact 32px",
         Name="Meter";
-        InitCommand=function(s) s:x(-0.5):draworder(99):strokecolor(Color.Black):y(-10):zoom(1.20) end,
+        InitCommand=function(s) s:draworder(99):strokecolor(Color.Black):zoom(0.75) end,
         SetCommand=function(self)
           self:settext("")
           local st=GAMESTATE:GetCurrentStyle():GetStepsType()
@@ -58,7 +58,7 @@ local function DrawDiffListItem(diff)
     Def.BitmapText{
       Font="_geo 957 Bold",
       Name="Score";
-      InitCommand=function(s) s:draworder(5):diffuse(Color.White):xy(74,-1):zoom(1.1):halign(1):maxwidth(80) end,
+      InitCommand=function(s) s:draworder(5):diffuse(Color.White):xy(80,-1):zoom(1.1):halign(1):maxwidth(80) end,
       SetCommand=function(self)
         self:settext("")
 

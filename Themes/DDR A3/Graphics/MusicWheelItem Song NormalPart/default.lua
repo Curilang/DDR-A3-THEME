@@ -134,17 +134,6 @@ return Def.ActorFrame{
 			Texture=THEME:GetPathG("MusicWheelItem Song","NormalPart/cleared"),
 			InitCommand=function(s) s:xy(-57,3) end,
 		};
-		
-		-- Def.Quad{
-			-- InitCommand=function(s) s:xy(60,3):diffuse(color("1,1,1,1")):setsize(8,96) end,
-		-- };
-		-- Def.Quad{
-			-- InitCommand=function(s) s:xy(59.5,3):diffuse(color("0,0,0,1")):setsize(7,95) end,
-		-- };
-		
-		-- Def.Quad{
-			-- InitCommand=function(s) s:xy(-61,3):diffuse(color("0,0,0,1")):setsize(7,95) end,
-		-- };
 		grade;
 	};
 	diff;

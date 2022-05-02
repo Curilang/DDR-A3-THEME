@@ -1,7 +1,7 @@
 --This file uses AddChildFromPath since I need to load as many actors as there are steps
 --Thus there are no constructors, it will just take the current song and display for as many
 --joined players. And do a lot of crazy stuff to handle two actorframes.
-local X_SPACING, Y_SPACING = 25,134;
+local X_SPACING, Y_SPACING = 25,139;
 local X_SPACING = 5,134;
 local function getXSpacing(pn)
 	return pn == PLAYER_1 and X_SPACING*-1 or X_SPACING
@@ -50,7 +50,7 @@ end;
 local function adjustScrollerFrame(pn)
 	for i=1,numDiffs do
 		local is_focus = (i == selection[pn])
-		frame[pn]:GetChild(i):stoptweening():decelerate(.2):zoom(is_focus and 1 or .6):xy(math.abs(i-selection[pn])*getXSpacing(pn),(i-selection[pn])*Y_SPACING):GetChild("Highlight"):visible(is_focus)
+		frame[pn]:GetChild(i):stoptweening():decelerate(.2):zoom(is_focus and 1 or 0.7):xy(math.abs(i-selection[pn])*getXSpacing(pn),(i-selection[pn])*Y_SPACING):GetChild("Highlight"):visible(is_focus)
 	end;
 end;
 
@@ -70,31 +70,22 @@ local function genScrollerFrame(player)
 			Def.ActorFrame{
 				StartSelectingStepsMessageCommand=function(s) s:diffusealpha(0):sleep(0.5):linear(0.1):diffusealpha(1) end,
 				OffCommand=function(s)
-					s:sleep(outdelay):linear(0.2):addx(-10):addy(-10)
+					s:sleep(outdelay):linear(0.2):diffusealpha(0)
 				end,
 				Def.Sprite{
 					Texture=GetCurrentModel().."/diff "..ToEnumShortString(diff);
-					InitCommand=cmd(zoom,0.7;xy,-7,-3)
-				};
-				Def.Sprite{
-					Texture="text_"..ToEnumShortString(diff);
-					InitCommand=cmd(zoom,0.75;xy,-17,-36)
+					InitCommand=cmd(zoom,0.5;y,-2)
 				};
 			};
 			Def.Sprite{
 				StartSelectingStepsMessageCommand=function(s) s:diffusealpha(0):sleep(0.5):linear(0.1):diffusealpha(1) end,
 				Texture=GetCurrentModel().."/line";
 				Name="Highlight";
-				InitCommand=cmd(zoom,0.7;xy,-7,-3;visible,i==selection[player];diffuseramp;effectcolor1,color("1,1,1,0");effectcolor2,color("1,1,1,1");effectperiod,.5);
-			};
-			Def.Sprite{
-				StartSelectingStepsMessageCommand=function(s) s:diffusealpha(0):sleep(0.5):linear(0.1):diffusealpha(1) end,
-				Texture="kanji_"..ToEnumShortString(diff);
-				InitCommand=cmd(zoom,0.6;xy,-82,8);
+				InitCommand=cmd(zoom,0.7;y,-2;visible,i==selection[player];diffuseramp;effectcolor1,color("1,1,1,0");effectcolor2,color("1,1,1,1");effectperiod,.5);
 			};
 			Def.ActorFrame{
 				Name="Ok desu ka",
-				InitCommand=function(s) s:xy(-82,8) end,
+				InitCommand=function(s) s:xy(-77,8) end,
 				Def.Sprite{
 					Texture=GetCurrentModel().."/eff",
 					InitCommand=function(s) s:diffusealpha(0) end,
@@ -159,10 +150,13 @@ local function genScrollerFrame(player)
 			LoadFont("difficulty numbers")..{
 				StartSelectingStepsMessageCommand=function(s) s:diffusealpha(0):sleep(0.5):linear(0.1):diffusealpha(1) end,
 				Text=steps:GetMeter();
-				InitCommand=cmd(zoom,0.8;xy,60,-8);
+				InitCommand=cmd(xy,62,-17);
+				OffCommand=function(s)
+					s:sleep(outdelay):linear(0.2):x(40):diffusealpha(0)
+				end,
 			};
 			Def.ActorFrame{
-				InitCommand=function(s) s:xy(60,-56) end,
+				InitCommand=function(s) s:xy(73,-59):zoom(0.85) end,
 				StartSelectingStepsMessageCommand=function(s) s:diffusealpha(0):sleep(0.5):linear(0.1):diffusealpha(1) end,
 				Def.Sprite{
 					InitCommand=function(s) s:queuecommand("Set"):xy(30,13):zoomto(2.5,0.22):rotationz(90):cropleft(0.28):cropright(0.28) end,
@@ -278,13 +272,13 @@ local function genScrollerFrame(player)
 						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","NoFCWithBatteryLives"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,1;effectperiod,effecttime))(s);
 					elseif FullComboRank == 6 then --6=GoodOldFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","GoodOldFC"));
+						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","GoodFC"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(s);
 					elseif FullComboRank == 5 then -- 5=GoodFC
 						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","GoodFC"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(s);
 					elseif FullComboRank == 4 then -- 4=GreatOldFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","GreatOldFC"));
+						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","GreatFC"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(s);
 					elseif FullComboRank == 3 then --3=GreatFC
 						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","GreatFC"));
@@ -305,7 +299,7 @@ local function genScrollerFrame(player)
 			};
 			Def.Sprite{
 				Texture="flash",
-				InitCommand=function(s) s:diffusealpha(0):zoom(0.7):xy(-7,-3) end,
+				InitCommand=function(s) s:diffusealpha(0):zoom(0.7):y(-2) end,
 				StartSelectingStepsMessageCommand=function(s) s:sleep(0.3):linear(0.05):diffusealpha(1):sleep(0.05):linear(0.1):diffusealpha(0) end,
 			};
 		};
