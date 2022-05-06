@@ -38,8 +38,6 @@ return Def.ActorFrame{
 				local song = GAMESTATE:GetCurrentSong()
 				if song then
 					s:settext(GetSongName(song))
-				else
-					s:settext("")
 				end
 			end
 		};
@@ -50,8 +48,6 @@ return Def.ActorFrame{
 				local song = GAMESTATE:GetCurrentSong()
 				if song then
 					s:settext(GetArtistName(song))
-				else
-					s:settext("")
 				end
 			end
 		};

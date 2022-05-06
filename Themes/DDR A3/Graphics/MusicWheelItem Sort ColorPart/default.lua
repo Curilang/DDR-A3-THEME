@@ -8,46 +8,49 @@ function arrangeXPosition3(myself, index, offset)
 	end;
 end
 
-local t = Def.ActorFrame {
-
-
-
---border bright
-
-	--DefaultBG
-
- 	LoadActor("cat_normal")..{
-		InitCommand=cmd(y,-8;zoom,2.5;);
-		SetCommand=function(self,params)
-			arrangeXPosition3(self,params.Index,0);
-		end;
-	};
-	LoadActor("cat_bright")..{
-		InitCommand=cmd(y,-8;zoom,2.5;diffusecolor,Color("Yellow");blend,Blend.Add;diffusealpha,0.5;thump;effectclock,'beat';effectmagnitude,1,1.1,1;effectoffset,0.20;);
-		SetCommand=function(self,params)
-			if params.HasFocus then
-				self:zoom(2.7);
-			else
-				self:zoom(0);
-			end
-			arrangeXPosition3(self,params.Index,0);
-		end;
-	};	
-	LoadActor("cat_over")..{
-		InitCommand=cmd(y,-8;zoom,0);
+return Def.ActorFrame {
+	Def.ActorFrame{
+		Name="Cursor",
+		InitCommand=function(s) s:y(-8):zoom(0.85) end,
 		SetMessageCommand=function(self,params)
-			
-			if params.HasFocus then
-				self:zoom(2.7);
-			else
-				self:zoom(0);
-			end
 			arrangeXPosition3(self,params.Index,0);
 		end;
+		Def.Sprite{
+			Texture=THEME:GetPathG("MusicWheelItem Sort","ColorPart/"..GetCurrentModel().."/category_normal"),
 		};
-		
-
-  LoadFont("_arial black 20px")..{
+		Def.Sprite{
+			Texture=THEME:GetPathG("MusicWheelItem Sort","ColorPart/"..GetCurrentModel().."/category_selected"),
+			SetMessageCommand=function(self,params)
+				if params.HasFocus then
+					self:zoom(1)
+				else
+					self:zoom(0)
+				end
+			end;
+		};
+	};
+	Def.ActorFrame{
+		Name="Highlights",
+		InitCommand=function(s) s:zoom(0.85):y(-8) end,
+		SetMessageCommand=function(self, params)
+			if params.Index ~= nil then
+				self:visible( params.HasFocus );
+				arrangeXPosition3(self,params.Index,0);
+			end
+		end;
+		Def.Sprite{
+			Texture=GetCurrentModel().."/category_hl",
+			InitCommand=function(s) s:diffuseramp():effectcolor1(color("1,1,1,0.2")):effectcolor2(color("1,1,1,1")):effectperiod(0.5) end,
+		};
+		Def.ActorFrame{
+			InitCommand=function(s) s:diffuseramp():effectcolor1(color("1,1,1,0")):effectcolor2(color("1,1,1,1")):effectperiod(0.5) end,
+			Def.Sprite{
+				Texture=GetCurrentModel().."/category_cursor.png",
+				InitCommand=function(s) s:thump(1):effectmagnitude(1.1,1,0):effectperiod(0.5) end,
+			};
+		};
+	};
+	LoadFont("_arial black 20px")..{
 		InitCommand=cmd(y,0;zoom,1.5;maxwidth,240;diffuse,Color("White");uppercase,true);
 		SetCommand=function(self,params)
 			self:stoptweening();
@@ -58,8 +61,6 @@ local t = Def.ActorFrame {
 			else
 				self:diffuse(Color("White"));
 			end
-    end;
-  };
-
+		end;
+	};
 };
-return t;

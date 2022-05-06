@@ -11,18 +11,18 @@ maskfile = maskfile[short_pn]
 
 local versus_y = {
 	P1 = -130,
-	P2 = 220
+	P2 = 230
 }
 versus_y = versus_y[short_pn]
 
 local t = Def.ActorFrame{};
 
-local charComboA   = "/Characters/"..GAMESTATE:GetCharacter(pn):GetDisplayName().."/Cut-In/comboA.png";
-local charComboB   = "/Characters/"..GAMESTATE:GetCharacter(pn):GetDisplayName().."/Cut-In/comboB.png";
-local charCombo100 = "/Characters/"..GAMESTATE:GetCharacter(pn):GetDisplayName().."/Cut-In/combo100.png";
-local charCircles  = "/Characters/"..GAMESTATE:GetCharacter(pn):GetDisplayName().."/Cut-In/Tex_0035.png";
-local charColor    = "/Characters/"..GAMESTATE:GetCharacter(pn):GetDisplayName().."/Cut-In/Tex_0036.png";
-local charLight    = "/Characters/"..GAMESTATE:GetCharacter(pn):GetDisplayName().."/Cut-In/Tex_0037.png";
+local charComboA   = "/Characters/"..WhichRead(pn).."/Cut-In/comboA.png";
+local charComboB   = "/Characters/"..WhichRead(pn).."/Cut-In/comboB.png";
+local charCombo100 = "/Characters/"..WhichRead(pn).."/Cut-In/combo100.png";
+local charCircles  = "/Characters/"..WhichRead(pn).."/Cut-In/Tex_0035.png";
+local charColor    = "/Characters/"..WhichRead(pn).."/Cut-In/Tex_0036.png";
+local charLight    = "/Characters/"..WhichRead(pn).."/Cut-In/Tex_0037.png";
 
 t[#t+1] = Def.ActorFrame{
   ComboChangedMessageCommand=function(self, params)

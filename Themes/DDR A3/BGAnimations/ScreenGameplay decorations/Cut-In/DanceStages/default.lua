@@ -1,8 +1,8 @@
 local t = Def.ActorFrame{};
 
 for _, pn in ipairs(GAMESTATE:GetEnabledPlayers()) do
-	if FILEMAN:DoesFileExist("/Characters/"..GAMESTATE:GetCharacter(pn):GetDisplayName().."/Cut-In") then
-		if FILEMAN:DoesFileExist(GAMESTATE:GetCurrentSong():GetMusicPath():sub(1, -4).."avi") == false and FILEMAN:DoesFileExist(GAMESTATE:GetCurrentSong():GetMusicPath():sub(1, -4).."mp4") == false then
+	if FILEMAN:DoesFileExist("/Characters/"..WhichRead(pn).."/Cut-In") then
+		if (not HasVideo() and not GAMESTATE:GetCurrentSong():HasBGChanges()) or (HasVideo() and VideoStage()) then
 			t[#t+1] = LoadActor("Animation", pn)..{
 				InitCommand=function(self) self:CenterY()
 					if GAMESTATE:GetCurrentStyle():GetStyleType() == "StyleType_TwoPlayersTwoSides" then

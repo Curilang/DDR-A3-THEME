@@ -80,7 +80,7 @@ function RegionFile()
 	end
 end
 
-function GetSongName(item, fallback)
+function GetSongName(item)
 	if item:GetDisplayFullTitle() == "OurMemories" then
 		return "#OurMemories"
 	else
@@ -88,48 +88,10 @@ function GetSongName(item, fallback)
 	end
 end
 
-function GetArtistName(item, fallback)
-	if 	
-	-- DDR X3 VS 2ndMIX
-		item:GetDisplayFullTitle() == "コネクト"							or	-- Connect
-		item:GetDisplayFullTitle() == "ヘビーローテーション"						or	-- Heavy Rotation
-	--DDR 2013	
-		item:GetDisplayFullTitle() == "つけまつける"							or	-- Tsukematsukeru
-		item:GetDisplayFullTitle() == "ジョジョ～その血の運命～"					or	-- JoJo ~Sono Chi no Sadame~
-		item:GetDisplayFullTitle() == "マジLOVE1000%"						or	-- Maji LOVE 1000%
-		item:GetDisplayFullTitle() == "BRIGHT STREAM"					or
-	--DDR HOTTEST PARTY
-		item:GetDisplayFullTitle() == "HOTTEST PARTY"					or
-		item:GetDisplayFullTitle() == "HOTTEST PARTY 2"					or
-		item:GetDisplayFullTitle() == "HOTTEST PARTY 3"					or
-		item:GetDisplayFullTitle() == "DanceDanceRevolution"			or
-	--DDR GRAND PRIX	
-		item:GetDisplayFullTitle() == "愛のために。"							or	-- Ai no tame ni
-		item:GetDisplayFullTitle() == "オリオンをなぞる"						or	-- Orion wo nazoru
-		item:GetDisplayFullTitle() == "怪物"								or	-- Kaibutsu
-		item:GetDisplayFullTitle() == "紅蓮華"							or	-- Gurenge
-		item:GetDisplayFullTitle() == "群青"								or	-- Gunjou
-		item:GetDisplayFullTitle() == "さくらんぼ"							or 	-- Sakuranbo
-		item:GetDisplayFullTitle() == "じょいふる"							or 	-- Joyful
-		item:GetDisplayFullTitle() == "ドライフラワー"							or	-- Dry flower
-		item:GetDisplayFullTitle() == "夏祭り"							or	-- Natsumatsuri
-		item:GetDisplayFullTitle() == "秒針を噛む"							or	-- Natsumatsuri
-		item:GetDisplayFullTitle() == "夜に駆ける"							or	-- Yoru ni kakeru
-		item:GetDisplayFullTitle() == "ルカルカ★ナイトフィーバー"					or	-- Luka luka night fever
-		item:GetDisplayFullTitle() == "恋愛レボリューション21"					or	-- Renai revolution 21
-		item:GetDisplayFullTitle() == "勿忘"								or	-- Wasurena
-		item:GetDisplayFullTitle() == "only my railgun"					or
-		item:GetDisplayFullTitle() == "Pretender"						or
-		item:GetDisplayFullTitle() == "Trickster"						or
-		item:GetDisplayFullTitle() == "10年桜"							or	-- 10nen sakura
-	--OTHER SONGS	
-		item:GetDisplayFullTitle() == "春竜 ～Haryu～"					
-	then
+function GetArtistName(item)
+	if item:GetDisplayArtist() == "Unknown artist" then 
 		return ""
-	elseif
-		item:GetDisplayFullTitle() == "The legend of MAX"				or
-		item:GetDisplayFullTitle() == "The legend of MAX(X-Special)"	
-	then
+	elseif item:GetDisplayFullTitle() == "The legend of MAX" or item:GetDisplayFullTitle() == "The legend of MAX(X-Special)" then
 		return "ZZ"
 	else
 		return item:GetDisplayArtist()

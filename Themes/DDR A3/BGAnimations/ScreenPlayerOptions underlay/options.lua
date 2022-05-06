@@ -263,25 +263,22 @@ local function MakeRow(rownames, idx)
 					elseif name == "NoteSkins" then
 						self:settext(NOTESKIN:GetNoteSkinNames()[choice+1])
 					elseif name == "DanceStage" then
-						local DanceStagesNames = FILEMAN:GetDirListing("/DanceStages/", true, false)
+						local DanceStagesNames = GetAllDanceStagesNames()
 						if choice == 0 then
 							self:settext("DEFAULT"):diffuse(color("#06ff06")):diffusetopedge(color("#74ff74"))
 						elseif choice == 1 then
-							self:settext("RANDOM"):diffuse(color("#FFFFFF")):diffusetopedge(color("#FFFFFF"))
-						else						
-						self:settext(DanceStagesNames[choice-1]):diffuse(color("#FFFFFF")):diffusetopedge(color("#FFFFFF"))
+							self:settext("RANDOM"):diffuse(color("1,1,1,1"))
+						else		
+							self:settext(DanceStagesNames[choice+1]):diffuse(color("1,1,1,1"))
 						end
 					elseif name == "Characters" then
 						if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-							local chars = FILEMAN:GetDirListing("/Characters/", true, false)
-							for i=1,#chars do
-								chars[i] = chars[i]:gsub("Rinon Dark", "Dark Rinon"):gsub(" 2", ":2"):gsub(" 3", ":3"):gsub(" 4", ":4")
-							end						
+							local chars = GetAllCharacterNames()
 							if choice == 0 then
-								self:settext("OFF"):diffuse(color("#06ff06")):diffusetopedge(color("#74ff74"))
+								self:settext("Random"):diffuse(color("#06ff06")):diffusetopedge(color("#74ff74"))
 							else
-								self:settext(chars[choice]):diffuse(color("1,1,1,1"))
-							end
+								self:settext(chars[choice+1]):diffuse(color("1,1,1,1"))
+							end;
 						elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
 							if choice == 0 then
 								self:settext("OFF"):diffuse(color("#06ff06")):diffusetopedge(color("#74ff74"))

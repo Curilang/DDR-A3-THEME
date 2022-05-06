@@ -1,83 +1,183 @@
+--Thank you for using this project.
+--Please consider all the effort that has been made, so remember to play fair.
+--Enjoy! See you later alligator.
+--Author: Enciso0720
+--Last Update: 20220126
+
+------- CHARACTER BPM SYNC -------
+
+local function CharaAnimRate(self)
+	local SPos = GAMESTATE:GetSongPosition()
+	local mRate = GAMESTATE:GetSongOptionsObject("ModsLevel_Current"):MusicRate()
+	local bpm = round(GAMESTATE:GetSongBPS() * 60 * mRate, 3)
+	local spdRate = 1
+	
+	if bpm <= 130 and GetUserPref("CharacterSync") == "BPM Sync" then
+		spdRate = (0.00388*bpm)+0.400
+	end
+
+	if _VERSION ~= 5.3 and HasVideo() and VideoStage() then
+		if not SPos:GetFreeze() and not SPos:GetDelay() then
+			spdRate = spdRate
+		else
+			spdRate = 0.1
+		end
+	end
+		
+	self:SetUpdateRate(spdRate)
+end
+
 local t = Def.ActorFrame{};
 
-Character_1 = GAMESTATE:GetCharacter(PLAYER_1):GetDisplayName()
-Character_2 = GAMESTATE:GetCharacter(PLAYER_2):GetDisplayName()
+------- READ SELECTED CHARACTER -------
 
+for pn in ivalues(GAMESTATE:GetEnabledPlayers()) do
+	if not GAMESTATE:IsDemonstration() then
+		if GetUserPref("SelectCharacter"..pn) == "Random" then
+			GAMESTATE:SetCharacter(pn,GetUserPref("CharaRandom"..pn))
+		else
+			GAMESTATE:SetCharacter(pn,GetUserPref("SelectCharacter"..pn))
+		end
+	else
+		local DemoChara = GetAllCharacterNames()
+		table.remove(DemoChara,IndexKey(DemoChara,"Random"))
+		table.remove(DemoChara,IndexKey(DemoChara,"None"))
+		GAMESTATE:SetCharacter(pn,DemoChara[math.random(#DemoChara)])
+	end
+end
 
+------- CHARACTER ORDER -------
 
-function CharacterInfo(Read,pn)
-	local CharaCfg = GAMESTATE:GetCharacter(pn):GetCharacterDir().."CharacterInfo.cfg";
+Listed = {
+	GAMESTATE:GetCharacter(PLAYER_1):GetDisplayName(),
+	GAMESTATE:GetCharacter(PLAYER_2):GetDisplayName(),
+	GetUserPref("Mate1"),
+	GetUserPref("Mate2"),
+	GetUserPref("Mate3"),
+}
+
+	if (GAMESTATE:IsPlayerEnabled(PLAYER_1)) and (not BothPlayersEnabled()) then
+		table.remove(Listed,2)
+	elseif (GAMESTATE:IsPlayerEnabled(PLAYER_2)) and (not BothPlayersEnabled()) then
+		table.remove(Listed,1)
+	end
+	
+	for i=1,#Listed do
+		for i=1,#Listed do
+			if Listed[i] == "None" then
+				table.remove(Listed,IndexKey(Listed,"None"))
+			end
+			if Listed[i] == "Random" then
+				local CharaRandom = GetAllCharacterNames()
+				table.remove(CharaRandom,IndexKey(CharaRandom,"Random"))
+				table.remove(CharaRandom,IndexKey(CharaRandom,"None"))
+				Listed[i]=CharaRandom[math.random(#CharaRandom)]
+			end
+		end
+	end
+
+------- GENDER AND SIZE CHECK -------
+
+function CharacterInfoo(Chara,Read)
+	local CharaCfg = "/Characters/"..Chara.."/character.ini";
 	local Info = Config.Load(Read,CharaCfg)
 	return Info
 end
 
-	
-function CharaCfg(player)
-	if FILEMAN:DoesFileExist(GAMESTATE:GetCharacter(player):GetCharacterDir().."CharacterInfo.cfg") then
+function NewChara(Chara)
+	if CharacterInfoo("Size",Chara) ~= nil then
 		return true
 	else
 		return false
 	end
 end
 
+Gender = {}
+Size = {}
 
-------- CHARACTER SIZE & GENRE-------
-
-
-if CharaCfg(PLAYER_1) then
-	CharacterSize1=tonumber(CharacterInfo("Size",PLAYER_1))
-	Char1_Gen=CharacterInfo("Genre",PLAYER_1)
-else
-	CharacterSize1=0.81
+for i=1,#Listed do
+	Gender[i]=CharacterInfoo(Listed[i],"Genre")
+	Size[i]=CharacterInfoo(Listed[i],"Size")
 end
 
-	
-if CharaCfg(PLAYER_2) then
-	CharacterSize2=tonumber(CharacterInfo("Size",PLAYER_2))
-	Char2_Gen=CharacterInfo("Genre",PLAYER_2)
-else
-	CharacterSize2=0.81
+------- DANCEROUTINES-------
+
+t[#t+1] = LoadActor("/Characters/DanceRepo/DRoutines.lua")
+
+------- CHARACTER POSITION -------
+
+if #Listed == 1 then
+	PositionX={0}
+	PositionZ={0}
+elseif #Listed == 2 then
+	PositionX={7,-7}
+	PositionZ={0,0}
+elseif #Listed == 3 and BothPlayersEnabled() then
+	PositionX={10,-10,0}
+	PositionZ={-2,-2,6}
+elseif #Listed == 3 and not BothPlayersEnabled() then
+	PositionX={0,10,-10}
+	PositionZ={-2,6,6}
+elseif #Listed == 4 then
+	PositionX={7,-7,15,-15}
+	PositionZ={-2,-2,9,9}
+elseif #Listed == 5 then
+	PositionX={8,-8,17,0,-17}
+	PositionZ={-2,-2,9,9,9}
 end
 
-------- DANCEROUTINE LOADER -------
+------- ... JUST BECAUSE XD -------
 
-t[#t+1] = LoadActor("/Characters/DanceRepo/DanceRoutines.lua")
+local SongLength = GAMESTATE:GetCurrentSong():MusicLengthSeconds()
+local MotionLength = MotionsLenght[IndexKey(MotionsLenght,Motion)+1]
+if MotionLength ~= nil and (MotionLength-2) > SongLength then
+	Delta = MotionLength - SongLength
+	Position=(math.random(0,Delta)/math.random(1,3))
+else
+	Position = 0
+end
 
-------- CHARACTER LOAD -------	
+------- MODEL LOAD -------
 
-if AnyoneHasChar() then
-	for player in ivalues(PlayerNumber) do
-		if CharaCfg(PLAYER_1) and CharaCfg(PLAYER_2) 
-		then
-			BonesToLoad1=GAMESTATE:GetCharacter(player):GetCharacterDir().."Dance/"..Char1_Gen.." "..Choreo..".redir"
-			BonesToLoad2=GAMESTATE:GetCharacter(player):GetCharacterDir().."Dance/"..Char2_Gen.." "..Choreo..".redir"
-		else
-			BonesToLoad1=GAMESTATE:GetCharacter(player):GetDanceAnimationPath()
-			BonesToLoad2=GAMESTATE:GetCharacter(player):GetDanceAnimationPath()
-		end
-		
-		------- MODEL LOAD -------
+for i=1,#Listed do
 
-		if GAMESTATE:IsPlayerEnabled(player) and GAMESTATE:GetCharacter(player):GetDisplayName() ~= "default" then
-			t[#t+1] = Def.Model {
-				Meshes=GAMESTATE:GetCharacter(player):GetModelPath(),
-				Materials=GAMESTATE:GetCharacter(player):GetModelPath(),
-				Bones=(player == PLAYER_1 and BonesToLoad1) or BonesToLoad2,
-					OnCommand=function(self)
-						self:cullmode("CullMode_None")
-						if BothPlayersEnabled() then 
-							self:x( (player == PLAYER_1 and 7) or -7 )
-							:zoom( (player == PLAYER_1 and CharacterSize1) or CharacterSize2)
-							:queuecommand("UpdateRate")
-						else
-							self:x(0):zoom( (player == PLAYER_1 and CharacterSize1) or CharacterSize2)
-							self:queuecommand("UpdateRate")
-						end
-					end,
-			};
-		end
+	if tonumber(CharacterInfoo(Listed[i],"Size")) <= 0.5 then
+		ShadowModel = "Model_Small.txt"
+	else
+		ShadowModel = "Model.txt"
 	end
-end
 
+	t[#t + 1] =	Def.ActorFrame {
+		OnCommand = function(self)
+			self:queuecommand('Animate')
+		end,
+		AnimateCommand = function(self)
+			self:SetUpdateFunction(CharaAnimRate)
+		end,
+		Def.Model {
+			Meshes="/Characters/"..Listed[i].."/model.txt",
+			Materials="/Characters/"..Listed[i].."/model.txt",
+			Bones="/Characters/DanceRepo/"..Gender[i].." "..Motion..".txt",
+				OnCommand=function(self)
+					self:cullmode("CullMode_None")
+						:zoom(Size[i])
+						:x(PositionX[i]):z(PositionZ[i])
+						:position(Position)
+				end,
+		};
+		Def.Model {
+			Meshes="/Characters/DanceRepo/Shadow/"..ShadowModel,
+			Materials="/Characters/DanceRepo/Shadow/Model.txt",
+			Bones="/Characters/DanceRepo/Shadow/Dance/"..Gender[i].." "..Motion..".txt",
+				OnCommand=function(self)
+					self:cullmode("CullMode_None")
+						:zoom(Size[i])
+						:x(PositionX[i]):z(PositionZ[i])
+						:position(Position)
+				end,
+		};
+	}
+
+end
 
 return t;

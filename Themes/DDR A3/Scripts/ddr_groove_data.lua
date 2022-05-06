@@ -523,24 +523,12 @@ DDR_groove_radar_values= {
 			Challenge = {58, 54, 1, 19, 31}, 
 		}, 
 		["AFRONOVA(FROM NONSTOP MEGAMIX)"] = {
-
-
-
-
 			Challenge = {77, 66, 40, 14, 19}, 
 		}, 
 		["AM-3P (AM EAST mix)"] = {
-
-
-
-
 			Challenge = {63, 58, 9, 4, 57}, 
 		}, 
 		["B4U(B4 ZA BEAT MIX)"] = {
-
-
-
-
 			Challenge = {62, 63, 16, 54, 22}, 
 		}, 
 		["BRE∀K DOWN!"] = {
@@ -550,17 +538,9 @@ DDR_groove_radar_values= {
 			Hard = {78, 55, 56, 25, 23}, 
 		}, 
 		["BRILLIANT 2U(K.O.G G3 MIX)"] = {
-
-
-
-
 			Challenge = {63, 56, 45, 13, 37}, 
 		}, 
 		["BURNIN' THE FLOOR (BLUE FIRE mix)"] = {
-
-
-
-
 			Challenge = {60, 45, 38, 21, 16}, 
 		}, 
 		["BURNING HEAT! (3 Option MIX)"] = {
@@ -576,10 +556,6 @@ DDR_groove_radar_values= {
 			Hard = {66, 60, 30, 36, 16}, 
 		}, 
 		["CELEBRATE NITE(EURO TRANCE STYLE)"] = {
-
-
-
-
 			Challenge = {63, 47, 10, 14, 29}, 
 		}, 
 		["D2R"] = {
@@ -602,31 +578,15 @@ DDR_groove_radar_values= {
 			Hard = {73, 51, 58, 3, 32}, 
 		}, 
 		["DROP OUT(FROM NONSTOP MEGAMIX)"] = {
-
-
-
-
 			Challenge = {66, 86, 16, 11, 55}, 
 		}, 
 		["ECSTASY (midnight blue mix)"] = {
-
-
-
-
 			Challenge = {59, 48, 30, 35, 28}, 
 		}, 
 		["HIGHER(next morning mix)"] = {
-
-
-
-
 			Challenge = {60, 43, 25, 18, 30}, 
 		}, 
 		["HYSTERIA 2001"] = {
-
-
-
-
 			Challenge = {60, 63, 63, 94, 10}, 
 		}, 
 		["i feel ..."] = {
@@ -642,10 +602,6 @@ DDR_groove_radar_values= {
 			Hard = {122, 108, 49, 41, 59}, 
 		}, 
 		["MY SUMMER LOVE(TOMMY'S SMILE MIX)"] = {
-
-
-
-
 			Challenge = {60, 50, 29, 29, 59}, 
 		}, 
 		["rain of sorrow"] = {
@@ -661,31 +617,15 @@ DDR_groove_radar_values= {
 			Hard = {49, 52, 36, 69, 66}, 
 		}, 
 		["SEXY PLANET(FROM NONSTOP MEGAMIX)"] = {
-
-
-
-
 			Challenge = {60, 60, 87, 22, 7}, 
 		}, 
 		["Silent Hill (3rd christmas mix)"] = {
-
-
-
-
 			Challenge = {49, 41, 18, 117, 13}, 
 		}, 
 		["STILL IN MY HEART(MOMO MIX)"] = {
-
-
-
-
 			Challenge = {71, 81, 23, 6, 36}, 
 		}, 
 		["SUPER STAR(FROM NONSTOP MEGAMIX)"] = {
-
-
-
-
 			Challenge = {61, 47, 5, 22, 31}, 
 		}, 
 		["Sweet Sweet ♥ Magic"] = {
@@ -701,17 +641,9 @@ DDR_groove_radar_values= {
 			Hard = {79, 66, 30, 25, 59}, 
 		}, 
 		["TSUGARU (APPLE MIX)"] = {
-
-
-
-
 			Challenge = {76, 60, 20, 11, 35}, 
 		}, 
 		["WILD RUSH(FROM NONSTOP MEGAMIX)"] = {
-
-
-
-
 			Challenge = {43, 46, 1, 67, 14}, 
 		},
 	--DDR EXTREME
@@ -1527,10 +1459,6 @@ DDR_groove_radar_values= {
 			Hard = {59, 60, 41, 39, 16}, 
 		}, 
 		["AM-3P (\"CHAOS\" Special)"] = {
-
-
-
-
 			Challenge = {81, 86, 47, 24, 101}, 
 		}, 
 		["Arrabbiata"] = {
@@ -1540,10 +1468,6 @@ DDR_groove_radar_values= {
 			Hard = {92, 74, 96, 2, 26}, 
 		}, 
 		["B4U (\"VOLTAGE\" Special)"] = {
-
-
-
-
 			Challenge = {79, 101, 85, 0, 77}, 
 		}, 
 		["Blind Justice ～Torn souls, Hurt Faiths ～"] = {
@@ -1559,10 +1483,6 @@ DDR_groove_radar_values= {
 			Hard = {61, 55, 45, 0, 28}, 
 		}, 
 		["BRILLIANT 2U (\"STREAM\" Special)"] = {
-
-
-
-
 			Challenge = {90, 62, 20, 11, 91}, 
 		}, 
 		["CaptivAte～誓い～"] = {
@@ -1572,17 +1492,9 @@ DDR_groove_radar_values= {
 			Hard = {83, 66, 32, 36, 70}, 
 		}, 
 		["D2R (\"FREEZE\" Special)"] = {
-
-
-
-
 			Challenge = {37, 60, 12, 200, 14}, 
 		}, 
 		["DEAD END (\"GROOVE RADAR\" Special)"] = {
-
-
-
-
 			Challenge = {95, 103, 100, 100, 116}, 
 		}, 
 		["dream of love"] = {
@@ -1592,10 +1504,6 @@ DDR_groove_radar_values= {
 			Hard = {37, 33, 5, 66, 13}, 
 		}, 
 		["DYNAMITE RAVE (\"AIR\" Special)"] = {
-
-
-
-
 			Challenge = {47, 37, 159, 0, 1}, 
 		}, 
 		["Electrified"] = {
@@ -1850,10 +1758,6 @@ DDR_groove_radar_values= {
 			Hard = {72, 71, 41, 41, 26}, 
 		},		
 		["革命(X-Special)"] = {
-
-
-
-
 			Challenge = {70, 61, 36, 34, 69}, 
 		}, 
 		["A Geisha's Dream"] = {
@@ -1863,10 +1767,6 @@ DDR_groove_radar_values= {
 			Hard = {62, 52, 30, 59, 30}, 
 		}, 
 		["AFRONOVA(X-Special)"] = {
-
-
-
-
 			Challenge = {94, 66, 76, 37, 37}, 
 		}, 
 		["Beautiful Inside (Cube Hard Mix)"] = {
@@ -1889,10 +1789,6 @@ DDR_groove_radar_values= {
 			Challenge = {33, 22, 18, 14, 0}, 
 		}, 		
 		["CANDY☆(X-Special)"] = {
-
-
-
-
 			Challenge = {75, 63, 78, 50, 22}, 
 		}, 
 		["Chance and Dice"] = {
@@ -1915,10 +1811,6 @@ DDR_groove_radar_values= {
 			Hard = {67, 55, 32, 95, 57}, 
 		}, 
 		["Dance Dance Revolution(X-Special)"] = {
-
-
-
-
 			Challenge = {74, 62, 47, 60, 55}, 
 		}, 
 		["Dance Floor"] = {
@@ -1960,10 +1852,6 @@ DDR_groove_radar_values= {
 			Hard = {58, 56, 60, 30, 22}, 
 		}, 
 		["Healing Vision(X-Special)"] = {
-
-
-
-
 			Challenge = {89, 104, 38, 47, 86}, 
 		}, 
 		["Horatio"] = {
@@ -2005,17 +1893,9 @@ DDR_groove_radar_values= {
 			Challenge = {77, 64, 7, 23, 100}, 
 		}, 
 		["MAX 300(X-Special)"] = {
-
-
-
-
 			Challenge = {130, 97, 25, 31, 49}, 
 		}, 
 		["MAXX UNLIMITED(X-Special)"] = {
-
-
-
-
 			Challenge = {154, 126, 69, 74, 93}, 
 		}, 
 		["on the bounce"] = {
@@ -2031,40 +1911,23 @@ DDR_groove_radar_values= {
 			Medium = {60, 45, 49, 51, 22}, 
 			Hard = {75, 65, 54, 38, 68}, 
 		}, 
+		["PARANOiA(X-Special)"] = {
+			Challenge = {78, 60, 65, 18, 26}, 
+		}, 
 		["PARANOiA ETERNAL(X-Special)"] = {
-
-
-
-
 			Challenge = {97, 66, 43, 30, 40}, 
 		}, 
 		["PARANOIA EVOLUTION(X-Special)"] = {
-
-
-
-
 			Challenge = {86, 66, 45, 8, 36}, 
 		}, 
 		["PARANOiA MAX～DIRTY MIX～(X-Special)"] = {
-
-
-
-
 			Challenge = {94, 63, 21, 4, 36}, 
 		}, 
-		["PARANOiA Rebirth(X-Special)"] = {
-
-
-
-
-			Challenge = {99, 63, 25, 25, 45}, 
-		}, 
-		["PARANOiA(X-Special)"] = {
-
-
-
-
+		["PARANOiA MAX~DIRTY MIX~in roulette(X-Special)"] = {
 			Challenge = {78, 60, 65, 18, 26}, 
+		}, 
+		["PARANOiA Rebirth(X-Special)"] = {
+			Challenge = {99, 63, 25, 25, 45}, 
 		}, 
 		["Party Lights"] = {
 			Beginner = {16, 16, 0, 0, 0}, 
@@ -2097,7 +1960,7 @@ DDR_groove_radar_values= {
 			Hard = {83, 100, 49, 49, 63}, 
 			Challenge = {84, 100, 98, 37, 63}, 
 		}, 
-		["SABER WING (AKIRA ISHIHARA Headshot mix)"] = {
+		["SABER WING (Akira Ishihara Headshot mix)"] = {
 			Beginner = {37, 30, 7, 18, 0}, 
 			Easy = {64, 61, 25, 25, 4}, 
 			Medium = {77, 72, 27, 15, 25}, 
@@ -2117,10 +1980,6 @@ DDR_groove_radar_values= {
 			Hard = {50, 44, 36, 95, 29}, 
 		}, 
 		["SP-TRIP MACHINE~JUNGLE MIX~(X-Special)"] = {
-
-
-
-
 			Challenge = {63, 53, 61, 43, 29}, 
 		}, 
 		["SUPER SAMURAI"] = {
@@ -2154,10 +2013,6 @@ DDR_groove_radar_values= {
 			Hard = {61, 46, 45, 50, 14}, 
 		}, 
 		["The legend of MAX(X-Special)"] = {
-
-
-
-
 			Challenge = {126, 128, 36, 36, 61}, 
 		}, 
 		["Ticket to Bombay"] = {
@@ -2198,17 +2053,9 @@ DDR_groove_radar_values= {
 			Challenge = {119, 141, 89, 67, 110}, 
 		}, 
 		["TRIP MACHINE CLIMAX(X-Special)"] = {
-
-
-
-
 			Challenge = {87, 67, 105, 35, 45}, 
 		}, 
 		["TRIP MACHINE(X-Special)"] = {
-
-
-
-
 			Challenge = {63, 53, 63, 53, 27}, 
 		}, 
 		["Übertreffen"] = {
@@ -7053,6 +6900,12 @@ DDR_groove_radar_values= {
 			Easy = {0, 0, 0, 0, 0}, 
 			Medium = {0, 0, 0, 0, 0}, 
 			Hard = {38, 39, 38, 48, 2}, 
+		},
+		["Lemon"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {54, 43, 32, 102, 87}, 
 		},
 		["Pretender"] = {
 			Beginner = {0, 0, 0, 0, 0}, 

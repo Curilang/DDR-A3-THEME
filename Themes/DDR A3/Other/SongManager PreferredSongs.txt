@@ -41,6 +41,7 @@
 19 - DDR GRAND PRIX\Renai revolution 21
 19 - DDR GRAND PRIX\Wasurena
 14 - DDR 2013\BRIGHT STREAM
+19 - DDR GRAND PRIX\Lemon
 14 - DDR 2013\LOVE & JOY -Risk Junk MIX-
 19 - DDR GRAND PRIX\only my railgun
 19 - DDR GRAND PRIX\Pretender
@@ -812,8 +813,8 @@
 11 - DDR X\ZERO
 11 - DDR X\KAKUMEI(X-Special)
 
-11 - DDR X\A Geisha's Dream
 11 - DDR X\AFRONOVA(X-Special)
+11 - DDR X\A Geisha's Dream
 11 - DDR X\Always on My Mind
 11 - DDR X\Beautiful Inside (Cube Hard Mix)
 11 - DDR X\Big Girls Don't Cry
@@ -849,11 +850,12 @@
 11 - DDR X\MAXX UNLIMITED(X-Special)
 11 - DDR X\on the bounce
 11 - DDR X\On The Break
+11 - DDR X\PARANOiA(X-Special)
 11 - DDR X\PARANOiA ETERNAL(X-Special)
 11 - DDR X\PARANOIA EVOLUTION(X-Special)
 11 - DDR X\PARANOiA MAX~DIRTY MIX~(X-Special)
+11 - DDR X\PARANOiA MAX~DIRTY MIX~in roulette(X-Special)
 11 - DDR X\PARANOiA Rebirth(X-Special)
-11 - DDR X\PARANOiA(X-Special)
 11 - DDR X\Party Lights
 11 - DDR X\Playa (Original Mix)
 11 - DDR X\Put 'Em Up
@@ -878,8 +880,8 @@
 11 - DDR X\Tracers (4Beat Remix)
 11 - DDR X\Trickster
 11 - DDR X\Trigger
-11 - DDR X\TRIP MACHINE CLIMAX(X-Special)
 11 - DDR X\TRIP MACHINE(X-Special)
+11 - DDR X\TRIP MACHINE CLIMAX(X-Special)
 11 - DDR X\U Can't Touch This
 11 - DDR X\Ubertreffen
 11 - DDR X\Waiting 4 u

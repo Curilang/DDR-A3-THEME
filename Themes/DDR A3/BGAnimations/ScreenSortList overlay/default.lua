@@ -156,7 +156,7 @@ local t = Def.ActorFrame{
 		SCREENMAN:GetTopScreen():AddInputCallback(input)
 		--SOUND:PlayOnce(THEME:GetPathS("_PHOTwON","back"))
 	end,
-	LoadActor("fondo")..{
+	LoadActor("bg")..{
 		OnCommand=function(s) s:xy(-6,48):zoomy(0):decelerate(0.2):zoomy(1) end,
 	},
 	Def.ActorFrame{
