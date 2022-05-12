@@ -1,5 +1,3 @@
-local t = Def.ActorFrame{
+return Def.ActorFrame{
 	StartTransitioningCommand=function(s) s:sleep(2) end,
 };
-
-return t;

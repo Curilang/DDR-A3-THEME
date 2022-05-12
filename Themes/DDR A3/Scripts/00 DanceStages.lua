@@ -110,14 +110,12 @@ function PotentialModSong()
 	return false
 end
 
-function VideoStage ()
-	if string.match(DanceStage, "MOVIE") or 
-	string.match(DanceStage, "REPLICANT") or 
-	string.match(DanceStage, "CAPTURE ME")
-	then
+function VideoStage()
+	if string.match(DanceStageSong(), "MOVIE") or string.match(DanceStageSong(), "REPLICANT") or string.match(DanceStageSong(), "CAPTURE ME") then
 		return true
+	else
+		return false
 	end
-	return false
 end
 
 ------------------------
@@ -228,6 +226,17 @@ function RandomCharacter(pn)
         setenv("ChoiceRandom"..pn,ChoiceList[math.random(#ChoiceList)])
     end
 end
+
+
+-- function RandomCharacter(pn)
+	-- local CharaRandom = GetAllCharacterNames()
+	-- table.remove(CharaRandom,IndexKey(CharaRandom,"Random"))
+	-- table.remove(CharaRandom,IndexKey(CharaRandom,"None"))
+	
+	-- if GetUserPref("SelectCharacter"..pn) == "Random" then
+        -- WritePrefToFile("CharaRandom"..pn,CharaRandom[math.random(#CharaRandom)]);
+    -- end
+-- end
 
 function WhichRead(pn)
 	if GetUserPref("SelectCharacter"..pn) == "Random" then

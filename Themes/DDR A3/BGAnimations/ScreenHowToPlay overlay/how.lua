@@ -1,7 +1,7 @@
 local HowToSleep = 4.8;
 
 return Def.ActorFrame {
-	LoadActor(THEME:GetPathB("","_door/blue bg"))..{
+	LoadActor(THEME:GetPathB("ScreenGameplay","ready/bg"))..{
 		InitCommand=function(s) s:Center()
 			if GetCurrentModel() == "Gold" then
 				s:blend(('BlendMode_Add'))

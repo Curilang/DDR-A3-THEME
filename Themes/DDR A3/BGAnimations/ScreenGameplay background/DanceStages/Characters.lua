@@ -30,6 +30,16 @@ end
 local t = Def.ActorFrame{};
 
 ------- READ SELECTED CHARACTER -------
+local CharaRandom = GetAllCharacterNames()
+table.remove(CharaRandom,IndexKey(CharaRandom,"Random"))
+table.remove(CharaRandom,IndexKey(CharaRandom,"None"))
+
+for pn in ivalues(GAMESTATE:GetEnabledPlayers()) do
+    if GetUserPref("SelectCharacter"..pn) == "Random" then
+        WritePrefToFile("CharaRandom"..pn,CharaRandom[math.random(#CharaRandom)]);
+    end
+end
+
 
 for pn in ivalues(GAMESTATE:GetEnabledPlayers()) do
 	if not GAMESTATE:IsDemonstration() then

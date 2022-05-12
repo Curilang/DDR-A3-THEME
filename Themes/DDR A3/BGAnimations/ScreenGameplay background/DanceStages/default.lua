@@ -15,14 +15,24 @@ local t = Def.ActorFrame{
 		if not (HasVideo() and _VERSION ~= "Lua 5.3") then Camera:SetUpdateFunction(SlowMotion) end
 	end;
 };
+------- DANCESTAGE LOADER -------
+local DanceStagesDir = GetAllDanceStagesNames()
+table.remove(DanceStagesDir,IndexKey(DanceStagesDir,"DEFAULT"))
+table.remove(DanceStagesDir,IndexKey(DanceStagesDir,"RANDOM"))
+local DanceStageSelected = GetUserPref("SelectDanceStage")
 
-------- DANCESTAGE DEMO -------
-
-if GAMESTATE:IsDemonstration() then
+local DanceStage
+if not GAMESTATE:IsDemonstration() then
+	if DanceStageSelected == "DEFAULT" then
+		DanceStage = DanceStageSong()
+	elseif DanceStageSelected == "RANDOM" then
+		DanceStage = DanceStagesDir[math.random(#DanceStagesDir)]
+	else
+		DanceStage = GetUserPref("SelectDanceStage")
+	end;
+else
 	DanceStage = DanceStageSong()
 end
-
-------- DANCESTAGE LOADER -------
 
 if (VideoStage() and GAMESTATE:GetCurrentSong():HasBGChanges()) or (not GAMESTATE:GetCurrentSong():HasBGChanges()) then
 	

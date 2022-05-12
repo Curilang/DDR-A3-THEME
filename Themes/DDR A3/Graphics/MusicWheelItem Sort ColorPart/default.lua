@@ -1,19 +1,20 @@
-function arrangeXPosition3(myself, index, offset)
-	if index%2==0 then
-		myself:x(-230+offset);
-	elseif index%2==1 then
-		myself:x(230+offset);
-	else
-		myself:x(300+offset);
-	end;
-end
-
+local value = 235
 return Def.ActorFrame {
+	
 	Def.ActorFrame{
 		Name="Cursor",
 		InitCommand=function(s) s:y(-8):zoom(0.85) end,
 		SetMessageCommand=function(self,params)
-			arrangeXPosition3(self,params.Index,0);
+			if params.Index ~= nil then
+				local index = params.Index;
+				if index%2 == 1 then
+					self:x(value);
+				elseif index%2 == 2 then
+					self:x(-value);
+				else
+					self:x(-value);
+				end
+			end
 		end;
 		Def.Sprite{
 			Texture=THEME:GetPathG("MusicWheelItem Sort","ColorPart/"..GetCurrentModel().."/category_normal"),
@@ -35,7 +36,16 @@ return Def.ActorFrame {
 		SetMessageCommand=function(self, params)
 			if params.Index ~= nil then
 				self:visible( params.HasFocus );
-				arrangeXPosition3(self,params.Index,0);
+				if params.Index ~= nil then
+					local index = params.Index;
+					if index%2 == 1 then
+						self:x(value);
+					elseif index%2 == 2 then
+						self:x(-value);
+					else
+						self:x(-value);
+					end
+				end
 			end
 		end;
 		Def.Sprite{
@@ -55,7 +65,16 @@ return Def.ActorFrame {
 		SetCommand=function(self,params)
 			self:stoptweening();
 			self:settextf("%s",params.Label);
-			arrangeXPosition3(self,params.Index,0);
+			if params.Index ~= nil then
+				local index = params.Index;
+				if index%2 == 1 then
+					self:x(value);
+				elseif index%2 == 2 then
+					self:x(-value);
+				else
+					self:x(-value);
+				end
+			end
 			if params.HasFocus then
 				self:diffuse(Color("Black"));
 			else

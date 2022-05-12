@@ -17,33 +17,31 @@ end;
 return Def.ActorFrame {
 	--InitCommand=function(s) s:zoom(0.667)
 	Def.Sprite{
-	InitCommand=function(self)
-		self:x(SCREEN_CENTER_X):y(SCREEN_CENTER_Y+10):zoom(1)
-	end;
-	OnCommand=function(self)	
-	self:Load(THEME:GetPathB("","_door/blue bg"))
-	self:diffusealpha(1);
-	self:zoomx(1);
-	self:zoomy(1);
-	self:linear(0.1);
-	self:diffusealpha(1);
-	self:zoomx(1.2);
-	self:zoomy(1.2);
-	self:linear(0.1);
-	self:diffusealpha(1);
-	self:zoomx(1.1);
-	self:zoomy(1.1);
-	self:sleep(0.3);
-	self:sleep(0.1);
-	self:linear(0.1);
-	self:zoomx(1);
-	self:zoomy(1);
-	self:sleep(0.85);
-	self:linear(0.04);
-	self:diffusealpha(0);
-	self:zoomx(0.8*1.2);
-	self:zoomy(0);
-	end;
+		Texture="bg",
+		InitCommand=function(s) s:x(SCREEN_CENTER_X):y(SCREEN_CENTER_Y+10):zoom(1) end,
+		OnCommand=function(self)	
+			self:diffusealpha(1);
+			self:zoomx(1);
+			self:zoomy(1);
+			self:linear(0.1);
+			self:diffusealpha(1);
+			self:zoomx(1.2);
+			self:zoomy(1.2);
+			self:linear(0.1);
+			self:diffusealpha(1);
+			self:zoomx(1.1);
+			self:zoomy(1.1);
+			self:sleep(0.3);
+			self:sleep(0.1);
+			self:linear(0.1);
+			self:zoomx(1);
+			self:zoomy(1);
+			self:sleep(0.85);
+			self:linear(0.04);
+			self:diffusealpha(0);
+			self:zoomx(0.8*1.2);
+			self:zoomy(0);
+		end;
 	};
 	Def.Sprite{
 	InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+5;zoom,1);

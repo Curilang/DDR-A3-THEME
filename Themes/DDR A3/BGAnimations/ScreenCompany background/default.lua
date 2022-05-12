@@ -37,7 +37,7 @@ return Def.ActorFrame {
 	};
 	Def.Sprite{
 		InitCommand=function(s) s:Center():diffusealpha(0) end,
-		OnCommand=function(s) s:Load(THEME:GetPathB("ScreenCompany","background/THANK YOU")):zoom(0.667)
+		OnCommand=function(s) s:Load(THEME:GetPathB("ScreenCompany","background/THANK YOU")):FullScreen()
 			s:sleep(12):linear(0.5):diffusealpha(1):sleep(3):linear(0.5):diffusealpha(0)
 		end,
 	};

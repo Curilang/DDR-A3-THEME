@@ -42,7 +42,7 @@ local function SongSleep()
 end
 
 return Def.ActorFrame {
-	LoadActor(THEME:GetPathB("","_door/blue bg"))..{
+	LoadActor("bg")..{
 		InitCommand=function(s) s:Center()
 			if GetCurrentModel() == "Gold" then
 				s:blend(('BlendMode_Add'))

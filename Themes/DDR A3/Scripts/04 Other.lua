@@ -253,10 +253,10 @@ function Model()
 		elseif GetUserPref("OptionRowModel")=='Blue' then
 			return "blue_"
 		else
-			return "blue_"
+			return "gold_"
 		end
 	else
-		return "blue_"
+		return "gold_"
 	end
 end
 
@@ -385,6 +385,14 @@ function JudgmentYM()
 		return 0
 	else
 		return -2
+	end
+end
+
+function ComboAnim()
+	if GetUserPref("OptionRowJudgementAnimation")=='Simple' then
+		return 1
+	else
+		return 1.28
 	end
 end
 

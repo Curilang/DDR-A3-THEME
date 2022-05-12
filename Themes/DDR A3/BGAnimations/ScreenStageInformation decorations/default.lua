@@ -23,7 +23,7 @@ t[#t+1] = Def.ActorFrame{
 	Name="Jacket",
 	InitCommand=function(s) s:setsize(300,300):xy(_screen.cx,_screen.cy+12) end,
 	Def.Sprite{
-		Texture=THEME:GetPathB("","_door/jacket frame"),
+		Texture=THEME:GetPathG("","_doors/jacket frame"),
 		OnCommand=function(s) 
 			s:zoomy(0.0129):zoomx(1.3):diffusealpha(0)
 			:sleep(1.2):diffusealpha(1)
@@ -47,7 +47,7 @@ t[#t+1] = Def.ActorFrame{
 		end,
 	};
 	Def.Sprite{
-		Texture=THEME:GetPathB("","_door/jacket frame"),
+		Texture=THEME:GetPathG("","_doors/jacket frame"),
 		OnCommand=function(s) s:diffusealpha(0)
 			:sleep(1.5):zoomy(1.033):zoomx(1.033)
 			:sleep(0.034):diffusealpha(1)
@@ -81,11 +81,8 @@ t[#t+1] = Def.Sprite {
 };
 
 t[#t+1] = Def.Quad{
-	OnCommand=cmd(Center;FullScreen;diffusecolor,Color.White;draworder,1;diffusealpha,0;sleep,0.164;linear,0.2;diffusealpha,0.7;linear,0.3;diffusealpha,0;);
-};
-
-t[#t+1] = LoadActor(THEME:GetPathB("","_door/whiteflash"))..{
-	OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0;sleep,0.164;zoom,1.5;linear,0.134;linear,0.299;zoom,5);
+	InitCommand=function(s) s:FullScreen():diffusecolor(Color.White):diffusealpha(0) end,
+	OnCommand=function(s) s:sleep(0.164):linear(0.2):diffusealpha(0.7):linear(0.3):diffusealpha(0) end,
 };
 
 t[#t+1] = LoadActor("ScoreDisplay")..{ InitCommand=function(s) s:zoom(0.667) end, };
