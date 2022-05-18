@@ -187,7 +187,11 @@ function IsLogo()
 end
 
 function IsReverse(pn)
-	return GAMESTATE:PlayerIsUsingModifier(pn,'reverse')
+	if _VERSION == "Lua 5.3" then
+		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Reverse() == 1
+	else
+		return GAMESTATE:PlayerIsUsingModifier(pn,'reverse')
+	end
 end
 
 function IsEXScore()

@@ -46,7 +46,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 		end,
         Def.ActorFrame{
             InitCommand=function(s)
-                s:y(GAMESTATE:PlayerIsUsingModifier(pn,'reverse') and SCREEN_TOP-143 or (yval-29)):zoomx(1.02)
+                s:y(IsReverse(pn) and SCREEN_TOP-143 or (yval-29)):zoomx(1.02)
 					if IsReverse(pn) then
 						s:x(pn==PLAYER_1 and 24 or -22)
 					else
@@ -59,14 +59,14 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 				Def.Sprite{
 					Texture=GetCurrentModel().."/diff",
 					InitCommand=function(s) 
-						s:rotationx(GAMESTATE:PlayerIsUsingModifier(pn,'reverse') and 180 or 0)
+						s:rotationx(IsReverse(pn) and 180 or 0)
 						s:x(-149)
 					end,
 				};
 				Def.Sprite{
 					Texture=GetCurrentModel().."/name",
 					InitCommand=function(s) 
-                        s:rotationx(GAMESTATE:PlayerIsUsingModifier(pn,'reverse') and 180 or 0)
+                        s:rotationx(IsReverse(pn) and 180 or 0)
 						s:x(159)
 					end,
 				};
@@ -77,11 +77,11 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 				if GetUserPref("OptionRowBPM")=='BPM' then
 					s:settext("BPM"):diffuse(color("#feec0a"))
 					s:x(pn==PLAYER_1 and 40 or 40):zoom(0.72):maxwidth(180)
-					s:y(GAMESTATE:PlayerIsUsingModifier(pn,'reverse') and -6 or -2)
+					s:y(IsReverse(pn) and -6 or -2)
 				else
 					s:settext(string.upper(PROFILEMAN:GetPlayerName(pn))):diffuse(color("#feec0a"))
 					s:xy(pn==PLAYER_1 and 80 or 77,-2):zoom(0.72):maxwidth(180)
-					s:y(GAMESTATE:PlayerIsUsingModifier(pn,'reverse') and -6 or -2)
+					s:y(IsReverse(pn) and -6 or -2)
 				end;
 				
             end,
@@ -130,7 +130,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
                             local totalWidth = sDiffWidth+sMeterWidth;
                             local additionXPos = totalWidth/2-42;
                             s:x(25+additionXPos)
-							s:y(GAMESTATE:PlayerIsUsingModifier(pn,'reverse') and -6 or -1.5)
+							s:y(IsReverse(pn) and -6 or -1.5)
                         end
                     end
                 };
@@ -177,7 +177,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 				        local totalWidth = sDiffWidth+sMeterWidth;
                         local additionXPos = totalWidth/2-42;
                         s:settext(meter):x(29+additionXPos)
-						s:y(GAMESTATE:PlayerIsUsingModifier(pn,'reverse') and -8 or -3)
+						s:y(IsReverse(pn) and -8 or -3)
                     end,
                 };
             };

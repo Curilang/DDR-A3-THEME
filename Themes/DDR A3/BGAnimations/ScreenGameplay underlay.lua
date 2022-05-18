@@ -11,3 +11,5 @@ else
 	PREFSMAN:SetPreference('SongBackgrounds', true)
 	SBG:RandomBGOnly(false)
 end
+
+return Def.ActorFrame {};
