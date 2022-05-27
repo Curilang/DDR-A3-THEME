@@ -16,7 +16,7 @@ t[#t+1] = Def.ActorFrame{
 	PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("ScreenStageInformation","JacketSound")) end,
 };
 
-t[#t+1] = LoadActor("doors_normal");
+t[#t+1] = LoadActor("Doors");
 
 
 t[#t+1] = Def.ActorFrame{
@@ -70,7 +70,7 @@ t[#t+1] = LoadActor("StageDisplay")..{ InitCommand=function(s) s:xy(140,80):zoom
 
 t[#t+1] = Def.Sprite {
 	InitCommand=function(s) s:x(_screen.cx):y(_screen.cy+12):diffusealpha(0) end,
-	OnCommand=function(s) s:queuecommand("Set"):sleep(1.85):linear(0.2):diffusealpha(1):sleep(0.7) end,
+	OnCommand=function(s) s:queuecommand("Set"):sleep(1.85):linear(0.2):diffusealpha(1):sleep(1000000000.7) end,
 	SetCommand=function(s)
 	local song = GAMESTATE:GetCurrentSong()
 		if song then

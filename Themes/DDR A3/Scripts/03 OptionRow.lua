@@ -92,15 +92,15 @@ function OptionRowFastSlow()
 		SelectType = "SelectOne";
 		OneChoiceForAllPlayers = true;
 		ExportOnChange = true,
-		Choices = {"On", "Off", };
+		Choices = {"Off", "On", };
 		LoadSelections = function(self, list, pn)
 			if ReadPrefFromFile("OptionRowFastSlow") ~= nil then
-				if GetUserPref("OptionRowFastSlow")=='On' then
+				if GetUserPref("OptionRowFastSlow")=='Off' then
 					list[1] = true
-				elseif GetUserPref("OptionRowFastSlow")=='Off' then
+				elseif GetUserPref("OptionRowFastSlow")=='On' then
 					list[2] = true
 				else
-					list[1] = true
+					list[2] = true
 				end
 			else
 				WritePrefToFile("OptionRowFastSlow",'On');
@@ -109,9 +109,9 @@ function OptionRowFastSlow()
 		end;
 		SaveSelections = function(self, list, pn)
 			if list[1] then
-				WritePrefToFile("OptionRowFastSlow",'On');
-			elseif list[2] then
 				WritePrefToFile("OptionRowFastSlow",'Off');
+			elseif list[2] then
+				WritePrefToFile("OptionRowFastSlow",'On');
 			else
 				WritePrefToFile("OptionRowFastSlow",'On');
 			end;
@@ -598,28 +598,28 @@ function OptionRowStreamMode()
 		SelectType = "SelectOne";
 		OneChoiceForAllPlayers = true;
 		ExportOnChange = true;
-		Choices = {"Normal", "Silent", };
+		Choices = {"Off", "On", };
 		LoadSelections = function(self, list, pn)
 			if ReadPrefFromFile("OptionRowStreamMode") ~= nil then
-				if GetUserPref("OptionRowStreamMode")=='Normal' then
+				if GetUserPref("OptionRowStreamMode")=='Off' then
 					list[1] = true
-				elseif GetUserPref("OptionRowStreamMode")=='Silent' then
+				elseif GetUserPref("OptionRowStreamMode")=='On' then
 					list[2] = true
 				else
 					list[1] = true
 				end
 			else
-				WritePrefToFile("OptionRowStreamMode",'Normal');
+				WritePrefToFile("OptionRowStreamMode",'Off');
 				list[1] = true;
 			end;
 		end;
 		SaveSelections = function(self, list, pn)
 			if list[1] then
-				WritePrefToFile("OptionRowStreamMode",'Normal');
+				WritePrefToFile("OptionRowStreamMode",'Off');
 			elseif list[2] then
-				WritePrefToFile("OptionRowStreamMode",'Silent');
+				WritePrefToFile("OptionRowStreamMode",'On');
 			else
-				WritePrefToFile("OptionRowStreamMode",'Normal');
+				WritePrefToFile("OptionRowStreamMode",'Off');
 			end;
 			THEME:ReloadMetrics();
 		end;

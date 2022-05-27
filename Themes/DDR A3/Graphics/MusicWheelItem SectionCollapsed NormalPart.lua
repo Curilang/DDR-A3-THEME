@@ -12,7 +12,7 @@ return Def.ActorFrame {
 	};
 	Def.Sprite{
 		Texture=THEME:GetPathG("","MusicWheelItem/"..Model().."folder flash"),
-		InitCommand=function(s) s:y(2):zoom(0.46) end,
+		InitCommand=function(s) s:y(2) end,
 		SetMessageCommand=function(s,params)
 			if params.HasFocus then
 				s:zoom(0.46)

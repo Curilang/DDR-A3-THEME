@@ -1382,6 +1382,7 @@ function DanceStageSong()
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "ウサテイ"															then return "(X2) BOOM LIGHT"				--Usatei
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "患部で止まってすぐ溶ける～狂気の優曇華院"									then return "(X) BOOM BOOM BOOM"			--Kanbu de tomatte sugu tokeru ~ kyouki no Udongein
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Anthurium"														then return "(X2) CLUB"			
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Beluga"															then return "(X) CRYSTALDIUM"			
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Dance Phenomena"												then return "(X) DANCING RAYS"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Deep tenDon Reflex"												then return "(A) BOOM RED"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "♡Drive My Heart♡"												then return "(X2) CYBER"
@@ -1389,8 +1390,10 @@ function DanceStageSong()
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "GRADIUS REMIX(↑↑↓↓←→←→BA Ver.)"									then return "(X2) CYBER"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Let's DANCE aROUND!!"											then return "(X) DANCING RAYS"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Like A Star"													then return "(X2) CYBER"
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "MEGALOVANIA"													then return "(X2) CYBER"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Pump Pump Pump"													then return "(A) BOOM YELLOW"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "SAYONARA☆ディスコライト"												then return "(X) DANCING RAYS"
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "STAY GOLD"														then return "(A) BOOM YELLOW"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Surface"														then return "(X) CRYSTALDIUM"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "WARNING×WARNING×WARNING"										then return "(A) BOOM BLUE"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Wolf's Rain"													then return "(X2) CYBER"

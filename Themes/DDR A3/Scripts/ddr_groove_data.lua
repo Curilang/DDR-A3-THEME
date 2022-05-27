@@ -6950,6 +6950,12 @@ DDR_groove_radar_values= {
 			Medium = {51, 47, 16, 15, 21}, 
 			Hard = {72, 70, 29, 28, 64}, 
 		},
+		["Beluga"] = {
+			Beginner = {4, 5, 0, 0, 0}, 
+			Easy = {16, 22, 3, 49, 0}, 
+			Medium = {31, 33, 7, 61, 3}, 
+			Hard = {57, 49, 16, 72, 39}, 
+		},
 		["Dance Phenomena"] = {
 			Beginner = {15, 18, 0, 8, 0}, 
 			Easy = {29, 24, 7, 43, 1}, 
@@ -6992,6 +6998,13 @@ DDR_groove_radar_values= {
 			Medium = {65, 58, 23, 65, 22}, 
 			Hard = {98, 80, 12, 13, 91}, 
 		},
+		["MEGALOVANIA"] = {
+			Beginner = {17, 24, 0, 32, 0}, 
+			Easy = {42, 33, 5, 67, 0}, 
+			Medium = {62, 49, 30, 59, 15}, 
+			Hard = {93, 91, 92, 106, 89}, 
+			Challenge = {126, 107, 165, 104, 107}, 
+		},
 		["Pump Pump Pump"] = {
 			Beginner = {15, 19, 9, 23, 0}, 
 			Easy = {33, 25, 23, 41, 0}, 
@@ -7003,6 +7016,12 @@ DDR_groove_radar_values= {
 			Easy = {35, 26, 20, 51, 0}, 
 			Medium = {49, 39, 12, 62, 10}, 
 			Hard = {78, 59, 25, 51, 63}, 
+		},
+		["STAY GOLD"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {87, 102, 49, 14, 150}, 
 		},
 		["Surface"] = {
 			Beginner = {8, 6, 0, 0, 0}, 

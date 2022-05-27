@@ -191,49 +191,50 @@ end
 
 
 t[#t+1] = Def.ActorFrame{
-        Name="Jacket";
-        InitCommand=cmd(x,_screen.cx+1;y,_screen.cy-134;draworder,1);
-        Def.Sprite {
-			OnCommand=function(s)
-				local song = GAMESTATE:GetCurrentSong()
-				if song then
-					s:Load(GetJacketPath(song))
-				end;
-				s:setsize(144,144)
+    Name="Jacket";
+    InitCommand=cmd(x,_screen.cx+1;y,_screen.cy-134;draworder,1);
+	Def.Sprite {
+		OnCommand=function(s)
+			local song = GAMESTATE:GetCurrentSong()
+			if song then
+				s:Load(GetJacketPath(song))
 			end;
-			OffCommand=cmd(sleep,0.2;bouncebegin,0.175;zoomy,0);
-		};
+			s:setsize(144,144)
+		end;
+		OffCommand=cmd(sleep,0.2;bouncebegin,0.175;zoomy,0);
 	};
+};
+
 t[#t+1] = Def.ActorFrame{
-        Name="songinfo",
-        InitCommand=function(s) s:xy(_screen.cx,_screen.cy-40):zoom(0.667) end,
-        OffCommand=function(s) s:linear(0.2):zoomy(0) end,
-        Def.Sprite{Texture=THEME:GetPathG("","_shared/song info"),};
-        Def.BitmapText{
-            Font="_arial black 28px",
-            InitCommand=function(s)
-                s:maxwidth(300):zoom(0.9)
-                local song = GAMESTATE:GetCurrentSong()
-                local course = GAMESTATE:GetCurrentCourse()
-                if song then
-                    s:settext(GetSongName(song)):y(-9)
-                else
-                    s:settext(course:GetDisplayTitle())
-                end
-            end,
-        };		
-        Def.BitmapText{
-            Font="_arial black 28px",
-            InitCommand=function(s)
-                s:maxwidth(390):y(13):x(2):zoom(0.7)
-                local song = GAMESTATE:GetCurrentSong()
-                if song then
-                    s:settext(GetArtistName(song))
-                else
-                    s:settext("")
-                end
-            end,
-        };
+    Name="songinfo",
+    InitCommand=function(s) s:xy(_screen.cx,_screen.cy-40):zoom(0.667) end,
+    OffCommand=function(s) s:linear(0.2):zoomy(0) end,
+    Def.Sprite{ Texture=THEME:GetPathG("","_shared/song info"), };
+    Def.BitmapText{
+        Font="_arial black 28px",
+        InitCommand=function(s)
+            s:maxwidth(300):zoom(0.9)
+            local song = GAMESTATE:GetCurrentSong()
+            local course = GAMESTATE:GetCurrentCourse()
+            if song then
+                s:settext(GetSongName(song)):y(-9)
+            else
+                s:settext(course:GetDisplayTitle())
+            end
+        end,
+    };		
+    Def.BitmapText{
+        Font="_arial black 28px",
+        InitCommand=function(s)
+			s:maxwidth(390):y(13):x(2):zoom(0.7)
+            local song = GAMESTATE:GetCurrentSong()
+			if song then
+                s:settext(GetArtistName(song))
+            else
+				s:settext("")
+            end
+        end,
     };
+};
 
 return t;

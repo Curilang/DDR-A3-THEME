@@ -1,3 +1,10 @@
+local loader
+if GoldenLeague() == "Bronze" or GoldenLeague() == "Silver" or GoldenLeague() == "Gold" then
+	loader = THEME:GetPathB("","_doors GoldenLeague open")
+else
+	loader = THEME:GetPathB("","_doors open")
+end
+
 return Def.ActorFrame{
 	--InitCommand=function(s) s:sleep(1) end,
 	LoadActor(THEME:GetPathS("ScreenGameOver","sound"))..{
@@ -62,5 +69,5 @@ return Def.ActorFrame{
 		InitCommand=function(s) s:FullScreen():diffusecolor(color("1,1,1,1")) end,
 		OnCommand=function(s) s:diffusealpha(0):sleep(5):linear(0.4):diffusealpha(1) end,
 	};
-	LoadActor(THEME:GetPathB("","_doors open"));
+	LoadActor(loader);
 };

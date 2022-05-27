@@ -8,7 +8,7 @@ return Def.ActorFrame {
 	};
 	Def.Sprite{
 		Texture=THEME:GetPathG("","_doors/lines"),
-		InitCommand=function(s) s:FullScreen():blend(('BlendMode_Add')):diffusealpha(0.14) end,	
+		InitCommand=function(s) s:FullScreen():blend(('BlendMode_Add')):diffusealpha(0.2) end,	
 	};
 	Def.Sprite{
 		Texture=THEME:GetPathG("","_doors/squares"),

@@ -70,7 +70,7 @@ function LoadCard(cColor,cColor2,Player,IsJoinFrame)
         self:diffusealpha(0)
       end;
     };
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."profile_frame") )..{
+		LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."profile") )..{
 			InitCommand=cmd(diffusealpha,0;zoom,0.5;y,-76);
 			OnCommand=function(self)
 				if IsJoinFrame then
@@ -81,7 +81,18 @@ function LoadCard(cColor,cColor2,Player,IsJoinFrame)
 			end;
 			OffCommand=function(s) s:diffusealpha(0) end,
 		};
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."golden_frame") )..{
+		LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model()..Language().."dan") )..{
+			InitCommand=cmd(diffusealpha,0;zoom,0.5;y,50);
+			OnCommand=function(self)
+				if IsJoinFrame then
+					(cmd(linear,0.3;diffusealpha,0))(self);
+				else
+					self:sleep(0.7):linear(0.1):diffusealpha(1):zoom(0.55):linear(0.1):zoom(0.5)
+				end
+			end;
+			OffCommand=function(s) s:diffusealpha(0) end,
+		};
+		LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."league") )..{
 			InitCommand=cmd(diffusealpha,0;zoom,0.5;y,154);
 			OnCommand=function(self)
 				if IsJoinFrame then

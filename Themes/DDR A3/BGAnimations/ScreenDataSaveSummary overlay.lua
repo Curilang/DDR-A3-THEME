@@ -50,12 +50,17 @@ function LoadPlayerStuff(Player)
         self:diffusealpha(0)
       end;
     };
-	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."profile_frame") )..{
+	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."profile") )..{
 		InitCommand=cmd(diffusealpha,0;zoom,0.5;y,-76);
 		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(0.55):linear(0.1):zoom(0.5) end,
 		OffCommand=function(s) s:diffusealpha(0) end,
 	};
-	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."golden_frame") )..{
+	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model()..Language().."dan") )..{
+		InitCommand=cmd(diffusealpha,0;zoom,0.5;y,50);
+		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(0.55):linear(0.1):zoom(0.5) end,
+		OffCommand=function(s) s:diffusealpha(0) end,
+	};
+	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."league") )..{
 		InitCommand=cmd(diffusealpha,0;zoom,0.5;y,154);
 		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(0.55):linear(0.1):zoom(0.5) end,
 		OffCommand=function(s) s:diffusealpha(0) end,

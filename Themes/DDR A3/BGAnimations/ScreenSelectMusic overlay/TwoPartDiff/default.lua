@@ -159,7 +159,11 @@ local function genScrollerFrame(player)
 				InitCommand=function(s) s:xy(73,-59):zoom(0.85) end,
 				StartSelectingStepsMessageCommand=function(s) s:diffusealpha(0):sleep(0.5):linear(0.1):diffusealpha(1) end,
 				Def.Sprite{
-					InitCommand=function(s) s:queuecommand("Set"):xy(30,13):zoomto(2.5,0.22):rotationz(90):cropleft(0.28):cropright(0.28) end,
+					Texture=THEME:GetPathG("","_shared/"..Model().."hex"),
+					InitCommand=cmd(zoom,0.28;xy,30,13);
+				};
+				Def.Sprite{
+					InitCommand=function(s) s:queuecommand("Set"):xy(30,13):zoom(0.3) end,
 					SetCommand=function(s)
 						local ClearedRank = 0;
 						local FullComboRank = 0;
@@ -260,41 +264,31 @@ local function genScrollerFrame(player)
 						end
 					local effecttime = 0.09
 					if ClearedRank == 0 then --NoPlayed
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","MFC"));
+						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","MarvelousFC"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,0;effectcolor2,1,1,1,0;effectperiod,effecttime))(s);
 					elseif ClearedRank == 7 then --E
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","Failed"));
+						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","Failed"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,0.65;effectcolor2,1,1,1,1;effectperiod,1.1))(s);
 					elseif FullComboRank == 8 then -- 8=NoFCWithLifeBar
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","NoFCWithLifeBar"));
+						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","NoFCLifeBar"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,1;effectperiod,effecttime))(s);
 					elseif FullComboRank == 7 then --7=NoFCWithBatteryLives
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","NoFCWithBatteryLives"));
+						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","NoFCBatteryLives"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,1;effectperiod,effecttime))(s);
-					elseif FullComboRank == 6 then --6=GoodOldFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","GoodFC"));
+					elseif FullComboRank == 6 or FullComboRank == 5 then --6=GoodOldFC
+						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","GoodFC"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(s);
-					elseif FullComboRank == 5 then -- 5=GoodFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","GoodFC"));
+					elseif FullComboRank == 4 or FullComboRank == 3 then -- 4=GreatOldFC
+						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","GreatFC"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(s);
-					elseif FullComboRank == 4 then -- 4=GreatOldFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","GreatFC"));
-						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(s);
-					elseif FullComboRank == 3 then --3=GreatFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","GreatFC"));
-						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(s);
-					elseif FullComboRank == 2 then --2=PFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","PFC"));
+					elseif FullComboRank == 2 then --2 = PFC
+						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","PerfectFC"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.70;effectperiod,effecttime))(s);
-					elseif FullComboRank == 1 then --1=MFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade light/ClearedMark","MFC"));
+					elseif FullComboRank == 1 then --1 = MFC
+						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","MarvelousFC"));
 						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.70;effectperiod,effecttime))(s);
 					end
 				end
-				};
-				Def.Sprite{
-					Texture=GetCurrentModel().."/hex",
-					InitCommand=cmd(zoom,0.28;xy,30,13);
 				};
 			};
 			Def.Sprite{

@@ -7,7 +7,7 @@ end;
 
 if not GAMESTATE:IsDemonstration() then
 	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		if (not GetUserPref("SelectCharacter"..PLAYER_1) == "Random") or (not GetUserPref("SelectCharacter"..PLAYER_2) == "Random") then
+		if not (GetUserPref("SelectCharacter"..PLAYER_1) == "Random" or GetUserPref("SelectCharacter"..PLAYER_2) == "Random") then
 			t[#t+1] = LoadActor("Cut-In/DanceStages")
 		end
 	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then

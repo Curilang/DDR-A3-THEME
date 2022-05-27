@@ -35,21 +35,27 @@ for i = 1, mStages do
 				self:addy(-100 + ((mStages - i) * 59));
 			elseif mStages == 6 then
 				self:addy(-100 + ((mStages - i) * 59));
+			elseif mStages == 7 then
+				self:addy(-150 + ((mStages - i) * 55));
 			else
-				self:addy(((mStages - i) * 47));
+				self:addy(((mStages - i) * 59));
 			end;
 		end;
 
 		LoadActor( "BannerCenter" ) .. {
-			InitCommand=cmd(diffusealpha,0;y,10);
-			OnCommand=cmd(sleep,0.25;diffusealpha,2);
+			InitCommand=cmd(y,10);
+			OnCommand=function(self) 
+				self:zoomy(0);
+				self:sleep(0.25+(i-mStages)*-0.1);
+				self:linear(0.2); 
+				self:zoomy(1);
+			end;
 			OffCommand=cmd(diffusealpha,0);
 		};
 		
 		-- banner line
 		Def.Quad {
 			InitCommand=function(self)
-				local sssong = ssStats:GetPlayedSongs()[1];
 				self:xy(-173,9.5):diffuse(color("#000000")):setsize(50,50)
 			end;
 			OnCommand=function(self) 
@@ -131,8 +137,10 @@ for pn in ivalues(PlayerNumber) do
 						self:addy(-100 + ((mStages - i) * 59));
 					elseif mStages == 6 then
 						self:addy(-100 + ((mStages - i) * 59));
+					elseif mStages == 7 then
+						self:addy(-150 + ((mStages - i) * 55));
 					else
-						self:addy(((mStages - i) * 47));
+						self:addy(-100 + ((mStages - i) * 59));
 					end;
 				end;
 				OffCommand=function(self) 

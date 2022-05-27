@@ -5,6 +5,7 @@
 20 - DDR A3\Usatei
 20 - DDR A3\Kanbu de tomatte sugu tokeru ~ kyouki no Udongein
 20 - DDR A3\Anthurium
+20 - DDR A3\Beluga
 20 - DDR A3\Dance Phenomena
 20 - DDR A3\Deep tenDon Reflex
 20 - DDR A3\Drive My Heart
@@ -12,8 +13,10 @@
 20 - DDR A3\GRADIUS REMIX (UUDDLRLRBA Ver.)
 20 - DDR A3\Let's DANCE aROUND!!
 20 - DDR A3\Like A Star
+20 - DDR A3\MEGALOVANIA
 20 - DDR A3\Pump Pump Pump
 20 - DDR A3\SAYONARA disco light
+20 - DDR A3\STAY GOLD
 20 - DDR A3\Surface
 20 - DDR A3\WARNING WARNING WARNING
 20 - DDR A3\Wolf's Rain
