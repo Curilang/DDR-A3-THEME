@@ -26,10 +26,6 @@ return Def.ActorFrame{
 		InitCommand = function(s) s:FullScreen():diffusealpha(0) end,
 		OnCommand=function(s) s:linear(0.1):diffusealpha(1) end,
 	};
-	LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/circle"))..{
-		InitCommand=function(s) s:xy(_screen.cx,_screen.cy-200):zoom(2.5):blend('BlendMode_Add'):spin():effectmagnitude(0,0,-10):diffusealpha(0) end,
-		OnCommand=function(s) s:linear(0.3):diffusealpha(0.4) end, 
-	};
 	LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/dot"))..{
 		InitCommand=function(s) s:Center() end,
 		OnCommand=function(s) s:blend('BlendMode_Add');
