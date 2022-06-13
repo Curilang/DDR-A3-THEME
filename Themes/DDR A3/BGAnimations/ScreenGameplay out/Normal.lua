@@ -1,18 +1,17 @@
 local AnimationSleep = 1.2
--- local Cleared = math.random(1,2);
 
 return Def.ActorFrame{
 	Def.ActorFrame{
 		StartTransitioningCommand=function(s) s:sleep(AnimationSleep+0.035):queuecommand("Play") end,
 		PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("","DoorClose")) end,
 	};
-	-- Def.ActorFrame{
-		-- StartTransitioningCommand=function(s) s:sleep(AnimationSleep+0.035):queuecommand("Play") end,
-		-- PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("","Announcer/Crowd X"))
-								-- SOUND:PlayOnce(THEME:GetPathS("","Announcer/Crowd SN"))
-								-- SOUND:PlayOnce(THEME:GetPathS("","Announcer/StageCleared "..Cleared)) 
-		-- end,
-	-- };
+	Def.ActorFrame{
+		StartTransitioningCommand=function(s) s:sleep(AnimationSleep+0.035):queuecommand("Play") end,
+		PlayCommand=function(s) SOUND:PlayAnnouncer("stage sound X");
+								SOUND:PlayAnnouncer("stage sound SN");
+								SOUND:PlayAnnouncer("stage cleared");
+		end,
+	};
 	LoadActor(THEME:GetPathG("","_doors/background_black"))..{
 		InitCommand=function(s) s:FullScreen():diffusealpha(0) end,
 		OnCommand=function(s) s:sleep(AnimationSleep):linear(0.1):diffusealpha(1):sleep(0.3):linear(0.1):diffusealpha(0) end,

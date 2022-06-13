@@ -16,23 +16,7 @@ local t = Def.ActorFrame{
 	end;
 };
 ------- DANCESTAGE LOADER -------
-local DanceStagesDir = GetAllDanceStagesNames()
-table.remove(DanceStagesDir,IndexKey(DanceStagesDir,"DEFAULT"))
-table.remove(DanceStagesDir,IndexKey(DanceStagesDir,"RANDOM"))
-local DanceStageSelected = GetUserPref("SelectDanceStage")
-
-local DanceStage
-if not GAMESTATE:IsDemonstration() then
-	if DanceStageSelected == "DEFAULT" then
-		DanceStage = DanceStageSong()
-	elseif DanceStageSelected == "RANDOM" then
-		DanceStage = DanceStagesDir[math.random(#DanceStagesDir)]
-	else
-		DanceStage = GetUserPref("SelectDanceStage")
-	end;
-else
-	DanceStage = DanceStageSong()
-end
+local DanceStage = DSLoader()
 
 if (VideoStage() and GAMESTATE:GetCurrentSong():HasBGChanges()) or (not GAMESTATE:GetCurrentSong():HasBGChanges()) then
 	

@@ -331,7 +331,6 @@ local function DiffInputHandler(event)
 	end;
 end;
 
--- local RSL = math.random(1,2);
 local t = Def.ActorFrame{
 	InitCommand=function(s)
 		s:sleep(0.5):queuecommand("Add")
@@ -365,6 +364,6 @@ local t = Def.ActorFrame{
 			self:zoom(0.667);
 		end;
 	};
-	-- SOUND:PlayOnce(THEME:GetPathS("","Announcer/ScreenSelectLevel "..RSL));
+	SOUND:PlayAnnouncer("select level")
 }
 return t;

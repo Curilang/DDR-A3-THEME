@@ -104,9 +104,11 @@ function LoadCard(cColor,cColor2,Player,IsJoinFrame)
 			OffCommand=function(s) s:diffusealpha(0) end,
 		};
 		Def.Sprite{
-			InitCommand=function(s) s:diffusealpha(0):zoom(0.3):x(43):y(154)
+			InitCommand=function(s) s:diffusealpha(0):y(154)
 				if GoldenLeague() then
-					s:Load(THEME:GetPathG("","ScreenSelectProfile/"..League().."icon"))
+					s:Load(THEME:GetPathG("","ScreenSelectProfile/"..League().."icon")):zoom(0.3):x(43)
+				else	
+					s:Load(THEME:GetPathG("","ScreenSelectProfile/icon_none")):zoom(1):x(98)
 				end
 			end,
 			OnCommand=function(self)

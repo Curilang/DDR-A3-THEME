@@ -25,6 +25,7 @@ local function SongSleep()
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "The Medley of Kirby SSDX"										then return 0.2
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "The legend of MAX(X-Special)"									then return 0.2
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "DDR TAGMIX -LAST DanceR-"										then return 2
+		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Avenger"														then return 0.8
 		else 																															 return 1 
 		end
 	else

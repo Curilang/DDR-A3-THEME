@@ -110,14 +110,6 @@ function PotentialModSong()
 	return false
 end
 
-function VideoStage()
-	if string.match(DanceStageSong(), "MOVIE") or string.match(DanceStageSong(), "REPLICANT") or string.match(DanceStageSong(), "CAPTURE ME") then
-		return true
-	else
-		return false
-	end
-end
-
 ------------------------
 
 
@@ -155,24 +147,24 @@ end
 function GetAllCharacterNames()
     local chars = {}
     local _chars = FILEMAN:GetDirListing("/Characters/", true, false)
-    SortList(_chars,chars,"%(A%)")
-    SortList(_chars,chars,"%(X2%)")
-    SortList(_chars,chars,"%(X%)")
-    SortList(_chars,chars,"%(SN2%)")
-    SortList(_chars,chars,"%(SN%)")
-    SortList(_chars,chars,"%[PiX%]")
-    SortList(_chars,chars,"%[JB%]")
-    SortList(_chars,chars,"%[DW%]")
-	SortList(_chars,chars,"%[DDRII%]")
-    SortList(_chars,chars,"%[HP4%]")
-    SortList(_chars,chars,"%[HP3%]")
-    SortList(_chars,chars,"%[HP2%]")
-    SortList(_chars,chars,"%[HP1%]")
-    SortList(_chars,chars,"%(5th%)")
-    SortList(_chars,chars,"%(4th%)")
-    SortList(_chars,chars,"%(3rd%)")
-    SortList(_chars,chars,"%(2nd%)")
-    SortList(_chars,chars,"%(1st%)")
+    -- SortList(_chars,chars,"%(A%)")
+    -- SortList(_chars,chars,"%(X2%)")
+    -- SortList(_chars,chars,"%(X%)")
+    -- SortList(_chars,chars,"%(SN2%)")
+    -- SortList(_chars,chars,"%(SN%)")
+    -- SortList(_chars,chars,"%[PiX%]")
+    -- SortList(_chars,chars,"%[JB%]")
+    -- SortList(_chars,chars,"%[DW%]")
+	-- SortList(_chars,chars,"%[DDRII%]")
+    -- SortList(_chars,chars,"%[HP4%]")
+    -- SortList(_chars,chars,"%[HP3%]")
+    -- SortList(_chars,chars,"%[HP2%]")
+    -- SortList(_chars,chars,"%[HP1%]")
+    -- SortList(_chars,chars,"%(5th%)")
+    -- SortList(_chars,chars,"%(4th%)")
+    -- SortList(_chars,chars,"%(3rd%)")
+    -- SortList(_chars,chars,"%(2nd%)")
+    -- SortList(_chars,chars,"%(1st%)")
     ReFillList(_chars,chars)
     table.remove(chars,IndexKey(chars,"DanceRepo"))
     table.remove(chars,IndexKey(chars,"default"))
@@ -250,15 +242,16 @@ function GetAllDanceStagesNames()
     local DanceStagesList = {}
     local _DanceStagesList = FILEMAN:GetDirListing("/DanceStages/", true, false)
     table.remove(_DanceStagesList,IndexKey(_DanceStagesList,"StageMovies"))
-    SortList(_DanceStagesList,DanceStagesList,"%(A%)")
-    SortList(_DanceStagesList,DanceStagesList,"%(X2%)")
-    SortList(_DanceStagesList,DanceStagesList,"%(X%)")
-    SortList(_DanceStagesList,DanceStagesList,"%(REPLICANT%)")
-    SortList(_DanceStagesList,DanceStagesList,"%(2014%)")
-    SortList(_DanceStagesList,DanceStagesList,"%(SN%)")
-    SortList(_DanceStagesList,DanceStagesList,"%(DDRII%)")
-    SortList(_DanceStagesList,DanceStagesList,"%(HP%)")
-    table.insert(DanceStagesList,1,"DEFAULT")
+    -- SortList(_DanceStagesList,DanceStagesList,"%(A%)")
+    -- SortList(_DanceStagesList,DanceStagesList,"%(X2%)")
+    -- SortList(_DanceStagesList,DanceStagesList,"%(X%)")
+    -- SortList(_DanceStagesList,DanceStagesList,"%(REPLICANT%)")
+    -- SortList(_DanceStagesList,DanceStagesList,"%(2014%)")
+    -- SortList(_DanceStagesList,DanceStagesList,"%(SN%)")
+    -- SortList(_DanceStagesList,DanceStagesList,"%(DDRII%)")
+    -- SortList(_DanceStagesList,DanceStagesList,"%(HP%)")
+    ReFillList(_DanceStagesList,DanceStagesList)
+	table.insert(DanceStagesList,1,"DEFAULT")
     table.insert(DanceStagesList,2,"RANDOM")
     return DanceStagesList
 end
@@ -562,5 +555,34 @@ function ThemeNumber()
 		return "ST,SM,JA,SS,FS,CU,SA,GD,BM,SP,MD,GL,BS,CS,DS,RM,C1,C2,C3"
 	else
 		return "ST,SM,JA,SS,FS,CU,SA,GD,BM,SP,MD,GL" 
+	end
+end
+
+function DSLoader()
+	local DanceStagesDir = GetAllDanceStagesNames()
+	table.remove(DanceStagesDir,IndexKey(DanceStagesDir,"DEFAULT"))
+	table.remove(DanceStagesDir,IndexKey(DanceStagesDir,"RANDOM"))
+	local DanceStageSelected = GetUserPref("SelectDanceStage")
+
+	local DanceStage
+	if not GAMESTATE:IsDemonstration() then
+		if DanceStageSelected == "DEFAULT" then
+			DanceStage = DanceStageSong()
+		elseif DanceStageSelected == "RANDOM" then
+			DanceStage = DanceStagesDir[math.random(#DanceStagesDir)]
+		else
+			DanceStage = GetUserPref("SelectDanceStage")
+		end
+	else
+	DanceStage = DanceStageSong()
+	end
+	return DanceStage
+end
+
+function VideoStage()
+	if string.match(DSLoader(), "MOVIE") or string.match(DSLoader(), "REPLICANT") or string.match(DSLoader(), "CAPTURE ME") then
+		return true
+	else
+		return false
 	end
 end

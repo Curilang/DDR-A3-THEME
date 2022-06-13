@@ -1,0 +1,11 @@
+-------------------
+
+DDR A Announcer v1.0
+
+-------------------
+May 30, 2022: DDR A Announcer v1.0
+- Add all narrator dialogs for game play and combos.
+- Add all evaluation comments.
+- Add all title comments.
+- Add all select mode comments.
+- Add another two select music intro.

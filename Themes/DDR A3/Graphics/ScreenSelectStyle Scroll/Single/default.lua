@@ -19,14 +19,14 @@ t[#t+1] = Def.ActorFrame{
 			InitCommand=cmd(diffusealpha,0;zoom,0.667;x,-12;y,-52);
 			OnCommand=cmd(sleep,0.6;linear,0.1;diffusealpha,1;zoomy,0.6;linear,0.1;zoomy,0.667;zoomx,0.9;linear,0.1;zoomx,0.667);
 		};
-		-- LoadActor(THEME:GetPathG("","_blank"))..{
-			-- GainFocusCommand=cmd(queuecommand,"Play");
-			-- PlayCommand=function(self)
-				-- if self:GetVisible() then
-					-- SOUND:PlayOnce(THEME:GetPathS("","Announcer/ScreenSelectStyle Single"));
-				-- end;
-			-- end;
-		-- };
+		LoadActor(THEME:GetPathG("","_blank"))..{
+			GainFocusCommand=cmd(queuecommand,"Play");
+			PlayCommand=function(self)
+				if self:GetVisible() then
+					SOUND:PlayAnnouncer("ScreenSelectStyle comment Single")
+				end;
+			end;
+		};
 	};
 	LoadActor(Model()..Language().."title")..{
     InitCommand=cmd(diffusealpha,0;x,214;y,-115;zoom,0.715);

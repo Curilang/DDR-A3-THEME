@@ -10,9 +10,10 @@ end
 local t = Def.ActorFrame{}
 
 -- manual bpm display
-t[#t+1] = LoadFont("_squareslab711 lt bt Bold 24px")..{
+--t[#t+1] = LoadFont("_squareslab711 lt bt Bold 24px")..{
+t[#t+1] = LoadFont("_impact 32px")..{
 	Name="BPMDisplay";
-	InitCommand=function(s) s:draworder(101):zoomx(1.3):zoomy(1):shadowlength(1) end,
+	InitCommand=function(s) s:draworder(101):zoomx(0.9):zoomy(0.68):shadowlength(1) end,
 };
 
 t.InitCommand=cmd(SetUpdateFunction,UpdateSingleBPM);

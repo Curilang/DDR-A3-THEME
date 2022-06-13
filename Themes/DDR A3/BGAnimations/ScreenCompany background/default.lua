@@ -9,7 +9,7 @@ return Def.ActorFrame {
 	};
 	Def.Sprite{
 		InitCommand=function(s) s:Center():diffusealpha(0) end,
-		OnCommand=function(s) s:Load(THEME:GetPathB("ScreenCompany","background/KONAMI")):zoom(0.74)
+		OnCommand=function(s) s:Load(THEME:GetPathB("ScreenCompany","background/KONAMI_1")):FullScreen()
 			s:diffusealpha(0):linear(0.5):diffusealpha(1):sleep(4):linear(0.5):diffusealpha(0)
 		end,
 	};

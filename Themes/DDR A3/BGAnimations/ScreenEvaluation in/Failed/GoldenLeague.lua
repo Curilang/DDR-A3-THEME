@@ -1,8 +1,7 @@
 return Def.ActorFrame{
 	OnCommand=function(s) s:sleep(0.2):linear(0.1):diffusealpha(0) end,
-	Def.Sprite{
-		Texture=THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/background"),
-		InitCommand=function(s) s:FullScreen():diffusealpha(1) end,
+	Def.Quad{
+		InitCommand=function(s) s:diffuse(color("#1f2e45")):FullScreen():Center():diffusealpha(1) end,
 	};
 	LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/stairs"))..{
 		InitCommand=function(s) s:Center():zoom(1.33):diffusealpha(1) end,
@@ -30,12 +29,12 @@ return Def.ActorFrame{
 		OnCommand=function(s) s:sleep(0.2):linear(0.15):addx(-100):zoom(1) end,
 	};
 	
-	LoadActor(THEME:GetPathB("ScreenGameplay","ready/bg"))..{
+	LoadActor(THEME:GetPathB("ScreenGameplay","failed/bg"))..{
 		InitCommand=function(s) s:Center():blend(Blend.Add):zoom(0.667) end,
-		OnCommand=function(s) s:linear(0.1):zoomy(0) end,
+		OnCommand=function(s) s:linear(0.1):zoomy(0)end,
 	};
 	Def.Sprite{	
 		InitCommand=function(s) s:Center():zoom(0.667) end,
-		OnCommand=function(s) s:Load(ClearedToLoad()):linear(0.09):zoomx(1):zoomy(0) end,
+		OnCommand=function(s) s:Load(THEME:GetPathB("ScreenGameplay","failed/FAILED")):linear(0.09):zoomx(1):zoomy(0) end,
 	};
 };

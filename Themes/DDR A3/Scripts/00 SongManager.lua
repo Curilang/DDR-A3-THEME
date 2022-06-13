@@ -1357,6 +1357,7 @@ function DanceStageSong()
 			
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "愛のために。"														then return "(X2) BOOM LIGHT"				--Ai no tame ni
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "オリオンをなぞる"														then return "(X2) BOOM LIGHT"				--Orion wo nazoru
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "廻廻奇譚"															then return "(X) BOOM BOOM BOOM"			--Kaikai kitan
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "怪物"															then return "(X) DAWN STREETS"				--Kaibutsu
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "紅蓮華"															then return "(X) BOOM BOOM BOOM"			--Gurenge
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "群青"															then return "(X) CRYSTALDIUM"				--Gunjou

@@ -5619,6 +5619,7 @@ DDR_groove_radar_values= {
 			Easy = {47, 55, 16, 24, 2}, 
 			Medium = {84, 109, 49, 1, 41}, 
 			Hard = {134, 123, 36, 17, 102},  
+			Challenge = {157, 123, 56, 23, 109},  
 		},
 		["BLACK JACKAL"] = {
 			Beginner = {18, 18, 3, 11, 0}, 
@@ -6828,6 +6829,12 @@ DDR_groove_radar_values= {
 			Easy = {0, 0, 0, 0, 0}, 
 			Medium = {0, 0, 0, 0, 0}, 
 			Hard = {71, 54, 14, 31, 19}, 
+		},
+		["廻廻奇譚"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {85, 61, 34, 19, 42}, 
 		},
 		["怪物"] = {
 			Beginner = {7, 14, 0, 24, 0}, 
@@ -11774,6 +11781,7 @@ DDR_groove_radar_values= {
 			Easy = {47, 46, 23, 2, 0}, 
 			Medium = {80, 92, 32, 0, 31}, 
 			Hard = {97, 109, 50, 0, 56}, 
+			Challenge = {178, 123, 47, 15, 109}, 
 		}, 
 		["BLACK JACKAL"] = {
 			Easy = {42, 37, 10, 31, 3}, 

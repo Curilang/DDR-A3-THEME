@@ -31,6 +31,8 @@ local function jacket_in()
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "We're so Happy"													then return 9.1
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "The legend of MAX(X-Special)"									then return 0.5
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "DDR TAGMIX -LAST DanceR-"										then return 0.2
+		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "MEGALOVANIA" 													then return 0.25
+		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Avenger" 														then return 2.3
 		else 																															 return 1 
 		end
 	else

@@ -1,7 +1,10 @@
 return Def.ActorFrame{
-	LoadActor(THEME:GetPathS("Screenlogo","Voice"))..{
-		OnCommand=cmd(queuecommand,"Play");
-		PlayCommand=cmd(play);
+	Def.ActorFrame{
+		OnCommand=function(s)
+			if IsLogo() then
+				SOUND:PlayAnnouncer("title menu game name")
+			end
+		end,
 	};
 	
 	LoadActor(THEME:GetPathB("ScreenLogo","decorations/"..Model().."logo"))..{

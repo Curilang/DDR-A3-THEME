@@ -1,5 +1,3 @@
-local t = Def.ActorFrame{};
-
 local Announcer
 if (GAMESTATE:GetCurrentStage() == 'Stage_1st') then
 	Announcer = "stage 1"
@@ -19,7 +17,7 @@ elseif (GAMESTATE:IsEventMode()) then
 	Announcer = "stage event"
 end
 
-	SOUND:PlayAnnouncer(Announcer)
-
-
-return t;
+return Def.ActorFrame{
+	SOUND:PlayAnnouncer("stage sound X");
+	SOUND:PlayAnnouncer(Announcer);
+};

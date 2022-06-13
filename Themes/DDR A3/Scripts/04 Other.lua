@@ -355,13 +355,13 @@ function FilterReadPref(pn)
 end
 
 function StreamingMode()
-	if GetUserPref("OptionRowStreamMode")=='Silent' then
+	if GetUserPref("OptionRowStreamMode")=='On' then
 		return true
 	end
 end
 
 function StreamingSound(item)
-	if GetUserPref("OptionRowStreamMode")=='Silent' then
+	if GetUserPref("OptionRowStreamMode")=='On' then
 		return THEME:GetPathS("","_silent")
 	else
 		return item
@@ -405,7 +405,7 @@ function SelectMusicBGM()
 	local file = RageFileUtil.CreateRageFile()
 
 	
-	if GetUserPref("OptionRowStreamMode")=='Silent' then
+	if GetUserPref("OptionRowStreamMode")=='On' then
 		file:Open(Music,2)
 		file:Write("_silent")
 		file:Close()

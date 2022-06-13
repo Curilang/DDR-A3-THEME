@@ -30,6 +30,8 @@ local function SongSleep()
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "The legend of MAX(X-Special)"									then return 0.2
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "DDR TAGMIX -LAST DanceR-"										then return 6.2
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Lesson by DJ"													then return 3.5
+		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "MEGALOVANIA"													then return 1.28
+		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Avenger"														then return 0.9
 		else 																															 return 1 
 		end
 	else

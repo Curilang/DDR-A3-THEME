@@ -356,8 +356,8 @@ t[#t+1] = Def.ActorFrame{
 					s:Load(THEME:GetPathB("ScreenGameplay","overlay/FullCombo/FCGo.png"))
 				end
 				s:diffusealpha(0):sleep(0.6):diffusealpha(1):zoomy(0)
-				:linear(0.1):zoom(TextZoom()):linear(0.5):zoom(TextZoom()*1.55):linear(0.05)
-				:diffusealpha(0.66):zoomx(TextZoom()*1.6):linear(0.1):zoomy(0):zoomx(TextZoom()*1.65):diffusealpha(0)
+				:linear(0.1):zoom(TextZoom()):linear(0.5):zoom(TextZoom()*1.25):linear(0.05)
+				:diffusealpha(0.66):zoomx(TextZoom()*1.3):linear(0.1):zoomy(0):diffusealpha(0)
 			end
 		end,
 		};
