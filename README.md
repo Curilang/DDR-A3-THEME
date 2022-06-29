@@ -1,11 +1,23 @@
 # DDR-A3-THEME
 Edit from Inori's DDR A20 Theme.
 
+##IMPORTANT NOTES
+
 🚫 DON'T REPRODUCE IN PUBLIC PLACES OR PUBLIC ARCADES
 
 🚫 NOT FOR MONETARY PURPOSES
 
 🚫 Not for the purpose of insulting another person/company/project
+
+# CURRENT SUPPORTED STEPMANIA BUILDS
+
+• [5.0.12](https://www.stepmania.com/download/)
+
+• [5.1.0-b2](https://github.com/stepmania/stepmania/releases/tag/v5.1.0-b2)
+
+• [5.1.0_new / ITGMania](https://www.itgmania.com/)
+
+NOTE: OUTFOX 0.4.15.1 ITS CURRENTLY PARCIALLY/NOT SUPPORTED DUE TO SOME RECENT CHANGES MADE ON THE ENGINE
 
 # HOW TO GET ARCADE GROUP SORT LIST
 
