@@ -18,7 +18,7 @@ Edit from Inori's DDR A20 Theme.
 
 • [5.1.0_new*](https://www.dropbox.com/s/16prwjkgmtfktvb/SM5.1_20220616.zip?dl=0) / [ITGMania](https://www.itgmania.com/)
 
-*build date: 2022-06-16. Thanks to Razorblade from ZIv for the build.
+<sub>*build date: 2022-06-16. Thanks to Razorblade from ZIv for the build.</sub>
 
 NOTE: [OUTFOX](https://projectoutfox.com/) ITS CURRENTLY BEING PARTIALLY SUPPORTED DUE TO SOME RECENT CHANGES MADE ON THE ENGINE. WE'RE TRYING TO GET THAT FIXED AS SOON AS WE CAN.
 
