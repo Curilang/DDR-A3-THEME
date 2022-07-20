@@ -16,7 +16,7 @@ Edit from Inori's DDR A20 Theme.
 
 • [5.1.0-b2](https://github.com/stepmania/stepmania/releases/tag/v5.1.0-b2)
 
-• [5.1.0_new*](https://www.dropbox.com/s/16prwjkgmtfktvb/SM5.1_20220616.zip?dl=0) / [ITGMania](https://www.itgmania.com/)
+• [5.1.0_new*](https://www.dropbox.com/s/16prwjkgmtfktvb/SM5.1_20220616.zip?dl=0](https://drive.google.com/file/d/1DiCF3n95tawbsTIJyn5bmY5rG4AS9Ydx/view?usp=sharing) / [ITGMania](https://www.itgmania.com/)
 
 <sub>*build date: 2022-06-16. Thanks to Razorblade from ZIv for the build.</sub>
 
