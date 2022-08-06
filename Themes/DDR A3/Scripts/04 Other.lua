@@ -392,7 +392,7 @@ end
 
 function ClearedToLoad()
 	local GetSong = GAMESTATE:GetCurrentSong():GetDisplayFullTitle()
-	if GetSong == "Tohoku EVOLVED" or GetSong == "COVID" or GetSong == "Outbreak" then
+	if GetSong == "Tohoku EVOLVED" or GetSong == "COVID" or GetSong == "Outbreak" then 
 		return THEME:GetPathB("ScreenGameplay","out/PRAY")
 	elseif GetSong == "Lesson by DJ" or GetSong == "LET'S CHECK YOUR LEVEL!" then
 		return THEME:GetPathB("ScreenGameplay","out/ENJOY")
