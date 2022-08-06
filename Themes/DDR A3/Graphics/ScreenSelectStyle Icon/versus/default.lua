@@ -63,19 +63,13 @@ t[#t+1] = Def.ActorFrame{
     OffCommand=cmd(smooth,0.2;y,0;diffusealpha,0);
     GainFocusCommand=cmd(finishtweening;diffusealpha,0;y,0;sleep,0.1;smooth,0.2;y,-100;diffusealpha,1;smooth,0.05;y,-92);
     LoseFocusCommand=cmd(finishtweening;queuecommand,"Off");
-    LoadActor(THEME:GetPathG("ScreenSelectStyle","icon/"..Model().."top"))..{
-		InitCommand=function(s) s:zoom(0.5) end,
-	};
+    LoadActor(THEME:GetPathG("ScreenSelectStyle","icon/"..Model().."top"));
     LoadActor(Language().."title")..{
 		InitCommand=cmd(x,10);
 	};
-	Def.Sprite{
-		Texture=THEME:GetPathG("", "_shared/Style"),
-		InitCommand=function(s) s:x(120):zoom(0.667):pause():setstate(1) end,
-	};
   };
   LoadActor(THEME:GetPathG("ScreenSelectStyle","icon/"..Model().."bottom"))..{
-    InitCommand=cmd(zoom,0.5;y,86);
+    InitCommand=cmd(zoom,0.996;y,86);
     OnCommand=function(self)
       if GAMESTATE:GetNumPlayersEnabled() == 2 then
         self:queuecommand("On2");

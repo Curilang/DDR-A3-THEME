@@ -1,6 +1,6 @@
 return Def.ActorFrame {
 	Def.Sprite{
-		Texture=THEME:GetPathG("","_doors/background_purple"),
+		Texture=BackgroundEntry(),
 		InitCommand=function(s) s:FullScreen():SetAllStateDelays(0.085) end,
 	};
 	Def.Quad{
@@ -17,10 +17,10 @@ return Def.ActorFrame {
 	Def.ActorFrame{
 		InitCommand=function(s) s:x(_screen.cx) end,	
 			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/door up"))..{ 
-			InitCommand=function(s) s:zoom(0.447):y(SCREEN_TOP+61) end, 
+			InitCommand=function(s) s:zoom(0.667):y(SCREEN_TOP+63) end, 
 		};
 		LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/door down"))..{ 
-			InitCommand=function(s) s:zoom(0.447):y(SCREEN_BOTTOM-61) end, 
+			InitCommand=function(s) s:zoom(0.667):y(SCREEN_BOTTOM-63) end, 
 		}; 
 	};
 };

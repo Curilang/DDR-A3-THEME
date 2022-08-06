@@ -1,3 +1,37 @@
+local GoldenLeagueSong = {
+	--A20
+	["Avenger"] = "league"; 								--1st 
+	["New Era"] = "league";									--2nd
+	["Give Me"] = "league";									--3rd
+	["Ace out"] = "league"; 								--4th
+	["The World Ends Now"] = "league";						--5th
+	["Rampage Hero"] = "league";							--6th
+	["ALPACORE"] = "league";								--7th
+	["Starlight in the Snow"] = "league";					--8th
+	["Glitch Angel"] = "league";							--9th
+	["Golden Arrow"] = "league";							--10th
+	["CyberConnect"] = "league";							--11th
+	--A20 PLUS
+	["DIGITALIZER"] = "league";								--1st
+	["Draw the Savage"] = "league";							--2nd
+	["MUTEKI BUFFALO"] = "league";							--3rd
+	["Going Hypersonic"] = "league";						--4th
+	["Lightspeed"] = "league";								--5th
+	["Run The Show"] = "league";							--6th
+	["Yuni's Nocturnal Days"] = "league";					--7th
+	["Good Looking"] = "league";							--8th
+	["Step This Way"] = "league";							--9th
+	["Come Back To Me"] = "league";							--10th
+	["actualization of self (weaponized)"] = "league";		--11th
+	["Better Than Me"] = "league";							--12th
+	["DDR TAGMIX -LAST DanceR-"] = "league";				--13th
+	["THIS IS MY LAST RESORT"] = "league";					--14th
+	--A3
+	["STAY GOLD"] = "league";								--1st
+	["Teleportation"] = "league";							--2nd
+	["Environ [De-SYNC](feat.lythe)"] = "league";			--3rd
+};
+
 local grade = Def.ActorFrame{}
 local cursor = Def.ActorFrame{};
 local diff = Def.ActorFrame{};
@@ -52,8 +86,23 @@ return Def.ActorFrame{
 		end
 	end;
 	Def.Sprite{
-		Texture=Model().."music_card",
-		InitCommand=function(s) s:zoom(0.49) end,
+		Texture=Model().."card",
+		InitCommand=function(s) s:zoom(0.94) end,
+	};
+	Def.Sprite{
+		InitCommand=function(s) s:zoom(0.94) end,
+		SetCommand=function(s,p)
+			local song = p.Song;
+			if song then
+				local songtit = song:GetDisplayMainTitle();
+				if GoldenLeagueSong[songtit] ~= nil then
+					local GoldenLeagueSong = GoldenLeagueSong[songtit];
+					s:Load(THEME:GetPathG("","MusicWheelItem Song NormalPart/"..GoldenLeagueSong));
+				else
+					s:Load(THEME:GetPathG("","_blank"));
+				end
+			end
+		end,
 	};
 	Def.ActorFrame{
 		Name="Highlights",
@@ -64,8 +113,8 @@ return Def.ActorFrame{
 			end
 		end;
 		Def.Sprite{
-			Texture=Model().."card_hl",
-			InitCommand=function(s) s:zoom(0.49):x(5)
+			Texture=Model().."high",
+			InitCommand=function(s) s:zoom(0.94):x(5)
 				s:diffuseramp():effectcolor1(color("1,1,1,0.2")):effectcolor2(color("1,1,1,1")):effectperiod(0.5)
 			end,
 		};
@@ -73,8 +122,8 @@ return Def.ActorFrame{
 			Name="cardcursor",
 			InitCommand=function(s) s:diffuseramp():effectcolor1(color("1,1,1,0")):effectcolor2(color("1,1,1,1")):effectperiod(0.5) end,
 			Def.Sprite{
-				Texture=Model().."card_cursor.png",
-				InitCommand=function(s) s:zoom(0.49):x(5)
+				Texture=Model().."line",
+				InitCommand=function(s) s:zoom(0.94):x(5)
 					s:thump(1):effectmagnitude(1.1,1,0):effectperiod(0.5) 
 				end,
 			};
@@ -91,12 +140,9 @@ return Def.ActorFrame{
 		end,
 	};
 	Def.ActorFrame{
-		Def.Quad{
-			InitCommand=function(s) s:xy(1,-1):diffuse(color("0,0,0,1")):setsize(109,109) end,
-		};
 		Def.Sprite{
 			Name="Banner",
-			InitCommand=function(s) s:xy(1,-1) end,
+			InitCommand=function(s) s:xy(-2.5,-1.5) end,
 			SetMessageCommand=function(s,p)
 				local song = p.Song;
 				if song then
@@ -106,7 +152,7 @@ return Def.ActorFrame{
 						s:Load(GetJacketPath(song))
 					end
 				end
-				s:setsize(100,100)
+				s:setsize(103,103)
 			end,
 		};
 		
@@ -128,11 +174,11 @@ return Def.ActorFrame{
 		Name="Clear Bases",
 		Def.Sprite{
 			Texture=THEME:GetPathG("MusicWheelItem Song","NormalPart/cleared"),
-			InitCommand=function(s) s:xy(59,3) end,
+			InitCommand=function(s) s:xy(54.9,3) end,
 		};
 		Def.Sprite{
 			Texture=THEME:GetPathG("MusicWheelItem Song","NormalPart/cleared"),
-			InitCommand=function(s) s:xy(-57,3) end,
+			InitCommand=function(s) s:xy(-60,3):zoomx(-1) end,
 		};
 		grade;
 	};

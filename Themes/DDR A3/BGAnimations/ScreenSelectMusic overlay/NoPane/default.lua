@@ -5,7 +5,7 @@ return Def.ActorFrame{
     Def.Sprite{
         Texture=Model().."pane",
         InitCommand=function(s)
-            s:xy(pn==PLAYER_1 and -20 or 20,-20):zoom(0.8)
+            s:xy(pn==PLAYER_1 and -20 or 20,-20):zoom(1)
         end,
     };
     Def.Sprite{

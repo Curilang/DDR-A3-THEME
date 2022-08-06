@@ -186,6 +186,11 @@ function IsLogo()
 	return curScreen == "ScreenLogo"
 end
 
+function IsOptionService()
+	local curScreen = Var "LoadingScreen"
+	return curScreen == "ScreenOptionsService"
+end
+
 function IsReverse(pn)
 	if _VERSION == "Lua 5.3" then
 		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Reverse() == 1
@@ -320,6 +325,36 @@ function GoldenLeague()
 	end
 end
 
+function DanCourse()
+	if ReadPrefFromFile("OptionRowDanCourse") ~= nil then
+		if GetUserPref("OptionRowDanCourse")=='None' then
+			return "None" 
+		elseif GetUserPref("OptionRowDanCourse")=='1st' then
+			return GetCurrentLanguage().."/Dan01"
+		elseif GetUserPref("OptionRowDanCourse")=='2nd' then
+			return GetCurrentLanguage().."/Dan02"
+		elseif GetUserPref("OptionRowDanCourse")=='3rd' then
+			return GetCurrentLanguage().."/Dan03"
+		elseif GetUserPref("OptionRowDanCourse")=='4th' then
+			return GetCurrentLanguage().."/Dan04"
+		elseif GetUserPref("OptionRowDanCourse")=='5th' then
+			return GetCurrentLanguage().."/Dan05"
+		elseif GetUserPref("OptionRowDanCourse")=='6th' then
+			return GetCurrentLanguage().."/Dan06"
+		elseif GetUserPref("OptionRowDanCourse")=='7th' then
+			return GetCurrentLanguage().."/Dan07"
+		elseif GetUserPref("OptionRowDanCourse")=='8th' then
+			return GetCurrentLanguage().."/Dan08"
+		elseif GetUserPref("OptionRowDanCourse")=='9th' then
+			return GetCurrentLanguage().."/Dan09"
+		elseif GetUserPref("OptionRowDanCourse")=='10th' then
+			return GetCurrentLanguage().."/Dan10"
+		elseif GetUserPref("OptionRowDanCourse")=='Kaiden' then
+			return GetCurrentLanguage().."/Dan11"
+		end
+	end
+end
+
 function OptionNumber()
 	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
 		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ScreenFilter,Characters,SelectStage,Risky"
@@ -327,6 +362,22 @@ function OptionNumber()
 		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ScreenFilter,Characters,Risky"
 	else
 		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ScreenFilter,Risky"
+	end
+end
+
+function CharactersOption()
+	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
+		return "lua,SelectCharacter()"
+	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
+		return "lua,OptionRowCharacters()"
+	end
+end
+
+function ThemeNumber()
+	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
+		return "ST,SM,JA,SS,FS,CU,SA,GD,BM,SP,MD,GL,DC,BS,CS,DS,RM,C1,C2,C3"
+	else
+		return "ST,SM,JA,SS,FS,CU,SA,GD,BM,SP,MD,GL,DC" 
 	end
 end
 
@@ -341,7 +392,7 @@ end
 
 function ClearedToLoad()
 	local GetSong = GAMESTATE:GetCurrentSong():GetDisplayFullTitle()
-	if GetSong == "Tohoku EVOLVED" or GetSong == "COVID" or GetSong == "Outbreak" then
+	if GetSong == "Tohoku EVOLVED" or GetSong == "COVID" then
 		return THEME:GetPathB("ScreenGameplay","out/PRAY")
 	elseif GetSong == "Lesson by DJ" or GetSong == "LET'S CHECK YOUR LEVEL!" then
 		return THEME:GetPathB("ScreenGameplay","out/ENJOY")
@@ -433,6 +484,30 @@ function MenuTimer()
 		file:Write("GoldTimerNumbers")
 		file:Close()
 		file:destroy()
+	end
+end
+
+function BackgroundEntry()
+	if GetCurrentModel() == "Blue" then
+		return THEME:GetPathG("","_doors/background_green")
+	else
+		return THEME:GetPathG("","_doors/background_purple")
+	end
+end
+
+function BackgroundCleared()
+	if GetCurrentModel() == "Blue" then
+		return THEME:GetPathG("","_doors/background_green")
+	else
+		return THEME:GetPathG("","_doors/background_blue")
+	end
+end
+
+function IsGoldenLeague()
+	if (GoldenLeague() == "Bronze" or GoldenLeague() == "Silver" or GoldenLeague() == "Gold") and GetCurrentModel() == "Gold" then
+		return true
+	else
+		return false
 	end
 end
 

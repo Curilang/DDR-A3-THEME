@@ -74,17 +74,17 @@ local function genScrollerFrame(player)
 				end,
 				Def.Sprite{
 					Texture=GetCurrentModel().."/diff "..ToEnumShortString(diff);
-					InitCommand=cmd(zoom,0.5;y,-2)
+					InitCommand=cmd(zoom,1;y,-2)
 				};
 			};
 			Def.Sprite{
 				StartSelectingStepsMessageCommand=function(s) s:diffusealpha(0):sleep(0.5):linear(0.1):diffusealpha(1) end,
 				Texture=GetCurrentModel().."/line";
 				Name="Highlight";
-				InitCommand=cmd(zoom,0.7;y,-2;visible,i==selection[player];diffuseramp;effectcolor1,color("1,1,1,0");effectcolor2,color("1,1,1,1");effectperiod,.5);
+				InitCommand=cmd(y,-2;visible,i==selection[player];diffuseramp;effectcolor1,color("1,1,1,0");effectcolor2,color("1,1,1,1");effectperiod,.5);
 			};
 			Def.ActorFrame{
-				Name="Ok desu ka",
+				Name="Ok",
 				InitCommand=function(s) s:xy(-77,8) end,
 				Def.Sprite{
 					Texture=GetCurrentModel().."/eff",
@@ -97,10 +97,10 @@ local function genScrollerFrame(player)
 				};
 				Def.Sprite{
 					Texture=GetCurrentModel().."/ok",
-					InitCommand=function(s) s:diffusealpha(0):rotationy(-90):zoom(0.8):x(0):y(2) end,
+					InitCommand=function(s) s:diffusealpha(0):rotationy(-90):zoom(1.3):x(0):y(2) end,
 					OutCommand=function(s)
 						if i == selection[player] then
-							s:diffusealpha(1):linear(0.1):zoom(0.64):rotationy(0)
+							s:diffusealpha(1):linear(0.1):zoom(0.9):rotationy(0)
 						end
 					end,
 				};
@@ -156,14 +156,10 @@ local function genScrollerFrame(player)
 				end,
 			};
 			Def.ActorFrame{
-				InitCommand=function(s) s:xy(73,-59):zoom(0.85) end,
+				InitCommand=function(s) s:xy(84.6,-59):zoom(0.75) end,
 				StartSelectingStepsMessageCommand=function(s) s:diffusealpha(0):sleep(0.5):linear(0.1):diffusealpha(1) end,
 				Def.Sprite{
-					Texture=THEME:GetPathG("","_shared/"..Model().."hex"),
-					InitCommand=cmd(zoom,0.28;xy,30,13);
-				};
-				Def.Sprite{
-					InitCommand=function(s) s:queuecommand("Set"):xy(30,13):zoom(0.3) end,
+					InitCommand=function(s) s:queuecommand("Set"):xy(29,13):zoom(1.2) end,
 					SetCommand=function(s)
 						local ClearedRank = 0;
 						local FullComboRank = 0;
@@ -293,7 +289,7 @@ local function genScrollerFrame(player)
 			};
 			Def.Sprite{
 				Texture="flash",
-				InitCommand=function(s) s:diffusealpha(0):zoom(0.7):y(-2) end,
+				InitCommand=function(s) s:diffusealpha(0):y(-2) end,
 				StartSelectingStepsMessageCommand=function(s) s:sleep(0.3):linear(0.05):diffusealpha(1):sleep(0.05):linear(0.1):diffusealpha(0) end,
 			};
 		};

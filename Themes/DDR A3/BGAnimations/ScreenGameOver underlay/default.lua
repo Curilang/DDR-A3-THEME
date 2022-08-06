@@ -1,5 +1,5 @@
 local loader
-if GoldenLeague() == "Bronze" or GoldenLeague() == "Silver" or GoldenLeague() == "Gold" then
+if IsGoldenLeague() then
 	loader = THEME:GetPathB("","_doors GoldenLeague open")
 else
 	loader = THEME:GetPathB("","_doors open")

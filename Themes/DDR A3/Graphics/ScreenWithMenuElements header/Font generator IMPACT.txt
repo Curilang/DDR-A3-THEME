@@ -1,0 +1,34 @@
+Página
+https://flamingtext.es/logotipo/Dise%C3%B1oResplandor?fontname=Impact
+
+Estilo
+Resplandor
+
+
+//Texto
+	Tamaño de la fuente
+		28
+	Fuente
+		IMPACT
+//Logo
+	Color del Texto
+		#ffffff
+	Color de Resplandor
+		(whatever)
+	Tamaño del Resplandor
+		2
+	Difuminar
+		10
+//Fondo
+	Transparente
+//Imagen
+	Tamaño fijo
+		ON
+	Ancho de la Imagen
+		444
+	Altura de la Imagen
+		42
+	Alineación
+		do
+	Formato del Archivo
+		PNG

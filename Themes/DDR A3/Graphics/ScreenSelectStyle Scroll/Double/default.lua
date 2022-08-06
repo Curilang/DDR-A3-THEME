@@ -28,39 +28,39 @@ t[#t+1] = Def.ActorFrame{
 			end;
 		};
 	};
-  LoadActor(Model()..Language().."title")..{
-    InitCommand=cmd(diffusealpha,0;x,215;y,-116;zoom,0.715);
-    MenuLeftP1MessageCommand=cmd(playcommand,"Change1");
-    MenuLeftP2MessageCommand=cmd(playcommand,"Change1");
-    MenuRightP1MessageCommand=cmd(playcommand,"Change1");
-    MenuRightP2MessageCommand=cmd(playcommand,"Change1");
-    MenuUpP1MessageCommand=cmd(playcommand,"Change1");
-    MenuUpP2MessageCommand=cmd(playcommand,"Change1");
-    MenuDownP1MessageCommand=cmd(playcommand,"Change1");
-    MenuDownP2MessageCommand=cmd(playcommand,"Change1");
-    OnCommand=function(self)
-        self:playcommand("Change1")
-    end;
-    Change1Command=function(self)
-      local env = GAMESTATE:Env()
-      if env.DOUBLESELECT then
-        self:queuecommand("GainFocus")
-      else
-        self:finishtweening():linear(0.1):cropright(1):sleep(0.3):queuecommand("Change2")
-      end;
-    end;
-    Change2Command=cmd(zoom,0.715;cropright,1;diffusealpha,1;linear,0.2;cropright,0);
-    GainFocusCommand=function(self)
-      local env = GAMESTATE:Env()
-      env.DOUBLESELECT = true
-      self:stoptweening():linear(0.1):zoomy(0)
-    end;
-    LoseFocusCommand=function(self)
-      local env = GAMESTATE:Env()
-      env.DOUBLESELECT = false
-    end;
-    OffCommand=cmd(stoptweening;smooth,0.2;zoom,0;diffusealpha,0;);
-  };
+	LoadActor(Model()..Language().."title")..{
+		InitCommand=cmd(diffusealpha,0;x,215;y,-116;zoom,1.415);
+		MenuLeftP1MessageCommand=cmd(playcommand,"Change1");
+		MenuLeftP2MessageCommand=cmd(playcommand,"Change1");
+		MenuRightP1MessageCommand=cmd(playcommand,"Change1");
+		MenuRightP2MessageCommand=cmd(playcommand,"Change1");
+		MenuUpP1MessageCommand=cmd(playcommand,"Change1");
+		MenuUpP2MessageCommand=cmd(playcommand,"Change1");
+		MenuDownP1MessageCommand=cmd(playcommand,"Change1");
+		MenuDownP2MessageCommand=cmd(playcommand,"Change1");
+		OnCommand=function(self)
+			self:playcommand("Change1")
+		end;
+		Change1Command=function(self)
+			local env = GAMESTATE:Env()
+			if env.DOUBLESELECT then
+				self:queuecommand("GainFocus")
+			else
+				self:finishtweening():linear(0.1):cropright(1):sleep(0.3):queuecommand("Change2")
+			end;
+		end;
+		Change2Command=cmd(zoom,1.415;cropright,1;diffusealpha,1;linear,0.2;cropright,0);
+		GainFocusCommand=function(self)
+		local env = GAMESTATE:Env()
+			env.DOUBLESELECT = true
+			self:stoptweening():linear(0.1):zoomy(0)
+		end;
+		LoseFocusCommand=function(self)
+		local env = GAMESTATE:Env()
+			env.DOUBLESELECT = false
+		end;
+		OffCommand=cmd(stoptweening;smooth,0.2;zoom,0;diffusealpha,0;);
+	};
 };
 
 return t;

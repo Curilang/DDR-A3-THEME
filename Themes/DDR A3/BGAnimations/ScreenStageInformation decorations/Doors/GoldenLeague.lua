@@ -159,46 +159,26 @@ return Def.ActorFrame{
 	};
 	Def.ActorFrame{
 		InitCommand=cmd(CenterX);	
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/"..Model().."door up"))..{
-			InitCommand=function(s) s:zoom(0.447):y(SCREEN_TOP+30):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.68):linear(0.1):y(SCREEN_TOP+77):diffusealpha(1) end, 
+		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/door"))..{
+			InitCommand=function(s) s:zoom(0.667):y(SCREEN_TOP+30):diffusealpha(0) end,
+			OnCommand=function(s) s:sleep(0.68):linear(0.1):y(SCREEN_TOP+75):diffusealpha(1) end, 
 		};
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/squares"))..{
-			InitCommand=function(s) s:zoom(0.445):y(SCREEN_TOP+30):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.1):y(SCREEN_TOP+15):sleep(0.3):linear(0.2):diffusealpha(1) end, 
-		};		
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/light up"))..{
-			InitCommand=function(s) s:zoom(0.447):y(SCREEN_TOP+30):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.1):y(SCREEN_TOP+61):sleep(0.3):linear(0.2):diffusealpha(1) end, 
-		};
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/stars"))..{
-			InitCommand=function(s) s:zoom(0.26):x(339):y(SCREEN_TOP+2):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.1):sleep(0.3):linear(0.2):diffusealpha(1) end, 
-		};
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/stars"))..{
-			InitCommand=function(s) s:zoom(0.26):x(-339):y(SCREEN_TOP+2):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.1):sleep(0.3):linear(0.2):diffusealpha(1) end, 
-		};
+		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/door"))..{
+				InitCommand=function(s) s:rotationz(180):zoom(0.667):y(SCREEN_BOTTOM-30):diffusealpha(0) end,
+				OnCommand=function(s) s:sleep(0.68):linear(0.1):y(SCREEN_BOTTOM-75):diffusealpha(1) end, 
+			};
 		
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/"..Model().."door down"))..{
-			InitCommand=function(s) s:zoom(0.447):y(SCREEN_BOTTOM-30):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.68):linear(0.1):y(SCREEN_BOTTOM-77):diffusealpha(1) end, 
-		};
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/squares"))..{
-			InitCommand=function(s) s:rotationx(180):zoom(0.445):y(SCREEN_BOTTOM-30):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.1):y(SCREEN_BOTTOM-15):sleep(0.3):linear(0.2):diffusealpha(1) end, 
-		};
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/light down"))..{
-			InitCommand=function(s) s:zoom(0.447):y(SCREEN_BOTTOM-30):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.1):y(SCREEN_BOTTOM-61):sleep(0.3):linear(0.2):diffusealpha(1) end, 
-		};
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/stars"))..{
-			InitCommand=function(s) s:zoom(0.26):x(339):y(SCREEN_BOTTOM-4):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.1):sleep(0.3):linear(0.2):diffusealpha(1) end, 
-		};
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/stars"))..{
-			InitCommand=function(s) s:zoom(0.26):x(-339):y(SCREEN_BOTTOM-4):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.6):linear(0.1):sleep(0.3):linear(0.2):diffusealpha(1) end, 
+		
+		Def.ActorFrame{
+			InitCommand=cmd(diffuseshift;effectcolor1,color("1,1,1,1");effectcolor2,color("1,1,1,0.9");effectperiod,0.47);
+			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/light"))..{
+				InitCommand=function(s) s:zoom(0.667):y(SCREEN_TOP+30):diffusealpha(0) end,
+				OnCommand=function(s) s:sleep(0.6):linear(0.1):y(SCREEN_TOP+61):sleep(0.3):linear(0.2):diffusealpha(1) end, 
+			};
+			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/light"))..{
+				InitCommand=function(s) s:rotationz(180):zoom(0.667):y(SCREEN_BOTTOM-30):diffusealpha(0) end,
+				OnCommand=function(s) s:sleep(0.6):linear(0.1):y(SCREEN_BOTTOM-61):sleep(0.3):linear(0.2):diffusealpha(1) end, 
+			};
 		};
 	};
 };

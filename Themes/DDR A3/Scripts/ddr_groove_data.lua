@@ -5588,7 +5588,8 @@ DDR_groove_radar_values= {
 			Beginner = {22, 17, 0, 20, 0}, 
 			Easy = {29, 23, 0, 71, 0}, 
 			Medium = {40, 35, 30, 29, 3}, 
-			Hard = {54, 47, 34, 60, 19},  
+			Hard = {54, 47, 34, 60, 19},
+			Challenge = {122, 127, 115, 40, 118},			
 		},
 		["Ace out"] = {
 			Beginner = {17, 17, 9, 8, 0}, 
@@ -5820,7 +5821,8 @@ DDR_groove_radar_values= {
 			Beginner = {30, 34, 10, 11, 13}, 
 			Easy = {56, 68, 16, 25, 41}, 
 			Medium = {89, 76, 47, 16, 103}, 
-			Hard = {121, 105, 63, 27, 114},  
+			Hard = {121, 105, 63, 27, 114}, 
+			Challenge = {162, 131, 36, 23, 139}, 			
 		},
 		["New Rules"] = {
 			Beginner = {14, 14, 5, 15, 0}, 
@@ -6108,9 +6110,9 @@ DDR_groove_radar_values= {
 			Hard = {77, 103, 58, 37, 90}, 
 		},
 		["共犯ヘヴンズコード"] = {
-			Beginner = {0, 0, 0, 0, 0}, 
-			Easy = {0, 0, 0, 0, 0}, 
-			Medium = {0, 0, 0, 0, 0}, 
+			Beginner = {14, 18, 3, 0, 0}, 
+			Easy = {22, 27, 10, 16, 0}, 
+			Medium = {48, 54, 25, 38, 11}, 
 			Hard = {76, 73, 25, 40, 61}, 
 		},
 		["恋"] = {
@@ -6165,7 +6167,8 @@ DDR_groove_radar_values= {
 			Beginner = {10, 7, 0, 55, 0}, 
 			Easy = {24, 22, 9, 29, 0}, 
 			Medium = {49, 44, 1, 12, 3}, 
-			Hard = {82, 58, 29, 12, 32}, 
+			Hard = {82, 58, 29, 12, 32},
+			Challenge = {103, 88, 40, 8, 86},
 		},
 		["スーパー戦湯ババンバーン"] = {
 			Beginner = {23, 22, 9, 13, 0}, 
@@ -6282,9 +6285,9 @@ DDR_groove_radar_values= {
 			Hard = {72, 56, 29, 34, 39}, 
 		},
 		["私をディスコに連れてって TOKYO"] = {
-			Beginner = {0, 0, 0, 0, 0}, 
-			Easy = {0, 0, 0, 0, 0}, 
-			Medium = {0, 0, 0, 0, 0}, 
+			Beginner = {20, 17, 1, 5, 0}, 
+			Easy = {45, 47, 27, 26, 5}, 
+			Medium = {67, 59, 7, 17, 31}, 
 			Hard = {91, 94, 18, 20, 96}, 
 		},
 		["actualization of self (weaponized)"] = {
@@ -6342,9 +6345,9 @@ DDR_groove_radar_values= {
 			Hard = {80, 63, 21, 34, 102}, 
 		},
 		["B4U (The Acolyte mix)"] = {
-			Beginner = {0, 0, 0, 0, 0}, 
-			Easy = {0, 0, 0, 0, 0}, 
-			Medium = {0, 0, 0, 0, 0}, 
+			Beginner = {15, 12, 9, 3, 0}, 
+			Easy = {26, 25, 10, 31, 0}, 
+			Medium = {55, 51, 10, 19, 14}, 
 			Hard = {77, 64, 20, 36, 61}, 
 		},
 		["City Never Sleeps"] = {
@@ -6499,9 +6502,9 @@ DDR_groove_radar_values= {
 			Hard = {84, 85, 36, 46, 87}, 
 		},
 		["I'm Flying Away"] = {
-			Beginner = {0, 0, 0, 0, 0}, 
-			Easy = {0, 0, 0, 0, 0}, 
-			Medium = {0, 0, 0, 0, 0}, 
+			Beginner = {13, 14, 3, 7, 0}, 
+			Easy = {29, 29, 16, 35, 0}, 
+			Medium = {53, 44, 12, 18, 6}, 
 			Hard = {73, 59, 43, 38, 21}, 
 		},
 		["Inner Spirit -GIGA HiTECH MIX-"] = {
@@ -6739,9 +6742,9 @@ DDR_groove_radar_values= {
 			Hard = {73, 61, 38, 22, 58}, 
 		},
 		["THIS IS MY LAST RESORT"] = {
-			Beginner = {0, 0, 0, 0, 0}, 
-			Easy = {0, 0, 0, 0, 0}, 
-			Medium = {0, 0, 0, 0, 0}, 
+			Beginner = {24, 17, 14, 27, 0}, 
+			Easy = {47, 35, 12, 21, 0}, 
+			Medium = {79, 70, 38, 13, 48}, 
 			Hard = {109, 87, 29, 13, 106}, 
 		},
 		["Together Going My Way"] = {
@@ -6781,9 +6784,9 @@ DDR_groove_radar_values= {
 			Hard = {81, 83, 49, 39, 86}, 
 		},
 		["We Can Win The Fight"] = {
-			Beginner = {0, 0, 0, 0, 0}, 
-			Easy = {0, 0, 0, 0, 0}, 
-			Medium = {0, 0, 0, 0, 0}, 
+			Beginner = {15, 14, 1, 22, 0}, 
+			Easy = {26, 19, 5, 44, 0}, 
+			Medium = {43, 34, 18, 33, 11}, 
 			Hard = {56, 44, 36, 40, 30}, 
 		},
 		["We're so Happy"] = {
@@ -6805,9 +6808,9 @@ DDR_groove_radar_values= {
 			Hard = {81, 76, 32, 38, 83}, 
 		},
 		["1998 (Sparky 2006)"] = {
-			Beginner = {0, 0, 0, 0, 0}, 
-			Easy = {0, 0, 0, 0, 0}, 
-			Medium = {0, 0, 0, 0, 0}, 
+			Beginner = {15, 12, 3, 14, 0}, 
+			Easy = {40, 31, 25, 11, 0}, 
+			Medium = {67, 75, 5, 27, 67}, 
 			Hard = {94, 75, 5, 27, 102}, 
 		},
 	--HOW TO PLAY
@@ -6829,6 +6832,13 @@ DDR_groove_radar_values= {
 			Easy = {0, 0, 0, 0, 0}, 
 			Medium = {0, 0, 0, 0, 0}, 
 			Hard = {71, 54, 14, 31, 19}, 
+		},
+		["おどるポンポコリン"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0},  
+			Hard = {46, 40, 1, 60, 16},
+			Challenge = {54, 46, 63, 108, 26},
 		},
 		["廻廻奇譚"] = {
 			Beginner = {0, 0, 0, 0, 0}, 
@@ -6890,6 +6900,12 @@ DDR_groove_radar_values= {
 			Medium = {0, 0, 0, 0, 0}, 
 			Hard = {65, 43, 10, 10, 42}, 
 		},
+		["ラムのラブソング"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {73, 60, 50, 26, 29}, 
+		},
 		["ルカルカ★ナイトフィーバー"] = {
 			Beginner = {0, 0, 0, 0, 0}, 
 			Easy = {0, 0, 0, 0, 0}, 
@@ -6944,12 +6960,39 @@ DDR_groove_radar_values= {
 			Easy = {45, 31, 47, 9, 0}, 
 			Medium = {61, 55, 47, 18, 10}, 
 			Hard = {92, 95, 58, 8, 69}, 
+			Challenge = {141, 113, 40, 13, 106}, 
 		},
 		["患部で止まってすぐ溶ける～狂気の優曇華院"] = {
 			Beginner = {14, 15, 3, 0, 0}, 
 			Easy = {46, 45, 18, 2, 3}, 
 			Medium = {63, 60, 23, 22, 23}, 
 			Hard = {97, 102, 25, 4, 73}, 
+			Challenge = {135, 115, 80, 10, 108},
+		},
+		["鏡花水月楼 (DDR EDITION)"] = {
+			Beginner = {10, 14, 3, 7, 0}, 
+			Easy = {39, 29, 9, 15, 0}, 
+			Medium = {67, 58, 27, 15, 25}, 
+			Hard = {95, 94, 52, 22, 82}, 
+		},
+		["ナナホシ"] = {
+			Beginner = {18, 20, 1, 16, 0}, 
+			Easy = {37, 27, 23, 12, 0}, 
+			Medium = {66, 69, 16, 18, 31}, 
+			Hard = {113, 89, 20, 14, 103}, 
+		},
+		["量子の海のリントヴルム"] = {
+			Beginner = {20, 23, 1, 23, 0}, 
+			Easy = {52, 46, 7, 35, 4}, 
+			Medium = {85, 93, 29, 21, 17}, 
+			Hard = {158, 93, 60, 7, 59}, 
+			Challenge = {194, 120, 106, 9, 98}, 
+		},
+		["ALBIDA"] = {
+			Beginner = {21, 23, 3, 18, 0}, 
+			Easy = {47, 46, 27, 22, 7}, 
+			Medium = {75, 69, 36, 25, 39}, 
+			Hard = {102, 111, 40, 27, 102},  
 		},
 		["Anthurium"] = {
 			Beginner = {20, 17, 7, 21, 0}, 
@@ -6963,6 +7006,19 @@ DDR_groove_radar_values= {
 			Medium = {31, 33, 7, 61, 3}, 
 			Hard = {57, 49, 16, 72, 39}, 
 		},
+		["Black Emperor"] = {
+			Beginner = {22, 22, 12, 11, 0}, 
+			Easy = {43, 45, 20, 38, 9}, 
+			Medium = {84, 75, 36, 23, 77}, 
+			Hard = {121, 110, 36, 35, 108}, 
+			Challenge = {146, 110, 47, 39, 114}, 
+		},
+		["Closer to my Heart (jun remix)"] = {
+			Beginner = {15, 12, 1, 19, 0}, 
+			Easy = {40, 36, 18, 49, 3}, 
+			Medium = {63, 48, 9, 55, 23}, 
+			Hard = {89, 72, 10, 52, 88},  
+		},
 		["Dance Phenomena"] = {
 			Beginner = {15, 18, 0, 8, 0}, 
 			Easy = {29, 24, 7, 43, 1}, 
@@ -6974,12 +7030,25 @@ DDR_groove_radar_values= {
 			Easy = {39, 30, 20, 13, 2}, 
 			Medium = {64, 60, 40, 13, 22}, 
 			Hard = {95, 102, 63, 56, 100}, 
+			Challenge = {121, 106, 76, 61, 104}, 
+		},
+		["DOUBLE TORNARD"] = {
+			Beginner = {17, 19, 0, 17, 0}, 
+			Easy = {37, 31, 10, 25, 4}, 
+			Medium = {72, 51, 14, 40, 33}, 
+			Hard = {104, 101, 0, 43, 104},  
 		},
 		["♡Drive My Heart♡"] = {
-			Beginner = {0, 0, 0, 0, 0}, 
+			Beginner = {12, 12, 1, 2, 0}, 
 			Easy = {25, 24, 5, 8, 0}, 
 			Medium = {47, 36, 21, 5, 4}, 
 			Hard = {76, 72, 27, 27, 59}, 
+		},
+		["Environ [De-SYNC](feat.lythe)"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {101, 86, 10, 49, 104}, 
 		},
 		["Fleur"] = {
 			Beginner = {22, 22, 10, 16, 0}, 
@@ -6987,11 +7056,41 @@ DDR_groove_radar_values= {
 			Medium = {74, 59, 23, 31, 41}, 
 			Hard = {104, 109, 60, 27, 103}, 
 		},
-		["GRADIUS REMIX(↑↑↓↓←→←→BA Ver.)"] = {
+		["GERBERA"] = {
+			Beginner = {26, 24, 7, 25, 0}, 
+			Easy = {57, 49, 29, 23, 6}, 
+			Medium = {101, 107, 52, 32, 73}, 
+			Hard = {132, 124, 92, 30, 104}, 
+		},
+		["glacia"] = {
+			Beginner = {28, 31, 5, 23, 0}, 
+			Easy = {50, 54, 10, 35, 5}, 
+			Medium = {88, 69, 36, 32, 56}, 
+			Hard = {113, 108, 74, 28, 103},  
+		},
+		["Glitter Flatter Scatter"] = {
+			Beginner = {25, 27, 10, 10, 0}, 
+			Easy = {47, 48, 10, 16, 13}, 
+			Medium = {87, 76, 49, 11, 116}, 
+			Hard = {135, 97, 21, 18, 140},  
+		},
+		["Good Sound United"] = {
+			Beginner = {25, 22, 14, 6, 0}, 
+			Easy = {58, 52, 23, 2, 12}, 
+			Medium = {84, 75, 45, 11, 60}, 
+			Hard = {126, 106, 72, 8, 106},  
+		},
+		["GRADIUS REMIX（↑↑↓↓←→←→BA Ver.)"] = {
 			Beginner = {10, 10, 0, 7, 0}, 
 			Easy = {29, 21, 16, 43, 0}, 
 			Medium = {39, 37, 10, 55, 10}, 
 			Hard = {60, 64, 16, 63, 67}, 
+		},
+		["I WANT YOUR LOVE (Darwin remix)"] = {
+			Beginner = {12, 7, 1, 0, 0}, 
+			Easy = {23, 21, 3, 0, 0}, 
+			Medium = {59, 56, 3, 17, 12}, 
+			Hard = {88, 63, 58, 0, 44},  
 		},
 		["Let's DANCE aROUND!!"] = {
 			Beginner = {13, 18, 1, 44, 0}, 
@@ -7005,6 +7104,13 @@ DDR_groove_radar_values= {
 			Medium = {65, 58, 23, 65, 22}, 
 			Hard = {98, 80, 12, 13, 91}, 
 		},
+		["Megalara Garuda"] = {
+			Beginner = {23, 18, 14, 0, 0}, 
+			Easy = {41, 44, 10, 70, 6}, 
+			Medium = {99, 88, 7, 20, 104}, 
+			Hard = {118, 103, 25, 20, 107},  
+			Challenge = {144, 119, 23, 56, 114},  
+		},
 		["MEGALOVANIA"] = {
 			Beginner = {17, 24, 0, 32, 0}, 
 			Easy = {42, 33, 5, 67, 0}, 
@@ -7012,11 +7118,29 @@ DDR_groove_radar_values= {
 			Hard = {93, 91, 92, 106, 89}, 
 			Challenge = {126, 107, 165, 104, 107}, 
 		},
+		["Mess With My Emotions"] = {
+			Beginner = {4, 5, 0, 0, 0}, 
+			Easy = {13, 16, 3, 14, 0}, 
+			Medium = {53, 43, 7, 13, 23}, 
+			Hard = {71, 54, 32, 17, 65},  
+		},
+		["PERSIAN LAND"] = {
+			Beginner = {19, 21, 1, 13, 0}, 
+			Easy = {50, 43, 20, 2, 4}, 
+			Medium = {78, 64, 27, 19, 39}, 
+			Hard = {118, 78, 29, 10, 103},  
+		},
 		["Pump Pump Pump"] = {
 			Beginner = {15, 19, 9, 23, 0}, 
 			Easy = {33, 25, 23, 41, 0}, 
 			Medium = {66, 51, 21, 37, 23}, 
 			Hard = {94, 84, 29, 32, 103}, 
+		},
+		["Qwerty"] = {
+			Beginner = {16, 13, 1, 29, 0}, 
+			Easy = {31, 26, 20, 37, 0}, 
+			Medium = {53, 46, 23, 42, 17}, 
+			Hard = {85, 80, 40, 43, 100}, 
 		},
 		["SAYONARA☆ディスコライト"] = {
 			Beginner = {18, 19, 1, 17, 0}, 
@@ -7025,16 +7149,46 @@ DDR_groove_radar_values= {
 			Hard = {78, 59, 25, 51, 63}, 
 		},
 		["STAY GOLD"] = {
-			Beginner = {0, 0, 0, 0, 0}, 
-			Easy = {0, 0, 0, 0, 0}, 
-			Medium = {0, 0, 0, 0, 0}, 
+			Beginner = {42, 38, 30, 11, 25}, 
+			Easy = {42, 38, 30, 11, 25}, 
+			Medium = {62, 71, 50, 16, 106}, 
 			Hard = {87, 102, 49, 14, 150}, 
+		},
+		["stellar rain"] = {
+			Beginner = {6, 6, 0, 0, 0}, 
+			Easy = {25, 24, 7, 43, 0}, 
+			Medium = {44, 42, 14, 24, 10}, 
+			Hard = {79, 72, 49, 22, 100}, 
 		},
 		["Surface"] = {
 			Beginner = {8, 6, 0, 0, 0}, 
 			Easy = {25, 25, 3, 24, 0}, 
 			Medium = {33, 37, 5, 43, 7}, 
 			Hard = {57, 62, 27, 68, 31}, 
+		},
+		["Teleportation"] = {
+			Beginner = {20, 21, 5, 16, 0}, 
+			Easy = {43, 49, 18, 6, 8}, 
+			Medium = {72, 63, 14, 27, 34}, 
+			Hard = {90, 99, 43, 15, 100},  
+		},
+		["Too Late Snow"] = {
+			Beginner = {15, 11, 1, 19, 0}, 
+			Easy = {33, 23, 9, 39, 0}, 
+			Medium = {52, 51, 27, 18, 19}, 
+			Hard = {74, 69, 30, 16, 55},  
+		},
+		["TRUE♥LOVE (Clubstar's True Club Mix)"] = {
+			Beginner = {12, 11, 0, 5, 0}, 
+			Easy = {31, 22, 10, 5, 0}, 
+			Medium = {54, 39, 14, 7, 18}, 
+			Hard = {79, 67, 23, 6, 73},  
+		},
+		["Unreality"] = {
+			Beginner = {12, 14, 3, 17, 0}, 
+			Easy = {30, 29, 9, 32, 0}, 
+			Medium = {61, 58, 14, 55, 50}, 
+			Hard = {94, 79, 27, 44, 109},  
 		},
 		["WARNING×WARNING×WARNING"] = {
 			Beginner = {17, 14, 0, 9, 0}, 
@@ -7047,6 +7201,18 @@ DDR_groove_radar_values= {
 			Easy = {41, 32, 21, 3, 1}, 
 			Medium = {67, 51, 27, 20, 33}, 
 			Hard = {87, 76, 36, 5, 89}, 
+		},
+		["Worst Plan"] = {
+			Beginner = {25, 25, 1, 23, 0}, 
+			Easy = {36, 37, 58, 61, 2}, 
+			Medium = {64, 75, 29, 40, 63}, 
+			Hard = {87, 100, 20, 47, 102}, 
+		},
+		["Wowie Zowie!"] = {
+			Beginner = {11, 10, 1, 9, 0}, 
+			Easy = {26, 21, 34, 44, 0}, 
+			Medium = {54, 47, 10, 13, 28}, 
+			Hard = {75, 84, 10, 14, 101},  
 		},
 	}, 
 -------------------------------------------------- DOUBLE --------------------------------------------------
@@ -11755,7 +11921,8 @@ DDR_groove_radar_values= {
 		["令和"] = {
 			Easy = {25, 23, 1, 56, 0}, 
 			Medium = {38, 29, 29, 27, 3}, 
-			Hard = {54, 47, 29, 62, 19}, 
+			Hard = {54, 47, 29, 62, 19},
+			Challenge = {121, 106, 117, 37, 119},			
 		}, 
 		["Ace out"] = {
 			Easy = {33, 23, 7, 12, 0}, 
@@ -11950,6 +12117,7 @@ DDR_groove_radar_values= {
 			Easy = {52, 68, 16, 26, 35}, 
 			Medium = {91, 85, 49, 14, 104}, 
 			Hard = {123, 93, 45, 13, 113}, 
+			Challenge = {157, 126, 27, 21, 134}, 
 		}, 
 		["New Rules"] = {
 			Easy = {24, 19, 7, 28, 0}, 
@@ -12238,6 +12406,7 @@ DDR_groove_radar_values= {
 			Easy = {23, 22, 5, 29, 0}, 
 			Medium = {49, 44, 5, 13, 3}, 
 			Hard = {74, 58, 25, 13, 24}, 
+			Challenge = {0, 0, 0, 0, 0},
 		}, 
 		["スーパー戦湯ババンバーン"] = {
 			Easy = {43, 36, 14, 26, 3}, 
@@ -12867,11 +13036,13 @@ DDR_groove_radar_values= {
 			Easy = {45, 31, 34, 10, 0}, 
 			Medium = {59, 55, 49, 5, 9}, 
 			Hard = {79, 79, 56, 15, 32}, 
+			Challenge = {0, 0, 0, 0, 0},
 		}, 
 		["患部で止まってすぐ溶ける～狂気の優曇華院"] = {
 			Easy = {45, 37, 7, 2, 2}, 
 			Medium = {62, 60, 21, 23, 23}, 
 			Hard = {95, 102, 16, 4, 65}, 
+			Challenge = {139, 119, 41, 10, 108},
 		}, 
 		["Anthurium"] = {
 			Easy = {31, 23, 9, 29, 0}, 
@@ -12883,6 +13054,12 @@ DDR_groove_radar_values= {
 			Medium = {0, 0, 0, 0, 0}, 
 			Hard = {59, 49, 5, 70, 32}, 
 		}, 
+		["Black Emperor"] = { 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {115, 110, 30, 32, 109}, 
+			Challenge = {158, 110, 25, 37, 117}, 
+		},
 		["Dance Phenomena"] = {
 			Easy = {28, 24, 10, 43, 1}, 
 			Medium = {51, 48, 3, 38, 37}, 
@@ -12892,6 +13069,7 @@ DDR_groove_radar_values= {
 			Easy = {39, 30, 20, 13, 2}, 
 			Medium = {62, 60, 30, 13, 18}, 
 			Hard = {92, 90, 45, 49, 83}, 
+			Challenge = {0, 0, 0, 0, 0}, 
 		}, 
 		["♡Drive My Heart♡"] = {
 			Easy = {25, 24, 5, 8, 0}, 
@@ -12902,7 +13080,12 @@ DDR_groove_radar_values= {
 			Easy = {48, 45, 16, 31, 7}, 
 			Medium = {75, 60, 9, 34, 41}, 
 			Hard = {97, 97, 36, 27, 102}, 
-		}, 
+		},
+		["GERBERA"] = {
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {143, 124, 70, 31, 105}, 
+		},		
 		["GRADIUS REMIX（↑↑↓↓←→←→BA Ver.)"] = {
 			Easy = {28, 21, 16, 43, 0}, 
 			Medium = {39, 37, 10, 55, 10}, 
@@ -12928,12 +13111,27 @@ DDR_groove_radar_values= {
 			Easy = {33, 26, 21, 41, 0}, 
 			Medium = {64, 52, 21, 37, 22}, 
 			Hard = {89, 78, 27, 32, 101}, 
-		}, 
+		},
+		["Qwerty"] = { 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {84, 80, 38, 43, 100}, 
+		},
 		["SAYONARA☆ディスコライト"] = {
 			Easy = {33, 26, 7, 48, 0}, 
 			Medium = {47, 39, 20, 39, 8}, 
 			Hard = {72, 53, 10, 34, 47}, 
-		}, 
+		},
+		["STAY GOLD"] = {
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {0, 0, 0, 0, 0}, 
+		},
+		["stellar rain"] = { 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {0, 0, 0, 0, 0}, 
+		},
 		["Surface"] = {
 			Easy = {25, 25, 5, 24, 0}, 
 			Medium = {33, 50, 5, 42, 7}, 
@@ -12949,5 +13147,10 @@ DDR_groove_radar_values= {
 			Medium = {62, 51, 16, 32, 28}, 
 			Hard = {85, 77, 18, 4, 73}, 
 		}, 
+		["Worst Plan"] = {
+			Easy = {36, 37, 58, 61, 2}, 
+			Medium = {64, 75, 29, 40, 63}, 
+			Hard = {87, 100, 20, 47, 102}, 
+		},
 	},
 }

@@ -7,15 +7,15 @@ return Def.ActorFrame {
 		end
 	end;	
 	Def.Sprite{
-		Texture=THEME:GetPathG("","MusicWheelItem/"..Model().."folder selected"),
-		InitCommand=function(s) s:y(2):zoom(0.46) end,
+		Texture=THEME:GetPathG("","MusicWheelItem/"..Model().."selected"),
+		InitCommand=function(s) s:y(2):zoom(0.91) end,
 	};
 	Def.Sprite{
-		Texture=THEME:GetPathG("","MusicWheelItem/"..Model().."folder flash"),
+		Texture=THEME:GetPathG("","MusicWheelItem/"..Model().."flash"),
 		InitCommand=function(s) s:y(2) end,
 		SetMessageCommand=function(s,params)
 			if params.HasFocus then
-				s:zoom(0.46)
+				s:zoomx(0.915):zoomy(0.76)
 				s:diffuseramp():effectcolor1(color("1,1,1,0.2")):effectcolor2(color("1,1,1,1")):effectperiod(0.5)
 			else
 				s:zoom(0)

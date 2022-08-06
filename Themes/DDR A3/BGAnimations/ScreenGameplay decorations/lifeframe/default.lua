@@ -7,7 +7,7 @@ return Def.ActorFrame{
     Name="LifeFrame",
 	Def.Sprite{
         Texture="stream/base",
-		InitCommand=function(s) s:x(pn==PLAYER_1 and -8 or 10):zoomto(296,20) 
+		InitCommand=function(s) s:x(pn==PLAYER_1 and -7 or 9):zoomto(296,20) 
 			if (GAMESTATE:PlayerIsUsingModifier(pn,'battery') or GAMESTATE:GetPlayMode() == 'PlayMode_Oni') then
 				s:visible(false)
 			else
@@ -34,9 +34,9 @@ return Def.ActorFrame{
 			end;
 		end;
     };
-    Def.Sprite{
+	Def.Sprite{
         Name="LifeFrame"..pn,
-        InitCommand=function(s) s:x(pn==PLAYER_1 and 2 or 0):zoom(0.333):rotationy(pn==PLAYER_2 and 180 or 0):y(3) end,
+        InitCommand=function(s) s:x(pn==PLAYER_1 and -3.97 or 6):zoom(0.667):rotationy(pn==PLAYER_2 and 180 or 0):y(-0.5) end,
         BeginCommand=function(self)
             if GAMESTATE:PlayerIsUsingModifier(pn,'battery') or GAMESTATE:GetPlayMode() == 'PlayMode_Oni' then
             self:Load(THEME:GetPathB("ScreenGameplay","decorations/lifeframe/"..Model().."life"))  
@@ -44,5 +44,6 @@ return Def.ActorFrame{
               self:Load(THEME:GetPathB("ScreenGameplay","decorations/lifeframe/"..Model().."normal"))
           end;
         end
-    }
+    };
+	
 }

@@ -93,7 +93,7 @@ t[#t+1]=Def.ActorFrame{
 	LoadActor(Model().."diff")..{
 		InitCommand=function(self)
 			self:x(pn == PLAYER_1 and cx-434-ox or cx+434+ox);
-			self:y(SCREEN_BOTTOM+35)
+			self:y(SCREEN_BOTTOM+37)
 			self:zoomx(pn == PLAYER_1 and 1 or -1)
 		end;
 		OnCommand=function(self)
@@ -103,8 +103,8 @@ t[#t+1]=Def.ActorFrame{
 	};
 	Def.Sprite{
 		Texture ="diff 1x6",
-		InitCommand=function(s) s:y(SCREEN_BOTTOM+35)
-		s:x(pn == PLAYER_1 and cx-552-ox or cx+552+ox)
+		InitCommand=function(s) s:y(SCREEN_BOTTOM+36)
+		s:x(pn == PLAYER_1 and cx-546-ox or cx+546+ox)
 		s:draworder(110):pause():queuecommand("Set") end,
 		SetCommand=function(self)
 			local diff = GAMESTATE:GetCurrentSteps(pn):GetDifficulty();
@@ -125,7 +125,7 @@ t[#t+1]=Def.ActorFrame{
 		end;
 		OnCommand=function(s)
 			s:sleep(SleepOffset+0.2):linear(0.05)
-			s:x(pn == PLAYER_1 and cx-552 or cx+552) end,
+			s:x(pn == PLAYER_1 and cx-546 or cx+546) end,
 	};
 	LoadActor(Model().."best")..{
 		InitCommand=function(self)

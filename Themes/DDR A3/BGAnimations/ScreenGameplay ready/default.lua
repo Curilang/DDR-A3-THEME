@@ -32,6 +32,7 @@ local function SongSleep()
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Lesson by DJ"													then return 3.5
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "MEGALOVANIA"													then return 1.28
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Avenger"														then return 0.9
+		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "量子の海のリントヴルム"													then return 0.6
 		else 																															 return 1 
 		end
 	else
@@ -45,11 +46,7 @@ end
 
 return Def.ActorFrame {
 	LoadActor("bg")..{
-		InitCommand=function(s) s:Center()
-			if GetCurrentModel() == "Gold" then
-				s:blend(('BlendMode_Add'))
-			end
-		end,
+		InitCommand=function(s) s:Center():blend(('BlendMode_Add')) end,
 		OnCommand=function(s)
 			s:diffusealpha(0):zoom(0)
 			s:linear(0.1):diffusealpha(1):zoom(0.867)

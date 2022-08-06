@@ -3,7 +3,7 @@ local t = Def.ActorFrame {};
 t[#t+1] = Def.ActorFrame {
 	InitCommand=cmd(draworder,99);
 	Name="Frames";
-	LoadActor(Model().."frame")..{
+	LoadActor("frame")..{
 	Name="P1 Frame";
 		InitCommand=cmd(x,SCREEN_LEFT-1;y,SCREEN_BOTTOM-53;halign,1;zoomx,-0.67);
 		OnCommand=function(self)
@@ -24,7 +24,7 @@ t[#t+1] = Def.ActorFrame {
 			end;
 		end;
 	};
-	LoadActor(Model().."frame")..{
+	LoadActor("frame")..{
 	Name="P2 Frame";
 		InitCommand=cmd(x,SCREEN_RIGHT+1;y,SCREEN_BOTTOM-53;halign,1;zoomx,0.67);
 		OnCommand=function(self)
@@ -182,11 +182,11 @@ t[#t+1] = Def.ActorFrame{
 	};
 };
 
-t[#t+1] = LoadActor(Model().."press_button")..{
+t[#t+1] = LoadActor(Model().."button")..{
 	Name = "PressStartP1";
 	InitCommand=function(self)
 		self:zoom(0)
-		self:x(SCREEN_LEFT+160):y(SCREEN_CENTER_Y+109.8)
+		self:x(SCREEN_RIGHT-160):y(SCREEN_CENTER_Y+109.8)
 		self:queuecommand("Set")
 		self:diffusealpha(0)
 	end;
@@ -214,11 +214,11 @@ t[#t+1] = LoadActor(Model().."press_button")..{
 	end;
 };
 
-t[#t+1] = LoadActor(Model().."press_button")..{
+t[#t+1] = LoadActor(Model().."button")..{
 	Name = "PressStartP2";
 	InitCommand=function(self)
 		self:zoom(0)
-		self:x(SCREEN_RIGHT-160):y(SCREEN_CENTER_Y+109.8)
+		self:x(SCREEN_LEFT+160):y(SCREEN_CENTER_Y+109.8)
 		self:queuecommand("Set")
 		self:diffusealpha(0)
 	end;

@@ -7,9 +7,9 @@ end;
 
 if not GAMESTATE:IsDemonstration() then
 	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		if not (GetUserPref("SelectCharacter"..PLAYER_1) == "Random" or GetUserPref("SelectCharacter"..PLAYER_2) == "Random") then
+		--if (not GetUserPref("SelectCharacter"..PLAYER_1) == "Random") or (not GetUserPref("SelectCharacter"..PLAYER_2) == "Random") then
 			t[#t+1] = LoadActor("Cut-In/DanceStages")
-		end
+		--end
 	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
 		t[#t+1] = LoadActor("Cut-In/SNCharacters")
 	end
@@ -27,11 +27,7 @@ if ShowFastSlow() then
 end
 	
 t[#t+1] = StandardDecorationFromFileOptional("StageFrame","StageFrame");
-
-
-if not GAMESTATE:IsDemonstration() then
-	t[#t+1] = StandardDecorationFromFile("StageDisplay","StageDisplay")
-end
+t[#t+1] = StandardDecorationFromFile("StageDisplay","StageDisplay")
 
 for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 	t[#t+1] = LoadActor("lifeframe",pn);

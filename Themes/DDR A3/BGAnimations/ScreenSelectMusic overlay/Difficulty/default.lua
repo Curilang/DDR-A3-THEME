@@ -215,7 +215,7 @@ return Def.ActorFrame{
     ["CurrentSteps" .. ToEnumShortString(pn) .. "ChangedMessageCommand"]=function(s) s:finishtweening():queuecommand("Set") end,
 	Def.Sprite{
 		Texture=Model().."frame",
-		InitCommand=function(s) s:xy(pn==PLAYER_1 and -2 or 2,-17):zoom(0.5):rotationy(pn==PLAYER_1 and 0 or 180) end,
+		InitCommand=function(s) s:xy(pn==PLAYER_1 and 36 or -36,-17):rotationy(pn==PLAYER_1 and 0 or 180) end,
 		OnCommand=function(s) s:diffusealpha(0):sleep(0.4):linear(0.05):diffusealpha(0.75):linear(0.1):diffusealpha(0.25):linear(0.1):diffusealpha(1) end,
 	};
 	Def.Sprite{

@@ -8,7 +8,7 @@ return Def.ActorFrame{
 		OnCommand=function(s) s:sleep(0.3):linear(0.1):diffusealpha(1):sleep(0.6):linear(0.1):diffusealpha(0) end,
 	};
 	Def.Sprite{
-		Texture=THEME:GetPathG("","_doors/background_purple"),
+		Texture=BackgroundEntry(),
 		InitCommand=function(s) s:FullScreen():SetAllStateDelays(0.085):diffusealpha(0) end,
 		OnCommand=function(s) s:sleep(0.9):linear(0.1):diffusealpha(1) end,
 	};
@@ -32,12 +32,12 @@ return Def.ActorFrame{
 	Def.ActorFrame{
 		InitCommand=function(s) s:x(_screen.cx) end,	
 		LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/door up"))..{ 
-			InitCommand=function(s) s:zoom(0.447):y(SCREEN_TOP+30):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.3):linear(0.1):y(SCREEN_TOP+61):diffusealpha(1) end, 
+			InitCommand=function(s) s:zoom(0.667):y(SCREEN_TOP+30):diffusealpha(0) end,
+			OnCommand=function(s) s:sleep(0.3):linear(0.1):y(SCREEN_TOP+63):diffusealpha(1) end, 
 		}; 
 		LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/door down"))..{  
-			InitCommand=function(s) s:zoom(0.447):y(SCREEN_BOTTOM-30):diffusealpha(0) end,
-			OnCommand=function(s) s:sleep(0.3):linear(0.1):y(SCREEN_BOTTOM-61):diffusealpha(1) end, 
+			InitCommand=function(s) s:zoom(0.667):y(SCREEN_BOTTOM-30):diffusealpha(0) end,
+			OnCommand=function(s) s:sleep(0.3):linear(0.1):y(SCREEN_BOTTOM-63):diffusealpha(1) end, 
 		}; 		
 	};
 };

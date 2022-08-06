@@ -154,22 +154,21 @@ local t = Def.ActorFrame{
 	InitCommand=function(s) s:zoom(0.667):Center():queuecommand("Capture") end,
 	CaptureCommand=function(s) 
 		SCREENMAN:GetTopScreen():AddInputCallback(input)
-		--SOUND:PlayOnce(THEME:GetPathS("_PHOTwON","back"))
 	end,
 	LoadActor("bg")..{
 		OnCommand=function(s) s:xy(-6,48):zoomy(0):decelerate(0.2):zoomy(1) end,
 	},
 	Def.ActorFrame{
 		OnCommand=function(s) s:x(-6):valign(1):y(0):decelerate(0.2):y(-195) end,
-		LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."upper_base"))..{
-			InitCommand=function(s) s:valign(1):zoom(0.59) end,
+		LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."upper"))..{
+			InitCommand=function(s) s:valign(1):zoom(0.89):y(2) end,
 		},
 		LoadActor(Language().."title")..{
 			InitCommand=function(s) s:y(-25) end,
 		}
 	};
 	LoadActor(THEME:GetPathG("ScreenSelectStyle","Icon/"..Model().."bottom"))..{
-		InitCommand=function(s) s:zoom(0.43) end,
+		InitCommand=function(s) s:zoom(0.85) end,
  		OnCommand=function(s) s:x(-6):valign(0):y(0):decelerate(0.2):y(289) end,
 	},
 	Def.ActorScroller{

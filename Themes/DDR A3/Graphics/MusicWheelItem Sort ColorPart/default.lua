@@ -3,7 +3,7 @@ return Def.ActorFrame {
 	
 	Def.ActorFrame{
 		Name="Cursor",
-		InitCommand=function(s) s:y(-8):zoom(0.85) end,
+		InitCommand=function(s) s:y(-8):zoom(1.65) end,
 		SetMessageCommand=function(self,params)
 			if params.Index ~= nil then
 				local index = params.Index;
@@ -17,10 +17,10 @@ return Def.ActorFrame {
 			end
 		end;
 		Def.Sprite{
-			Texture=THEME:GetPathG("MusicWheelItem Sort","ColorPart/"..GetCurrentModel().."/category_normal"),
+			Texture=THEME:GetPathG("MusicWheelItem Sort","ColorPart/"..GetCurrentModel().."/normal"),
 		};
 		Def.Sprite{
-			Texture=THEME:GetPathG("MusicWheelItem Sort","ColorPart/"..GetCurrentModel().."/category_selected"),
+			Texture=THEME:GetPathG("MusicWheelItem Sort","ColorPart/"..GetCurrentModel().."/selected"),
 			SetMessageCommand=function(self,params)
 				if params.HasFocus then
 					self:zoom(1)
@@ -32,7 +32,7 @@ return Def.ActorFrame {
 	};
 	Def.ActorFrame{
 		Name="Highlights",
-		InitCommand=function(s) s:zoom(0.85):y(-8) end,
+		InitCommand=function(s) s:zoom(1.62):xy(40,-8) end,
 		SetMessageCommand=function(self, params)
 			if params.Index ~= nil then
 				self:visible( params.HasFocus );
@@ -49,13 +49,13 @@ return Def.ActorFrame {
 			end
 		end;
 		Def.Sprite{
-			Texture=GetCurrentModel().."/category_hl",
+			Texture=GetCurrentModel().."/highlight",
 			InitCommand=function(s) s:diffuseramp():effectcolor1(color("1,1,1,0.2")):effectcolor2(color("1,1,1,1")):effectperiod(0.5) end,
 		};
 		Def.ActorFrame{
 			InitCommand=function(s) s:diffuseramp():effectcolor1(color("1,1,1,0")):effectcolor2(color("1,1,1,1")):effectperiod(0.5) end,
 			Def.Sprite{
-				Texture=GetCurrentModel().."/category_cursor.png",
+				Texture=GetCurrentModel().."/cursor",
 				InitCommand=function(s) s:thump(1):effectmagnitude(1.1,1,0):effectperiod(0.5) end,
 			};
 		};

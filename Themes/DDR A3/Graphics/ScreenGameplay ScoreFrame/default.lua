@@ -55,19 +55,19 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
             end,
 			--Graphic
 			Def.ActorFrame{
-			InitCommand=function(s) s:xy(pn==PLAYER_1 and 0 or 0,-5):zoom(0.5) end,
-				Def.Sprite{
-					Texture=GetCurrentModel().."/diff",
-					InitCommand=function(s) 
-						s:rotationx(IsReverse(pn) and 180 or 0)
-						s:x(-149)
-					end,
-				};
+			InitCommand=function(s) s:xy(pn==PLAYER_1 and 0 or 0,-5) end,
 				Def.Sprite{
 					Texture=GetCurrentModel().."/name",
 					InitCommand=function(s) 
                         s:rotationx(IsReverse(pn) and 180 or 0)
-						s:x(159)
+						s:x(75)
+					end,
+				};
+				Def.Sprite{
+					Texture=GetCurrentModel().."/diff",
+					InitCommand=function(s) 
+						s:rotationx(IsReverse(pn) and 180 or 0)
+						s:x(-80)
 					end,
 				};
             };
@@ -185,7 +185,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
         };
 		Def.Sprite{
             Texture=GetCurrentModel().."/score",
-			InitCommand=function(s) s:y(yval+2):zoom(0.5) end,
+			InitCommand=function(s) s:y(yval+2.4) end,
 		};
 		Def.Sprite{
 			Texture="EX",

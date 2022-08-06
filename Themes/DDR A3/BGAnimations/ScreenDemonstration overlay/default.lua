@@ -6,15 +6,15 @@ return Def.ActorFrame {
 		InitCommand=function(s) s:x(_screen.cx):y(SCREEN_TOP-30) end,
 		OnCommand=function(s) s:linear(0.3):y(SCREEN_TOP+15):sleep(44):linear(0.3):y(SCREEN_TOP-30) end,
 		LoadActor(THEME:GetPathG("ScreenWithMenuElements","header/"..GetCurrentModel().."/base"))..{
-			InitCommand=function(s) s:zoom(0.445) end,
+			InitCommand=function(s) s:zoom(0.667):y(2) end,
 		};
 		LoadActor(THEME:GetPathG("ScreenWithMenuElements","header/"..GetCurrentModel().."/DEMONSTRATION"))..{
 			InitCommand=function(s) s:setsize(340,27) end,
 		};
 	};
-	LoadActor(Model().."base")..{
-		InitCommand=function(s) s:xy(_screen.cx+254,_screen.cy+123+out):zoom(0.335) end,
-		OnCommand=function(s) s:linear(0.3):y(_screen.cy+10):sleep(44):linear(0.3):y(_screen.cy+123+out) end,
+	LoadActor(Model().."demo")..{
+		InitCommand=function(s) s:xy(_screen.cx+254,_screen.cy+122+out):zoom(0.68) end,
+		OnCommand=function(s) s:linear(0.3):y(_screen.cy+9):sleep(44):linear(0.3):y(_screen.cy+122+out) end,
 	};
 	Def.Sprite {
 		InitCommand=function(s) s:x(_screen.cx+254):y(_screen.cy+110+out) end,

@@ -156,12 +156,12 @@ for pn in ivalues(PlayerNumber) do
 				
 				Def.Sprite{
 					Texture=THEME:GetPathG("", "_shared/Style"),
-					InitCommand=function(s) s:horizalign(right):x(pn==PLAYER_1 and -212 or 332):zoom(0.5):y(-33):pause():queuecommand("Set") end,
+					InitCommand=function(s) s:horizalign(right):x(pn==PLAYER_1 and -212 or 332):zoom(1):y(-31):pause():queuecommand("Set") end,
 					OnCommand=function(s)
 						s:zoomy(0);
 						s:sleep(0.45+(i-mStages)*-0.1);
 						s:linear(0.4); 
-						s:zoomy(0.5);
+						s:zoomy(1);
 					end,
 					SetCommand=function(self)
 					local style = GAMESTATE:GetCurrentStyle()
@@ -390,7 +390,7 @@ t[#t+1] = Def.ActorFrame{
 		Def.Sprite{
 			Texture=THEME:GetPathB("ScreenEvaluation","decorations/"..Model().."player"),
 			InitCommand=function(s) 
-			s:xy(pn==PLAYER_1 and SCREEN_LEFT-60 or SCREEN_RIGHT+60,_screen.cy-181):zoom(0.35):rotationy(pn==PLAYER_1 and 0 or 180) end,
+			s:xy(pn==PLAYER_1 and SCREEN_LEFT-60 or SCREEN_RIGHT+60,_screen.cy-181):zoom(0.667):rotationy(pn==PLAYER_1 and 0 or 180) end,
 			OnCommand=function(s) s:linear(0.25):x(pn==PLAYER_1 and SCREEN_LEFT+52 or SCREEN_RIGHT-52) end,
 			OffCommand=function(s) s:linear(0.25):addx(pn==PLAYER_1 and -300 or 300) end,
 		};

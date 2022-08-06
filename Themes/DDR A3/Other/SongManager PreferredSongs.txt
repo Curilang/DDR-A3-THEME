@@ -4,26 +4,51 @@
 20 - DDR A3\Ue ue shita shita hidari migi hidari migi BA
 20 - DDR A3\Usatei
 20 - DDR A3\Kanbu de tomatte sugu tokeru ~ kyouki no Udongein
+20 - DDR A3\Kyoka suigetsurou (DDR EDITION)
+20 - DDR A3\Nanahoshi
+20 - DDR A3\Ryoushi no umi no Lindwurm
+
+20 - DDR A3\ALBIDA
 20 - DDR A3\Anthurium
 20 - DDR A3\Beluga
+20 - DDR A3\Black Emperor
+20 - DDR A3\Closer to my Heart (jun remix)
 20 - DDR A3\Dance Phenomena
 20 - DDR A3\Deep tenDon Reflex
+20 - DDR A3\DOUBLE TORNARD
 20 - DDR A3\Drive My Heart
 20 - DDR A3\Fleur
+20 - DDR A3\GERBERA
+20 - DDR A3\glacia
+20 - DDR A3\Glitter Flatter Scatter
+20 - DDR A3\Good Sound United
 20 - DDR A3\GRADIUS REMIX (UUDDLRLRBA Ver.)
+20 - DDR A3\I WANT YOUR LOVE (Darwin remix)
 20 - DDR A3\Let's DANCE aROUND!!
 20 - DDR A3\Like A Star
+20 - DDR A3\Megalara Garuda
 20 - DDR A3\MEGALOVANIA
+20 - DDR A3\Mess With My Emotions
+20 - DDR A3\PERSIAN LAND
 20 - DDR A3\Pump Pump Pump
+20 - DDR A3\Qwerty
 20 - DDR A3\SAYONARA disco light
 20 - DDR A3\STAY GOLD
+20 - DDR A3\stellar rain
 20 - DDR A3\Surface
+20 - DDR A3\Teleportation
+20 - DDR A3\Too Late Snow
+20 - DDR A3\TRUE LOVE (Clubstar's True Club Mix)
+20 - DDR A3\Unreality
 20 - DDR A3\WARNING WARNING WARNING
 20 - DDR A3\Wolf's Rain
+20 - DDR A3\Worst Plan
+20 - DDR A3\Wowie Zowie!
 
 ---DDR GRAND PRIX
 
 19 - DDR GRAND PRIX\Ai no tame ni
+19 - DDR GRAND PRIX\Odoru Pompokolin
 19 - DDR GRAND PRIX\Orion wo nazoru
 19 - DDR GRAND PRIX\Kaikai kitan
 19 - DDR GRAND PRIX\Kaibutsu
@@ -41,6 +66,7 @@
 11 - DDR X\PORIRIZUMU
 14 - DDR 2013\Maji LOVE 1000%
 19 - DDR GRAND PRIX\Yoru ni kakeru
+19 - DDR GRAND PRIX\Lum no love song
 19 - DDR GRAND PRIX\Luka luka night fever
 19 - DDR GRAND PRIX\Renai revolution 21
 19 - DDR GRAND PRIX\Wasurena
@@ -72,7 +98,7 @@
 18 - DDR A20 PLUS\Zassou tamashii namen na yo!
 18 - DDR A20 PLUS\Shijou no laturia
 18 - DDR A20 PLUS\Shisouhan
-18 - DDR A20 PLUS\Shakunetsu Pt 2 Long Train Running
+18 - DDR A20 PLUS\Shakunetsu Pt.2 Long Train Running
 18 - DDR A20 PLUS\S'il vous president
 18 - DDR A20 PLUS\Super sentou Babanburn
 18 - DDR A20 PLUS\Skyclad no kansokusha

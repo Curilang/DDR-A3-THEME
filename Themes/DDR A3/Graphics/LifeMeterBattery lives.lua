@@ -103,15 +103,15 @@ return Def.ActorFrame{
 		if params.Player ~= player then return end;
 			self:finishtweening();
 			if params.LivesLeft == 4 then 
-				self:zoomto(0,26);
+				self:zoomto(0,20);
 			elseif params.LivesLeft == 3 then
-				self:zoomto(77,26);
+				self:zoomto(77,20);
 			elseif params.LivesLeft == 2 then
-				self:zoomto(152,26);
+				self:zoomto(152,20);
 			elseif params.LivesLeft == 1 then
-				self:zoomto(228,26);
+				self:zoomto(228,20);
 			elseif params.LivesLeft == 0 then
-				self:zoomto(296,26);
+				self:zoomto(296,20);
 			end;
 		end;
 	};

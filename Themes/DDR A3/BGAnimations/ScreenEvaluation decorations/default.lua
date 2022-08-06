@@ -80,7 +80,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
         OffCommand=function(s) s:linear(0.25):diffusealpha(0) end,
         Def.Sprite{
 			Texture=THEME:GetPathG("", "_shared/Style"),
-			InitCommand=function(s) s:xy(2,5):zoom(0.55):pause():queuecommand("Set") end,
+			InitCommand=function(s) s:xy(2,5):pause():queuecommand("Set") end,
 			SetCommand=function(self)
 				local style = GAMESTATE:GetCurrentStyle()
 				if style:GetStyleType() == "StyleType_OnePlayerOneSide" then
@@ -124,7 +124,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 	t[#t+1] = Def.ActorFrame{ 
 		Def.Sprite{
 			Texture=Model().."player",
-			InitCommand=function(s) s:xy(pn==PLAYER_1 and SCREEN_LEFT+52 or SCREEN_RIGHT-52,_screen.cy-181):zoom(0.35):rotationy(pn==PLAYER_1 and 0 or 180) end,
+			InitCommand=function(s) s:xy(pn==PLAYER_1 and SCREEN_LEFT+48 or SCREEN_RIGHT-48,_screen.cy-181):zoom(0.667):rotationy(pn==PLAYER_1 and 0 or 180) end,
 			OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -300 or 300) end,
 		};
 		Def.BitmapText{
@@ -146,7 +146,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 	if (StageIndex == FinalStage+1) or (StageIndex == FinalStage+2) then
 	else
 		for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
-			t[#t+1] = LoadActor(THEME:GetPathB("GameDecoration","3 Stars"))..{
+			t[#t+1] = LoadActor(THEME:GetPathB("ScreenEvaluation","decorations/stars"))..{
 				InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-54 or _screen.cx+278,_screen.cy-10):zoom(0.667) end,
 				OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -700 or 700) end,
 			};

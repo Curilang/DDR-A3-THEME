@@ -385,7 +385,6 @@ function OptionRowSpeedDisplay()
 			else
 				WritePrefToFile("OptionRowSpeedDisplay",'Off');
 			end;
-			THEME:ReloadMetrics();
 		end;
 	};
 	setmetatable( t, t );
@@ -502,7 +501,6 @@ function OptionRowModel()
 			else
 				WritePrefToFile("OptionRowModel",'Gold');
 			end;
-			THEME:ReloadMetrics();
 		end;
 	};
 	setmetatable( t, t );
@@ -539,7 +537,6 @@ function OptionRowVersion()
 			else
 				WritePrefToFile("OptionRowVersion",'A20');
 			end;
-			THEME:ReloadMetrics();
 		end;
 	};
 	setmetatable( t, t );
@@ -584,7 +581,6 @@ function OptionRowGoldenLeague()
 			else
 				WritePrefToFile("OptionRowGoldenLeague",'Off');
 			end;
-			THEME:ReloadMetrics();
 		end;
 	};
 	setmetatable( t, t );
@@ -659,6 +655,82 @@ function OptionRowJudgementAnimation()
 				WritePrefToFile("OptionRowJudgementAnimation",'Normal');
 			end;
 			THEME:ReloadMetrics();
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end
+
+function OptionRowDanCourse()
+	local t = {
+		Name = "DanCourse";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = true;
+		ExportOnChange = false;
+		Choices = {"None" ,"1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "Kaiden", };
+		LoadSelections = function(self, list, pn)
+			if ReadPrefFromFile("OptionRowDanCourse") ~= nil then
+				if GetUserPref("OptionRowDanCourse")=='None' then
+					list[1] = true
+				elseif GetUserPref("OptionRowDanCourse")=='1st' then
+					list[2] = true
+				elseif GetUserPref("OptionRowDanCourse")=='2nd' then
+					list[3] = true
+				elseif GetUserPref("OptionRowDanCourse")=='3rd' then
+					list[4] = true
+				elseif GetUserPref("OptionRowDanCourse")=='4th' then
+					list[5] = true
+				elseif GetUserPref("OptionRowDanCourse")=='5th' then
+					list[6] = true
+				elseif GetUserPref("OptionRowDanCourse")=='6th' then
+					list[7] = true
+				elseif GetUserPref("OptionRowDanCourse")=='7th' then
+					list[8] = true
+				elseif GetUserPref("OptionRowDanCourse")=='8th' then
+					list[9] = true
+				elseif GetUserPref("OptionRowDanCourse")=='9th' then
+					list[10] = true
+				elseif GetUserPref("OptionRowDanCourse")=='10th' then
+					list[11] = true
+				elseif GetUserPref("OptionRowDanCourse")=='Kaiden' then
+					list[12] = true
+				else
+					list[1] = true
+				end
+			else
+				WritePrefToFile("OptionRowDanCourse",'None');
+				list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			if list[1] then
+				WritePrefToFile("OptionRowDanCourse",'None');
+			elseif list[2] then
+				WritePrefToFile("OptionRowDanCourse",'1st');
+			elseif list[3] then
+				WritePrefToFile("OptionRowDanCourse",'2nd');
+			elseif list[4] then
+				WritePrefToFile("OptionRowDanCourse",'3rd');
+			elseif list[5] then
+				WritePrefToFile("OptionRowDanCourse",'4th');
+			elseif list[6] then
+				WritePrefToFile("OptionRowDanCourse",'5th');
+			elseif list[7] then
+				WritePrefToFile("OptionRowDanCourse",'6th');
+			elseif list[8] then
+				WritePrefToFile("OptionRowDanCourse",'7th');
+			elseif list[9] then
+				WritePrefToFile("OptionRowDanCourse",'8th');
+			elseif list[10] then
+				WritePrefToFile("OptionRowDanCourse",'9th');
+			elseif list[11] then
+				WritePrefToFile("OptionRowDanCourse",'10th');
+			elseif list[12] then
+				WritePrefToFile("OptionRowDanCourse",'Kaiden');
+			else
+				WritePrefToFile("OptionRowDanCourse",'None');
+			end;
 		end;
 	};
 	setmetatable( t, t );

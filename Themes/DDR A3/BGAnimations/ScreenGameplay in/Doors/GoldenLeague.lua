@@ -60,38 +60,20 @@ return Def.ActorFrame{
 		InitCommand=cmd(CenterX);
 		Def.ActorFrame{
 		OnCommand=function(s) s:linear(0.25):y(SCREEN_TOP-30):diffusealpha(0) end,
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/"..Model().."door up"))..{
-				InitCommand=function(s) s:zoom(0.447):y(SCREEN_TOP+77):diffusealpha(1) end, 
+			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/door"))..{
+				InitCommand=function(s) s:zoom(0.667):y(SCREEN_TOP+75):diffusealpha(1) end, 
 			};
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/squares"))..{
-				InitCommand=function(s) s:zoom(0.445):y(SCREEN_TOP+15):diffusealpha(1) end,
-			};	
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/light up"))..{
-				InitCommand=function(s) s:zoom(0.447):y(SCREEN_TOP+61):diffusealpha(1) end,
-			};
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/stars"))..{
-				InitCommand=function(s) s:zoom(0.26):x(339):y(SCREEN_TOP+2):diffusealpha(1) end,
-			};
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/stars"))..{
-				InitCommand=function(s) s:zoom(0.26):x(-339):y(SCREEN_TOP+2):diffusealpha(1) end, 
+			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/light"))..{
+				InitCommand=function(s) s:zoom(0.667):y(SCREEN_TOP+61):diffusealpha(1) end,
 			};
 		};
 		Def.ActorFrame{
 		OnCommand=function(s) s:linear(0.25):y(SCREEN_TOP+30):diffusealpha(0) end,
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/"..Model().."door down"))..{
-				InitCommand=function(s) s:zoom(0.447):y(SCREEN_BOTTOM-77):diffusealpha(1) end, 
+			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/door"))..{
+				InitCommand=function(s) s:rotationz(180):zoom(0.667):y(SCREEN_BOTTOM-75):diffusealpha(1) end, 
 			};
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/squares"))..{
-				InitCommand=function(s) s:rotationx(180):zoom(0.445):y(SCREEN_BOTTOM-15):diffusealpha(1) end,
-			};
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/light down"))..{
-				InitCommand=function(s) s:zoom(0.447):y(SCREEN_BOTTOM-61):diffusealpha(0) end, 
-			};
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/stars"))..{
-				InitCommand=function(s) s:zoom(0.26):x(339):y(SCREEN_BOTTOM-4):diffusealpha(1) end, 
-			};
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/stars"))..{
-				InitCommand=function(s) s:zoom(0.26):x(-339):y(SCREEN_BOTTOM-4):diffusealpha(1) end,
+			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/light"))..{
+				InitCommand=function(s) s:rotationz(180):zoom(0.667):y(SCREEN_BOTTOM-61):diffusealpha(1) end, 
 			};
 		};
 	};

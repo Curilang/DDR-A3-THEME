@@ -8,11 +8,11 @@ return Def.ActorFrame{
 	};
 	
 	LoadActor(THEME:GetPathB("ScreenLogo","decorations/"..Model().."logo"))..{
-		InitCommand=function(s) s:xy(_screen.cx,_screen.cy-14):setsize(725,325) end,
+		InitCommand=function(s) s:x(_screen.cx):y(_screen.cy-14):zoom(0.667) end,
 	};
 	
 	LoadActor(THEME:GetPathB("ScreenLogo","decorations/copyright"))..{
-		InitCommand=cmd(CenterX;y,SCREEN_BOTTOM-98;zoom,0.54);
+		InitCommand=cmd(CenterX;y,SCREEN_BOTTOM-98;zoom,0.777);
 	};
 	
 	Def.Quad{

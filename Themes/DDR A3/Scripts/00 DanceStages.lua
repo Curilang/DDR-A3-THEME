@@ -538,26 +538,6 @@ setmetatable( t, t );
 return t;
 end;
 
-function CharactersOption()
-	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		return "lua,SelectCharacter()"
-	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
-		return "lua,OptionRowCharacters()"
-	end
-end
-
-function SelectStage()
-	return "lua,SelectDanceStage()"
-end
-
-function ThemeNumber()
-	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		return "ST,SM,JA,SS,FS,CU,SA,GD,BM,SP,MD,GL,BS,CS,DS,RM,C1,C2,C3"
-	else
-		return "ST,SM,JA,SS,FS,CU,SA,GD,BM,SP,MD,GL" 
-	end
-end
-
 function DSLoader()
 	local DanceStagesDir = GetAllDanceStagesNames()
 	table.remove(DanceStagesDir,IndexKey(DanceStagesDir,"DEFAULT"))

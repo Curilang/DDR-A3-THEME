@@ -44,11 +44,10 @@ end
 if headerTextImage then
 	t[#t+1] = LoadActor(GetCurrentModel().."/base")..{
 		InitCommand=function(self)
-			self:y(-10)
-			self:zoom(0.445)
+			self:y(-9)
+			self:zoom(0.667)
 		end;
 	};
-	
 	t[#t+1] = LoadActor(GetCurrentModel().."/"..headerTextImage)..{
 		InitCommand=function(self)
 			self:y(-11)

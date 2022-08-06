@@ -29,6 +29,8 @@ local t = Def.ActorFrame {
 					self:settextf("HOW TO PLAY")
 				elseif GAMESTATE:IsEventMode() then
 					self:settextf("EVENT");
+				elseif GAMESTATE:IsDemonstration() then
+					self:settextf("DEMO");
 				else
 					local thed_stage= thified_curstage_index(false)
 					

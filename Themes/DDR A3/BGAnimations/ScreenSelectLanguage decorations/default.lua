@@ -29,10 +29,10 @@ local function MakeRowItem(LangItems, idx)
         end,
         Def.ActorFrame{
             Def.Sprite{
-                Texture="scpr_selectwin",
+                Texture="back",
             };
             Def.Sprite{
-                Texture="scpr_selecteff_b",
+                Texture="color",
                 InitCommand=function(s) s:blend(Blend.Add) end,
                 GainFocusCommand=function(s) s:finishtweening():diffusealpha(1):diffuseshift():effectcolor1(Alpha(Color.White,0.75))
                     :effectcolor2(Alpha(Color.White,0.5)):effectperiod(0.3)
@@ -40,7 +40,7 @@ local function MakeRowItem(LangItems, idx)
                 LoseFocusCommand=function(s) s:finishtweening():stopeffect():diffusealpha(0.5) end,
             };
             Def.Sprite{
-                Texture="scpr_selecteff_c",
+                Texture="line",
                 InitCommand=function(s) s:visible(false):zoomx(0.97):zoomy(0.9) end,
                 GainFocusCommand=function(s) s:visible(true):queuecommand("Animate") end,
                 AnimateCommand=function(s) s:finishtweening():linear(0.15):zoom(1):linear(0.15):zoomx(0.97):zoomy(0.9)
@@ -49,7 +49,7 @@ local function MakeRowItem(LangItems, idx)
             };
         };
         Def.Sprite{
-            Texture="scpr_"..LangItems,
+            Texture=LangItems,
         };  
     };
 end
@@ -102,9 +102,9 @@ t[#t+1] = Def.ActorFrame{
     Def.ActorFrame{
         OffCommand=function(s) s:linear(0.2):zoomy(0) end,
         Def.Sprite{
-            Texture=Model().."panel_lang",
-            InitCommand=function(s) s:setsize(600,170):x(0.7) end,
-			OnCommand=function(s) s:zoomy(0):linear(0.2):zoomy(1) end,
+            Texture=GetCurrentModel().."/base",
+			InitCommand=function(s) s:zoom(0.667):x(0.7) end,
+			OnCommand=function(s) s:zoomy(0):linear(0.2):zoomy(0.667) end,
         };
         Def.ActorScroller{
             InitCommand=function(s) s:zoom(0.67):y(-36) end,
@@ -123,40 +123,38 @@ t[#t+1] = Def.ActorFrame{
         OnCommand=function(s) s:linear(0.2):zoomy(0.67) end,
         OffCommand=function(s) s:linear(0.2):zoomy(0) end,
         Def.Sprite{
-            Texture=THEME:GetPathG("","ScreenSelectProfile/"..Model().."upper_base"),
-			InitCommand=function(s) s:setsize(440,55) end, 
+            Texture=THEME:GetPathG("","ScreenSelectProfile/"..Model().."upper"),
         };
         Def.Sprite{
             BeginCommand=function(s) s:playcommand("MoveScroller") end,
             MoveScrollerMessageCommand=function(s)
                 if curIndex == 1 then
-                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/scpr_selectlang_jp"))
+                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/lang_jp"))
                 elseif curIndex == 2 then
-                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/scpr_selectlang_en"))
+                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/lang_en"))
                 else
-                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/scpr_selectlang_kor"))
+                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/lang_kor"))
                 end
             end
         };
     };
     Def.ActorFrame{
         Name="Bottom",
-        InitCommand=function(s) s:x(1):y(117):zoomx(0.67):zoomy(0) end,
+        InitCommand=function(s) s:x(1):y(116):zoomx(0.67):zoomy(0) end,
         OnCommand=function(s) s:linear(0.2):zoomy(0.67) end,
         OffCommand=function(s) s:linear(0.2):zoomy(0) end,
         Def.Sprite{
-            Texture=THEME:GetPathG("","ScreenSelectProfile/"..Model().."down_base"),
-			InitCommand=function(s) s:setsize(442,100) end,
+            Texture=THEME:GetPathG("","ScreenSelectProfile/"..Model().."bottom"),
         };
         Def.Sprite{
             BeginCommand=function(s) s:playcommand("MoveScroller") end,
             MoveScrollerMessageCommand=function(s)
                 if curIndex == 1 then
-                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..Model().."scpr_operate_jp"))
+                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..GetCurrentModel().."/japanese"))
                 elseif curIndex == 2 then
-                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..Model().."scpr_operate_en"))
+                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..GetCurrentModel().."/english"))
                 else
-                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..Model().."scpr_operate_kor"))
+                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..GetCurrentModel().."/korean"))
                 end
             end
         };

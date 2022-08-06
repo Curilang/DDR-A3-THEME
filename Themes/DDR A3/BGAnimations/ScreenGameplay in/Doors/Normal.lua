@@ -16,60 +16,36 @@ return Def.ActorFrame{
 		InitCommand=cmd(CenterX);	
 		
 		Def.ActorFrame{
+		InitCommand=function(s) s:zoom(0.667):y(SCREEN_TOP+61):diffusealpha(1) end,
 		OnCommand=function(s) s:linear(0.25):y(SCREEN_TOP-30):diffusealpha(0) end,
-			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/door up"))..{
-				InitCommand=function(s) s:zoom(0.447):y(SCREEN_TOP+61):diffusealpha(1) end,
-			};
-			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/stars"))..{
-				InitCommand=function(s) s:zoom(0.26):x(339):y(SCREEN_TOP+2):diffusealpha(1) end,
-			};
-			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/stars"))..{
-				InitCommand=function(s) s:zoom(0.26):x(-339):y(SCREEN_TOP+2):diffusealpha(1) end,
-			};
-			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/light up"))..{
-				InitCommand=function(s) s:zoom(0.447):y(SCREEN_TOP+61):diffusealpha(1) end, 
-			};
-			LoadActor(THEME:GetPathG("ScreenWithMenuElements","header/"..GetCurrentModel().."/base"))..{
-				InitCommand=function(s) s:zoom(0.445):y(15):diffusealpha(1) end,
-			};		
-			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/squares"))..{
-				InitCommand=function(s) s:zoom(0.445):y(15):diffusealpha(1) end,
-			};
+			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/ScreenStageInformation/top"));
+			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/ScreenStageInformation/upquad"));
+			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/ScreenStageInformation/lightup"));
 		};
 		
 		Def.ActorFrame{
+			InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2) end,
 			OnCommand=function(s) s:linear(0.15):diffusealpha(0) end,
 			LoadActor(THEME:GetPathG("","_doors/center_circle"))..{
-				InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2):diffusealpha(0.5) end,
+				InitCommand=function(s) s:diffusealpha(0.5) end,
 			};
 			LoadActor(THEME:GetPathG("","_doors/center_outline"))..{
-				InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2):diffusealpha(0.5) end,
+				InitCommand=function(s) s:diffusealpha(0.5) end,
 			};
 			LoadActor(THEME:GetPathG("","_doors/center_lines_up"))..{
-				InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2):diffusealpha(1) end,
+				InitCommand=function(s) s:diffusealpha(1) end,
 			};
 			LoadActor(THEME:GetPathG("","_doors/center_lines_center"))..{
-				InitCommand=function(s) s:zoom(0.447):y(_screen.cy-2.2):diffusealpha(1) end,
+				InitCommand=function(s) s:diffusealpha(1) end,
 			};
 		};
 		
 		Def.ActorFrame{
-			OnCommand=function(s) s:linear(0.25):y(SCREEN_TOP+30):diffusealpha(0) end,
-			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/door down"))..{
-				InitCommand=function(s) s:zoom(0.447):y(SCREEN_BOTTOM-61):diffusealpha(1) end,
-			};
-			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/stars"))..{
-				InitCommand=function(s) s:zoom(0.26):x(339):y(SCREEN_BOTTOM-4):diffusealpha(1) end,
-			};
-			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/stars"))..{
-				InitCommand=function(s) s:zoom(0.26):x(-339):y(SCREEN_BOTTOM-4):diffusealpha(1) end,
-			};
-			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/squares"))..{
-				InitCommand=function(s) s:rotationx(180):zoomx(0.38):zoomy(0.3):y(SCREEN_BOTTOM-8):diffusealpha(1) end,
-			};
-			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/light down"))..{
-				InitCommand=function(s) s:zoom(0.447):y(SCREEN_BOTTOM-61):diffusealpha(1) end, 
-			};
+			InitCommand=function(s) s:zoom(0.667):y(SCREEN_BOTTOM-61):diffusealpha(1) end,
+			OnCommand=function(s) s:linear(0.25):y(SCREEN_BOTTOM+30):diffusealpha(0) end,
+			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/ScreenStageInformation/bottom"));
+			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/ScreenStageInformation/downquad"));
+			LoadActor(THEME:GetPathG("","_doors/"..GetCurrentModel().."/ScreenStageInformation/lightdown"));
 		};
 		
 	};

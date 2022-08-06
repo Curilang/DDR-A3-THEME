@@ -26,6 +26,7 @@ local function SongSleep()
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "The legend of MAX(X-Special)"									then return 0.2
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "DDR TAGMIX -LAST DanceR-"										then return 2
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Avenger"														then return 0.8
+		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "量子の海のリントヴルム"													then return 0.6
 		else 																															 return 1 
 		end
 	else
@@ -36,11 +37,7 @@ end
 if not (GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Lesson by DJ") then
 	t[#t+1] = Def.ActorFrame {
 		LoadActor( "bg" )..{
-			InitCommand=function(s) s:Center()
-				if GetCurrentModel() == "Gold" then
-					s:blend(('BlendMode_Add'))
-				end
-			end,
+			InitCommand=function(s) s:Center():blend(('BlendMode_Add')) end,
 			OnCommand=function(s)
 				s:diffusealpha(0):zoom(0)
 				s:linear(0.1):diffusealpha(1):zoom(0.867)

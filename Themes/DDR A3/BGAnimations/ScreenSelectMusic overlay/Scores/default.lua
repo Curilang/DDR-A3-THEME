@@ -101,7 +101,7 @@ end
 return Def.ActorFrame{
 	Def.Sprite{
         Texture=Model().."frame",
-        InitCommand=function(s) s:valign(0):xy(pn==PLAYER_1 and -12 or 12, 25):zoom(0.5) end,
+        InitCommand=function(s) s:valign(0):xy(pn==PLAYER_1 and -11 or 10, 22):zoom(0.846) end,
     };
 	Def.Sprite{
         Texture=Language().."score",

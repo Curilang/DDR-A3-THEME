@@ -12,9 +12,8 @@ end
 
 if footerTextImage then
 	t[#t+1] = LoadActor(GetCurrentModel().."/base") .. {
-		InitCommand=cmd(zoom,0.34;y,12);
+		InitCommand=cmd(zoom,0.667;y,11);
 	};
-	
 	t[#t+1] = LoadActor(GetCurrentModel().."/"..footerTextImage)..{
 		InitCommand=cmd(zoom,0.667;xy,0.5,12);
 	};

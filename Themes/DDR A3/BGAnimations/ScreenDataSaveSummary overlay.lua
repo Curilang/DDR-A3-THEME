@@ -51,24 +51,36 @@ function LoadPlayerStuff(Player)
       end;
     };
 	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."profile") )..{
-		InitCommand=cmd(diffusealpha,0;zoom,0.5;y,-76);
-		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(0.55):linear(0.1):zoom(0.5) end,
+		InitCommand=cmd(diffusealpha,0;y,-76);
+		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(1.1):linear(0.1):zoom(1) end,
 		OffCommand=function(s) s:diffusealpha(0) end,
 	};
 	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model()..Language().."dan") )..{
-		InitCommand=cmd(diffusealpha,0;zoom,0.5;y,50);
-		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(0.55):linear(0.1):zoom(0.5) end,
+		InitCommand=cmd(diffusealpha,0;y,50);
+		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(1.1):linear(0.1):zoom(1) end,
+		OffCommand=function(s) s:diffusealpha(0) end,
+	};
+	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/Dan/"..DanCourse()) )..{
+		InitCommand=function(s) s:diffusealpha(0):xy(-56,60) end,
+		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(1.1):linear(0.1):zoom(1) end,
+		OffCommand=function(s) s:diffusealpha(0) end,
+	};
+	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/Dan/"..DanCourse()) )..{
+		InitCommand=function(s) s:diffusealpha(0):xy(136,60) end,
+		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(1.1):linear(0.1):zoom(1) end,
 		OffCommand=function(s) s:diffusealpha(0) end,
 	};
 	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."league") )..{
-		InitCommand=cmd(diffusealpha,0;zoom,0.5;y,154);
-		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(0.55):linear(0.1):zoom(0.5) end,
+		InitCommand=cmd(diffusealpha,0;y,154);
+		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(1.1):linear(0.1):zoom(1) end,
 		OffCommand=function(s) s:diffusealpha(0) end,
 	};
 	t[#t+1] = Def.Sprite{
-		InitCommand=function(s) s:diffusealpha(0):zoom(0.3):x(43):y(154)
+		InitCommand=function(s) s:diffusealpha(0):y(154)
 			if GoldenLeague() then
-				s:Load(THEME:GetPathG("","ScreenSelectProfile/"..League().."icon"))
+				s:Load(THEME:GetPathG("","ScreenSelectProfile/"..League().."icon")):zoom(0.3):x(43)
+			else	
+				s:Load(THEME:GetPathG("","ScreenSelectProfile/icon_none")):zoom(1):x(98)
 			end
 		end,
 		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1) end,
@@ -84,18 +96,12 @@ function LoadPlayerStuff(Player)
 		OffCommand=function(s) s:diffusealpha(0) end,
 	};
 	t[#t+1] = LoadActor(RegionFile())..{
-		InitCommand=function(s) s:diffusealpha(0):x(130)
-			if GetCurrentLanguage() == "English" or GetCurrentLanguage() == "Korean" then
-				s:y(-82)
-			else
-				s:y(-81)
-			end
-		end,
+		InitCommand=function(s) s:diffusealpha(0):x(130) end,
 		OnCommand=function(s)
 			if GetCurrentLanguage() == "English" or GetCurrentLanguage() == "Korean" then
-				s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(1.1):linear(0.1):zoom(1)
+				s:y(-82):sleep(0.7):linear(0.1):diffusealpha(1):zoom(1.1):linear(0.1):zoom(1)
 			else
-				s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(1.1):linear(0.1):zoomx(1):zoomy(0.8)
+				s:y(-81):sleep(0.7):linear(0.1):diffusealpha(1):zoom(1.1):linear(0.1):zoomx(1):zoomy(0.8)
 			end
 		end,
 		OffCommand=function(s) s:diffusealpha(0) end,
@@ -104,15 +110,15 @@ function LoadPlayerStuff(Player)
 	Name="Topper";
 	OnCommand=cmd(y,0;linear,0.3;y,-238;);
 	OffCommand=function(self) self:linear(0.1):y(0):sleep(0):diffusealpha(0) end,
-		LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."upper_base"))..{
-			InitCommand=function(s) s:valign(1):zoom(0.667) end,      
+		LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."upper"))..{
+			InitCommand=function(s) s:valign(1) end,      
 		};
 		Def.Sprite{
 			InitCommand=function(s) s:y(-27)
 				if Player == PLAYER_1 then
-					s:Load(THEME:GetPathG("","ScreenSelectProfile/PLAYER_1"))
+					s:Load(THEME:GetPathG("","ScreenSelectProfile/P1"))
 				else
-					s:Load(THEME:GetPathG("","ScreenSelectProfile/PLAYER_2"))
+					s:Load(THEME:GetPathG("","ScreenSelectProfile/P2"))
 				end
 			end,
 		};
@@ -121,8 +127,8 @@ function LoadPlayerStuff(Player)
 	Name="Bottom";
 	OnCommand=cmd(y,0;linear,0.3;y,224;);
 	OffCommand=function(self) self:linear(0.1):y(0):sleep(0):diffusealpha(0) end,
-		LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."down_base"))..{
-			InitCommand=function(s) s:valign(0):zoom(0.667) end,
+		LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."bottom"))..{
+			InitCommand=function(s) s:valign(0):y(-6) end,
 		};
     };
 	t[#t+1] = Def.ActorFrame {

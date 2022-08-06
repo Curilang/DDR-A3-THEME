@@ -104,14 +104,14 @@ local function MakeRow(rownames, idx)
 				if GetCurrentModel() == "Gold" then
 					s:diffuse(color("#dac42e"))
 				else
-					s:diffuse(color("#00d8ff"))
+					s:diffuse(color("#00ffde"))
 				end
 				s:x(64):setsize(142,30)
 			end,
 		};
 		LoadActor("bsln");
 		LoadFont("_avenirnext lt pro bold Bold 20px")..{
-			InitCommand=cmd(x,-122;uppercase,true;halign,0;zoom,0.75);
+			InitCommand=cmd(x,-122;uppercase,true;halign,0;zoom,0.75;maxwidth,150);
 			OnCommand=function(s) s:queuecommand("Set") end,
 			SetCommand=function(self)
                 local screen = SCREENMAN:GetTopScreen();
@@ -129,7 +129,7 @@ local function MakeRow(rownames, idx)
 		};
 		--SPEED DISPLAY
 		Def.ActorFrame{
-			InitCommand=function(s) s:visible(SpeedDisplay()) end,
+			Condition=SpeedDisplay();
 			Name="Row Name";
 				OnCommand=function(s) s:queuecommand("Set") end,
 				SetCommand=function(self)
@@ -187,7 +187,7 @@ local function MakeRow(rownames, idx)
 		LoadFont("_avenirnext lt pro bold Bold 20px")..{
 			Name="Row Name";
             Text="";
-			InitCommand=function(s) s:visible(SpeedDisplay())end,
+			Condition=SpeedDisplay();
 			OnCommand=function(s) s:queuecommand("Set") end,
 			SetCommand=function(self)
                 if not IsExitRow() then
@@ -335,9 +335,7 @@ local t = Def.ActorFrame{
 	};
 	Def.ActorFrame{
 		InitCommand=function(s) s:y(_screen.cy-150) end,
-		LoadActor(Model().."header")..{
-            InitCommand=function(s) s:zoom(0.5) end,
-        };
+		LoadActor(Model().."header");
 		LoadActor(Language().."text");
 	};
 	Def.ActorFrame{
