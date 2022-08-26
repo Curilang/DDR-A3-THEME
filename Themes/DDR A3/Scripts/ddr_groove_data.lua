@@ -3752,6 +3752,7 @@ DDR_groove_radar_values= {
 			Easy = {41, 38, 70, 62, 1}, 
 			Medium = {68, 63, 104, 13, 40}, 
 			Hard = {97, 101, 128, 16, 103}, 
+			Challenge = {0, 0, 0, 0, 0}, 
 		}, 
 		["セツナトリップ"] = {
 			Beginner = {17, 18, 0, 8, 0}, 
@@ -5737,6 +5738,7 @@ DDR_groove_radar_values= {
 			Easy = {42, 29, 29, 36, 0}, 
 			Medium = {67, 58, 54, 31, 20}, 
 			Hard = {109, 108, 52, 21, 101},  
+			Challenge = {113, 87, 60, 39, 103},  
 		},
 		["Glitch Angel"] = {
 			Beginner = {24, 27, 14, 56, 0}, 
@@ -6211,6 +6213,7 @@ DDR_groove_radar_values= {
 			Easy = {27, 25, 10, 32, 0}, 
 			Medium = {42, 43, 23, 29, 9}, 
 			Hard = {64, 56, 36, 20, 38}, 
+			Challenge = {0, 0, 0, 0, 0},
 		},
 		["ノープラン・デイズ"] = {
 			Beginner = {21, 17, 5, 23, 0}, 
@@ -6691,7 +6694,8 @@ DDR_groove_radar_values= {
 			Beginner = {11, 13, 7, 12, 0}, 
 			Easy = {20, 18, 12, 21, 0}, 
 			Medium = {35, 32, 18, 10, 9}, 
-			Hard = {46, 41, 32, 19, 38}, 
+			Hard = {46, 41, 32, 19, 38},
+			Challenge = {0, 0, 0, 0, 0},
 		},
 		["Shout It Out"] = { 
 			Beginner = {21, 17, 7, 31, 0}, 
@@ -6943,50 +6947,92 @@ DDR_groove_radar_values= {
 			Hard = {67, 57, 32, 32, 20}, 
 		},
 	--DDR A3	
-		["アユミ☆マジカルショータイム"] = {
+		["アユミ☆マジカルショータイム"] = { -- Ayumi Magical Showtime
 			Beginner = {12, 15, 3, 18, 0}, 
 			Easy = {27, 31, 7, 27, 0}, 
 			Medium = {54, 46, 29, 10, 8}, 
 			Hard = {75, 62, 69, 17, 31}, 
 		},
-		["↑↑↓↓←→←→BA"] = {
+		["↑↑↓↓←→←→BA"] = { -- Ue ue shita shita hidari migi hidari migi BA
 			Beginner = {19, 15, 12, 14, 0}, 
 			Easy = {30, 20, 29, 50, 0}, 
 			Medium = {50, 36, 29, 55, 15}, 
 			Hard = {53, 41, 63, 67, 23}, 
 		},
-		["ウサテイ"] = {
+		["ウサテイ"] = { -- Usatei
 			Beginner = {20, 15, 5, 6, 0}, 
 			Easy = {45, 31, 47, 9, 0}, 
 			Medium = {61, 55, 47, 18, 10}, 
 			Hard = {92, 95, 58, 8, 69}, 
 			Challenge = {141, 113, 40, 13, 106}, 
 		},
-		["患部で止まってすぐ溶ける～狂気の優曇華院"] = {
+		["患部で止まってすぐ溶ける～狂気の優曇華院"] = { -- Kanbu de tomatte sugu tokeru ~ kyouki no Udongein
 			Beginner = {14, 15, 3, 0, 0}, 
 			Easy = {46, 45, 18, 2, 3}, 
 			Medium = {63, 60, 23, 22, 23}, 
 			Hard = {97, 102, 25, 4, 73}, 
 			Challenge = {135, 115, 80, 10, 108},
 		},
-		["鏡花水月楼 (DDR EDITION)"] = {
+		["鏡花水月楼 (DDR EDITION)"] = { -- Kyoka suigetsurou (DDR EDITION)
 			Beginner = {10, 14, 3, 7, 0}, 
 			Easy = {39, 29, 9, 15, 0}, 
 			Medium = {67, 58, 27, 15, 25}, 
 			Hard = {95, 94, 52, 22, 82}, 
 		},
-		["ナナホシ"] = {
+		["サヨナラ・ヘヴン"] = { -- Sayonara heaven
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {73, 60, 20, 22, 83}, 
+		},
+		["チュッチュ♪マチュピチュ"] = { -- Chucchu Machu Picchu
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {86, 86, 27, 4, 103}, 
+		},
+		["ナナホシ"] = { -- Nanahoshi
 			Beginner = {18, 20, 1, 16, 0}, 
 			Easy = {37, 27, 23, 12, 0}, 
 			Medium = {66, 69, 16, 18, 31}, 
 			Hard = {113, 89, 20, 14, 103}, 
 		},
-		["量子の海のリントヴルム"] = {
+		["斑咲花"] = { -- Murasakibana
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {106, 115, 74, 65, 99}, 
+		},
+		["ヤサイマシ☆ニンニクアブラオオメ"] = { -- Yasaimashi ninniku abura oome
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {97, 109, 34, 39, 100}, 
+		},
+		["酔いどれ知らず"] = { -- Yoidore shirazu
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {68, 57, 40, 50, 83}, 
+		},
+		["量子の海のリントヴルム"] = { -- Ryoushi no umi no Lindwurm
 			Beginner = {20, 23, 1, 23, 0}, 
 			Easy = {52, 46, 7, 35, 4}, 
 			Medium = {85, 93, 29, 21, 17}, 
 			Hard = {158, 93, 60, 7, 59}, 
 			Challenge = {194, 120, 106, 9, 98}, 
+		},
+		["リリーゼと炎龍レーヴァテイン"] = { -- Lilieze to enryuu Laevateinn
+			Beginner = {23, 24, 5, 12, 0}, 
+			Easy = {44, 33, 18, 11, 1}, 
+			Medium = {91, 66, 27, 14, 45}, 
+			Hard = {136, 99, 65, 17, 101}, 
+		},
+		["恋愛観測 -2021真夏のエンディング ver.-"] = { -- Renaikansoku -2021 manatsu no ending ver.-
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {88, 86, 56, 27, 58}, 
 		},
 		["ALBIDA"] = {
 			Beginner = {21, 23, 3, 18, 0}, 
@@ -6999,6 +7045,12 @@ DDR_groove_radar_values= {
 			Easy = {32, 23, 18, 29, 0}, 
 			Medium = {51, 47, 16, 15, 21}, 
 			Hard = {72, 70, 29, 28, 64}, 
+		},
+		["Are U Ready"] = { 
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {78, 77, 25, 51, 85}, 
 		},
 		["Beluga"] = {
 			Beginner = {4, 5, 0, 0, 0}, 
@@ -7018,6 +7070,18 @@ DDR_groove_radar_values= {
 			Easy = {40, 36, 18, 49, 3}, 
 			Medium = {63, 48, 9, 55, 23}, 
 			Hard = {89, 72, 10, 52, 88},  
+		},
+		["Concertino in Blue"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {108, 98, 47, 24, 109}, 
+		},
+		["concon"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {109, 101, 29, 19, 80}, 
 		},
 		["Dance Phenomena"] = {
 			Beginner = {15, 18, 0, 8, 0}, 
@@ -7044,10 +7108,16 @@ DDR_groove_radar_values= {
 			Medium = {47, 36, 21, 5, 4}, 
 			Hard = {76, 72, 27, 27, 59}, 
 		},
-		["Environ [De-SYNC](feat.lythe)"] = {
+		["DUAL STRIKER"] = {
 			Beginner = {0, 0, 0, 0, 0}, 
 			Easy = {0, 0, 0, 0, 0}, 
 			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {110, 111, 16, 34, 104}, 
+		},
+		["Environ [De-SYNC] (feat. lythe)"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {50, 40, 7, 13, 10}, 
+			Medium = {73, 53, 14, 48, 34}, 
 			Hard = {101, 86, 10, 49, 104}, 
 		},
 		["Fleur"] = {
@@ -7061,6 +7131,12 @@ DDR_groove_radar_values= {
 			Easy = {57, 49, 29, 23, 6}, 
 			Medium = {101, 107, 52, 32, 73}, 
 			Hard = {132, 124, 92, 30, 104}, 
+		},
+		["Get Your Wish"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {80, 87, 32, 16, 108}, 
 		},
 		["glacia"] = {
 			Beginner = {28, 31, 5, 23, 0}, 
@@ -7092,6 +7168,18 @@ DDR_groove_radar_values= {
 			Medium = {59, 56, 3, 17, 12}, 
 			Hard = {88, 63, 58, 0, 44},  
 		},
+		["KING"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {114, 96, 43, 14, 104}, 
+		},
+		["Last Summer"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {67, 55, 14, 24, 60}, 
+		},
 		["Let's DANCE aROUND!!"] = {
 			Beginner = {13, 18, 1, 44, 0}, 
 			Easy = {33, 36, 27, 110, 17}, 
@@ -7103,6 +7191,18 @@ DDR_groove_radar_values= {
 			Easy = {42, 36, 9, 39, 3}, 
 			Medium = {65, 58, 23, 65, 22}, 
 			Hard = {98, 80, 12, 13, 91}, 
+		},
+		["MANA"] = {
+			Beginner = {20, 21, 1, 14, 0}, 
+			Easy = {42, 36, 9, 39, 3}, 
+			Medium = {65, 58, 23, 65, 22}, 
+			Hard = {98, 80, 12, 13, 91}, 
+		},
+		["MA・TSU・RI"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {83, 65, 16, 48, 78}, 
 		},
 		["Megalara Garuda"] = {
 			Beginner = {23, 18, 14, 0, 0}, 
@@ -7123,6 +7223,18 @@ DDR_groove_radar_values= {
 			Easy = {13, 16, 3, 14, 0}, 
 			Medium = {53, 43, 7, 13, 23}, 
 			Hard = {71, 54, 32, 17, 65},  
+		},
+		["ON-DO"] = { 
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {95, 69, 40, 19, 100}, 
+		},
+		["perditus†paradisus"] = { 
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {135, 107, 9, 53, 109}, 
 		},
 		["PERSIAN LAND"] = {
 			Beginner = {19, 21, 1, 13, 0}, 
@@ -7147,6 +7259,12 @@ DDR_groove_radar_values= {
 			Easy = {35, 26, 20, 51, 0}, 
 			Medium = {49, 39, 12, 62, 10}, 
 			Hard = {78, 59, 25, 51, 63}, 
+		},
+		["Settin' the Scene"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {66, 55, 5, 12, 79},  
 		},
 		["STAY GOLD"] = {
 			Beginner = {42, 38, 30, 11, 25}, 
@@ -7184,11 +7302,23 @@ DDR_groove_radar_values= {
 			Medium = {54, 39, 14, 7, 18}, 
 			Hard = {79, 67, 23, 6, 73},  
 		},
+		["Unity"] = { 
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {64, 55, 32, 18, 55}, 
+		},
 		["Unreality"] = {
 			Beginner = {12, 14, 3, 17, 0}, 
 			Easy = {30, 29, 9, 32, 0}, 
 			Medium = {61, 58, 14, 55, 50}, 
 			Hard = {94, 79, 27, 44, 109},  
+		},
+		["VALLIS-NERIA"] = { 
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {101, 92, 49, 66, 100}, 
 		},
 		["WARNING×WARNING×WARNING"] = {
 			Beginner = {17, 14, 0, 9, 0}, 
@@ -7213,6 +7343,12 @@ DDR_groove_radar_values= {
 			Easy = {26, 21, 34, 44, 0}, 
 			Medium = {54, 47, 10, 13, 28}, 
 			Hard = {75, 84, 10, 14, 101},  
+		},
+		["Wuv U"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {86, 85, 45, 19, 100},   
 		},
 	}, 
 -------------------------------------------------- DOUBLE --------------------------------------------------
@@ -10375,7 +10511,8 @@ DDR_groove_radar_values= {
 		["灼熱Beach Side Bunny"] = {
 			Easy = {40, 38, 65, 4, 0}, 
 			Medium = {63, 44, 80, 16, 30}, 
-			Hard = {96, 101, 122, 9, 104}, 
+			Hard = {96, 101, 122, 9, 104},
+			Challenge = {0, 0, 0, 0, 0},
 		}, 
 		["セツナトリップ"] = {
 			Easy = {25, 24, 5, 14, 0}, 
@@ -12046,6 +12183,7 @@ DDR_groove_radar_values= {
 			Easy = {43, 29, 36, 35, 0}, 
 			Medium = {66, 58, 50, 26, 20}, 
 			Hard = {109, 108, 54, 21, 101}, 
+			Challenge = {113, 87, 60, 39, 103},
 		}, 
 		["Glitch Angel"] = {
 			Easy = {39, 41, 32, 64, 6}, 
@@ -12441,7 +12579,8 @@ DDR_groove_radar_values= {
 		["なだめスかし Negotiation"] = {
 			Easy = {25, 25, 9, 35, 0}, 
 			Medium = {42, 43, 23, 29, 8}, 
-			Hard = {64, 62, 21, 22, 38}, 
+			Hard = {64, 62, 21, 22, 38},
+			Challenge = {0, 0, 0, 0, 0},
 		}, 
 		["ノープラン・デイズ"] = {
 			Easy = {57, 43, 3, 10, 1}, 
@@ -12838,7 +12977,8 @@ DDR_groove_radar_values= {
 		["SHINY DAYS"] = {
 			Easy = {20, 18, 10, 21, 0}, 
 			Medium = {36, 32, 9, 10, 10}, 
-			Hard = {46, 41, 32, 19, 38}, 
+			Hard = {46, 41, 32, 19, 38},
+			Challenge = {0, 0, 0, 0, 0},
 		}, 
 		["Shout It Out"] = {
 			Easy = {48, 51, 16, 33, 3}, 
