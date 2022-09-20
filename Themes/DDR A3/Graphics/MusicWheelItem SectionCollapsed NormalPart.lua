@@ -23,10 +23,14 @@ return Def.ActorFrame {
 		end;
 	};
 	LoadFont("_dfghsgothic-w9 20px")..{
-		InitCommand=cmd(y,0;maxwidth,320);
+		InitCommand=function(s) s:maxwidth(320):diffuse(Color.White) end,
 		SetMessageCommand=function(self, params)
 			local group = params.Text;
-			  self:settext(SongAttributes.GetGroupName(group));
+			if GetArcadeGroupName(group) then
+				self:settext(GetArcadeGroupName(group));
+			else
+				self:settext(SongAttributes.GetGroupName(group));
+			end
 		end;
 	  };
 	  LoadActor(THEME:GetPathG("","_shared/"..Model().."cursor"))..{

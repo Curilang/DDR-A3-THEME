@@ -1,5 +1,6 @@
 local function jacket_in()
 	if GetUserPref("OptionRowSongTiming")=='DDR' then
+		-- DDR 1st
 			if GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Butterfly" 														then return 1
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "CHAOS"															then return 4.6
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "DEAD END (\"GROOVE RADAR\" Special)" 							then return 0
@@ -33,6 +34,7 @@ local function jacket_in()
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "DDR TAGMIX -LAST DanceR-"										then return 0.2
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "MEGALOVANIA" 													then return 0.25
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Avenger" 														then return 2.3
+		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Boss Rush" 														then return 7.6
 		else 																															 return 1 
 		end
 	else

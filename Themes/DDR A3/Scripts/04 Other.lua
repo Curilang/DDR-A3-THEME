@@ -487,6 +487,14 @@ function MenuTimer()
 	end
 end
 
+function BackgroundInit()
+	if GetCurrentModel() == "Blue" then
+		return THEME:GetPathG("","_doors/init_green")
+	else
+		return THEME:GetPathG("","_doors/init_purple")
+	end
+end
+
 function BackgroundEntry()
 	if GetCurrentModel() == "Blue" then
 		return THEME:GetPathG("","_doors/background_green")
@@ -497,9 +505,9 @@ end
 
 function BackgroundCleared()
 	if GetCurrentModel() == "Blue" then
-		return THEME:GetPathG("","_doors/background_green")
+		return THEME:GetPathG("","_doors/cleared_green")
 	else
-		return THEME:GetPathG("","_doors/background_blue")
+		return THEME:GetPathG("","_doors/cleared_blue")
 	end
 end
 
@@ -508,6 +516,30 @@ function IsGoldenLeague()
 		return true
 	else
 		return false
+	end
+end
+
+function GetArcadeGroupName(group)
+		if group == "01 - DDR 1st" 			then 			return "DDR 1st"
+	elseif group == "02 - DDR 2ndMIX" 		then 			return "DDR 2ndMIX"
+	elseif group == "03 - DDR 3rdMIX" 		then 			return "DDR 3rdMIX"
+	elseif group == "04 - DDR 4thMIX" 		then 			return "DDR 4thMIX"
+	elseif group == "05 - DDR 5thMIX" 		then 			return "DDR 5thMIX"
+	elseif group == "06 - DDR MAX" 			then 			return "DDRMAX"
+	elseif group == "07 - DDR MAX2" 		then 			return "DDRMAX2"
+	elseif group == "08 - DDR EXTREME" 		then 			return "DDR EXTREME"
+	elseif group == "09 - DDR SuperNOVA" 	then 			return "DDR SuperNOVA"
+	elseif group == "10 - DDR SuperNOVA2" 	then 			return "DDR SuperNOVA 2"
+	elseif group == "11 - DDR X" 			then 			return "DDR X"
+	elseif group == "12 - DDR X2" 			then 			return "DDR X2"
+	elseif group == "13 - DDR X3 VS 2ndMIX" then 			return "DDR X3 VS 2ndMIX"
+	elseif group == "14 - DDR 2013" 		then 			return "DanceDanceRevolution(2013)"
+	elseif group == "15 - DDR 2014" 		then 			return "DanceDanceRevolution(2014)"
+	elseif group == "16 - DDR A" 			then 			return "DDR A"
+	elseif group == "17 - DDR A20" 			then 			return "DDR A20"
+	elseif group == "18 - DDR A20 PLUS" 	then 			return "DDR A20 PLUS"
+	elseif group == "19 - DDR GRAND PRIX" 	then 			return "DDR GRAND PRIX"
+	elseif group == "20 - DDR A3" 			then 			return "DDR A3"
 	end
 end
 

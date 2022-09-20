@@ -7,16 +7,9 @@ local t = Def.ActorFrame{
 };
 
 
--- local RSO = math.random(1,2);
-t[#t+1] = Def.ActorFrame {
-	LoadActor("swoosh")..{
-		OnCommand=cmd(queuecommand,"Play");
-		PlayCommand=cmd(play);
-	};
-	-- LoadActor(THEME:GetPathS("","Announcer/ScreenSelectOptions "..RSO))..{
-		-- OnCommand=cmd(queuecommand,"Play");
-		-- PlayCommand=cmd(play);
-	-- };
+t[#t+1] = LoadActor("swoosh")..{
+	OnCommand=cmd(queuecommand,"Play");
+	PlayCommand=cmd(play);
 };
 
 for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do

@@ -29,7 +29,8 @@ local GoldenLeagueSong = {
 	--A3
 	["STAY GOLD"] = "league";								--1st
 	["Teleportation"] = "league";							--2nd
-	["Environ [De-SYNC](feat.lythe)"] = "league";			--3rd
+	["Environ [De-SYNC] (feat. lythe)"] = "league";			--3rd
+	["Let Me Know"] = "league";								--4th
 };
 
 local grade = Def.ActorFrame{}

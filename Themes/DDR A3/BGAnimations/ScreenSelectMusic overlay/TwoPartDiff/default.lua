@@ -79,7 +79,7 @@ local function genScrollerFrame(player)
 			};
 			Def.Sprite{
 				StartSelectingStepsMessageCommand=function(s) s:diffusealpha(0):sleep(0.5):linear(0.1):diffusealpha(1) end,
-				Texture=GetCurrentModel().."/line";
+				Texture="line";
 				Name="Highlight";
 				InitCommand=cmd(y,-2;visible,i==selection[player];diffuseramp;effectcolor1,color("1,1,1,0");effectcolor2,color("1,1,1,1");effectperiod,.5);
 			};
@@ -87,7 +87,7 @@ local function genScrollerFrame(player)
 				Name="Ok",
 				InitCommand=function(s) s:xy(-77,8) end,
 				Def.Sprite{
-					Texture=GetCurrentModel().."/eff",
+					Texture="eff",
 					InitCommand=function(s) s:diffusealpha(0) end,
 					OutCommand=function(s)
 						if i == selection[player] then
@@ -96,7 +96,7 @@ local function genScrollerFrame(player)
 					end,
 				};
 				Def.Sprite{
-					Texture=GetCurrentModel().."/ok",
+					Texture="ok",
 					InitCommand=function(s) s:diffusealpha(0):rotationy(-90):zoom(1.3):x(0):y(2) end,
 					OutCommand=function(s)
 						if i == selection[player] then
@@ -106,7 +106,7 @@ local function genScrollerFrame(player)
 				};
 
                 Def.Sprite{
-					Texture=GetCurrentModel().."/wait",
+					Texture="wait",
 					InitCommand=function(s) s:diffusealpha(0):rotationy(-90):zoom(1.2):y(48) end,
 					OutCommand=function(s)
 						if i == selection[player] then
@@ -115,7 +115,7 @@ local function genScrollerFrame(player)
 					end,
 				};
 				Def.Sprite{
-					Texture=GetCurrentModel().."/dot",
+					Texture="dot",
 					InitCommand=function(s) s:diffusealpha(0):zoom(1):y(56):x(75) end,
 					AnimateCommand=function(s) s:sleep(0.2):diffusealpha(0):sleep(0.1):diffusealpha(1):sleep(0.1):queuecommand("Animate") end,
 					OutCommand=function(s)
@@ -125,7 +125,7 @@ local function genScrollerFrame(player)
 					end,
 				};
 				Def.Sprite{
-					Texture=GetCurrentModel().."/dot",
+					Texture="dot",
 					InitCommand=function(s) s:diffusealpha(0):zoom(1):y(56):x(85) end,
 					AnimateCommand=function(s) s:sleep(0.1):diffusealpha(0):sleep(0.2):diffusealpha(1):sleep(0.1):queuecommand("Animate") end,
 					OutCommand=function(s)
@@ -136,7 +136,7 @@ local function genScrollerFrame(player)
 					end,
 				};
 				Def.Sprite{
-					Texture=GetCurrentModel().."/dot",
+					Texture="dot",
 					InitCommand=function(s) s:diffusealpha(0):zoom(1):y(56):x(95) end,
 					AnimateCommand=function(s) s:diffusealpha(0):sleep(0.3):diffusealpha(1):sleep(0.1):queuecommand("Animate") end,
 					OutCommand=function(s)

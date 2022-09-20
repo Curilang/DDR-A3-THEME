@@ -1,7 +1,7 @@
 return Def.ActorFrame {
 	Def.Sprite{
 		Texture=BackgroundEntry(),
-		InitCommand=function(s) s:FullScreen():SetAllStateDelays(0.085) end,
+		InitCommand=function(s) s:FullScreen():SetAllStateDelays(0.032) end,
 	};
 	Def.Quad{
 		InitCommand=function(s) s:FullScreen():diffuse(Color.Black):diffusealpha(0.2) end,

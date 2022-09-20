@@ -560,7 +560,14 @@ function DSLoader()
 end
 
 function VideoStage()
-	if string.match(DSLoader(), "MOVIE") or string.match(DSLoader(), "REPLICANT") or string.match(DSLoader(), "CAPTURE ME") then
+	if		string.match(DSLoader(), "MOVIE") 
+	or 		string.match(DSLoader(), "REPLICANT") 
+	or 		string.match(DSLoader(), "CAPTURE ME") 
+	or 		string.match(DSLoader(), "Tales of FESTIVEL") 
+	or 		string.match(DSLoader(), "COSMISPHERE") 
+	or 		string.match(DSLoader(), "WIRED") 
+	or 		string.match(DSLoader(), "Success Colors") 
+	then
 		return true
 	else
 		return false

@@ -2440,25 +2440,25 @@ DDR_groove_radar_values= {
 			Medium = {51, 41, 23, 30, 6}, 
 			Hard = {71, 61, 30, 26, 27}, 
 		},
-		["roppongi EVOLVED ver.A"] = {
+		["roppongi EVOLVED ver. A"] = {
 			Beginner = {27, 28, 3, 25, 0}, 
 			Easy = {43, 35, 10, 73, 2}, 
 			Medium = {63, 56, 25, 78, 21}, 
 			Hard = {93, 99, 20, 79, 102}, 
 		}, 
-		["roppongi EVOLVED ver.B"] = {
+		["roppongi EVOLVED ver. B"] = {
 			Beginner = {25, 26, 5, 29, 0}, 
 			Easy = {41, 40, 10, 77, 4}, 
 			Medium = {62, 60, 18, 67, 27}, 
 			Hard = {85, 93, 23, 68, 101}, 
 		}, 
-		["roppongi EVOLVED ver.C"] = {
+		["roppongi EVOLVED ver. C"] = {
 			Beginner = {27, 26, 1, 28, 2}, 
 			Easy = {43, 39, 12, 58, 7}, 
 			Medium = {66, 65, 21, 31, 38}, 
 			Hard = {88, 102, 30, 42, 103}, 
 		}, 
-		["roppongi EVOLVED ver.D"] = {
+		["roppongi EVOLVED ver. D"] = {
 			Beginner = {27, 31, 1, 43, 0}, 
 			Easy = {46, 55, 10, 76, 11}, 
 			Medium = {68, 63, 30, 60, 54}, 
@@ -2845,21 +2845,21 @@ DDR_groove_radar_values= {
 			Medium = {41, 50, 16, 22, 5}, 
 			Hard = {52, 50, 25, 19, 14}, 
 		}, 
-		["London EVOLVED Ver.A"] = {
+		["London EVOLVED ver.A"] = {
 			Beginner = {25, 39, 5, 9, 0}, 
 			Easy = {46, 78, 7, 17, 2}, 
 			Medium = {66, 133, 21, 2, 33}, 
 			Hard = {85, 177, 20, 4, 96}, 
 			Challenge = {132, 177, 54, 2, 105}, 
 		}, 
-		["London EVOLVED Ver.B"] = {
+		["London EVOLVED ver.B"] = {
 			Beginner = {28, 52, 14, 4, 0}, 
 			Easy = {51, 52, 14, 10, 0}, 
 			Medium = {68, 78, 29, 35, 6}, 
 			Hard = {87, 102, 27, 48, 14}, 
 			Challenge = {135, 129, 67, 64, 73}, 
 		}, 
-		["London EVOLVED Ver.C"] = {
+		["London EVOLVED ver.C"] = {
 			Beginner = {28, 49, 9, 7, 0}, 
 			Easy = {51, 49, 16, 11, 0}, 
 			Medium = {69, 74, 36, 2, 5}, 
@@ -3752,7 +3752,7 @@ DDR_groove_radar_values= {
 			Easy = {41, 38, 70, 62, 1}, 
 			Medium = {68, 63, 104, 13, 40}, 
 			Hard = {97, 101, 128, 16, 103}, 
-			Challenge = {0, 0, 0, 0, 0}, 
+			Challenge = {146, 104, 105, 5, 113}, 
 		}, 
 		["セツナトリップ"] = {
 			Beginner = {17, 18, 0, 8, 0}, 
@@ -6213,7 +6213,7 @@ DDR_groove_radar_values= {
 			Easy = {27, 25, 10, 32, 0}, 
 			Medium = {42, 43, 23, 29, 9}, 
 			Hard = {64, 56, 36, 20, 38}, 
-			Challenge = {0, 0, 0, 0, 0},
+			Challenge = {95, 93, 78, 23, 105},
 		},
 		["ノープラン・デイズ"] = {
 			Beginner = {21, 17, 5, 23, 0}, 
@@ -6695,7 +6695,7 @@ DDR_groove_radar_values= {
 			Easy = {20, 18, 12, 21, 0}, 
 			Medium = {35, 32, 18, 10, 9}, 
 			Hard = {46, 41, 32, 19, 38},
-			Challenge = {0, 0, 0, 0, 0},
+			Challenge = {69, 68, 67, 35, 102},
 		},
 		["Shout It Out"] = { 
 			Beginner = {21, 17, 7, 31, 0}, 
@@ -6997,6 +6997,12 @@ DDR_groove_radar_values= {
 			Medium = {66, 69, 16, 18, 31}, 
 			Hard = {113, 89, 20, 14, 103}, 
 		},
+		["ミックスナッツ"] = { -- Mixed nuts
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {86, 93, 20, 36, 97}, 
+		},
 		["斑咲花"] = { -- Murasakibana
 			Beginner = {0, 0, 0, 0, 0}, 
 			Easy = {0, 0, 0, 0, 0}, 
@@ -7034,6 +7040,13 @@ DDR_groove_radar_values= {
 			Medium = {0, 0, 0, 0, 0}, 
 			Hard = {88, 86, 56, 27, 58}, 
 		},
+		["Acid,Tribal & Dance (DDR EDITION)"] = {
+			Beginner = {12, 18, 5, 10, 0}, 
+			Easy = {27, 37, 14, 42, 0}, 
+			Medium = {61, 74, 14, 24, 14}, 
+			Hard = {86, 115, 27, 35, 66},  
+			Challenge = {148, 143, 32, 27, 107},  
+		},
 		["ALBIDA"] = {
 			Beginner = {21, 23, 3, 18, 0}, 
 			Easy = {47, 46, 27, 22, 7}, 
@@ -7070,6 +7083,12 @@ DDR_groove_radar_values= {
 			Easy = {40, 36, 18, 49, 3}, 
 			Medium = {63, 48, 9, 55, 23}, 
 			Hard = {89, 72, 10, 52, 88},  
+		},
+		["Come Back to Me (Feel It)"] = {
+			Beginner = {14, 13, 1, 14, 0}, 
+			Easy = {39, 34, 18, 32, 0}, 
+			Medium = {52, 55, 14, 27, 16}, 
+			Hard = {73, 82, 27, 42, 56}, 
 		},
 		["Concertino in Blue"] = {
 			Beginner = {0, 0, 0, 0, 0}, 
@@ -7150,6 +7169,12 @@ DDR_groove_radar_values= {
 			Medium = {87, 76, 49, 11, 116}, 
 			Hard = {135, 97, 21, 18, 140},  
 		},
+		["Go Down"] = {
+			Beginner = {15, 15, 0, 2, 0}, 
+			Easy = {20, 20, 0, 39, 0}, 
+			Medium = {53, 41, 23, 28, 25}, 
+			Hard = {79, 68, 23, 58, 100},  
+		},
 		["Good Sound United"] = {
 			Beginner = {25, 22, 14, 6, 0}, 
 			Easy = {58, 52, 23, 2, 12}, 
@@ -7180,11 +7205,18 @@ DDR_groove_radar_values= {
 			Medium = {0, 0, 0, 0, 0}, 
 			Hard = {67, 55, 14, 24, 60}, 
 		},
+		["Let Me Know"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {100, 95, 14, 11, 112}, 
+		},
 		["Let's DANCE aROUND!!"] = {
 			Beginner = {13, 18, 1, 44, 0}, 
 			Easy = {33, 36, 27, 110, 17}, 
 			Medium = {51, 67, 38, 73, 101}, 
 			Hard = {68, 95, 61, 100, 125}, 
+			Challenge = {109, 99, 81, 13, 112}, 
 		},
 		["Like A Star"] = {
 			Beginner = {20, 21, 1, 14, 0}, 
@@ -7241,6 +7273,12 @@ DDR_groove_radar_values= {
 			Easy = {50, 43, 20, 2, 4}, 
 			Medium = {78, 64, 27, 19, 39}, 
 			Hard = {118, 78, 29, 10, 103},  
+		},
+		["Prettiful!"] = {
+			Beginner = {0, 0, 0, 0, 0}, 
+			Easy = {0, 0, 0, 0, 0}, 
+			Medium = {0, 0, 0, 0, 0}, 
+			Hard = {98, 85, 23, 29, 105},  
 		},
 		["Pump Pump Pump"] = {
 			Beginner = {15, 19, 9, 23, 0}, 
@@ -9421,22 +9459,22 @@ DDR_groove_radar_values= {
 			Medium = {50, 41, 16, 48, 5}, 
 			Hard = {66, 55, 20, 43, 20}, 
 		}, 
-		["roppongi EVOLVED ver.A"] = {
+		["roppongi EVOLVED ver. A"] = {
 			Easy = {41, 35, 7, 80, 1}, 
 			Medium = {54, 56, 30, 89, 13}, 
 			Hard = {82, 85, 29, 80, 91}, 
 		}, 
-		["roppongi EVOLVED ver.B"] = {
+		["roppongi EVOLVED ver. B"] = {
 			Easy = {40, 40, 9, 78, 2}, 
 			Medium = {57, 60, 18, 83, 23}, 
 			Hard = {82, 87, 23, 67, 97}, 
 		}, 
-		["roppongi EVOLVED ver.C"] = {
+		["roppongi EVOLVED ver. C"] = {
 			Easy = {43, 39, 10, 54, 8}, 
 			Medium = {62, 65, 20, 42, 33}, 
 			Hard = {86, 79, 23, 40, 101}, 
 		}, 
-		["roppongi EVOLVED ver.D"] = {
+		["roppongi EVOLVED ver. D"] = {
 			Easy = {44, 55, 9, 64, 9}, 
 			Medium = {60, 63, 27, 72, 39}, 
 			Hard = {88, 95, 25, 69, 110}, 
@@ -13234,7 +13272,8 @@ DDR_groove_radar_values= {
 		["Let's DANCE aROUND!!"] = {
 			Easy = {33, 36, 27, 114, 17}, 
 			Medium = {51, 67, 38, 73, 101}, 
-			Hard = {68, 95, 63, 99, 131}, 
+			Hard = {68, 95, 63, 99, 131},
+			Challenge = {113, 99, 52, 13, 116},
 		}, 
 		["Like A Star"] = {
 			Easy = {44, 36, 5, 17, 1}, 

@@ -27,6 +27,7 @@ local function SongSleep()
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "DDR TAGMIX -LAST DanceR-"										then return 2
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Avenger"														then return 0.8
 		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "量子の海のリントヴルム"													then return 0.6
+		elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Boss Rush"														then return 0.7
 		else 																															 return 1 
 		end
 	else

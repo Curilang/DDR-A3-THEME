@@ -8,6 +8,7 @@
 20 - DDR A3\Sayonara heaven
 20 - DDR A3\Chucchu Machu Picchu
 20 - DDR A3\Nanahoshi
+20 - DDR A3\Mixed nuts
 20 - DDR A3\Murasakibana
 20 - DDR A3\Yasaimashi ninniku abura oome
 20 - DDR A3\Yoidore shirazu
@@ -15,12 +16,14 @@
 20 - DDR A3\Lilieze to enryuu Laevateinn
 20 - DDR A3\Renaikansoku -2021 manatsu no ending ver.-
 
+20 - DDR A3\Acid,Tribal & Dance (DDR EDITION)
 20 - DDR A3\ALBIDA
 20 - DDR A3\Anthurium
 20 - DDR A3\Are U Ready
 20 - DDR A3\Beluga
 20 - DDR A3\Black Emperor
 20 - DDR A3\Closer to my Heart (jun remix)
+20 - DDR A3\Come Back to Me (Feel It)
 20 - DDR A3\Concertino in Blue
 20 - DDR A3\concon
 20 - DDR A3\Dance Phenomena
@@ -34,11 +37,13 @@
 20 - DDR A3\Get Your Wish
 20 - DDR A3\glacia
 20 - DDR A3\Glitter Flatter Scatter
+20 - DDR A3\Go Down
 20 - DDR A3\Good Sound United
 20 - DDR A3\GRADIUS REMIX (UUDDLRLRBA Ver.)
 20 - DDR A3\I WANT YOUR LOVE (Darwin remix)
 20 - DDR A3\KING
 20 - DDR A3\Last Summer
+20 - DDR A3\Let Me Know
 20 - DDR A3\Let's DANCE aROUND!!
 20 - DDR A3\Like A Star
 20 - DDR A3\MANA
@@ -49,6 +54,7 @@
 20 - DDR A3\ON-DO
 20 - DDR A3\perditus paradisus
 20 - DDR A3\PERSIAN LAND
+20 - DDR A3\Prettiful!
 20 - DDR A3\Pump Pump Pump
 20 - DDR A3\Qwerty
 20 - DDR A3\SAYONARA disco light
@@ -825,10 +831,10 @@
 12 - DDR X2\Poseidon (kors k mix)
 12 - DDR X2\POSSESSION
 12 - DDR X2\real-high-SPEED
-12 - DDR X2\roppongi EVOLVED ver.A
-12 - DDR X2\roppongi EVOLVED ver.B
-12 - DDR X2\roppongi EVOLVED ver.C
-12 - DDR X2\roppongi EVOLVED ver.D
+12 - DDR X2\roppongi EVOLVED ver. A
+12 - DDR X2\roppongi EVOLVED ver. B
+12 - DDR X2\roppongi EVOLVED ver. C
+12 - DDR X2\roppongi EVOLVED ver. D
 12 - DDR X2\Sacred Oath
 12 - DDR X2\sakura storm
 12 - DDR X2\Sakura Sunrise

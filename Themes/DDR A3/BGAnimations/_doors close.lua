@@ -5,25 +5,25 @@ return Def.ActorFrame{
 	};
 	LoadActor(THEME:GetPathG("","_doors/background_black"))..{
 		InitCommand=function(s) s:FullScreen():diffusealpha(0) end,
-		OnCommand=function(s) s:sleep(0.3):linear(0.1):diffusealpha(1):sleep(0.6):linear(0.1):diffusealpha(0) end,
+		OnCommand=function(s) s:sleep(0.35):linear(0.1):diffusealpha(1) end,
 	};
 	Def.Sprite{
-		Texture=BackgroundEntry(),
-		InitCommand=function(s) s:FullScreen():SetAllStateDelays(0.085):diffusealpha(0) end,
-		OnCommand=function(s) s:sleep(0.9):linear(0.1):diffusealpha(1) end,
+		Texture=BackgroundInit(),
+		InitCommand=function(s) s:FullScreen():SetAllStateDelays(0.042):diffusealpha(0) end,
+		OnCommand=function(s) s:sleep(0.6):linear(0.1):diffusealpha(1) end,
 	};
 	Def.Quad{
 		InitCommand=function(s) s:FullScreen():diffuse(Color.Black):diffusealpha(0) end,
-		OnCommand=function(s) s:sleep(0.9):linear(0.1):diffusealpha(0.2) end,
-	};
-	LoadActor(THEME:GetPathG("","_doors/squares"))..{
-		InitCommand=function(s) s:FullScreen():blend(('BlendMode_Add')):diffusealpha(0) end,
-		OnCommand=function(s) s:sleep(0.9):linear(0.1):diffusealpha(0.14) end,
+		OnCommand=function(s) s:sleep(0.6):linear(0.1):diffusealpha(0.2) end,
 	};
 	Def.Sprite{
 		Texture=THEME:GetPathG("","_doors/lines"),
 		InitCommand=function(s) s:FullScreen():blend(('BlendMode_Add')):diffusealpha(0) end,
-		OnCommand=function(s) s:sleep(0.9):linear(0.1):diffusealpha(0.14) end,
+		OnCommand=function(s) s:sleep(0.6):linear(0.1):diffusealpha(0.14) end,
+	};
+	LoadActor(THEME:GetPathG("","_doors/squares"))..{
+		InitCommand=function(s) s:FullScreen():blend(('BlendMode_Add')):diffusealpha(0) end,
+		OnCommand=function(s) s:sleep(0.6):linear(0.1):diffusealpha(0.14) end,
 	};
 	Def.Quad{
 		InitCommand=cmd(diffusealpha,0);

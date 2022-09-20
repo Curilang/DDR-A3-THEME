@@ -7,7 +7,7 @@ return Def.ActorFrame{
 	};
 	Def.Sprite{
 		Texture=BackgroundCleared(),
-		InitCommand=function(s) s:FullScreen():SetAllStateDelays(0.085):diffusealpha(0) end,
+		InitCommand=function(s) s:FullScreen():SetAllStateDelays(0.032):diffusealpha(0) end,
 		OnCommand=function(s) s:sleep(AnimationSleep+0.3):linear(0.1):diffusealpha(1) end,
 	};
 	LoadActor(THEME:GetPathG("","_doors/squares"))..{
@@ -21,7 +21,7 @@ return Def.ActorFrame{
 	};
 	Def.Quad{
 		InitCommand=cmd(diffusealpha,0);
-		OnCommand=cmd(sleep,1.5);
+		OnCommand=cmd(sleep,2.5);
 	};
 	Def.ActorFrame{
 	InitCommand=function(s) s:x(_screen.cx) end,	
