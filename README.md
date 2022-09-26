@@ -16,9 +16,9 @@ Edit from Inori's DDR A20 Theme.
 
 • [5.1.0-b2](https://github.com/stepmania/stepmania/releases/tag/v5.1.0-b2)
 
-• [5.1.0-new*](https://drive.google.com/file/d/1DiCF3n95tawbsTIJyn5bmY5rG4AS9Ydx/view?usp=sharing) / [ITGMania](https://www.itgmania.com/)
+• [5.1.0-new*](https://drive.google.com/file/d/1m5H4UXPKWHxiIV1eFW7GpySu8Mdrfm6p/view?usp=sharing) / [ITGMania](https://www.itgmania.com/)
 
-<sub>*build date: 2022-07-20</sub>
+<sub>*build date: 2022-09-25</sub>
 
 NOTE: [OUTFOX](https://projectoutfox.com/) ITS CURRENTLY BEING PARTIALLY SUPPORTED DUE TO SOME RECENT CHANGES MADE ON THE ENGINE. WE'RE TRYING TO GET THAT FIXED AS SOON AS WE CAN.
 
