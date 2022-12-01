@@ -13,7 +13,7 @@ local Fast=getenv("numFast"..ToEnumShortString(player));
 local Slow=getenv("numSlow"..ToEnumShortString(player));
 
 local Score = STATSMAN:GetCurStageStats():GetPlayerStageStats(player):GetScore();
-local EXScore = math.floor(STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):GetPossibleDancePoints())*(STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):GetPercentDancePoints())+0.5
+local EXScore = math.floor(STATSMAN:GetCurStageStats():GetPlayerStageStats(player):GetPossibleDancePoints())*(STATSMAN:GetCurStageStats():GetPlayerStageStats(player):GetPercentDancePoints())+0.5
 
 
 local Large = Def.BitmapText{
