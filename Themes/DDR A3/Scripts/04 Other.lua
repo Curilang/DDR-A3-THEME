@@ -98,6 +98,8 @@ function GetArtistName(item)
 	end
 end
 
+--Conditionals
+
 function ComboUnderField()
 	if ReadPrefFromFile("OptionRowComboUnderField") ~= nil then
 		if GetUserPref("OptionRowComboUnderField") == 'false' then
@@ -166,6 +168,50 @@ function SpeedDisplay()
 	end
 end
 
+function ShowCutIns()
+	if GetUserPref("OptionRowCutIns")=='On' then
+		return true
+	else
+		return false
+	end
+end
+
+function IsEXScore()
+	if GetUserPref("OptionRowEXScore") == 'On' then
+		if GAMESTATE:IsDemonstration() then
+			return false
+		else
+			return true
+		end
+	else
+		return false
+	end
+end
+
+function IsGoldenLeague()
+	if (GoldenLeague() == "Bronze" or GoldenLeague() == "Silver" or GoldenLeague() == "Gold") and GetCurrentModel() == "Gold" then
+		return true
+	else
+		return false
+	end
+end
+
+function ShowBPMDisplay()
+	if GetUserPref("OptionRowBPM")=='BPM' then
+		if GAMESTATE:IsDemonstration() then
+			return false
+		else
+			return true
+		end
+	else
+		return false
+	end
+end
+
+--Conditionals
+
+--Screens
+
 function IsTitleMenu()
 	local curScreen = Var "LoadingScreen"
 	return curScreen == "ScreenTitleMenu"
@@ -191,6 +237,20 @@ function IsOptionService()
 	return curScreen == "ScreenOptionsService"
 end
 
+function IsOptionManageProfiles()
+	local curScreen = Var "LoadingScreen"
+	return curScreen == "ScreenOptionsManageProfiles"
+end
+
+function IsCustomOptions()
+	local curScreen = Var "LoadingScreen"
+	return curScreen == "ScreenCustomOptions"
+end
+
+--Screens
+
+--OutFox Fixes
+
 function IsReverse(pn)
 	if _VERSION == "Lua 5.3" then
 		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Reverse() == 1
@@ -199,37 +259,59 @@ function IsReverse(pn)
 	end
 end
 
-function IsEXScore()
-	if PREFSMAN:GetPreference("PercentageScoring") == true then
-		return true
+function IsBoost(pn)
+	if _VERSION == "Lua 5.3" then
+		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Boost() == 1
 	else
-		return false
+		return GAMESTATE:PlayerIsUsingModifier(pn,'boost')
 	end
 end
 
-function SecondsToStep()
-	if GetUserPref("OptionRowSongTiming")=='DDR' then
-		return 0
+function IsBrake(pn)
+	if _VERSION == "Lua 5.3" then
+		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Brake() == 1
 	else
-		return 6.0
+		return GAMESTATE:PlayerIsUsingModifier(pn,'brake')
 	end
 end
 
-function SecondsToMusic()
-	if GetUserPref("OptionRowSongTiming")=='DDR' then
-		return 0
+function IsWave(pn)
+	if _VERSION == "Lua 5.3" then
+		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Wave() == 1
 	else
-		return 2.0
+		return GAMESTATE:PlayerIsUsingModifier(pn,'wave')
 	end
 end
 
-function SecondsToStepNextSong()
-	if GetUserPref("OptionRowSongTiming")=='DDR' then
-		return 0
+function IsDark(pn)
+	if _VERSION == "Lua 5.3" then
+		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Dark() == 1
 	else
-		return 2.0
+		return GAMESTATE:PlayerIsUsingModifier(pn,'dark')
 	end
 end
+
+function Is4Lives(pn)
+	if _VERSION == "Lua 5.3" then
+		return table.search(GAMESTATE:GetPlayerState(pn):GetPlayerOptionsArray("ModsLevel_Preferred"), '4Lives')
+	else
+		return GAMESTATE:PlayerIsUsingModifier(pn,'4 lives,battery')
+	end
+end
+
+function Is1Lives(pn)
+	if _VERSION == "Lua 5.3" then
+		return table.search(GAMESTATE:GetPlayerState(pn):GetPlayerOptionsArray("ModsLevel_Preferred"), '1Lives')
+	else
+		return GAMESTATE:PlayerIsUsingModifier(pn,'1 life,battery')
+	end
+end
+
+
+
+--OutFox Fixes
+
+--Theme Stuff
 
 function Language()
 	if GetUserPref("OptionRowLanguage")=='jp' then
@@ -259,7 +341,7 @@ function Model()
 	if ReadPrefFromFile("OptionRowModel") ~= nil then
 		if GetUserPref("OptionRowModel")=='Gold' then
 			return "gold_"
-		elseif GetUserPref("OptionRowModel")=='Blue' then
+		elseif GetUserPref("OptionRowModel")=='White' then
 			return "blue_"
 		else
 			return "gold_"
@@ -276,30 +358,6 @@ function GetCurrentModel()
 		return "Blue"
 	else
 		return "Gold"
-	end
-end
-
-function Version()
-	if ReadPrefFromFile("OptionRowVersion") ~= nil then
-		if GetUserPref("OptionRowVersion")=='A20' then
-			return "a20_"
-		elseif GetUserPref("OptionRowVersion")=='A20 PLUS' then
-			return "a20p_"
-		else
-			return "a20_"
-		end
-	else
-		return "a20_"
-	end
-end
-
-function GetCurrentVersion()
-	if Version() == "a20_" then
-		return "A20"
-	elseif Version() == "a20p_" then
-		return "A20 PLUS"
-	else
-		return "A20"
 	end
 end
 
@@ -351,17 +409,25 @@ function DanCourse()
 			return GetCurrentLanguage().."/Dan10"
 		elseif GetUserPref("OptionRowDanCourse")=='Kaiden' then
 			return GetCurrentLanguage().."/Dan11"
+		else
+			return "None"
 		end
+	else
+		return "None"
 	end
 end
 
+--Theme Stuff
+
+--Player Options
+
 function OptionNumber()
 	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ScreenFilter,Characters,SelectStage,Risky"
+		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,SelectStage,Visual,Risky"
 	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
-		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ScreenFilter,Characters,Risky"
+		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Characters,Visual,Risky"
 	else
-		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ScreenFilter,Risky"
+		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Visual,Risky"
 	end
 end
 
@@ -373,31 +439,65 @@ function CharactersOption()
 	end
 end
 
-function ThemeNumber()
-	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		return "ST,SM,JA,SS,FS,CU,SA,GD,BM,SP,MD,GL,DC,BS,CS,DS,RM,C1,C2,C3"
-	else
-		return "ST,SM,JA,SS,FS,CU,SA,GD,BM,SP,MD,GL,DC" 
+function GetNoteSkinType(pn)
+	local Type = ReadPrefFromFile("OptionRowNoteSkins"..ToEnumShortString(pn)); 
+		if Type == "Normal" 			then return "SCH-NORMAL-"
+	elseif Type == "Classic" 			then return "SCH-CLASSIC-"
+	elseif Type == "Cyber" 				then return "SCH-CYBER-"
+	elseif Type == "X" 					then return "SCH-X-"
 	end
 end
 
-function ReadyToLoad()
-	local GetSong = GAMESTATE:GetCurrentSong():GetDisplayFullTitle()
-	if GetSong == "Lesson by DJ" then
-		return THEME:GetPathB("ScreenGameplay","ready/HOW")
+function GetArrowColor(pn)
+	local Color = ReadPrefFromFile("OptionRowArrowColor"..ToEnumShortString(pn)); 
+		if Color == "Rainbow" 			then return "RAINBOW"
+	elseif Color == "Note" 				then return "NOTE"
+	elseif Color == "Vivid" 			then return "VIVID"
+	elseif Color == "Flat" 				then return "FLAT"
+	elseif Color == "SMNote" 			then return "SMNOTE"
+	end
+end
+
+function GetPlayerNoteSkin(pn)
+	GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Preferred'):NoteSkin(GetNoteSkinType(pn)..GetArrowColor(pn))
+end
+
+function NoteSkinOption()
+	if GetUserPref("NTOption")=='On' then
+		return "lua,OptionRowArrowColor()"
 	else
-		return THEME:GetPathB("ScreenGameplay","ready/READY")
+		return "list,NoteSkins"
+	end
+end
+
+--Player Options
+
+--
+
+function CustomOptions()
+	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
+		return "Theme,Player,Stages"
+	else
+		return "Theme,Player"
+	end
+end
+
+function OptionsPlayerStuff()
+	if GetUserPref("NTOption")=='On' then
+		return "1,2,3,4,5,6,7,8,9,10"
+	else
+		return "2,3,4,5,6,7,8,9,10"
 	end
 end
 
 function ClearedToLoad()
 	local GetSong = GAMESTATE:GetCurrentSong():GetDisplayFullTitle()
 	if GetSong == "Tohoku EVOLVED" or GetSong == "COVID" or GetSong == "Outbreak" then 
-		return THEME:GetPathB("ScreenGameplay","out/PRAY")
+		return "PRAY"
 	elseif GetSong == "Lesson by DJ" or GetSong == "LET'S CHECK YOUR LEVEL!" then
-		return THEME:GetPathB("ScreenGameplay","out/ENJOY")
+		return "ENJOY"
 	else
-		return THEME:GetPathB("ScreenGameplay","out/CLEARED")
+		return "CLEARED"
 	end
 end
 
@@ -473,7 +573,6 @@ function MenuTimer()
 	local TimerNumbers = THEME:GetAbsolutePath("Fonts/MenuTimer numbers.redir")
 	local file = RageFileUtil.CreateRageFile()
 
-	
 	if GetCurrentModel() == "Blue" then
 		file:Open(TimerNumbers,2)
 		file:Write("BlueTimerNumbers")
@@ -511,35 +610,52 @@ function BackgroundCleared()
 	end
 end
 
-function IsGoldenLeague()
-	if (GoldenLeague() == "Bronze" or GoldenLeague() == "Silver" or GoldenLeague() == "Gold") and GetCurrentModel() == "Gold" then
-		return true
-	else
-		return false
-	end
-end
 
-function GetArcadeGroupName(group)
-		if group == "01 - DDR 1st" 			then 			return "DDR 1st"
-	elseif group == "02 - DDR 2ndMIX" 		then 			return "DDR 2ndMIX"
-	elseif group == "03 - DDR 3rdMIX" 		then 			return "DDR 3rdMIX"
-	elseif group == "04 - DDR 4thMIX" 		then 			return "DDR 4thMIX"
-	elseif group == "05 - DDR 5thMIX" 		then 			return "DDR 5thMIX"
-	elseif group == "06 - DDR MAX" 			then 			return "DDRMAX"
-	elseif group == "07 - DDR MAX2" 		then 			return "DDRMAX2"
-	elseif group == "08 - DDR EXTREME" 		then 			return "DDR EXTREME"
-	elseif group == "09 - DDR SuperNOVA" 	then 			return "DDR SuperNOVA"
-	elseif group == "10 - DDR SuperNOVA2" 	then 			return "DDR SuperNOVA 2"
-	elseif group == "11 - DDR X" 			then 			return "DDR X"
-	elseif group == "12 - DDR X2" 			then 			return "DDR X2"
-	elseif group == "13 - DDR X3 VS 2ndMIX" then 			return "DDR X3 VS 2ndMIX"
-	elseif group == "14 - DDR 2013" 		then 			return "DanceDanceRevolution(2013)"
-	elseif group == "15 - DDR 2014" 		then 			return "DanceDanceRevolution(2014)"
-	elseif group == "16 - DDR A" 			then 			return "DDR A"
-	elseif group == "17 - DDR A20" 			then 			return "DDR A20"
-	elseif group == "18 - DDR A20 PLUS" 	then 			return "DDR A20 PLUS"
-	elseif group == "19 - DDR GRAND PRIX" 	then 			return "DDR GRAND PRIX"
-	elseif group == "20 - DDR A3" 			then 			return "DDR A3"
+GoldenLeagueSong = {
+	--A20
+	["Avenger"] = "league"; 								--1st 
+	["New Era"] = "league";									--2nd
+	["Give Me"] = "league";									--3rd
+	["Ace out"] = "league"; 								--4th
+	["The World Ends Now"] = "league";						--5th
+	["Rampage Hero"] = "league";							--6th
+	["ALPACORE"] = "league";								--7th
+	["Starlight in the Snow"] = "league";					--8th
+	["Glitch Angel"] = "league";							--9th
+	["Golden Arrow"] = "league";							--10th
+	["CyberConnect"] = "league";							--11th
+	--A20 PLUS
+	["DIGITALIZER"] = "league";								--1st
+	["Draw the Savage"] = "league";							--2nd
+	["MUTEKI BUFFALO"] = "league";							--3rd
+	["Going Hypersonic"] = "league";						--4th
+	["Lightspeed"] = "league";								--5th
+	["Run The Show"] = "league";							--6th
+	["Yuni's Nocturnal Days"] = "league";					--7th
+	["Good Looking"] = "league";							--8th
+	["Step This Way"] = "league";							--9th
+	["Come Back To Me"] = "league";							--10th
+	["actualization of self (weaponized)"] = "league";		--11th
+	["Better Than Me"] = "league";							--12th
+	["DDR TAGMIX -LAST DanceR-"] = "league";				--13th
+	["THIS IS MY LAST RESORT"] = "league";					--14th
+	--A3
+	["STAY GOLD"] = "league";								--1st
+	["Teleportation"] = "league";							--2nd
+	["Environ [De-SYNC] (feat. lythe)"] = "league";			--3rd
+	["Let Me Know"] = "league";								--4th
+	["Let Me Show You"] = "league";							--5th
+	["Go To The Oasis"] = "league";							--6th
+	["TAKE ME HIGHER"] = "league";							--7th
+	["Lose Your Sense"] = "league";							--8th
+	["Sector"] = "league";									--9th
+};
+
+function AttackPerfectFullCombo()
+	if GAMESTATE:IsExtraStage2() then
+		return "TapNoteScore_W2"
+	else
+		return "TapNoteScore_W4"
 	end
 end
 

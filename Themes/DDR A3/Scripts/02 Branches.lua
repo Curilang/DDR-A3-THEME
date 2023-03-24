@@ -45,6 +45,13 @@ Branch = {
 		local hour = Hour()
 		return hour > 3 and hour < 6 and "ScreenNoise" or "ScreenInit"
 	end,
+	OldSM = function()
+		if _VERSION ~= "Lua 5.3" and tonumber(VersionDate()) < 20190328 then
+			return "ScreenOldSM"
+		else
+			return "ScreenWarning"
+		end
+	end,
 	TitleMenu = function()
 		-- home mode is the most assumed use of sm-ssc.
 		if GAMESTATE:GetCoinMode() == "CoinMode_Home" then

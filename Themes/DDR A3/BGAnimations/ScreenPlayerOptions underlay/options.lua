@@ -20,14 +20,14 @@ local screen = SCREENMAN:GetTopScreen();
 
 local rownames
 if GAMESTATE:IsExtraStage() or GAMESTATE:IsExtraStage2() then
-	rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump" }
+	rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds" }
 else
 	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "ScreenFilter", "Gauge", "Characters", "DanceStage" }
+		rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", "DanceStage" }
 	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
-		rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "ScreenFilter", "Gauge", "Characters" }
+		rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", "Characters" }
 	else
-		rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "ScreenFilter", "Gauge", }
+		rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", }
 	end
 end
 
@@ -246,7 +246,7 @@ local function MakeRow(rownames, idx)
                             return ""
                         end
                     end
-					if name ~= "NoteSkins" and name ~= "DanceStage" and name ~= "Characters" then
+					if name ~= "NoteSkins" and name ~= "DanceStage" and name ~= "Characters" and name ~= "VisualDelaySeconds" then
 						--normal option, handle default choice coloring.
                         local ChoiceText = ChoiceToText(choice)
                         --for most options, 0 is the default choice, for Speed it is 3.
@@ -285,6 +285,30 @@ local function MakeRow(rownames, idx)
 							else
 								self:settext(Characters.GetAllCharacterNames()[choice]):diffuse(color("1,1,1,1"))
 							end;
+						end
+					elseif name == "VisualDelaySeconds" then
+						if choice == 0 then
+							self:settext("-5"):diffuse(color("1,1,1,1"))
+						elseif choice == 1 then
+							self:settext("-4"):diffuse(color("1,1,1,1"))
+						elseif choice == 2 then
+							self:settext("-3"):diffuse(color("1,1,1,1"))
+						elseif choice == 3 then
+							self:settext("-2"):diffuse(color("1,1,1,1"))
+						elseif choice == 4 then
+							self:settext("-1"):diffuse(color("1,1,1,1"))
+						elseif choice == 5 then
+							self:settext("±0"):diffuse(color("#06ff06")):diffusetopedge(color("#74ff74"))
+						elseif choice == 6 then
+							self:settext("+1"):diffuse(color("1,1,1,1"))
+						elseif choice == 7 then
+							self:settext("+2"):diffuse(color("1,1,1,1"))
+						elseif choice == 8 then
+							self:settext("+3"):diffuse(color("1,1,1,1"))
+						elseif choice == 9 then
+							self:settext("+4"):diffuse(color("1,1,1,1"))
+						elseif choice == 10 then
+							self:settext("+5"):diffuse(color("1,1,1,1"))
 						end
 					else
 						self:settext("")

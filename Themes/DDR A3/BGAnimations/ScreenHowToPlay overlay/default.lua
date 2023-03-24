@@ -2,10 +2,10 @@ return Def.ActorFrame {
 	Def.ActorFrame{
 		InitCommand=function(s) s:x(_screen.cx):y(SCREEN_TOP-30) end,
 		OnCommand=function(s) s:linear(0.3):y(SCREEN_TOP+15):sleep(40.3):linear(0.3):y(SCREEN_TOP-30) end,
-		LoadActor(THEME:GetPathG("ScreenWithMenuElements","header/"..GetCurrentModel().."/base"))..{
+		LoadActor(THEME:GetPathG("ScreenWithMenuElements","header/"..Model().."base"))..{
 			InitCommand=function(s) s:zoom(0.667):y(2) end,
 		};
-		LoadActor(THEME:GetPathG("ScreenWithMenuElements","header/"..GetCurrentModel().."/HOW"))..{
+		LoadActor(THEME:GetPathG("ScreenWithMenuElements","header/"..Model().."HOW"))..{
 			InitCommand=function(s) s:setsize(340,27) end,
 		};
 	};
@@ -19,5 +19,5 @@ return Def.ActorFrame {
 	Def.Quad{
 		InitCommand=function(s) s:diffuse(color("White")):FullScreen():sleep(0.25):linear(0.25):diffusealpha(0):sleep(40.3):linear(0.25):diffusealpha(1) end,
 	};
-	LoadActor(THEME:GetPathB("","_arcade decorations"));
+	LoadActor(THEME:GetPathG("","ArcadeDecorations"));
 };

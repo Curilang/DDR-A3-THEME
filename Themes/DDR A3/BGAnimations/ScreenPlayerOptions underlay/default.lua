@@ -7,7 +7,7 @@ local t = Def.ActorFrame{
 };
 
 
-t[#t+1] = LoadActor("swoosh")..{
+t[#t+1] = LoadActor(THEME:GetPathS("ScreenSelectMusic","swoosh"))..{
 	OnCommand=cmd(queuecommand,"Play");
 	PlayCommand=cmd(play);
 };

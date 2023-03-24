@@ -5,51 +5,39 @@ local FinalStage = PREFSMAN:GetPreference("SongsPerPlay")
 
 t[#t+1] = Def.ActorFrame{
     StandardDecorationFromFile("Header","Header");
-	StandardDecorationFromFile("StageDisplay","StageDisplay");
     StandardDecorationFromFileOptional("Footer","Footer");
 }
-	
---Machine Record
-for pn in ivalues(PlayerNumber) do
-	local MetricsName = "MachineRecord" .. PlayerNumberToString(pn);
-	t[#t+1] = LoadActor( THEME:GetPathG(Var "LoadingScreen", "MachineRecord"), pn ) .. {
-		InitCommand=function(self) 
-			self:player(pn); 
-			self:name(MetricsName); 
-			ActorUtil.LoadAllCommandsAndSetXY(self,Var "LoadingScreen"); 
-		end;
-	};
-end
 
---Personal Record
-for pn in ivalues(PlayerNumber) do
-	local MetricsName = "PersonalRecord" .. PlayerNumberToString(pn);
-	t[#t+1] = LoadActor( THEME:GetPathG(Var "LoadingScreen", "PersonalRecord"), pn ) .. {
-		InitCommand=function(self) 
-			self:player(pn); 
-			self:name(MetricsName); 
-			ActorUtil.LoadAllCommandsAndSetXY(self,Var "LoadingScreen"); 
-		end;
-	};
-end
 
 for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
+	local pss = STATSMAN:GetCurStageStats():GetPlayerStageStats(pn)
+	if pss:GetMachineHighScoreIndex() == 0 or pss:GetPersonalHighScoreIndex() == 0 then
+		t[#t+1] = Def.Sprite{
+			Texture="Record",
+			InitCommand=function(s) s:zoomx(0.667):xy(pn==PLAYER_1 and _screen.cx-195 or _screen.cx+232,_screen.cy-65) end,
+			OnCommand=function(s) s:zoomy(0):sleep(2.3):linear(0.1):zoomy(0.667) end,
+			OffCommand=function(s) s:decelerate(0.05):zoomy(0) end,
+		};
+		t[#t+1] = Def.Sound {
+			File=THEME:GetPathS("ScreenEvaluation", "NewRecord"),
+			OnCommand=function(s) s:play() end,
+		};
+	end
 	t[#t+1] = Def.Sprite{
-		Texture="eamu/"..Language().."exp",
+		Texture=Language().."exp",
 		InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-212.5 or _screen.cx+212.5,_screen.cy+179):zoom(0.6) end,
 		OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -700 or 700)  end,
 	};
+	local IsScore = "NORMAL.png"
+	if IsEXScore() then
+		IsScore = "EX.png"
+	end
 	t[#t+1] = Def.ActorFrame{
 		InitCommand=function(s) s:zoom(0.667):xy(pn==PLAYER_1 and _screen.cx-208 or _screen.cx+220,_screen.cy-40) end,
         OffCommand=function(s) s:sleep(0.2):linear(0.2):diffusealpha(0) end,
 		Def.Sprite{
-            InitCommand=function(s) s:xy(-124,-36) 
-				if IsEXScore() then
-					s:Load(THEME:GetPathB("ScreenEvaluation","decorations/score/mdx02_rs_ex"))
-				else
-					s:Load(THEME:GetPathB("ScreenEvaluation","decorations/score/mdx02_rs_score"))
-				end
-			end,
+			Texture=IsScore,
+            InitCommand=function(s) s:xy(-124,-36) end,
         };
     };
 	t[#t+1] = Def.ActorFrame{
@@ -62,9 +50,9 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
             SetCommand=function(s)
             local score
 				if IsEXScore() then
-					score = (STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetPossibleDancePoints())*(STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetPercentDancePoints());
+					score = (pss:GetPossibleDancePoints())*(pss:GetPercentDancePoints());
 				else 
-					score = STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetScore();
+					score = pss:GetScore();
 				end;
 			    s:Load("RollingNumbersEvaluation"):targetnumber(score);
             end,
@@ -92,17 +80,6 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 				end;
 			end;
 		};
-		-- Def.BitmapText{
-            -- Font="_impact 32px",
-            -- InitCommand=function(s)
-				-- s:x(2):zoom(0.79)
-                -- local style = GAMESTATE:GetCurrentStyle()
-					-- if style:GetStyleType() == "StyleType_OnePlayerTwoSides"  then s:settext("DOUBLE");
-                -- elseif style:GetStyleType() == "StyleType_OnePlayerOneSide"   then s:settext("SINGLE");
-                -- elseif style:GetStyleType() == "StyleType_TwoPlayersTwoSides" then s:settext("VERSUS");
-                -- end;
-            -- end,
-        -- };
         Def.BitmapText{
             Font="_impact 32px",
             InitCommand=function(self)
@@ -123,7 +100,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
     };
 	t[#t+1] = Def.ActorFrame{ 
 		Def.Sprite{
-			Texture=Model().."player",
+			Texture=THEME:GetPathG("","_shared/"..Model().."player"),
 			InitCommand=function(s) s:xy(pn==PLAYER_1 and SCREEN_LEFT+48 or SCREEN_RIGHT-48,_screen.cy-181):zoom(0.667):rotationy(pn==PLAYER_1 and 0 or 180) end,
 			OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -300 or 300) end,
 		};
@@ -143,14 +120,11 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
         };
 	};
 	
-	if (StageIndex == FinalStage+1) or (StageIndex == FinalStage+2) then
-	else
-		for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
-			t[#t+1] = LoadActor(THEME:GetPathB("ScreenEvaluation","decorations/stars"))..{
-				InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-54 or _screen.cx+278,_screen.cy-10):zoom(0.667) end,
-				OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -700 or 700) end,
-			};
-		end;
+	if not ((StageIndex == FinalStage+1) or (StageIndex == FinalStage+2)) then
+		t[#t+1] = LoadActor(THEME:GetPathB("ScreenEvaluation","decorations/stars"))..{
+			InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-54 or _screen.cx+278,_screen.cy-10):zoom(0.667) end,
+			OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -700 or 700) end,
+		};
 	end;
 end;
 
@@ -172,11 +146,8 @@ end;
 
 
 
-if (StageIndex == FinalStage+1) or (StageIndex == FinalStage+2) then
-
-else
-
-	t[#t+1] = LoadActor(THEME:GetPathB("GameDecoration","9 Stars"))..{
+if not ((StageIndex == FinalStage+1) or (StageIndex == FinalStage+2)) then
+	t[#t+1] = LoadActor(THEME:GetPathG("","_shared/stars"))..{
 		InitCommand=function(s) s:xy(_screen.cx,_screen.cy+184):zoom(0.667) end,
 		OffCommand=function(s) s:linear(0.2):diffusealpha(0) end,
 	};
@@ -209,7 +180,10 @@ t[#t+1] = Def.ActorFrame{
     Name="songinfo",
     InitCommand=function(s) s:xy(_screen.cx,_screen.cy-40):zoom(0.667) end,
     OffCommand=function(s) s:linear(0.2):zoomy(0) end,
-    Def.Sprite{ Texture=THEME:GetPathG("","_shared/song info"), };
+    Def.Sprite{ 
+		Texture=THEME:GetPathG("","_shared/song info"), 
+		InitCommand=function(s) s:setsize(300,47) end,
+	};
     Def.BitmapText{
         Font="_arial black 28px",
         InitCommand=function(s)

@@ -43,24 +43,25 @@ end
 
 for pn in ivalues(GAMESTATE:GetEnabledPlayers()) do
 	if not GAMESTATE:IsDemonstration() then
-		if GetUserPref("SelectCharacter"..pn) == "Random" then
-			GAMESTATE:SetCharacter(pn,GetUserPref("CharaRandom"..pn))
+		if ReadPrefFromFile("SelectCharacter") ~= nil then
+			if GetUserPref("SelectCharacter"..pn) == "Random" then
+				GAMESTATE:SetCharacter(pn,GetUserPref("CharaRandom"..pn))
+			else
+				GAMESTATE:SetCharacter(pn,GetUserPref("SelectCharacter"..pn))
+			end
 		else
-			GAMESTATE:SetCharacter(pn,GetUserPref("SelectCharacter"..pn))
+			GAMESTATE:SetCharacter(pn,CharaRandom[math.random(#CharaRandom)])
 		end
 	else
-		local DemoChara = GetAllCharacterNames()
-		table.remove(DemoChara,IndexKey(DemoChara,"Random"))
-		table.remove(DemoChara,IndexKey(DemoChara,"None"))
-		GAMESTATE:SetCharacter(pn,DemoChara[math.random(#DemoChara)])
+		GAMESTATE:SetCharacter(pn,CharaRandom[math.random(#CharaRandom)])
 	end
 end
 
 ------- CHARACTER ORDER -------
 
 Listed = {
-	GAMESTATE:GetCharacter(PLAYER_1):GetDisplayName(),
-	GAMESTATE:GetCharacter(PLAYER_2):GetDisplayName(),
+	Character(PLAYER_1),
+	Character(PLAYER_2),
 	GetUserPref("Mate1"),
 	GetUserPref("Mate2"),
 	GetUserPref("Mate3"),

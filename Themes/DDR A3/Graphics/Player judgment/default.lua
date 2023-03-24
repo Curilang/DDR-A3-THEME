@@ -52,7 +52,7 @@ local t = Def.ActorFrame {};
 
 t[#t+1] = Def.ActorFrame {
 	LoadActor("deviation")..{
-		InitCommand=function(s) s:diffusealpha(0):animate(false):x(100) end,
+		InitCommand=function(s) s:diffusealpha(0):animate(false):x(80) end,
 		JudgmentMessageCommand=function(self, params)
 			if not ShowFastSlow() then 
 				return 

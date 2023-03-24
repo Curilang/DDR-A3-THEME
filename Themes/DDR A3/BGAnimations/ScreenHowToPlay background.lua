@@ -1,6 +1,6 @@
 return Def.ActorFrame{
 	LoadActor(THEME:GetPathB("ScreenHowToPlay","overlay/music.ogg"))..{
-		OnCommand=function(s) s:sleep(0.5):play() end,
+		OnCommand=function(s) s:sleep(0.47):play() end,
 		OffCommand=function(s) s:stop() end,
 	};
 	

@@ -53,8 +53,8 @@ local function CreatPanelDisplayShockArrowIcon(_pnPlayer, _sLabel, _rcRadarCateg
 				end;
 			end;	
 			--OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
-		LoadActor( "difficulty_shockarrow.png" );
-		LoadActor( "difficulty_shockarrow_eff.png" )..{
+		LoadActor( "shock" );
+		LoadActor( "effect" )..{
 			InitCommand=cmd(diffuseshift;effectcolor1,color("1,1,1,1");effectcolor2,color("1,1,1,0.8");effectperiod,0.2);
 		};
 	};

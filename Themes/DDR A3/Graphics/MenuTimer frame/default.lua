@@ -1,7 +1,7 @@
 return Def.ActorFrame {
 	InitCommand=function(self)
-		self:x(6);
-		self:y(17);
+		self:x(4.5);
+		self:y(18);
 		self:zoom(0.627)
 	end;
 	LoadActor(Model().."base")..{

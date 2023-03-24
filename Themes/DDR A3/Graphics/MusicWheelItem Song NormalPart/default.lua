@@ -1,41 +1,65 @@
-local GoldenLeagueSong = {
-	--A20
-	["Avenger"] = "league"; 								--1st 
-	["New Era"] = "league";									--2nd
-	["Give Me"] = "league";									--3rd
-	["Ace out"] = "league"; 								--4th
-	["The World Ends Now"] = "league";						--5th
-	["Rampage Hero"] = "league";							--6th
-	["ALPACORE"] = "league";								--7th
-	["Starlight in the Snow"] = "league";					--8th
-	["Glitch Angel"] = "league";							--9th
-	["Golden Arrow"] = "league";							--10th
-	["CyberConnect"] = "league";							--11th
-	--A20 PLUS
-	["DIGITALIZER"] = "league";								--1st
-	["Draw the Savage"] = "league";							--2nd
-	["MUTEKI BUFFALO"] = "league";							--3rd
-	["Going Hypersonic"] = "league";						--4th
-	["Lightspeed"] = "league";								--5th
-	["Run The Show"] = "league";							--6th
-	["Yuni's Nocturnal Days"] = "league";					--7th
-	["Good Looking"] = "league";							--8th
-	["Step This Way"] = "league";							--9th
-	["Come Back To Me"] = "league";							--10th
-	["actualization of self (weaponized)"] = "league";		--11th
-	["Better Than Me"] = "league";							--12th
-	["DDR TAGMIX -LAST DanceR-"] = "league";				--13th
-	["THIS IS MY LAST RESORT"] = "league";					--14th
-	--A3
-	["STAY GOLD"] = "league";								--1st
-	["Teleportation"] = "league";							--2nd
-	["Environ [De-SYNC] (feat. lythe)"] = "league";			--3rd
-	["Let Me Know"] = "league";								--4th
-};
-
 local grade = Def.ActorFrame{}
 local cursor = Def.ActorFrame{};
 local diff = Def.ActorFrame{};
+local top
+
+local function quadButton(z)
+	local t = Def.Quad{
+		InitCommand= function(self) 
+			self:z(z)
+		end;
+		MouseLeftClickMessageCommand = function(self)
+			if isOver(self) then
+				addPressedActors(self)
+			end
+		end;
+		TopPressedCommand = function(self)
+		end;
+	}
+
+	return t
+end
+
+local function GetExpandedSectionIndex()
+	local mWheel = SCREENMAN:GetTopScreen():GetMusicWheel()
+	local curSections = mWheel:GetCurrentSections()
+	for i=1, #curSections do
+		if curSections[i] == GAMESTATE:GetExpandedSectionName() then
+			return i-1
+		end
+	end
+end
+
+function IndexStage(param)
+	if GAMESTATE:IsExtraStage() or GAMESTATE:IsExtraStage2() then
+		return param.Index ~= nil
+	else
+		return GetExpandedSectionIndex()
+	end
+end
+
+function IndexStage2(param)
+	if GAMESTATE:IsExtraStage() or GAMESTATE:IsExtraStage2() then
+		return param.Index
+	else
+		return param.Index-GetExpandedSectionIndex()-1
+	end
+end
+
+
+local function SetXYPosition(self, param)
+	if IndexStage(param) then
+		local index = IndexStage2(param)
+		
+		if index%3 == 0 then
+			self:x(-304):y(107)
+		elseif index%3 == 1 then
+			self:x(0):y(0)
+		else
+			self:x(304):y(-107)
+		end
+	end
+end
 
 for i=1,2 do
 	cursor[#cursor+1] = Def.Sprite{
@@ -72,20 +96,49 @@ if GAMESTATE:IsSideJoined(PLAYER_2) then
 end;
 
 return Def.ActorFrame{
-	SetMessageCommand=function(self, params)
-		if params.Index ~= nil then
-			local index = params.Index;
-
-			if index%3 == 1 then
-				self:x(-304):y(107);
-			elseif index%3 == 2 then
-				self:x(0):y(0);
-			else
-				self:x(304):y(-107);
-			end
+	OnCommand = function(self)
+		top = SCREENMAN:GetTopScreen()
+	end;
+	SetMessageCommand=function(self,params)
+		local index = params.Index
+		
+		if index ~= nil then
+			SetXYPosition(self, params)
 			self:zoom(params.HasFocus and 2 or 1.7);
+			self:name(tostring(params.Index))
 		end
 	end;
+	quadButton(1)..{
+		InitCommand=function(s) s:visible(false) end,
+		TopPressedCommand=function(self)
+			local newIndex = tonumber(self:GetParent():GetName())
+			local wheel = SCREENMAN:GetTopScreen():GetChild("MusicWheel")
+			local size = wheel:GetNumItems()
+			local move = newIndex-wheel:GetCurrentIndex()
+
+		if math.abs(move)>math.floor(size/2) then
+			if newIndex > wheel:GetCurrentIndex() then
+				move = (move)%size-size
+			else
+				move = (move)%size
+			end
+		end
+
+		wheel:Move(move)
+		wheel:Move(0)
+
+		-- TODO: play sounds.
+		if move == 0 and wheel:GetSelectedType() == 'WheelItemDataType_Section' then
+			if wheel:GetSelectedSection() == curFolder then
+				wheel:SetOpenSection("")
+				curFolder = ""
+			else
+				wheel:SetOpenSection(wheel:GetSelectedSection())
+				curFolder = wheel:GetSelectedSection()
+			end
+		end
+	end,
+	};
 	Def.Sprite{
 		Texture=Model().."card",
 		InitCommand=function(s) s:zoom(0.94) end,

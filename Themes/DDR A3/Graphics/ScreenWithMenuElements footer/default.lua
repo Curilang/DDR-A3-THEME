@@ -11,10 +11,10 @@ elseif screenName == "ScreenEvaluationSummary" then
 end
 
 if footerTextImage then
-	t[#t+1] = LoadActor(GetCurrentModel().."/base") .. {
+	t[#t+1] = LoadActor(Model().."base") .. {
 		InitCommand=cmd(zoom,0.667;y,11);
 	};
-	t[#t+1] = LoadActor(GetCurrentModel().."/"..footerTextImage)..{
+	t[#t+1] = LoadActor(Model()..footerTextImage)..{
 		InitCommand=cmd(zoom,0.667;xy,0.5,12);
 	};
 end

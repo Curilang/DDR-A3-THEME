@@ -73,7 +73,7 @@ local function genScrollerFrame(player)
 					s:sleep(outdelay):linear(0.2):diffusealpha(0)
 				end,
 				Def.Sprite{
-					Texture=GetCurrentModel().."/diff "..ToEnumShortString(diff);
+					Texture=Model()..ToEnumShortString(diff);
 					InitCommand=cmd(zoom,1;y,-2)
 				};
 			};
@@ -291,6 +291,43 @@ local function genScrollerFrame(player)
 				Texture="flash",
 				InitCommand=function(s) s:diffusealpha(0):y(-2) end,
 				StartSelectingStepsMessageCommand=function(s) s:sleep(0.3):linear(0.05):diffusealpha(1):sleep(0.05):linear(0.1):diffusealpha(0) end,
+			};
+			Def.ActorFrame{
+			InitCommand=function(s) s:visible(false):queuecommand("Set") end,
+				SetCommand=function(s)
+					local song = GAMESTATE:GetCurrentSong()
+					local st = GAMESTATE:GetCurrentStyle():GetStepsType()
+					if song then
+						local steps = song:GetOneSteps(st,diff)
+						if steps then
+							if steps:GetRadarValues(player):GetValue('RadarCategory_Mines') >= 1 then
+								s:visible(true)
+							else
+								s:visible(false)
+							end
+						else
+							s:visible(false)
+						end
+					else
+						s:visible(false)
+					end
+				end,
+				Def.Sprite{ Texture=THEME:GetPathB("ScreenSelectMusic","overlay/ShockArrows/base"),
+					InitCommand=function(s) s:xy(103,55):zoom(0.867) end,
+				};
+				Def.Sprite{ Texture=THEME:GetPathB("ScreenSelectMusic","overlay/ShockArrows/title"),
+					InitCommand=function(s) s:xy(99,55):zoom(0.507) end,
+				};
+				Def.Sprite{ Texture=THEME:GetPathB("ScreenSelectMusic","overlay/ShockArrows/shock"),
+					InitCommand=function(s) s:xy(143,46):zoom(0.767) end,
+				};
+				Def.Sprite{ Texture=THEME:GetPathB("ScreenSelectMusic","overlay/ShockArrows/eff"),
+					InitCommand=function(s) s:xy(143,46):zoom(0.767):diffuseshift()
+						s:effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.8"))
+						s:effectperiod(0.15) 
+					end,
+				};
+				
 			};
 		};
 	end;

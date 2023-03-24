@@ -3,7 +3,6 @@
 --Enjoy! See you later alligator.
 --Author: Enciso0720
 --Last Update: 20220126
-
 local StagesFolder="/DanceStages/"
 
 local t = Def.ActorFrame{
@@ -25,9 +24,9 @@ if (VideoStage() and GAMESTATE:GetCurrentSong():HasBGChanges()) or (not GAMESTAT
 t[#t+1] = LoadActor(StagesFolder..DanceStage.."/LoaderA.lua" )
 
 -------------- CHARACTERS --------------
-
-t[#t+1] = LoadActor("Characters");
-
+if not (GetUserPref("SelectCharacter"..PLAYER_1) == "None" or GetUserPref("SelectCharacter"..PLAYER_2) == "None") then
+	t[#t+1] = LoadActor("Characters");
+end
 ------- DANCESTAGE LOADER 2 -------
 
 if FILEMAN:DoesFileExist(StagesFolder..DanceStage.."/LoaderB.lua") then

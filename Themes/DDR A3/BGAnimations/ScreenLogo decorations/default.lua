@@ -1,4 +1,5 @@
-return Def.ActorFrame{
+return Def.ActorFrame { 
+	
 	Def.ActorFrame{
 		OnCommand=function(s)
 			if IsLogo() then
@@ -7,12 +8,12 @@ return Def.ActorFrame{
 		end,
 	};
 	
-	LoadActor(THEME:GetPathB("ScreenLogo","decorations/"..Model().."logo"))..{
+	LoadActor(Model().."logo")..{
 		InitCommand=function(s) s:x(_screen.cx):y(_screen.cy-14):zoom(0.667) end,
 	};
 	
 	LoadActor(THEME:GetPathB("ScreenLogo","decorations/copyright"))..{
-		InitCommand=cmd(CenterX;y,SCREEN_BOTTOM-98;zoom,0.777);
+		InitCommand=function(s) s:xy(_screen.cx,SCREEN_BOTTOM-98):zoom(0.54) end,
 	};
 	
 	Def.Quad{
@@ -25,8 +26,7 @@ return Def.ActorFrame{
 			end
 		end
 	};
-	
 	LoadActor(THEME:GetPathB("","ModDate"));
 	
-	LoadActor(THEME:GetPathB("","_Arcade decorations"));
+	LoadActor(THEME:GetPathG("","ArcadeDecorations"));
 };

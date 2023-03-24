@@ -190,10 +190,9 @@ t[#t+1] = LoadActor( THEME:GetPathS("", "_MusicWheel change") )..{ Name="change_
 t[#t+1] = LoadActor( THEME:GetPathS("", "player mine") )..{ Name="change_invalid", SupportPan = false }
 t[#t+1] = LoadActor( THEME:GetPathS("common", "start") )..{ Name="start_sound", SupportPan = false }
 
-t[#t+1] = Def.ActorFrame {
-	LoadActor("../_swoosh_in") .. {
-	OnCommand=cmd(queuecommand,"Play");
-	PlayCommand=cmd(play);
-	};
+t[#t+1] = Def.Sound {
+	File=THEME:GetPathS("","_swoosh in"),
+	OnCommand=function(s) s:play() end,
 };
+
 return t

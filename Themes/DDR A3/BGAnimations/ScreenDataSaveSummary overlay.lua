@@ -43,7 +43,7 @@ function LoadPlayerStuff(Player)
         self:diffusealpha(0)
       end;
     };
-	t[#t+1] = LoadActor( THEME:GetPathB("GameDecoration","9 stars") )..{
+	t[#t+1] = LoadActor( THEME:GetPathG("","_shared/stars"))..{
 		InitCommand=cmd(diffusealpha,0;zoom,0.75;y,-17);
 		OnCommand=function(s) s:sleep(0.7):linear(0.1):diffusealpha(1):zoom(1.1):linear(0.1):zoom(1) end,
       OffCommand=function(self)

@@ -208,25 +208,25 @@ function OptionRowGuideLines()
 		Choices = {"Off", "On", };
 		LoadSelections = function(self, list, pn)
 			if ReadPrefFromFile("OptionRowGuideLines") ~= nil then
-				if GetUserPref("OptionRowGuideLines")=='false' then
-					list[1] = true
-				elseif GetUserPref("OptionRowGuideLines")=='true' then
+				if GetUserPref("OptionRowGuideLines")=='true' then
 					list[2] = true
-				else
+				elseif GetUserPref("OptionRowGuideLines")=='false' then
 					list[1] = true
+				else
+					list[2] = true
 				end
 			else
-				WritePrefToFile("OptionRowGuideLines",false);
-				list[1] = true;
+				WritePrefToFile("OptionRowGuideLines",true);
+				list[2] = true;
 			end;
 		end;
 		SaveSelections = function(self, list, pn)
-			if list[1] then
-				WritePrefToFile("OptionRowGuideLines",false);
-			elseif list[2] then
+			if list[2] then
 				WritePrefToFile("OptionRowGuideLines",true);
-			else
+			elseif list[1] then
 				WritePrefToFile("OptionRowGuideLines",false);
+			else
+				WritePrefToFile("OptionRowGuideLines",true);
 			end;
 			THEME:ReloadMetrics();
 		end;
@@ -348,7 +348,6 @@ function OptionRowBPM()
 			else
 				WritePrefToFile("OptionRowBPM",'Name');
 			end;
-			THEME:ReloadMetrics();
 		end;
 	};
 	setmetatable( t, t );
@@ -432,44 +431,41 @@ function OptionRowGameplayBackground()
 	return t;
 end
 
-function OptionRowSongTiming()
+function OptionRowCutIns()
 	local t = {
-		Name = "SongTiming";
+		Name = "CutIns";
 		LayoutType = "ShowAllInRow";
 		SelectType = "SelectOne";
 		OneChoiceForAllPlayers = true;
 		ExportOnChange = false;
-		Choices = {"StepMania", "DDR", };
+		Choices = {"Off", "On", };
 		LoadSelections = function(self, list, pn)
-			if ReadPrefFromFile("OptionRowSongTiming") ~= nil then
-				if GetUserPref("OptionRowSongTiming")=='StepMania' then
+			if ReadPrefFromFile("OptionRowCutIns") ~= nil then
+				if GetUserPref("OptionRowCutIns")=='Off' then
 					list[1] = true
-				elseif GetUserPref("OptionRowSongTiming")=='DDR'then
+				elseif GetUserPref("OptionRowCutIns")=='On'then
 					list[2] = true
 				else
 					list[1] = true
 				end
 			else
-				WritePrefToFile("OptionRowSongTiming",'StepMania');
+				WritePrefToFile("OptionRowCutIns",'Off');
 				list[1] = true;
 			end;
 		end;
 		SaveSelections = function(self, list, pn)
 			if list[1] then
-				WritePrefToFile("OptionRowSongTiming",'StepMania');
+				WritePrefToFile("OptionRowCutIns",'Off');
 			elseif list[2] then
-				WritePrefToFile("OptionRowSongTiming",'DDR');
+				WritePrefToFile("OptionRowCutIns",'On');
 			else
-				WritePrefToFile("OptionRowSongTiming",'StepMania');
+				WritePrefToFile("OptionRowCutIns",'Off');
 			end;
-			THEME:ReloadMetrics();
 		end;
 	};
 	setmetatable( t, t );
 	return t;
 end
-
---DDR A20--
 
 function OptionRowModel()
 	local t = {
@@ -478,12 +474,12 @@ function OptionRowModel()
 		SelectType = "SelectOne";
 		OneChoiceForAllPlayers = true;
 		ExportOnChange = false;
-		Choices = {"Gold", "Blue", };
+		Choices = {"Gold", "White", };
 		LoadSelections = function(self, list, pn)
 			if ReadPrefFromFile("OptionRowModel") ~= nil then
 				if GetUserPref("OptionRowModel")=='Gold' then
 					list[1] = true
-				elseif GetUserPref("OptionRowModel")=='Blue' then
+				elseif GetUserPref("OptionRowModel")=='White' then
 					list[2] = true
 				else
 					list[1] = true
@@ -497,45 +493,9 @@ function OptionRowModel()
 			if list[1] then
 				WritePrefToFile("OptionRowModel",'Gold');
 			elseif list[2] then
-				WritePrefToFile("OptionRowModel",'Blue');
+				WritePrefToFile("OptionRowModel",'White');
 			else
 				WritePrefToFile("OptionRowModel",'Gold');
-			end;
-		end;
-	};
-	setmetatable( t, t );
-	return t;
-end
-
-function OptionRowVersion()
-	local t = {
-		Name = "Version";
-		LayoutType = "ShowAllInRow";
-		SelectType = "SelectOne";
-		OneChoiceForAllPlayers = true;
-		ExportOnChange = false;
-		Choices = {"A20", "A20 PLUS", };
-		LoadSelections = function(self, list, pn)
-			if ReadPrefFromFile("OptionRowVersion") ~= nil then
-				if GetUserPref("OptionRowVersion")=='A20' then
-					list[1] = true
-				elseif GetUserPref("OptionRowVersion")=='A20 PLUS' then
-					list[2] = true
-				else
-					list[1] = true
-				end
-			else
-				WritePrefToFile("OptionRowVersion",'A20');
-				list[1] = true;
-			end;
-		end;
-		SaveSelections = function(self, list, pn)
-			if list[1] then
-				WritePrefToFile("OptionRowVersion",'A20');
-			elseif list[2] then
-				WritePrefToFile("OptionRowVersion",'A20 PLUS');
-			else
-				WritePrefToFile("OptionRowVersion",'A20');
 			end;
 		end;
 	};
@@ -734,5 +694,210 @@ function OptionRowDanCourse()
 		end;
 	};
 	setmetatable( t, t );
+	return t;
+end
+
+function OptionRowNoteSkins()
+ 	local t = {
+		Name = "NoteSkins";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = false;
+		ExportOnChange = true;
+		Choices = {"Normal" ,"Classic", "Cyber", "X" };
+		LoadSelections = function(self, list, pn)
+		local pName = ToEnumShortString(pn)
+			if ReadPrefFromFile("OptionRowNoteSkins"..pName) ~= nil then
+				if GetUserPref("OptionRowNoteSkins"..pName)=='Normal' then
+					list[1] = true
+				elseif GetUserPref("OptionRowNoteSkins"..pName)=='Classic' then
+					list[2] = true
+				elseif GetUserPref("OptionRowNoteSkins"..pName)=='Cyber' then
+					list[3] = true
+				elseif GetUserPref("OptionRowNoteSkins"..pName)=='X' then
+					list[4] = true
+				else
+					list[1] = true
+				end
+			else
+				WritePrefToFile("OptionRowNoteSkins"..pName,'Normal');
+				list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			local pName = ToEnumShortString(pn)
+			if list[1] then
+				WritePrefToFile("OptionRowNoteSkins"..pName,'Normal');
+			elseif list[2] then
+				WritePrefToFile("OptionRowNoteSkins"..pName,'Classic');
+			elseif list[3] then
+				WritePrefToFile("OptionRowNoteSkins"..pName,'Cyber');
+			elseif list[4] then
+				WritePrefToFile("OptionRowNoteSkins"..pName,'X');
+			else
+				WritePrefToFile("OptionRowNoteSkins"..pName,'Normal');
+			end;
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end
+
+function OptionRowArrowColor()
+ 	local t = {
+		Name = "ArrowColor";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = false;
+		ExportOnChange = true;
+		Choices = {"Rainbow" ,"Note", "Vivid", "Flat", "SMNote" };
+		LoadSelections = function(self, list, pn)
+		local pName = ToEnumShortString(pn)
+			if ReadPrefFromFile("OptionRowArrowColor"..pName) ~= nil then
+				if GetUserPref("OptionRowArrowColor"..pName)=='Rainbow' then
+					list[1] = true
+				elseif GetUserPref("OptionRowArrowColor"..pName)=='Note' then
+					list[2] = true
+				elseif GetUserPref("OptionRowArrowColor"..pName)=='Vivid' then
+					list[3] = true
+				elseif GetUserPref("OptionRowArrowColor"..pName)=='Flat' then
+					list[4] = true
+				elseif GetUserPref("OptionRowArrowColor"..pName)=='SMNote' then
+					list[5] = true
+				else
+					list[1] = true
+				end
+			else
+				WritePrefToFile("OptionRowArrowColor"..pName,'Rainbow');
+				list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			local pName = ToEnumShortString(pn)
+			if list[1] then
+				WritePrefToFile("OptionRowArrowColor"..pName,'Rainbow');
+			elseif list[2] then
+				WritePrefToFile("OptionRowArrowColor"..pName,'Note');
+			elseif list[3] then
+				WritePrefToFile("OptionRowArrowColor"..pName,'Vivid');
+			elseif list[4] then
+				WritePrefToFile("OptionRowArrowColor"..pName,'Flat');
+			elseif list[5] then
+				WritePrefToFile("OptionRowArrowColor"..pName,'SMNote');
+			else
+				WritePrefToFile("OptionRowArrowColor"..pName,'Rainbow');
+			end;
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end
+
+function OptionRowNTOption()
+	local t = {
+		Name = "NTOption";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = true;
+		ExportOnChange = true;
+		Choices = {"Off", "On", };
+		LoadSelections = function(self, list, pn)
+			if ReadPrefFromFile("NTOption") ~= nil then
+				if GetUserPref("NTOption")=='Off' then
+					list[1] = true
+				elseif GetUserPref("NTOption")=='On' then
+					list[2] = true
+				else
+					list[1] = true
+				end
+			else
+				WritePrefToFile("NTOption",'Off');
+				list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			if list[1] then
+				WritePrefToFile("NTOption",'Off');
+			elseif list[2] then
+				WritePrefToFile("NTOption",'On');
+			else
+				WritePrefToFile("NTOption",'Off');
+			end;
+			THEME:ReloadMetrics();
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end
+
+function OptionRowEXScore()
+	local t = {
+		Name = "EXScore";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = true;
+		ExportOnChange = true;
+		Choices = {"Off", "On", };
+		LoadSelections = function(self, list, pn)
+			if ReadPrefFromFile("OptionRowEXScore") ~= nil then
+				if GetUserPref("OptionRowEXScore")=='Off' then
+					list[1] = true
+				elseif GetUserPref("OptionRowEXScore")=='On' then
+					list[2] = true
+				else
+					list[1] = true
+				end
+			else
+				WritePrefToFile("OptionRowEXScore",'Off');
+				list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			if list[1] then
+				WritePrefToFile("OptionRowEXScore",'Off');
+			elseif list[2] then
+				WritePrefToFile("OptionRowEXScore",'On');
+			else
+				WritePrefToFile("OptionRowEXScore",'Off');
+			end;
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end
+
+function OptionRowGauge()
+	local t = {
+		Name="Gauge",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = false,
+		ExportOnChange = true,
+		Choices = {"NORMAL", "LIFE4", "RISKY"};
+		LoadSelections = function(self, list, pn)
+			local po = GAMESTATE:GetPlayerState(pn):GetPlayerOptionsArray("ModsLevel_Preferred")
+				if table.search(po, "4Lives") then
+					list[2] = true
+				elseif table.search(po, "1Lives") then
+					list[3] = true
+				else
+					list[1] = true
+				end
+		end,
+		SaveSelections = function(self, list, pn)
+			local mod
+			if list[2] then
+				mod = "4 lives,battery,failimmediate"
+			elseif list[3] then
+				mod = "1 lives,battery,failimmediate"
+			else
+				mod = "bar,failimmediate"
+			end
+			if mod ~= "" then
+				GAMESTATE:ApplyPreferredModifiers(pn, mod)
+			end
+		end,
+	};
+	setmetatable(t, t);
 	return t;
 end

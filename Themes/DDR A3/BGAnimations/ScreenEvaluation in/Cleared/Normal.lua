@@ -29,13 +29,4 @@ return Def.ActorFrame{
 			OnCommand=function(s) s:sleep(0.2):linear(0.1):y(SCREEN_BOTTOM-30):diffusealpha(0) end, 
 		}; 		
 	};
-
-	LoadActor(THEME:GetPathB("ScreenGameplay","ready/bg"))..{
-		InitCommand=function(s) s:Center():blend(Blend.Add):zoom(0.667) end,
-		OnCommand=function(s) s:linear(0.1):zoomy(0)end,
-	};
-	Def.Sprite{	
-		InitCommand=function(s) s:Center():zoom(0.667) end,
-		OnCommand=function(s) s:Load(ClearedToLoad()):linear(0.09):zoomx(1):zoomy(0) end,
-	};
 };

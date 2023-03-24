@@ -14,8 +14,8 @@ return Def.ActorFrame {
 		OffCommand=function(s) s:play() end,
 	};
 	
-	LoadActor(THEME:GetPathS("","_silent"))..{
-		OnCommand=cmd(sleep,1);
-		OffCommand=cmd(play);
-	};
+	-- LoadActor(THEME:GetPathS("","_silent"))..{
+		-- OnCommand=cmd(sleep,1);
+		-- OffCommand=cmd(play);
+	-- };
 };

@@ -27,24 +27,16 @@ end
 
 if GAMESTATE:IsDemonstration()  then Darkness = 0.65 end
 
-function FilterUpdate(self)
-	if (GAMESTATE:GetSongBeat() >= GAMESTATE:GetCurrentSong():GetLastBeat()) then 
-		self:visible(false)
-	elseif (GAMESTATE:GetSongBeat() >= GAMESTATE:GetCurrentSong():GetFirstBeat()-8) then 
-		self:visible(true)
-	else 
-		self:visible(false)
-	end
-end
-
-local t = Def.ActorFrame {};
-
-t[#t+1] = Def.Sprite { 
-	InitCommand=function(s) s:zoom(0.67):x(Position):y(_screen.cy):Load(Filter):diffusealpha(Darkness) end, 
+return Def.ActorFrame {
+	InitCommand=function(s) s:xy(Position,_screen.cy):diffusealpha(GuideLines() and Darkness or 0) end,
+	CurrentSongChangedMessageCommand=function(s) s:sleep(BeginReadyDelay()+SongMeasureSec()):diffusealpha(Darkness) end,
+	ChangeCourseSongInMessageCommand=function(s) s:playcommand('FilterOff') end,
+	OffCommand=function(s) 
+		if (GAMESTATE:GetSongBeat() >= GAMESTATE:GetCurrentSong():GetLastBeat()) then 
+			s:diffusealpha(GuideLines() and Darkness or 0)
+		end
+	end,
+	Def.Sprite { 
+		InitCommand=function(s) s:zoom(0.67):Load(Filter) end, 
+	};
 };
-
-if GuideLines() == false then
-	t.InitCommand=cmd(SetUpdateFunction,FilterUpdate); 
-end;
-
-return t;

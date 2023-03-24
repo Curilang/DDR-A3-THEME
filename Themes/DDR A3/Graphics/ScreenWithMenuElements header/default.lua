@@ -42,13 +42,13 @@ elseif screenName == "ScreenEditMenu" then
 end
 
 if headerTextImage then
-	t[#t+1] = LoadActor(GetCurrentModel().."/base")..{
+	t[#t+1] = LoadActor(Model().."base")..{
 		InitCommand=function(self)
 			self:y(-9)
 			self:zoom(0.667)
 		end;
 	};
-	t[#t+1] = LoadActor(GetCurrentModel().."/"..headerTextImage)..{
+	t[#t+1] = LoadActor(Model()..headerTextImage)..{
 		InitCommand=function(self)
 			self:y(-11)
 			if disp_stage == "ENCORE" then

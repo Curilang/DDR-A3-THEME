@@ -1,1 +1,1 @@
-return LoadActor(THEME:GetPathB("ScreenWithMenuElements","background/"..Model().."ddra3_bg_hd"))..{ InitCommand=function(s) s:FullScreen() end, };
+return LoadActor(Model().."background")..{ InitCommand=function(s) s:FullScreen() end, };

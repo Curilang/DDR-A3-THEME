@@ -1,110 +1,158 @@
 ---DDR A3
 
 20 - DDR A3\Ayumi Magical Showtime
+20 - DDR A3\Ichizu
 20 - DDR A3\Ue ue shita shita hidari migi hidari migi BA
 20 - DDR A3\Usatei
 20 - DDR A3\Kanbu de tomatte sugu tokeru ~ kyouki no Udongein
+20 - DDR A3\Kiyarora eisei no kiseki
 20 - DDR A3\Kyoka suigetsurou (DDR EDITION)
+20 - DDR A3\Koi no hyoketsu otenba yukemuri Cirno onsen
+20 - DDR A3\Saisoku saikou shutter girl
 20 - DDR A3\Sayonara heaven
+20 - DDR A3\SHIN HEBI HIME
+20 - DDR A3\Scarlet keisatsu no ghetto patrol 24 ji
 20 - DDR A3\Chucchu Machu Picchu
 20 - DDR A3\Nanahoshi
 20 - DDR A3\Mixed nuts
+20 - DDR A3\Myu, myu, Mullru
 20 - DDR A3\Murasakibana
 20 - DDR A3\Yasaimashi ninniku abura oome
 20 - DDR A3\Yoidore shirazu
+20 - DDR A3\Respec fujin
 20 - DDR A3\Ryoushi no umi no Lindwurm
 20 - DDR A3\Lilieze to enryuu Laevateinn
 20 - DDR A3\Renaikansoku -2021 manatsu no ending ver.-
+20 - DDR A3\Wakusei lollipop
 
 20 - DDR A3\Acid,Tribal & Dance (DDR EDITION)
 20 - DDR A3\ALBIDA
 20 - DDR A3\Anthurium
 20 - DDR A3\Are U Ready
+20 - DDR A3\Awakening Wings
+20 - DDR A3\Be With You (Still Miss you)
 20 - DDR A3\Beluga
 20 - DDR A3\Black Emperor
+20 - DDR A3\BONE BORN
+20 - DDR A3\BREDLI
+20 - DDR A3\CANDY (UFO mix)
 20 - DDR A3\Closer to my Heart (jun remix)
 20 - DDR A3\Come Back to Me (Feel It)
 20 - DDR A3\Concertino in Blue
 20 - DDR A3\concon
+20 - DDR A3\Crystarium
+20 - DDR A3\Curry Up
 20 - DDR A3\Dance Phenomena
+20 - DDR A3\Debug Dance
 20 - DDR A3\Deep tenDon Reflex
 20 - DDR A3\DOUBLE TORNARD
 20 - DDR A3\Drive My Heart
 20 - DDR A3\DUAL STRIKER
+20 - DDR A3\Easy Peasy
 20 - DDR A3\Environ [De-SYNC] (feat. lythe)
+20 - DDR A3\Eon Break
 20 - DDR A3\Fleur
 20 - DDR A3\GERBERA
+20 - DDR A3\Get it
 20 - DDR A3\Get Your Wish
 20 - DDR A3\glacia
 20 - DDR A3\Glitter Flatter Scatter
 20 - DDR A3\Go Down
+20 - DDR A3\Go To The Oasis
 20 - DDR A3\Good Sound United
 20 - DDR A3\GRADIUS REMIX (UUDDLRLRBA Ver.)
+20 - DDR A3\Heavens and the Earth
+20 - DDR A3\insist
 20 - DDR A3\I WANT YOUR LOVE (Darwin remix)
+20 - DDR A3\Kilonova
 20 - DDR A3\KING
 20 - DDR A3\Last Summer
 20 - DDR A3\Let Me Know
+20 - DDR A3\Let Me Show You
 20 - DDR A3\Let's DANCE aROUND!!
 20 - DDR A3\Like A Star
+20 - DDR A3\little steps
+20 - DDR A3\Look at the Sky
+20 - DDR A3\Lose Your Sense
 20 - DDR A3\MANA
 20 - DDR A3\MA-TSU-RI
 20 - DDR A3\Megalara Garuda
 20 - DDR A3\MEGALOVANIA
 20 - DDR A3\Mess With My Emotions
+20 - DDR A3\Musician
+20 - DDR A3\On the Night of a Still Wind
 20 - DDR A3\ON-DO
+20 - DDR A3\PARADISE
 20 - DDR A3\perditus paradisus
 20 - DDR A3\PERSIAN LAND
+20 - DDR A3\Phlox
 20 - DDR A3\Prettiful!
 20 - DDR A3\Pump Pump Pump
 20 - DDR A3\Qwerty
 20 - DDR A3\SAYONARA disco light
+20 - DDR A3\Sector
 20 - DDR A3\Settin' the Scene
+20 - DDR A3\Snow Garland Fairy
+20 - DDR A3\Something Comforting
+20 - DDR A3\STAY (Joey Riot remix)
 20 - DDR A3\STAY GOLD
 20 - DDR A3\stellar rain
+20 - DDR A3\Such A Feeling
 20 - DDR A3\Surface
+20 - DDR A3\Take Me
+20 - DDR A3\TAKE ME HIGHER
 20 - DDR A3\Teleportation
+20 - DDR A3\THE ANCIENT KING IS BACK
 20 - DDR A3\Too Late Snow
 20 - DDR A3\TRUE LOVE (Clubstar's True Club Mix)
 20 - DDR A3\Unity
 20 - DDR A3\Unreality
 20 - DDR A3\VALLIS-NERIA
+20 - DDR A3\VOLAQUAS
 20 - DDR A3\WARNING WARNING WARNING
+20 - DDR A3\We Will Live Together
 20 - DDR A3\Wolf's Rain
 20 - DDR A3\Worst Plan
 20 - DDR A3\Wowie Zowie!
 20 - DDR A3\Wuv U
+20 - DDR A3\You You You
 
 ---DDR GRAND PRIX
 
 19 - DDR GRAND PRIX\Ai no tame ni
+19 - DDR GRAND PRIX\Ichizu
 19 - DDR GRAND PRIX\Odoru Pompokolin
 19 - DDR GRAND PRIX\Orion wo nazoru
 19 - DDR GRAND PRIX\Kaikai kitan
 19 - DDR GRAND PRIX\Kaibutsu
 19 - DDR GRAND PRIX\Gurenge
 19 - DDR GRAND PRIX\Gunjou
-13 - DDR X3 VS 2ndMIX\Connect
+19 - DDR GRAND PRIX\Connect
 19 - DDR GRAND PRIX\Sakuranbo
 19 - DDR GRAND PRIX\Joyful
-14 - DDR 2013\JoJo ~Sono Chi no Sadame~
-14 - DDR 2013\Tsukematsukeru
+19 - DDR GRAND PRIX\JoJo ~Sono Chi no Sadame~
+19 - DDR GRAND PRIX\Sousei no Aquarion
+19 - DDR GRAND PRIX\Tsukematsukeru
 19 - DDR GRAND PRIX\Dry flower
 19 - DDR GRAND PRIX\Natsumatsuri
 19 - DDR GRAND PRIX\Byoushin wo kamu
-13 - DDR X3 VS 2ndMIX\Heavy Rotation
-11 - DDR X\PORIRIZUMU
-14 - DDR 2013\Maji LOVE 1000%
+19 - DDR GRAND PRIX\Heavy Rotation
+19 - DDR GRAND PRIX\HOSHI GA OYOGU
+19 - DDR GRAND PRIX\PORIRIZUMU
+19 - DDR GRAND PRIX\Maji LOVE 1000%
+19 - DDR GRAND PRIX\Mixed nuts
 19 - DDR GRAND PRIX\Yoru ni kakeru
 19 - DDR GRAND PRIX\Lum no love song
 19 - DDR GRAND PRIX\Luka luka night fever
 19 - DDR GRAND PRIX\Renai revolution 21
 19 - DDR GRAND PRIX\Wasurena
-14 - DDR 2013\BRIGHT STREAM
+19 - DDR GRAND PRIX\BRIGHT STREAM
 19 - DDR GRAND PRIX\Lemon
-14 - DDR 2013\LOVE & JOY -Risk Junk MIX-
+19 - DDR GRAND PRIX\LOVE & JOY -Risk Junk MIX-
 19 - DDR GRAND PRIX\only my railgun
+19 - DDR GRAND PRIX\POP STAR
 19 - DDR GRAND PRIX\Pretender
-12 - DDR X2\resonance
+19 - DDR GRAND PRIX\resonance
 19 - DDR GRAND PRIX\Trickster
 19 - DDR GRAND PRIX\10nen sakura
 
@@ -613,18 +661,21 @@
 
 ---DanceDanceRevolution(2013)
 
+14 - DDR 2013\Tsukematsukeru
 14 - DDR 2013\Furisodation
 14 - DDR 2013\U-u-uma uma (Speedcake Remix)
 14 - DDR 2013\Okome no oishii takikata, soshite okome wo taberu koto ni yoru sono kouka
 14 - DDR 2013\Orion wo nazoru
 14 - DDR 2013\Colorful Pastel
 14 - DDR 2013\Kiken na kajitsu
+14 - DDR 2013\JoJo ~Sono Chi no Sadame~
 14 - DDR 2013\Zutto Mitsu Meteite (Ryu Remix)
 14 - DDR 2013\Seiten Bon Voyage
 14 - DDR 2013\Sousei Note
 14 - DDR 2013\Chikuwa parfait da yo CKP
 14 - DDR 2013\Nagisa no koakuma lovely~radio
 14 - DDR 2013\Nijiiro no hana
+14 - DDR 2013\Maji LOVE 1000%
 14 - DDR 2013\Who Floats
 14 - DDR 2013\Meumeupettantan!!
 14 - DDR 2013\Lucky Lucky
@@ -640,6 +691,7 @@
 14 - DDR 2013\Beautiful Dream
 14 - DDR 2013\Blew My Mind
 14 - DDR 2013\Bombay Bomb
+14 - DDR 2013\BRIGHT STREAM
 14 - DDR 2013\Burst The Gravity
 14 - DDR 2013\Children of the Beat
 14 - DDR 2013\Chinese Snowy Dance
@@ -657,6 +709,7 @@
 14 - DDR 2013\heron
 14 - DDR 2013\Hoping To Be Good
 14 - DDR 2013\JOKER
+14 - DDR 2013\LOVE & JOY -Risk Junk MIX-
 14 - DDR 2013\Magnetic
 14 - DDR 2013\Mickey Mouse March(Eurobeat Version)
 14 - DDR 2013\Monkey Business
@@ -697,6 +750,8 @@
 13 - DDR X3 VS 2ndMIX\Shizuku
 13 - DDR X3 VS 2ndMIX\Sumidagawa karenka
 13 - DDR X3 VS 2ndMIX\Tenjou no Hoshi -Reimeiki-
+13 - DDR X3 VS 2ndMIX\Connect
+13 - DDR X3 VS 2ndMIX\Heavy Rotation
 13 - DDR X3 VS 2ndMIX\Beautiful Receipt
 13 - DDR X3 VS 2ndMIX\Memeshikute
 13 - DDR X3 VS 2ndMIX\Ryouran Hit Chart
@@ -831,6 +886,7 @@
 12 - DDR X2\Poseidon (kors k mix)
 12 - DDR X2\POSSESSION
 12 - DDR X2\real-high-SPEED
+12 - DDR X2\resonance
 12 - DDR X2\roppongi EVOLVED ver. A
 12 - DDR X2\roppongi EVOLVED ver. B
 12 - DDR X2\roppongi EVOLVED ver. C
@@ -865,6 +921,7 @@
 
 ---DDR X
 
+11 - DDR X\PORIRIZUMU
 11 - DDR X\Suki Melo
 11 - DDR X\SEKAI HA ODORU
 11 - DDR X\Rin To Shite Saku Hana No Gotoku

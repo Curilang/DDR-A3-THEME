@@ -85,6 +85,9 @@ return Def.ActorFrame{
 	Def.ActorFrame{
 		Name="Jacket";
 		LoadActor(Model().."jacket")..{ InitCommand=function(s) s:x(245):y(15) end, };
+		Def.Quad{ 
+			InitCommand=function(s) s:diffuse(Color.Black):diffusealpha(0.4):xy(244,17):setsize(152,152) end,
+		};
 		Def.Sprite{
 			InitCommand=function(s) s:x(244):y(17) end,
 			SetCommand=function(s)

@@ -17,10 +17,10 @@ return Def.ActorFrame {
 			end
 		end;
 		Def.Sprite{
-			Texture=THEME:GetPathG("MusicWheelItem Sort","ColorPart/"..GetCurrentModel().."/normal"),
+			Texture=Model().."normal",
 		};
 		Def.Sprite{
-			Texture=THEME:GetPathG("MusicWheelItem Sort","ColorPart/"..GetCurrentModel().."/selected"),
+			Texture=Model().."selected",
 			SetMessageCommand=function(self,params)
 				if params.HasFocus then
 					self:zoom(1)
@@ -49,13 +49,13 @@ return Def.ActorFrame {
 			end
 		end;
 		Def.Sprite{
-			Texture=GetCurrentModel().."/highlight",
+			Texture=Model().."high",
 			InitCommand=function(s) s:diffuseramp():effectcolor1(color("1,1,1,0.2")):effectcolor2(color("1,1,1,1")):effectperiod(0.5) end,
 		};
 		Def.ActorFrame{
 			InitCommand=function(s) s:diffuseramp():effectcolor1(color("1,1,1,0")):effectcolor2(color("1,1,1,1")):effectperiod(0.5) end,
 			Def.Sprite{
-				Texture=GetCurrentModel().."/cursor",
+				Texture=Model().."line",
 				InitCommand=function(s) s:thump(1):effectmagnitude(1.1,1,0):effectperiod(0.5) end,
 			};
 		};

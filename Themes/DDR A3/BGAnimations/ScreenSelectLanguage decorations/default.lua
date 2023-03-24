@@ -102,7 +102,7 @@ t[#t+1] = Def.ActorFrame{
     Def.ActorFrame{
         OffCommand=function(s) s:linear(0.2):zoomy(0) end,
         Def.Sprite{
-            Texture=GetCurrentModel().."/base",
+            Texture=Model().."base",
 			InitCommand=function(s) s:zoom(0.667):x(0.7) end,
 			OnCommand=function(s) s:zoomy(0):linear(0.2):zoomy(0.667) end,
         };
@@ -150,11 +150,11 @@ t[#t+1] = Def.ActorFrame{
             BeginCommand=function(s) s:playcommand("MoveScroller") end,
             MoveScrollerMessageCommand=function(s)
                 if curIndex == 1 then
-                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..GetCurrentModel().."/japanese"))
+                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..Model().."japanese"))
                 elseif curIndex == 2 then
-                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..GetCurrentModel().."/english"))
+                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..Model().."english"))
                 else
-                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..GetCurrentModel().."/korean"))
+                    s:Load(THEME:GetPathB("ScreenSelectLanguage","decorations/"..Model().."korean"))
                 end
             end
         };

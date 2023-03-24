@@ -42,7 +42,7 @@ function LoadCard(cColor,cColor2,Player,IsJoinFrame)
 			end,
 			OffCommand=function(s) s:diffusealpha(0) end,
 		};
-		LoadActor( THEME:GetPathB("GameDecoration","9 stars") )..{
+		LoadActor(THEME:GetPathG("","_shared/stars"))..{
 			InitCommand=function(s) s:diffusealpha(0):zoom(0.75):y(-17) end,
 			OnCommand=function(s)
 				local difu if IsJoinFrame then difu = 0 else difu = 1 end

@@ -58,6 +58,7 @@ local function InputHandler(event)
     end
   end
 end
+
 return Def.ActorFrame{
   OnCommand=function(self) SCREENMAN:GetTopScreen():AddInputCallback(InputHandler) end;
   OffCommand=function(self) SCREENMAN:GetTopScreen():RemoveInputCallback(InputHandler) end,
@@ -66,45 +67,3 @@ return Def.ActorFrame{
     self:sleep(0.5):queuecommand("On");
   end;
 };
-
---[[
-local function WheelMove(mov)
-  local mw = SCREENMAN:GetTopScreen():GetChild("MusicWheel");
-	mw:Move(mov)
-end
-
-local t = Def.ActorFrame{
-  OnCommand=function(self) SCREENMAN:GetTopScreen():AddInputCallback(DDRInput(self))
-  OffCommand=function(self)
-    SCREENMAN:GetTopScreen():RemoveInputCallback(DDRInput(self))
-  end;
-  SongChosenMessageCommand=function(self) self:queuecommand("Off") end;
-  SongUnchosenMessageCommand=function(self)
-    self:sleep(0.5):queuecommand("On");
-  end;
-  StartReleaseCommand=function(self)
-	  local mw = SCREENMAN:GetTopScreen("ScreenSelectMusic"):GetChild("MusicWheel");
-    local song = GAMESTATE:GetCurrentSong() 
-    if ThemePrefs.Get("WheelType") == "Jukebox" or ThemePrefs.Get("WheelType") == "Wheel" then
-		  if song then
-        SCREENMAN:GetTopScreen():StartTransitioningScreen("SM_MenuTimer")
-      end
-    else
-		end;
-  end;
-  StartRepeatCommand=function(self)
-    local mw = SCREENMAN:GetTopScreen():GetChild("MusicWheel")
-    local song = GAMESTATE:GetCurrentSong()
-    if song then
-      if ThemePrefs.Get("WheelType") == "Jukebox" or ThemePrefs.Get("WheelType") == "Wheel" then
-        SCREENMAN:AddNewScreenToTop("ScreenPlayerOptionsPopup","SM_MenuTimer")
-      else
-        SCREENMAN:AddNewScreenToTop("ScreenPlayerOptionsPopup")
-      end
-    else
-    end;
-  end;
-  SongUnchosenMessageCommand=function(self)
-    self:sleep(0.5):queuecommand("On");
-  end;
-};]]

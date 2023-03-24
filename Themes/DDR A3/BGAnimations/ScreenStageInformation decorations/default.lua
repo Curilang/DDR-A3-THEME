@@ -68,6 +68,12 @@ t[#t+1] = Def.ActorFrame{
 
 t[#t+1] = LoadActor("StageDisplay")..{ InitCommand=function(s) s:xy(140,80):zoom(0.667) end, };
 
+t[#t+1] = LoadActor("APFC")..{
+	Condition=GAMESTATE:IsExtraStage2();
+	InitCommand=function(s) s:xy(_screen.cx,_screen.cy-157):zoom(0.637) end, 
+	OnCommand=function(s) s:diffusealpha(0):sleep(1.85):linear(0.2):diffusealpha(1):sleep(0.5):linear(0.2):diffusealpha(0) end,
+};
+
 t[#t+1] = Def.Sprite {
 	InitCommand=function(s) s:x(_screen.cx):y(_screen.cy+12):diffusealpha(0) end,
 	OnCommand=function(s) s:queuecommand("Set"):sleep(1.85):linear(0.2):diffusealpha(1):sleep(0.7) end,

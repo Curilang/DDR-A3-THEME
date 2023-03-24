@@ -388,7 +388,7 @@ end;
 for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 t[#t+1] = Def.ActorFrame{ 
 		Def.Sprite{
-			Texture=THEME:GetPathB("ScreenEvaluation","decorations/"..Model().."player"),
+			Texture=THEME:GetPathG("","_shared/"..Model().."player"),
 			InitCommand=function(s) 
 			s:xy(pn==PLAYER_1 and SCREEN_LEFT-60 or SCREEN_RIGHT+60,_screen.cy-181):zoom(0.667):rotationy(pn==PLAYER_1 and 0 or 180) end,
 			OnCommand=function(s) s:linear(0.25):x(pn==PLAYER_1 and SCREEN_LEFT+52 or SCREEN_RIGHT-52) end,

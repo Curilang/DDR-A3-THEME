@@ -1,1 +1,0 @@
-return LoadActor(THEME:GetPathG("ShockArrowDisplay","Icon"),PLAYER_2);

@@ -13,7 +13,7 @@ local function GetPositionOniGamerOverX(pn)
 end;
 end;
 
-t[#t+1] = LoadActor("jx3hd_gover_p1")..{
+t[#t+1] = LoadActor("P1")..{
 	InitCommand=function(s) s:player(PLAYER_1):visible(false):zoom(0.667):y(_screen.cy):bob():effectperiod(0.533):effectmagnitude(0,5,0):rotationz(-5) end,
 	HealthStateChangedMessageCommand=function(self, param)
 		if GAMESTATE:PlayerIsUsingModifier(PLAYER_1,'battery') == true then 
@@ -30,7 +30,7 @@ t[#t+1] = LoadActor("jx3hd_gover_p1")..{
 	end;
 };
 
-t[#t+1] = LoadActor("jx3hd_gover_p2")..{
+t[#t+1] = LoadActor("P2")..{
 	InitCommand=function(s) s:player(PLAYER_2):visible(false):zoom(0.667):y(_screen.cy):bob():effectperiod(0.533):effectmagnitude(0,5,0):rotationz(-5) end,
 	HealthStateChangedMessageCommand=function(self, param)
 		if GAMESTATE:PlayerIsUsingModifier(PLAYER_2,'battery') == true then 
