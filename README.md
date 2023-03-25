@@ -12,15 +12,11 @@ Edit from Inori's DDR A20 Theme.
 
 # CURRENT SUPPORTED STEPMANIA BUILDS
 
-• [5.0.12](https://www.stepmania.com/download/)
+• [5.1.0-new](https://drive.google.com/file/d/1m5H4UXPKWHxiIV1eFW7GpySu8Mdrfm6p/view?usp=sharing) / [ITGMania](https://www.itgmania.com/)
 
-• [5.1.0-b2](https://github.com/stepmania/stepmania/releases/tag/v5.1.0-b2)
+• [OutFox**](https://projectoutfox.com/)
 
-• [5.1.0-new*](https://drive.google.com/file/d/1m5H4UXPKWHxiIV1eFW7GpySu8Mdrfm6p/view?usp=sharing) / [ITGMania](https://www.itgmania.com/)
-
-<sub>*build date: 2022-09-25</sub>
-
-NOTE: [OUTFOX](https://projectoutfox.com/) ITS CURRENTLY BEING PARTIALLY SUPPORTED DUE TO SOME RECENT CHANGES MADE ON THE ENGINE. WE'RE TRYING TO GET THAT FIXED AS SOON AS WE CAN.
+**There's still some visual issues on OutFox. We are working hard to have those problems fixed as soon as possible.
 
 # HOW TO GET ARCADE GROUP SORT LIST
 
