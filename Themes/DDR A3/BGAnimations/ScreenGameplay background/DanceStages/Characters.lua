@@ -43,14 +43,10 @@ end
 
 for pn in ivalues(GAMESTATE:GetEnabledPlayers()) do
 	if not GAMESTATE:IsDemonstration() then
-		if ReadPrefFromFile("SelectCharacter") ~= nil then
-			if GetUserPref("SelectCharacter"..pn) == "Random" then
-				GAMESTATE:SetCharacter(pn,GetUserPref("CharaRandom"..pn))
-			else
-				GAMESTATE:SetCharacter(pn,GetUserPref("SelectCharacter"..pn))
-			end
+		if GetUserPref("SelectCharacter"..pn) ~= "Random" then
+			GAMESTATE:SetCharacter(pn,GetUserPref("SelectCharacter"..pn))
 		else
-			GAMESTATE:SetCharacter(pn,CharaRandom[math.random(#CharaRandom)])
+			GAMESTATE:SetCharacter(pn,GetUserPref("CharaRandom"..pn))
 		end
 	else
 		GAMESTATE:SetCharacter(pn,CharaRandom[math.random(#CharaRandom)])
@@ -60,8 +56,8 @@ end
 ------- CHARACTER ORDER -------
 
 Listed = {
-	Character(PLAYER_1),
-	Character(PLAYER_2),
+	GAMESTATE:GetCharacter(PLAYER_1):GetDisplayName(),
+	GAMESTATE:GetCharacter(PLAYER_2):GetDisplayName(),
 	GetUserPref("Mate1"),
 	GetUserPref("Mate2"),
 	GetUserPref("Mate3"),

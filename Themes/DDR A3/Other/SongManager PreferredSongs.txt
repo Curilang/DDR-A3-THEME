@@ -25,6 +25,7 @@
 20 - DDR A3\Renaikansoku -2021 manatsu no ending ver.-
 20 - DDR A3\Wakusei lollipop
 
+20 - DDR A3\Ability
 20 - DDR A3\Acid,Tribal & Dance (DDR EDITION)
 20 - DDR A3\ALBIDA
 20 - DDR A3\Anthurium
@@ -36,6 +37,7 @@
 20 - DDR A3\BONE BORN
 20 - DDR A3\BREDLI
 20 - DDR A3\CANDY (UFO mix)
+20 - DDR A3\chaplet
 20 - DDR A3\Closer to my Heart (jun remix)
 20 - DDR A3\Come Back to Me (Feel It)
 20 - DDR A3\Concertino in Blue
@@ -62,8 +64,10 @@
 20 - DDR A3\Good Sound United
 20 - DDR A3\GRADIUS REMIX (UUDDLRLRBA Ver.)
 20 - DDR A3\Heavens and the Earth
+20 - DDR A3\Hold Tight
 20 - DDR A3\insist
 20 - DDR A3\I WANT YOUR LOVE (Darwin remix)
+20 - DDR A3\JUST BELIEVE
 20 - DDR A3\Kilonova
 20 - DDR A3\KING
 20 - DDR A3\Last Summer
@@ -74,6 +78,7 @@
 20 - DDR A3\little steps
 20 - DDR A3\Look at the Sky
 20 - DDR A3\Lose Your Sense
+20 - DDR A3\LOVE SHINE (Body Grooverz 2006 mix)
 20 - DDR A3\MANA
 20 - DDR A3\MA-TSU-RI
 20 - DDR A3\Megalara Garuda
@@ -94,6 +99,7 @@
 20 - DDR A3\Settin' the Scene
 20 - DDR A3\Snow Garland Fairy
 20 - DDR A3\Something Comforting
+20 - DDR A3\spring pony
 20 - DDR A3\STAY (Joey Riot remix)
 20 - DDR A3\STAY GOLD
 20 - DDR A3\stellar rain
@@ -103,6 +109,7 @@
 20 - DDR A3\TAKE ME HIGHER
 20 - DDR A3\Teleportation
 20 - DDR A3\THE ANCIENT KING IS BACK
+20 - DDR A3\the beat
 20 - DDR A3\Too Late Snow
 20 - DDR A3\TRUE LOVE (Clubstar's True Club Mix)
 20 - DDR A3\Unity
@@ -147,6 +154,7 @@
 19 - DDR GRAND PRIX\Renai revolution 21
 19 - DDR GRAND PRIX\Wasurena
 19 - DDR GRAND PRIX\BRIGHT STREAM
+19 - DDR GRAND PRIX\HOT LIMIT
 19 - DDR GRAND PRIX\Lemon
 19 - DDR GRAND PRIX\LOVE & JOY -Risk Junk MIX-
 19 - DDR GRAND PRIX\only my railgun

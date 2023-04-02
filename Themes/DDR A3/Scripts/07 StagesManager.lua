@@ -1376,6 +1376,7 @@
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "ルカルカ★ナイトフィーバー"												then return "(X) DANCING RAYS"				--Luka luka night fever
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "恋愛レボリューション21"													then return "(X2) CLUB"						--Renai revolution 21
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "勿忘"															then return "(X2) BOOM LIGHT"				--Wasurena
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "HOT LIMIT"														then return "(X) BOOM BOOM BOOM"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Lemon"															then return "(X) DAWN STREETS"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "only my railgun"												then return "(X) CRYSTALDIUM"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "POP STAR"														then return "(X2) BOOM LIGHT"
@@ -1406,6 +1407,7 @@
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "リリーゼと炎龍レーヴァテイン"												then return "(A) BOOM RED"					--Lilieze to enryuu Laevateinn
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "恋愛観測 -2021真夏のエンディング ver.-"									then return "(X2) BOOM LIGHT"				--Renaikansoku -2021 manatsu no ending ver.-
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "惑星☆ロリポップ"														then return "(X2) BOOM LIGHT"				--Wakusei lollipop
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Ability"														then return "(X2) CYBER"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Acid,Tribal & Dance (DDR EDITION)"								then return "(A) BOOM GREEN"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "ALBIDA"															then return "(A) BOOM BLUE"			
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Anthurium"														then return "(X2) CLUB"			
@@ -1417,6 +1419,7 @@
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "BONE BORN"														then return "(X) LOVE SWEETS"			
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "BREDLI"															then return "(X) DAWN STREETS"			
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "CANDY (UFO mix)"												then return "(X) LOVE SWEETS"			
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "chaplet"														then return "(X2) BOOM LIGHT"			
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Closer to my Heart (jun remix)"									then return "(X) DANCING RAYS"			
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Come Back to Me (Feel It)"										then return "(X) CRYSTALDIUM"			
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Concertino in Blue"												then return "(A) BOOM BLUE"			
@@ -1443,8 +1446,10 @@
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Good Sound United"												then return "(A) BOOM RED"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "GRADIUS REMIX（↑↑↓↓←→←→BA Ver.)"									then return "(X2) CYBER"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Heavens and the Earth"											then return "(X) DANCING RAYS"
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Hold Tight"														then return "(X) DANCING RAYS"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "insist"															then return "(X2) CLUB"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "I WANT YOUR LOVE (Darwin remix)"								then return "(X2) BOOM LIGHT"
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "JUST BELIEVE"													then return "(X) DAWN STREETS"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Kilonova"														then return "(A) BOOM BLUE"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "KING"															then return "(A) BOOM RED"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Last Summer"													then return "(X) DANCING RAYS"
@@ -1455,6 +1460,7 @@
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "little steps"													then return "(X2) BOOM LIGHT"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Look at the Sky"												then return "(X) DANCING RAYS"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Lose Your Sense"												then return "(A) BOOM GREEN"
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "LOVE SHINE (Body Grooverz 2006 mix)"							then return "(X) LOVE SWEETS"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "MANA"															then return "(X) CRYSTALDIUM"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "MA・TSU・RI"														then return "(X2) BOOM LIGHT"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Megalara Garuda"												then return "(A) BOOM WHITE"
@@ -1475,6 +1481,7 @@
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Settin' the Scene"												then return "(X2) CLUB"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Snow Garland Fairy"												then return "(X) CRYSTALDIUM"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Something Comforting"											then return "(X2) CLUB"
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "spring pony"													then return "(X) LOVE SWEETS"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "STAY (Joey Riot remix)"											then return "(X) CRYSTALDIUM"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "STAY GOLD"														then return "(A) BOOM YELLOW"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "stellar rain"													then return "(X2) CYBER"
@@ -1484,6 +1491,7 @@
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Take Me"														then return "(X2) BOOM LIGHT"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Teleportation"													then return "(A) BOOM DARK"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "THE ANCIENT KING IS BACK"										then return "(A) BOOM DARK"
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "the beat"														then return "(X2) CLUB"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Too Late Snow"													then return "(X) CRYSTALDIUM"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "TRUE♥LOVE (Clubstar's True Club Mix)"							then return "(X) LOVE SWEETS"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Unity"															then return "(X) DANCING RAYS"

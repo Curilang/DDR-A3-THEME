@@ -135,7 +135,7 @@ t[#t+1] = Def.ActorFrame {
 				speedDelta = -0.25;
 			end;
 
-			speed = math.max(0.5, math.min(speed + speedDelta, 10.0));
+			speed = math.max(0.25, math.min(speed + speedDelta, 10.0));
 			targetBPM[pn] = speed * maxBPM[pn];
 
 			local modstring = ps:GetPlayerOptionsString("ModsLevel_Preferred");

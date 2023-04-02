@@ -24,7 +24,7 @@ if (VideoStage() and GAMESTATE:GetCurrentSong():HasBGChanges()) or (not GAMESTAT
 t[#t+1] = LoadActor(StagesFolder..DanceStage.."/LoaderA.lua" )
 
 -------------- CHARACTERS --------------
-if not (GetUserPref("SelectCharacter"..PLAYER_1) == "None" or GetUserPref("SelectCharacter"..PLAYER_2) == "None") then
+if not (GetUserPref("SelectCharacter"..PLAYER_1) == "None") or (GetUserPref("SelectCharacter"..PLAYER_2) == "None") then
 	t[#t+1] = LoadActor("Characters");
 end
 ------- DANCESTAGE LOADER 2 -------

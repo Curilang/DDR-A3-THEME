@@ -252,62 +252,8 @@ end
 --OutFox Fixes
 
 function IsReverse(pn)
-	if _VERSION == "Lua 5.3" then
-		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Reverse() == 1
-	else
-		return GAMESTATE:PlayerIsUsingModifier(pn,'reverse')
-	end
+	return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Reverse() == 1
 end
-
-function IsBoost(pn)
-	if _VERSION == "Lua 5.3" then
-		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Boost() == 1
-	else
-		return GAMESTATE:PlayerIsUsingModifier(pn,'boost')
-	end
-end
-
-function IsBrake(pn)
-	if _VERSION == "Lua 5.3" then
-		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Brake() == 1
-	else
-		return GAMESTATE:PlayerIsUsingModifier(pn,'brake')
-	end
-end
-
-function IsWave(pn)
-	if _VERSION == "Lua 5.3" then
-		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Wave() == 1
-	else
-		return GAMESTATE:PlayerIsUsingModifier(pn,'wave')
-	end
-end
-
-function IsDark(pn)
-	if _VERSION == "Lua 5.3" then
-		return GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Dark() == 1
-	else
-		return GAMESTATE:PlayerIsUsingModifier(pn,'dark')
-	end
-end
-
-function Is4Lives(pn)
-	if _VERSION == "Lua 5.3" then
-		return table.search(GAMESTATE:GetPlayerState(pn):GetPlayerOptionsArray("ModsLevel_Preferred"), '4Lives')
-	else
-		return GAMESTATE:PlayerIsUsingModifier(pn,'4 lives,battery')
-	end
-end
-
-function Is1Lives(pn)
-	if _VERSION == "Lua 5.3" then
-		return table.search(GAMESTATE:GetPlayerState(pn):GetPlayerOptionsArray("ModsLevel_Preferred"), '1Lives')
-	else
-		return GAMESTATE:PlayerIsUsingModifier(pn,'1 life,battery')
-	end
-end
-
-
 
 --OutFox Fixes
 
@@ -423,11 +369,23 @@ end
 
 function OptionNumber()
 	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,SelectStage,Visual,Risky"
+		if GetUserPref("NTOption")=='On' then
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,ArrowType,NoteSkins,Cut,Freeze,Jump,SelectStage,Visual,Risky"
+		else
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,SelectStage,Visual,Risky"
+		end
 	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
-		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Characters,Visual,Risky"
+		if GetUserPref("NTOption")=='On' then
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,ArrowType,NoteSkins,Cut,Freeze,Jump,Characters,Visual,Risky"
+		else
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Characters,Visual,Risky"
+		end
 	else
-		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Visual,Risky"
+		if GetUserPref("NTOption")=='On' then
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,ArrowType,NoteSkins,Cut,Freeze,Jump,Visual,Risky"
+		else
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Visual,Risky"
+		end
 	end
 end
 
@@ -440,11 +398,15 @@ function CharactersOption()
 end
 
 function GetNoteSkinType(pn)
-	local Type = ReadPrefFromFile("OptionRowNoteSkins"..ToEnumShortString(pn)); 
+	local Type = ReadPrefFromFile("OptionRowArrowType"..ToEnumShortString(pn)); 
 		if Type == "Normal" 			then return "SCH-NORMAL-"
 	elseif Type == "Classic" 			then return "SCH-CLASSIC-"
 	elseif Type == "Cyber" 				then return "SCH-CYBER-"
 	elseif Type == "X" 					then return "SCH-X-"
+	elseif Type == "Medium" 			then return "SCH-MEDIUM-"
+	elseif Type == "Small" 				then return "SCH-SMALL-"
+	elseif Type == "Dot" 				then return "SCH-DOT-"
+	else									 return "SCH-NORMAL-"
 	end
 end
 
@@ -455,6 +417,7 @@ function GetArrowColor(pn)
 	elseif Color == "Vivid" 			then return "VIVID"
 	elseif Color == "Flat" 				then return "FLAT"
 	elseif Color == "SMNote" 			then return "SMNOTE"
+	else									 return "RAINBOW"
 	end
 end
 

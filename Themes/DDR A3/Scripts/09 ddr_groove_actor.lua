@@ -54,12 +54,7 @@ function lookup_ddr_radar_values(song, steps, pn)
 	local steps_radar = steps:GetRadarValues(pn)
 	
 	for category, index in pairs(radar_category_to_index) do
-		-- Cap radar values at 1 because stepmania doesn't have a cap anymore.
-		if ThemePrefs.Get("RadarLimit") then
-			radars[index]= math.min(steps_radar:GetValue(category), 3)
-		else
-			radars[index]= round(steps_radar:GetValue(category), 6)
-		end
+		radars[index]= math.min(steps_radar:GetValue(category), 3)
 	end
 	
 	if DDR_groove_radar_values then

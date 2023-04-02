@@ -18,16 +18,28 @@ end
 local screen = SCREENMAN:GetTopScreen();
 
 
-local rownames
+local rownames = OptionNumber()
 if GAMESTATE:IsExtraStage() or GAMESTATE:IsExtraStage2() then
-	rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds" }
+	rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "Remove", "Freeze", "Jump", "VisualDelaySeconds" }
 else
 	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", "DanceStage" }
+		if GetUserPref("NTOption")=='On' then
+			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", "DanceStage", "Arrow" }
+		else
+			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", "DanceStage" }
+		end
 	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
-		rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", "Characters" }
+		if GetUserPref("NTOption")=='On' then
+			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", "Characters", "Arrow" }
+		else
+			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", "Characters" }
+		end
 	else
-		rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", }
+		if GetUserPref("NTOption")=='On' then
+			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", "Arrow" }
+		else
+			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "VisualDelaySeconds", "Gauge", }
+		end
 	end
 end
 

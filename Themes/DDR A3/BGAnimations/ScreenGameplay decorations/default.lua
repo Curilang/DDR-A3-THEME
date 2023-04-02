@@ -26,6 +26,21 @@ t[#t+1] = Def.Actor{
 	end;
 };
 
+local lastAnnouncer = ANNOUNCER:GetCurrentAnnouncer()
+t[#t+1] = Def.ActorFrame {
+	Def.Actor {
+		InitCommand=function(s) 
+			ANNOUNCER:SetCurrentAnnouncer('')
+			s:sleep(BeginReadyDelay()):queuecommand('Play') 
+		end,
+		PlayCommand=function(s) 
+			if lastAnnouncer then
+				ANNOUNCER:SetCurrentAnnouncer(lastAnnouncer)
+			end
+			SOUND:PlayAnnouncer('gameplay ready') end,
+	},
+};
+
 if not GAMESTATE:IsDemonstration() then
 	if ShowCutIns() then 
 		if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
@@ -56,7 +71,10 @@ end
 
 t[#t+1] = LoadActor("ScoreFrame")..{ InitCommand=function(s) s:draworder(99) end, };
 t[#t+1] = LoadActor("message")..{ InitCommand=function(s) s:draworder(99) end, };
-t[#t+1] = LoadActor("doors")..{ InitCommand=function(s) s:draworder(99) end, };
+
+if not GAMESTATE:IsDemonstration() then
+	t[#t+1] = LoadActor("doors")..{ InitCommand=function(s) s:draworder(99) end, };
+end
 
 t[#t+1] = Def.ActorFrame {
 	Condition=not GAMESTATE:IsDemonstration(),

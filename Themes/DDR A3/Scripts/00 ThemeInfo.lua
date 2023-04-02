@@ -5,3 +5,4 @@ themeInfo = {
 	Date = "20230324",
 	Author = "KENP"
 	Mod = "SchneiderAFX, Curilang, Inorizushi, Wyvern-D, Midflight Digital"
+},

@@ -3,75 +3,8 @@ local player = ToEnumShortString(pn)
 
 return Def.ActorFrame {
 	-- Speed
-	Def.Sprite {
-		OnCommand=function(self)
-			self:x(-186);
-			if GAMESTATE:PlayerIsUsingModifier(pn,'0.25x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x025.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'0.5x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x050.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'0.75x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x075.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'1x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x100.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'1.25x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x125.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'1.5x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x150.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'1.75x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x175.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'2x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x200.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'2.25x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x225.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'2.5x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x250.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'2.75x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x275.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'3x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x300.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'3.25x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x325.png"));        
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'3.5x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x350.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'3.75x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x375.png"));        
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'4x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x400.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'4.25x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x425.png"));         
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'4.5x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x450.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'4.75x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x475.png"));         
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'5x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x500.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'5.25x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x525.png"));        
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'5.5x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x550.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'5.75x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x575.png"));        
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'6x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x600.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'6.25x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x625.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'6.5x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x650.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'6.75x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x675.png"));        
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'7x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x700.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'7.25x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x725.png"));        
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'7.5x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x750.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'7.75x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x775.png"));  
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'8x') then
-				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Speed/x800.png"));
-			end;
-		end;
+	Def.ActorFrame{
+		OnCommand=function(s) s:x(-186) end,
 		PlayerJoinedMessageCommand=function(self, params)
 			if params.Player == pn then
 				self:playcommand("On");
@@ -82,16 +15,26 @@ return Def.ActorFrame {
 				self:queuecommand("On");
 			end;
 		end;
+		Def.Sprite{
+			Texture=THEME:GetPathG("","OptionIcon/"..player.."/Speed"),
+		};
+		Def.BitmapText{
+			Font="_arial black 28px",
+			OnCommand=function(self)
+				self:y(1):zoomx(0.78):zoomy(0.74):maxwidth(34)
+				self:settext("x"..GAMESTATE:GetPlayerState(pn):GetPlayerOptions("ModsLevel_Preferred"):ScrollSpeed());
+			end;	
+		};
 	};
 	-- Boost
 	Def.Sprite {
 		InitCommand=function(self)
 			self:x(-153);
-			if IsBoost(pn) then
+			if GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Boost() == 1 then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Boost/Boost.png"));
-			elseif IsBrake(pn) then
+			elseif GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Brake() == 1 then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Boost/Brake.png"));
-			elseif IsWave(pn) then
+			elseif GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Wave() == 1 then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Boost/Wave.png"));
 			end;
 		end;
@@ -133,13 +76,13 @@ return Def.ActorFrame {
 	Def.Sprite {
 		InitCommand=function(self)
 			self:x(-85);
-			if GAMESTATE:PlayerIsUsingModifier(pn,'mirror') then
+			if GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Mirror() then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Turn/Mirror.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'left') then
+			elseif GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Left() then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Turn/Left.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'right') then
+			elseif GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Right() then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Turn/Right.png"));
-			elseif GAMESTATE:PlayerIsUsingModifier(pn,'shuffle') then
+			elseif GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Shuffle() then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Turn/Shuffle.png"));
 			end;
 		end;
@@ -153,7 +96,7 @@ return Def.ActorFrame {
 	Def.Sprite {
 		InitCommand=function(self)
 			self:x(-51);
-			if IsDark(pn) then
+			if GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Dark() == 1 then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Dark/Off.png"));
 			end;
 		end;
@@ -167,7 +110,7 @@ return Def.ActorFrame {
 	Def.Sprite {
 		InitCommand=function(self)
 			self:x(-18);
-			if IsReverse(pn) then
+			if GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Reverse() == 1 then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Scroll/Reverse.png"));
 			end;
 		end;
@@ -199,7 +142,7 @@ return Def.ActorFrame {
 	Def.Sprite {
 		InitCommand=function(self)
 			self:x(49);
-			if GAMESTATE:PlayerIsUsingModifier(pn,'little') then
+			if GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):Little() then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Cut/On1.png"));
 			end;
 		end;
@@ -213,7 +156,7 @@ return Def.ActorFrame {
 	Def.Sprite {
 		InitCommand=function(self)
 			self:x(83);
-			if GAMESTATE:PlayerIsUsingModifier(pn,'noholds') then
+			if GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):NoHolds() then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Freeze/Off.png"));
 			end;
 		end;
@@ -227,7 +170,7 @@ return Def.ActorFrame {
 	Def.Sprite {
 		InitCommand=function(self)
 			self:x(116);
-			if GAMESTATE:PlayerIsUsingModifier(pn,'nojumps') then
+			if GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Current'):NoJumps() then
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Jump/On2.png"));
 			end;
 		end;
@@ -241,9 +184,9 @@ return Def.ActorFrame {
 	Def.Sprite {
 		InitCommand=function(self)
 			self:x(151);
-			if Is4Lives(pn) then			
+			if table.search(GAMESTATE:GetPlayerState(pn):GetPlayerOptionsArray("ModsLevel_Preferred"), '4Lives') then			
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Gauge/Life4.png"));
-			elseif Is1Lives(pn) then			
+			elseif table.search(GAMESTATE:GetPlayerState(pn):GetPlayerOptionsArray("ModsLevel_Preferred"), '1Lives') then			
 				self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Gauge/Risky.png"));                                			
 			end;
 		end;

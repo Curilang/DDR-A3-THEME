@@ -697,45 +697,57 @@ function OptionRowDanCourse()
 	return t;
 end
 
-function OptionRowNoteSkins()
+function OptionRowArrowType()
  	local t = {
-		Name = "NoteSkins";
+		Name = "ArrowType";
 		LayoutType = "ShowAllInRow";
 		SelectType = "SelectOne";
 		OneChoiceForAllPlayers = false;
 		ExportOnChange = true;
-		Choices = {"Normal" ,"Classic", "Cyber", "X" };
+		Choices = {"Normal" ,"Classic", "Cyber", "X", "Medium", "Small", "Dot" };
 		LoadSelections = function(self, list, pn)
 		local pName = ToEnumShortString(pn)
-			if ReadPrefFromFile("OptionRowNoteSkins"..pName) ~= nil then
-				if GetUserPref("OptionRowNoteSkins"..pName)=='Normal' then
+			if ReadPrefFromFile("OptionRowArrowType"..pName) ~= nil then
+				if GetUserPref("OptionRowArrowType"..pName)=='Normal' then
 					list[1] = true
-				elseif GetUserPref("OptionRowNoteSkins"..pName)=='Classic' then
+				elseif GetUserPref("OptionRowArrowType"..pName)=='Classic' then
 					list[2] = true
-				elseif GetUserPref("OptionRowNoteSkins"..pName)=='Cyber' then
+				elseif GetUserPref("OptionRowArrowType"..pName)=='Cyber' then
 					list[3] = true
-				elseif GetUserPref("OptionRowNoteSkins"..pName)=='X' then
+				elseif GetUserPref("OptionRowArrowType"..pName)=='X' then
 					list[4] = true
+				elseif GetUserPref("OptionRowArrowType"..pName)=='Medium' then
+					list[5] = true
+				elseif GetUserPref("OptionRowArrowType"..pName)=='Small' then
+					list[6] = true
+				elseif GetUserPref("OptionRowArrowType"..pName)=='Dot' then
+					list[7] = true
 				else
 					list[1] = true
 				end
 			else
-				WritePrefToFile("OptionRowNoteSkins"..pName,'Normal');
+				WritePrefToFile("OptionRowArrowType"..pName,'Normal');
 				list[1] = true;
 			end;
 		end;
 		SaveSelections = function(self, list, pn)
 			local pName = ToEnumShortString(pn)
 			if list[1] then
-				WritePrefToFile("OptionRowNoteSkins"..pName,'Normal');
+				WritePrefToFile("OptionRowArrowType"..pName,'Normal');
 			elseif list[2] then
-				WritePrefToFile("OptionRowNoteSkins"..pName,'Classic');
+				WritePrefToFile("OptionRowArrowType"..pName,'Classic');
 			elseif list[3] then
-				WritePrefToFile("OptionRowNoteSkins"..pName,'Cyber');
+				WritePrefToFile("OptionRowArrowType"..pName,'Cyber');
 			elseif list[4] then
-				WritePrefToFile("OptionRowNoteSkins"..pName,'X');
+				WritePrefToFile("OptionRowArrowType"..pName,'X');
+			elseif list[5] then
+				WritePrefToFile("OptionRowArrowType"..pName,'Medium');
+			elseif list[6] then
+				WritePrefToFile("OptionRowArrowType"..pName,'Small');
+			elseif list[7] then
+				WritePrefToFile("OptionRowArrowType"..pName,'Dot');
 			else
-				WritePrefToFile("OptionRowNoteSkins"..pName,'Normal');
+				WritePrefToFile("OptionRowArrowType"..pName,'Normal');
 			end;
 		end;
 	};
