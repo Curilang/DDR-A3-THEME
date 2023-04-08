@@ -14,9 +14,7 @@ Edit from Inori's DDR A20 Theme.
 
 • [5.1.0-new](https://drive.google.com/file/d/1m5H4UXPKWHxiIV1eFW7GpySu8Mdrfm6p/view?usp=sharing) / [ITGMania](https://www.itgmania.com/)
 
-• [OutFox**](https://projectoutfox.com/)
-
-**There's still some visual issues on OutFox. We are working hard to have those problems fixed as soon as possible.
+• [OutFox](https://projectoutfox.com/)
 
 # HOW TO GET ARCADE GROUP SORT LIST
 
