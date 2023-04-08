@@ -1,23 +1,5 @@
 local pn = ...
 
-local ClearLampColors = {
-	[0]={1,1,1,0},
-	color "#555452",
-	color "#f70b9e",
-	GameColor.Judgment["JudgmentLine_W4"],
-	GameColor.Judgment["JudgmentLine_W3"],
-	GameColor.Judgment["JudgmentLine_W2"],
-	GameColor.Judgment["JudgmentLine_W1"]
-};
-
-local BestGetHighScoreList;
-if Profile.GetHighScoreListIfExists then
-	BestGetHighScoreList = Profile.GetHighScoreListIfExists;
-else
-	BestGetHighScoreList = Profile.GetHighScoreList;
-end;
-
-
 local function SameDiffSteps(song,pn)
 	if song then
 		local diff = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
@@ -31,7 +13,13 @@ local function ClearLamp(song,steps,pn)
 	    if PROFILEMAN:IsPersistentProfile(pn) then
 		    local prof = PROFILEMAN:GetProfile(pn);
 		    local st = GAMESTATE:GetCurrentStyle():GetStepsType();
-		    local list = BestGetHighScoreList(prof, song, steps);
+		    local BestGetHighScoreList;
+				if Profile.GetHighScoreListIfExists then
+					BestGetHighScoreList = Profile.GetHighScoreListIfExists;
+				else
+					BestGetHighScoreList = Profile.GetHighScoreList;
+				end;
+			local list = BestGetHighScoreList(prof, song, steps);
 		    if list then
 		    	for score in ivalues(list:GetHighScores()) do
 		    		local this_lamp = 0;
@@ -105,6 +93,8 @@ return Def.Sprite{
 			elseif lamp == 6 then 
 				self:Load(THEME:GetPathG("MusicWheelItem Song NormalPart/lamp/ClearedMark","MFC"))
 				self:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
+			else
+				self:visible(false)
 			end
         end;
     end;
