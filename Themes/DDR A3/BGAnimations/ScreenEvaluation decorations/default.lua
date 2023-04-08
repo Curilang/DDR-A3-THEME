@@ -84,9 +84,8 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
             Font="_impact 32px",
             InitCommand=function(self)
                 self:x(3):y(31):zoom(0.74)
-                local diffname = GAMESTATE:GetCurrentSteps(pn):GetDifficulty();
-				self:settext(THEME:GetString("CustomDifficulty",ToEnumShortString(diffname)));
-				self:diffuse(GameColor.Difficulty[diffname])
+                self:settext(THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentSteps(pn):GetDifficulty())));
+				self:diffuse(GameColor.Difficulty[GAMESTATE:GetCurrentSteps(pn):GetDifficulty()])
             end,
         };
 		Def.BitmapText{

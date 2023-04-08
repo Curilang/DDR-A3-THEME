@@ -35,7 +35,6 @@ local function DrawDiffListItem(diff)
     Def.ActorFrame{
       InitCommand=function(s) s:x(pn==pn_2 and 26 or -26) end,
       Def.Quad{
-        Name="MeterBG",
         InitCommand=function(s) s:setsize(26,25):diffuse(CustomDifficultyToColor(diff)) end,
       };
       Def.BitmapText{

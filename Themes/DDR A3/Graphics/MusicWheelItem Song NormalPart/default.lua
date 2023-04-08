@@ -78,22 +78,15 @@ for i=1,2 do
 	};
 end
 
-if GAMESTATE:IsSideJoined(PLAYER_1) then 
-	grade[#grade+1] = loadfile(THEME:GetPathG("MusicWheelItem","Song NormalPart/grade1.lua"))(PLAYER_1)..{
+for i,pn in pairs(GAMESTATE:GetEnabledPlayers()) do 
+	grade[#grade+1] = loadfile(THEME:GetPathG("MusicWheelItem","Song NormalPart/grade.lua"))(pn)..{
 		InitCommand=function(s) s:xy(-5,3.4):zoomy(1.13) end,
 	};
-	diff[#diff+1] = loadfile(THEME:GetPathG("MusicWheelItem","Song NormalPart/diff1.lua"))(PLAYER_1)..{
-		InitCommand=function(s) s:xy(-74,-36) end,
-	};
-	end;
-if GAMESTATE:IsSideJoined(PLAYER_2) then
-	grade[#grade+1] = loadfile(THEME:GetPathG("MusicWheelItem","Song NormalPart/grade2.lua"))(PLAYER_2)..{
-		InitCommand=function(s) s:xy(-5,3.4):zoomy(1.13) end,
-	};
-	diff[#diff+1] = loadfile(THEME:GetPathG("MusicWheelItem","Song NormalPart/diff2.lua"))(PLAYER_2)..{
-		InitCommand=function(s) s:xy(74,-36) end,
+	diff[#diff+1] = loadfile(THEME:GetPathG("MusicWheelItem","Song NormalPart/diff.lua"))(pn)..{
+		InitCommand=function(s) s:xy(pn == PLAYER_1 and -74 or 74,-36) end,
 	};
 end;
+
 
 return Def.ActorFrame{
 	OnCommand = function(self)

@@ -103,7 +103,7 @@ for i=1,NumColumns do
 	t[#t+1] = Def.ActorFrame{
 		InitCommand=function(s)
 			s:x(GetPosition2(pn)):diffusealpha(0):zoom(0.45)
-			if GAMESTATE:PlayerIsUsingModifier(pn,'reverse') then
+			if IsReverse(pn) then
 				s:y(_screen.cy+(THEME:GetMetric("Player","ReceptorArrowsYReverse")))
 			else
 				s:y(_screen.cy+(THEME:GetMetric("Player","ReceptorArrowsYStandard")))

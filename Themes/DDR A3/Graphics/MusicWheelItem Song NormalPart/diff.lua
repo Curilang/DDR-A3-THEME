@@ -1,13 +1,14 @@
+local pn = ...
 local t = Def.ActorFrame{};
 
 local function setDiffBG1(self,param)
   local st = GAMESTATE:GetCurrentStyle():GetStepsType()
   if self.ParamSong then
-    local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
+    local steps = GAMESTATE:GetCurrentSteps(pn)
     if steps then
       local sDiff = steps:GetDifficulty()
 			 local diff = self.ParamSong:GetOneSteps( st, sDiff)
-      local diffname = GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()
+      local diffname = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
       if diff then
   			self:diffuse(color("1,1,1,1"))
   		else
@@ -22,11 +23,11 @@ end;
 local function setDiffBG2(self,param)
   local st = GAMESTATE:GetCurrentStyle():GetStepsType()
   if self.ParamSong then
-    local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
+    local steps = GAMESTATE:GetCurrentSteps(pn)
     if steps then
       local sDiff = steps:GetDifficulty()
 			 local diff = self.ParamSong:GetOneSteps( st, sDiff)
-      local diffname = GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()
+      local diffname = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
       if diff then
   			self:diffuse(CustomDifficultyToColor(diffname));
   		else
@@ -41,11 +42,11 @@ end;
 local function setDiff(self,param)
 	local st = GAMESTATE:GetCurrentStyle():GetStepsType()
 	if self.ParamSong then
-		local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
+		local steps = GAMESTATE:GetCurrentSteps(pn)
 		if steps then
 			local sDiff = steps:GetDifficulty()
 			local diff = self.ParamSong:GetOneSteps( st, sDiff)
-			local diffname = GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()
+			local diffname = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
 			if diff then
 				if self:GetName() == diffname then
 						
@@ -76,6 +77,7 @@ return Def.ActorFrame{
 				setDiffBG1(self)
 			end;
 			CurrentStepsP1ChangedMessageCommand=function(self) setDiffBG1(self) end;
+			CurrentStepsP2ChangedMessageCommand=function(self) setDiffBG1(self) end;
 			CurrentSongChangedMessageCommand=function(self) setDiffBG1(self) end;
 		};
 		LoadActor("line")..{
@@ -85,6 +87,7 @@ return Def.ActorFrame{
 				setDiffBG2(self)
 			end;
 			CurrentStepsP1ChangedMessageCommand=function(self) setDiffBG2(self) end;
+			CurrentStepsP2ChangedMessageCommand=function(self) setDiffBG2(self) end;
 			CurrentSongChangedMessageCommand=function(self) setDiffBG2(self) end;
 		};
 	};
@@ -99,6 +102,7 @@ return Def.ActorFrame{
 				setDiff(self)
 			end;
 			CurrentStepsP1ChangedMessageCommand=function(self) setDiff(self) end;
+			CurrentStepsP2ChangedMessageCommand=function(self) setDiff(self) end;
 			CurrentSongChangedMessageCommand=function(self) setDiff(self) end;
 		};
 		Def.BitmapText{
@@ -110,6 +114,7 @@ return Def.ActorFrame{
 				setDiff(self)
 			end;
 			CurrentStepsP1ChangedMessageCommand=function(self) setDiff(self) end;
+			CurrentStepsP2ChangedMessageCommand=function(self) setDiff(self) end;
 			CurrentSongChangedMessageCommand=function(self) setDiff(self) end;
 		};
 		Def.BitmapText{
@@ -121,6 +126,7 @@ return Def.ActorFrame{
 				setDiff(self)
 			end;
 			CurrentStepsP1ChangedMessageCommand=function(self) setDiff(self) end;
+			CurrentStepsP2ChangedMessageCommand=function(self) setDiff(self) end;
 			CurrentSongChangedMessageCommand=function(self) setDiff(self) end;
 		};
 		Def.BitmapText{
@@ -132,6 +138,7 @@ return Def.ActorFrame{
 				setDiff(self)
 			end;
 			CurrentStepsP1ChangedMessageCommand=function(self) setDiff(self) end;
+			CurrentStepsP2ChangedMessageCommand=function(self) setDiff(self) end;
 			CurrentSongChangedMessageCommand=function(self) setDiff(self) end;
 		};
 		Def.BitmapText{
@@ -143,6 +150,7 @@ return Def.ActorFrame{
 				setDiff(self)
 			end;
 			CurrentStepsP1ChangedMessageCommand=function(self) setDiff(self) end;
+			CurrentStepsP2ChangedMessageCommand=function(self) setDiff(self) end;
 			CurrentSongChangedMessageCommand=function(self) setDiff(self) end;
 		};
 		Def.BitmapText{
@@ -154,6 +162,7 @@ return Def.ActorFrame{
 				setDiff(self)
 			end;
 			CurrentStepsP1ChangedMessageCommand=function(self) setDiff(self) end;
+			CurrentStepsP2ChangedMessageCommand=function(self) setDiff(self) end;
 			CurrentSongChangedMessageCommand=function(self) setDiff(self) end;
 		};
 		

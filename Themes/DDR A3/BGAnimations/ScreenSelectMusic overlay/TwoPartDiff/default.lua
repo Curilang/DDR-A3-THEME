@@ -161,130 +161,54 @@ local function genScrollerFrame(player)
 				Def.Sprite{
 					InitCommand=function(s) s:queuecommand("Set"):xy(29,13):zoom(1.2) end,
 					SetCommand=function(s)
-						local ClearedRank = 0;
-						local FullComboRank = 0;
 						local profile;
 						local st = GAMESTATE:GetCurrentStyle():GetStepsType()
 						local steps = song:GetOneSteps(st,diff)
-	
 						if PROFILEMAN:IsPersistentProfile(player) then
 							profile = PROFILEMAN:GetProfile(player)
 						else
 							profile = PROFILEMAN:GetMachineProfile()
 						end
-						
 						local scorelist = profile:GetHighScoreList(song,steps)
 						local scores = scorelist:GetHighScores()
-						local topscore=0;
-						local topgrade;
-						local temp=#scores;
-	
+						local topscore;
 						if scores[1] then
-							topscore = scores[1]:GetScore()
-							for i=1,temp do
-								topgrade = scores[1]:GetGrade()
-								curgrade = scores[i]:GetGrade()
-								if scores[1]:GetScore()>1 then
-									if scores[1]:GetScore()>=1000000 and topgrade == "Grade_Tier07" then
-										ClearedRank = 7;
-										break;
-									else
-										if ToEnumShortString(curgrade) ~= "Failed" then
-											local gradenum = tonumber(string.sub(curgrade,-2,-1));
-											ClearedRank = gradenum;
-											break
-										else
-											if i == temp then
-												ClearedRank = 7;
-												break
-											end
-										end
-									end
+							topscore = scores[1];
+							assert(topscore);
+							local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
+							local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
+							local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
+							local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
+							local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
+							local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
+							if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
+								if (greats+perfects) == 0 then
+									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","MarvelousFC"))
+									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
+								elseif greats == 0 then
+									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","PerfectFC"))
+									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
+								elseif (misses+boos+goods) == 0 then
+									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","GreatFC"))
+									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
+								elseif (misses+boos) == 0 then
+									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","GoodFC"))
+									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
+								end
+								s:visible(true)
+							else
+								if topscore:GetGrade() ~= 'Grade_Failed' then
+									s:visible(true)
+									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","Cleared"))
 								else
-									ClearedRank = 0;
+									s:visible(true)
+									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","Failed"))
 								end
 							end
-							local scoresHasUsedBatterAndCleared = false;
-		
-							for i=1,temp do
-								if scores[i] then
-									topscore=scores[i]
-									assert(topscore)
-									local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
-									+topscore:GetTapNoteScore("TapNoteScore_HitMine")+topscore:GetHoldNoteScore("HoldNoteScore_LetGo")
-									local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
-									local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
-									local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
-									local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
-									local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
-									local hasUsedLittle = string.find(topscore:GetModifiers(),"Little")
-									local hasUsedBattery = string.find(topscore:GetModifiers(),"Lives")
-		
-									if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 and (not hasUsedLittle) and topscore:GetGrade()~="Grade_Failed"  then
-										if (goods+greats+perfects) == 0 then
-												FullComboRank = 1;
-												break;
-										elseif goods+greats == 0 then
-												FullComboRank = 2;
-												break;
-										elseif (misses+boos+goods) == 0 then
-												FullComboRank = 4;
-												if i==1 then
-													FullComboRank = 3;
-												end;
-												break;
-										elseif (misses+boos) == 0 then
-												FullComboRank = 6;
-												if i==1 then
-													FullComboRank = 5;
-												end;
-												break;
-										end;
-									else
-										if topscore:GetGrade()~="Grade_Failed" then
-											if hasUsedBattery  then
-												scoresHasUsedBatteryAndCleared = true;
-												FullComboRank = 7;
-											else 
-												scoresHasUsedBatteryAndCleared = scoresHasUsedBatteryAndCleared or false;
-												FullComboRank = 8;
-											end
-										end
-									end;
-								end
-							end;
-						
-							if scoresHasUsedBatteryAndCleared and FullComboRank == 8 then
-								FullComboRank = 7;
-							end  
+						else
+							s:visible(false)
 						end
-					local effecttime = 0.09
-					if ClearedRank == 0 then --NoPlayed
-						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","MarvelousFC"));
-						(cmd(diffuseshift;effectcolor1,1,1,1,0;effectcolor2,1,1,1,0;effectperiod,effecttime))(s);
-					elseif ClearedRank == 7 then --E
-						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","Failed"));
-						(cmd(diffuseshift;effectcolor1,1,1,1,0.65;effectcolor2,1,1,1,1;effectperiod,1.1))(s);
-					elseif FullComboRank == 8 then -- 8=NoFCWithLifeBar
-						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","NoFCLifeBar"));
-						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,1;effectperiod,effecttime))(s);
-					elseif FullComboRank == 7 then --7=NoFCWithBatteryLives
-						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","NoFCBatteryLives"));
-						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,1;effectperiod,effecttime))(s);
-					elseif FullComboRank == 6 or FullComboRank == 5 then --6=GoodOldFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","GoodFC"));
-						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(s);
-					elseif FullComboRank == 4 or FullComboRank == 3 then -- 4=GreatOldFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","GreatFC"));
-						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(s);
-					elseif FullComboRank == 2 then --2 = PFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","PerfectFC"));
-						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.70;effectperiod,effecttime))(s);
-					elseif FullComboRank == 1 then --1 = MFC
-						s:LoadBackground(THEME:GetPathG("_shared/grade hex/Cleared","MarvelousFC"));
-						(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.70;effectperiod,effecttime))(s);
 					end
-				end
 				};
 			};
 			Def.Sprite{
