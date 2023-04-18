@@ -1381,11 +1381,13 @@
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "only my railgun"												then return "(X) CRYSTALDIUM"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "POP STAR"														then return "(X2) BOOM LIGHT"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Pretender"														then return "(X) DAWN STREETS"
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "SOUVENIR"														then return "(X2) BOOM LIGHT"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "Trickster"														then return "(X) DANCING RAYS"
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "10年桜"															then return "(X) BOOM BOOM BOOM"			--10nen sakura
 	
 ----------------------------------------------------------------------------- DDR A3
 
+	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "アドレナリン"														then return "(X2) CYBER"					--Adrenaline		
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "アユミ☆マジカルショータイム"												then return "(X) DANCING RAYS"				--Ayumi Magical Showtime		
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "↑↑↓↓←→←→BA"														then return "(X) DANCING RAYS"				--Ue ue shita shita hidari migi hidari migi BA		
 	elseif GAMESTATE:GetCurrentSong():GetDisplayFullTitle() == "ウサテイ"															then return "(X2) BOOM LIGHT"				--Usatei

@@ -1,4 +1,4 @@
-local AnimationSleep = BeginOutDelay()
+local AnimationSleep = 1.35
 
 local loader
 if IsGoldenLeague() then

@@ -1,6 +1,9 @@
 local t = Def.ActorFrame{}
- 
---Sound
+
+t[#t+1] = Def.Quad{
+	InitCommand=function(s) s:FullScreen():diffusecolor(Color.Black):diffusealpha(1) end,
+};
+
 t[#t+1] = Def.ActorFrame{
 	OnCommand=function(s) s:queuecommand("Play") end,
 	PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("ScreenStageInformation","StageSound")) end,

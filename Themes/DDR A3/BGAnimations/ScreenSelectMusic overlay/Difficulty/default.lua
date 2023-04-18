@@ -1,7 +1,5 @@
 local pn = ...
-
 local yspacing = 31;
-
 local DiffList = Def.ActorFrame{};
 
 local function DrawDiffListItem(diff)
@@ -204,7 +202,9 @@ local function DrawDiffListItem(diff)
   return DifficultyListItem
 end
 
-for diff in ivalues(Difficulty) do
+local difficulties = {"Difficulty_Beginner", "Difficulty_Easy", "Difficulty_Medium", "Difficulty_Hard", "Difficulty_Challenge", "Difficulty_Edit"}
+
+for diff in ivalues(difficulties) do
   DiffList[#DiffList+1] = DrawDiffListItem(diff)
 end
 

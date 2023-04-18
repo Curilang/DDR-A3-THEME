@@ -1,4 +1,4 @@
-local AnimationSleep = BeginOutDelay()
+local AnimationSleep = 1.35
 
 return Def.ActorFrame{
 	Def.Sprite{

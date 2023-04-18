@@ -79,8 +79,10 @@ return Def.Sprite{
 			local lamp = ClearLamp(self.cur_song, steps, pn)
 			if lamp == 1 then 
 				self:Load(THEME:GetPathG("MusicWheelItem Song NormalPart/lamp/ClearedMark","Failed"))
+				self:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,1")):effectperiod(1.1)
 			elseif lamp == 2 then 
 				self:Load(THEME:GetPathG("MusicWheelItem Song NormalPart/lamp/ClearedMark","Cleared"))
+				self:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,1")):effectperiod(1.1)
 			elseif lamp == 3 then 
 				self:Load(THEME:GetPathG("MusicWheelItem Song NormalPart/lamp/ClearedMark","GoodFC"))
 				self:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.6")):effectperiod(0.09)

@@ -193,11 +193,7 @@ return Def.ActorFrame{
 			SetMessageCommand=function(s,p)
 				local song = p.Song;
 				if song then
-					if (GAMESTATE:IsExtraStage()) and song:GetDisplayFullTitle() == "ENDYMION" then
-						s:Load(THEME:GetPathG("","ENDYMION"))
-					else
-						s:Load(GetJacketPath(song))
-					end
+					s:Load(GetJacketPath(song))
 				end
 				s:setsize(103,103)
 			end,
@@ -208,11 +204,11 @@ return Def.ActorFrame{
 		InitCommand=function(s) s:x(1):y(67) end,
 		Def.BitmapText{
 			Font="_helveticaneuelt w1g 75 bd 24px",
-			InitCommand=function(s) s:zoom(0.6):maxwidth(260):diffuse(Color.White):strokecolor(color("0.15,0.15,0.0,0.9")) end,
-			SetMessageCommand=function(self,params)
-				local song = params.Song
+			InitCommand=function(s) s:zoom(0.6):maxwidth(260) end,
+			SetMessageCommand=function(s,p)
+				local song = p.Song
 				if song then
-					self:settext(GetSongName(song))
+					s:settext(song:GetDisplayMainTitle()):diffuse(SongAttributes.GetMenuColor(song)):strokecolor(color("0.15,0.15,0.0,0.9"))
 				end
 			end;
 		};

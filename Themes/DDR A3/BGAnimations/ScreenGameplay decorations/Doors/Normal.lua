@@ -1,12 +1,12 @@
 return Def.ActorFrame{
-	LoadActor(THEME:GetPathB("ScreenWithMenuElements","background"))..{
-		InitCommand=cmd(FullScreen);
-		OnCommand=cmd(linear,0.05;diffusealpha,0);
+	Def.Quad{
+		InitCommand=function(s) s:FullScreen():diffuse(Color.Black):diffusealpha(1) end,
+		OnCommand=function(s) s:linear(0.05):diffusealpha(0) end,
 	};
 	Def.Sprite{
 		Texture=THEME:GetPathG("","_doors/"..GetCurrentModel().."/lines"),
 		InitCommand=function(s) s:FullScreen():diffusealpha(0.5) end,
-		OnCommand=cmd(linear,0.05;diffusealpha,0);
+		OnCommand=function(s) s:linear(0.05):diffusealpha(0) end,
 	};
 	Def.ActorFrame{
 		InitCommand=cmd(CenterX);	

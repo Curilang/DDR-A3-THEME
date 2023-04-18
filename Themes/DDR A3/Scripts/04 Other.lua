@@ -612,6 +612,7 @@ GoldenLeagueSong = {
 	["TAKE ME HIGHER"] = "league";							--7th
 	["Lose Your Sense"] = "league";							--8th
 	["Sector"] = "league";									--9th
+	["Ability"] = "league";									--10th
 };
 
 function AttackPerfectFullCombo()

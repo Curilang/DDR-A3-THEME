@@ -15,14 +15,13 @@ return Def.ActorFrame {
 		InitCommand=function(s) s:maxwidth(320):diffuse(Color.Black) end,
 		SetCommand=function(self,params)
 			self:stoptweening();
-			if params.Text == '' then
-				self:settext("RANDOM");
-			elseif GAMESTATE:GetSortOrder() == 'SortOrder_Group' then
-				self:settext(string.gsub(params.Text,"^%d%d? ?%- ?", ""));
+			local group = params.Text;
+			if GAMESTATE:GetSortOrder() == 'SortOrder_Group' then
+				self:settext(string.gsub(SongAttributes.GetGroupName(group),"^%d%d? ?%- ?", ""));
 			elseif GAMESTATE:GetSortOrder() == 'SortOrder_TopGrades' then
-				self:settext(string.gsub(params.Text,"AAAA","AAA+"))
+				self:settext(string.gsub(group,"AAAA","AAA+"))
 			else
-				self:settext(SongAttributes.GetGroupName(params.Text));
+				self:settext(SongAttributes.GetGroupName(group));
 			end
 		end;
 	  };
