@@ -100,6 +100,7 @@
 20 - DDR A3\Settin' the Scene
 20 - DDR A3\Snow Garland Fairy
 20 - DDR A3\Something Comforting
+20 - DDR A3\SOUVENIR
 20 - DDR A3\spring pony
 20 - DDR A3\STAY (Joey Riot remix)
 20 - DDR A3\STAY GOLD
@@ -162,6 +163,7 @@
 19 - DDR GRAND PRIX\POP STAR
 19 - DDR GRAND PRIX\Pretender
 19 - DDR GRAND PRIX\resonance
+19 - DDR GRAND PRIX\SOUVENIR
 19 - DDR GRAND PRIX\Trickster
 19 - DDR GRAND PRIX\10nen sakura
 

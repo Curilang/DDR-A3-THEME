@@ -21,11 +21,11 @@ return Def.ActorFrame{
 		OnCommand=function(s) s:sleep(0.2):linear(0.15):addx(-100):zoom(1) end,
 	};
 	LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/boots medium"))..{
-		InitCommand=function(s) s:zoom(0.667):xy(_screen.cx+347,_screen.cy-174):rotationy(-180):rotationz(-180) end,
+		InitCommand=function(s) s:zoom(0.667):xy(_screen.cx+347,_screen.cy-164):rotationy(-180):rotationz(-180) end,
 		OnCommand=function(s) s:sleep(0.2):linear(0.15):addx(100):zoom(1) end,
 	};
 	LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/boots medium"))..{
-		InitCommand=function(s) s:zoom(0.667):xy(_screen.cx-347,_screen.cy-174):rotationz(-180) end,
+		InitCommand=function(s) s:zoom(0.667):xy(_screen.cx-347,_screen.cy-164):rotationz(-180) end,
 		OnCommand=function(s) s:sleep(0.2):linear(0.15):addx(-100):zoom(1) end,
 	};
 };

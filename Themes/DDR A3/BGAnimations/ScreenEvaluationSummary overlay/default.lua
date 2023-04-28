@@ -174,25 +174,6 @@ for pn in ivalues(PlayerNumber) do
 						end;
 					end;
 				};
-				-- Def.BitmapText{
-					-- Font="_impact 32px",
-					-- InitCommand=function(s) s:horizalign(right):x(pn==PLAYER_1 and -220 or 297):zoom(0.72):y(-32)
-						-- local style = GAMESTATE:GetCurrentStyle()
-						-- if style:GetStyleType() == "StyleType_OnePlayerTwoSides" then
-							-- s:settext("DOUBLE")
-						-- elseif style:GetStyleType() == "StyleType_OnePlayerOneSide" then
-							-- s:settext("SINGLE")
-						-- elseif style:GetStyleType() == "StyleType_TwoPlayersTwoSides" then
-							-- s:settext("VERSUS")
-						-- end
-					-- end,
-					-- OnCommand=function(s)
-						-- s:zoomy(0);
-						-- s:sleep(0.45+(i-mStages)*-0.1);
-						-- s:linear(0.4); 
-						-- s:zoomy(0.72);
-					-- end,
-				-- };
 				-- Label
 				LoadActor( "BannerCenter" ) .. {
 					InitCommand=function(s) s:horizalign(right):setsize(250,45):fadeleft(0.3) end,
@@ -257,33 +238,45 @@ for pn in ivalues(PlayerNumber) do
 				};
 
 				-- fullcombo
-				LoadActor(THEME:GetPathB("ScreenEvaluationSummary","overlay/FullCombo")) .. {
-					InitCommand=cmd();
-					BeginCommand=function(self)
-						if pn == PLAYER_1 then
-							self:x(-248);
-						else
-							self:x(300);
-						end
-						self:y(18);
-						local grade = pStageStats:GetGrade();
-						if grade ~= "Grade_Tier08" then
-							if pStageStats:FullComboOfScore('TapNoteScore_W1') or pStageStats:FullComboOfScore('TapNoteScore_W2') or pStageStats:FullComboOfScore('TapNoteScore_W3') or pStageStats:FullComboOfScore('TapNoteScore_W4') then
-								self:diffuse(GetFullComboEffectColor(pStageStats)); 
-								self:visible(true);
-							else
-								self:visible(false);
+				Def.ActorFrame{
+					InitCommand=function(s) s:xy(pn==PLAYER_1 and -248 or 300,18):spin():effectmagnitude(0,0,170) end,
+					OnCommand=function(s) s:zoom(0):sleep(0.45+(i-mStages)*-0.1):linear(0.4):zoom(0.4) end,
+					Def.Sprite{
+						BeginCommand=function(s)
+							local grade = pStageStats:GetGrade();
+							if grade ~= "Grade_Tier08" then
+								if pStageStats:FullComboOfScore('TapNoteScore_W1') then
+									s:Load(THEME:GetPathG("","Grade/MarvelousFullcombo_ring"))
+								elseif pStageStats:FullComboOfScore('TapNoteScore_W2') then
+									s:Load(THEME:GetPathG("","Grade/PerfectFullcombo_ring"))
+								elseif pStageStats:FullComboOfScore('TapNoteScore_W3') then
+									s:Load(THEME:GetPathG("","Grade/Fullcombo_ring"))
+								elseif pStageStats:FullComboOfScore('TapNoteScore_W4') then
+									s:Load(THEME:GetPathG("","Grade/GoodFullcombo_ring"))
+								else
+									s:visible(false);
+								end
 							end
-						else
-							self:visible(false);
-						end;
-					end;
-					OnCommand=function(self) 
-						self:zoom(0);
-						self:sleep(0.45+(i-mStages)*-0.1);
-						self:linear(0.4); 
-						self:zoom(0.4);
-					end;
+						end,
+					};
+					Def.Sprite{
+						BeginCommand=function(s)
+							local grade = pStageStats:GetGrade();
+							if grade ~= "Grade_Tier08" then
+								if pStageStats:FullComboOfScore('TapNoteScore_W1') then
+									s:Load(THEME:GetPathG("","Grade/MarvelousFullcombo_lines"))
+								elseif pStageStats:FullComboOfScore('TapNoteScore_W2') then
+									s:Load(THEME:GetPathG("","Grade/PerfectFullcombo_lines"))
+								elseif pStageStats:FullComboOfScore('TapNoteScore_W3') then
+									s:Load(THEME:GetPathG("","Grade/Fullcombo_lines"))
+								elseif pStageStats:FullComboOfScore('TapNoteScore_W4') then
+									s:Load(THEME:GetPathG("","Grade/GoodFullcombo_lines"))
+								else
+									s:visible(false);
+								end
+							end
+						end,
+					};
 				};
 
 				-- grade

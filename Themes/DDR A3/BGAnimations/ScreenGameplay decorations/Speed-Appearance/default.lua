@@ -11,6 +11,9 @@ local center1P = PREFSMAN:GetPreference("Center1Player")
 local style = GAMESTATE:GetCurrentStyle();
 local styleType = ToEnumShortString(style:GetStyleType());
 
+local SingleGraphic = Model().."single"
+local DoubleGraphic = Model().."double"
+
 function retrieveMeterType()
 	if true then
 		if GAMESTATE:IsExtraStage() then
@@ -478,15 +481,15 @@ function AppearancePlusMain(pn)
 		OptionString = string.gsub(OptionString, "(Hidden,)", "");
 		if GAMESTATE:GetCurrentStyle():GetStepsType()=="StepsType_Dance_Single" then
 			if not GAMESTATE:PlayerIsUsingModifier(player,'reverse') then
-				AddCoverLayer(Model().."single", player, CoverPosition, pos, "Hidden+",false);
+				AddCoverLayer(SingleGraphic, player, CoverPosition, pos, "Hidden+",false);
 			else
-				AddCoverLayer(Model().."single", player, CoverPosition, pos, "Hidden+",false);
+				AddCoverLayer(SingleGraphic, player, CoverPosition, pos, "Hidden+",false);
 			end
 		elseif GAMESTATE:GetCurrentStyle():GetStepsType()=="StepsType_Dance_Double" then
 			if not GAMESTATE:PlayerIsUsingModifier(player,'reverse') then
-				AddCoverLayer(Model().."double", player, CoverPosition, pos, "Hidden+",false);
+				AddCoverLayer(DoubleGraphic, player, CoverPosition, pos, "Hidden+",false);
 			else
-				AddCoverLayer(Model().."double", player, CoverPosition, pos, "Hidden+",false);
+				AddCoverLayer(DoubleGraphic, player, CoverPosition, pos, "Hidden+",false);
 			end
 		end
 	elseif MyValue == "Sudden+" then
@@ -495,15 +498,15 @@ function AppearancePlusMain(pn)
 		OptionString = string.gsub(OptionString, "(Hidden,)", "");
 		if GAMESTATE:GetCurrentStyle():GetStepsType()=="StepsType_Dance_Single" then
 			if not GAMESTATE:PlayerIsUsingModifier(player,'reverse') then
-				AddCoverLayer(Model().."single", player, CoverPosition, pos, "Sudden+",false);
+				AddCoverLayer(SingleGraphic, player, CoverPosition, pos, "Sudden+",false);
 			else
-				AddCoverLayer(Model().."single", player, CoverPosition, pos, "Sudden+",false);
+				AddCoverLayer(SingleGraphic, player, CoverPosition, pos, "Sudden+",false);
 			end
 		elseif GAMESTATE:GetCurrentStyle():GetStepsType()=="StepsType_Dance_Double" then
 			if not GAMESTATE:PlayerIsUsingModifier(player,'reverse') then
-				AddCoverLayer(Model().."double", player, CoverPosition, pos, "Sudden+",false);
+				AddCoverLayer(DoubleGraphic, player, CoverPosition, pos, "Sudden+",false);
 			else
-				AddCoverLayer(Model().."double", player, CoverPosition, pos, "Sudden+",false);
+				AddCoverLayer(DoubleGraphic, player, CoverPosition, pos, "Sudden+",false);
 			end
 		end
 	elseif MyValue == "Hidden+&Sudden+" then
@@ -512,23 +515,23 @@ function AppearancePlusMain(pn)
 		OptionString = string.gsub(OptionString, "(Hidden,)", "");
 		if GAMESTATE:GetCurrentStyle():GetStepsType()=="StepsType_Dance_Single" then
 			if not GAMESTATE:PlayerIsUsingModifier(player,'reverse') then
-				AddCoverLayer(Model().."single", player, CoverPosition, pos, "Hidden+",true);
+				AddCoverLayer(SingleGraphic, player, CoverPosition, pos, "Hidden+",true);
 				CoverPosition = 0;
-				AddCoverLayer(Model().."single", player, CoverPosition, pos, "Sudden+",true);
+				AddCoverLayer(SingleGraphic, player, CoverPosition, pos, "Sudden+",true);
 			else
-				AddCoverLayer(Model().."single", player, CoverPosition, pos, "Sudden+",true);
+				AddCoverLayer(SingleGraphic, player, CoverPosition, pos, "Sudden+",true);
 				CoverPosition = 0;
-				AddCoverLayer(Model().."single", player, CoverPosition, pos, "Hidden+",true);
+				AddCoverLayer(SingleGraphic, player, CoverPosition, pos, "Hidden+",true);
 			end
 		elseif GAMESTATE:GetCurrentStyle():GetStepsType()=="StepsType_Dance_Double" then
 			if not GAMESTATE:PlayerIsUsingModifier(player,'reverse') then
-				AddCoverLayer(Model().."double", player, CoverPosition, pos, "Hidden+",true);
+				AddCoverLayer(DoubleGraphic, player, CoverPosition, pos, "Hidden+",true);
 				CoverPosition = 0;
-				AddCoverLayer(Model().."double", player, CoverPosition, pos, "Sudden+",true);
+				AddCoverLayer(DoubleGraphic, player, CoverPosition, pos, "Sudden+",true);
 			else
-				AddCoverLayer(Model().."double", player, CoverPosition, pos, "Sudden+",true);
+				AddCoverLayer(DoubleGraphic, player, CoverPosition, pos, "Sudden+",true);
 				CoverPosition = 0;
-				AddCoverLayer(Model().."double", player, CoverPosition, pos, "Hidden+",true);
+				AddCoverLayer(DoubleGraphic, player, CoverPosition, pos, "Hidden+",true);
 			end
 		end
 	else

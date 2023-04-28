@@ -10,8 +10,13 @@ end
     
 local function ClearLamp(song,steps,pn)
         local best_lamp = 0; --No Play
-	    if PROFILEMAN:IsPersistentProfile(pn) then
-		    local prof = PROFILEMAN:GetProfile(pn);
+	    local profile;
+		if PROFILEMAN:IsPersistentProfile(pn) then 
+			prof = PROFILEMAN:GetProfile(pn); --player profile
+		else 
+			prof = PROFILEMAN:GetMachineProfile(); --machine profile
+		end;
+		if prof then
 		    local st = GAMESTATE:GetCurrentStyle():GetStepsType();
 		    local BestGetHighScoreList;
 				if Profile.GetHighScoreListIfExists then

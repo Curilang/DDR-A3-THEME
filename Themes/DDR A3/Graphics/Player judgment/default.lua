@@ -43,7 +43,7 @@ local TNSFrames = {
 	TapNoteScore_W3 = 2;
 	TapNoteScore_W4 = 3;
 	TapNoteScore_W5 = 4;
-	TapNoteScore_Miss = 5;
+	TapNoteScore_Miss = 4;
 };
 
 local t = Def.ActorFrame {};
@@ -51,7 +51,7 @@ local t = Def.ActorFrame {};
 
 
 t[#t+1] = Def.ActorFrame {
-	LoadActor("deviation")..{
+	LoadActor("FastSlow")..{
 		InitCommand=function(s) s:diffusealpha(0):animate(false):x(80) end,
 		JudgmentMessageCommand=function(self, params)
 			if not ShowFastSlow() then 
@@ -90,7 +90,7 @@ t[#t+1] = Def.ActorFrame {
 		AnimateCommand=cmd(diffusealpha,1;zoom,0.37*1.5;linear,0.05;zoom,0.34*1.5;sleep,0.4;diffusealpha,0);
 	};
 	
-	LoadActor("Judgment Normal") .. {
+	LoadActor("Judgment") .. {
 		Name="Judgment";
 		InitCommand=cmd(pause;visible,false);
 		OnCommand=THEME:GetMetric("Judgment","JudgmentOnCommand");

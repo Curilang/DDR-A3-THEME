@@ -55,7 +55,7 @@ return Def.ActorFrame{
 	Def.ActorFrame{
 		Name="BPMBar";
 		InitCommand=cmd(xy,-20,44);
-			LoadActor("BPM")..{ InitCommand=function(s) s:xy(90,10) end, };
+			LoadActor("BPM")..{ InitCommand=function(s) s:xy(91,9):zoom(0.87) end, };
 			Def.Sprite{
 				Texture="_meter 2x2.png";
 				InitCommand=cmd(xy,58,16;effectclock,'beatnooffset';SetAllStateDelays,1);
@@ -93,11 +93,7 @@ return Def.ActorFrame{
 			SetCommand=function(s)
 				local song = GAMESTATE:GetCurrentSong()
 				if song then
-					if (GAMESTATE:IsExtraStage()) and song:GetDisplayFullTitle() == "ENDYMION" then
-						s:Load(THEME:GetPathG("","ENDYMION"))
-					else
-						s:Load(GetJacketPath(song))
-					end
+					s:Load(GetJacketPath(song))
 				end
 				s:setsize(150,150)
 			end

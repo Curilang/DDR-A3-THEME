@@ -43,9 +43,10 @@ t[#t+1] = Def.ActorFrame {
 
 if not GAMESTATE:IsDemonstration() then
 	if ShowCutIns() then 
-		if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-			t[#t+1] = LoadActor("Cut-In/DanceStages")
-		elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
+		--if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
+			--t[#t+1] = LoadActor("Cut-In/DanceStages")
+		--else
+		if GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
 			t[#t+1] = LoadActor("Cut-In/SNCharacters")
 		end
 	end
