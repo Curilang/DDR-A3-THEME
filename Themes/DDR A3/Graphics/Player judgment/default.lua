@@ -212,8 +212,10 @@ t[#t+1] = Def.ActorFrame {
 		JudgeCmds[param.TapNoteScore](c.Judgment);
 		
 		c.ProtimingDisplay:visible( bShowProtiming );
-		c.ProtimingDisplay:settextf("%i",math.abs(fTapNoteOffset * 1000));
-		ProtimingCmds[param.TapNoteScore](c.ProtimingDisplay);
+		if bShowProtiming then
+			c.ProtimingDisplay:settextf("%.2f",math.abs(fTapNoteOffset * 1000));
+			ProtimingCmds[param.TapNoteScore](c.ProtimingDisplay);
+		end
 		
 		c.ProtimingAverage:visible( bShowProtiming );
 		c.ProtimingAverage:settextf("%.2f%%",clamp(100 - MakeAverage( tTotalJudgments ) * 1000 ,0,100));
@@ -247,7 +249,10 @@ t[#t+1] = Def.ActorFrame {
 			0,188)
 		);
 -- 		c.ProtimingGraphAverage:zoomtowidth( clamp(MakeAverage( tTotalJudgments ) * 1880,0,188) );
-		c.ProtimingGraphCenter:visible( bShowProtiming );
+		c.ProtimingGraphCenter:visible( bShowProtiming )
+		
+		if not bShowProtiming then return end
+
 		(cmd(sleep,2;linear,0.5;diffusealpha,0))(c.ProtimingGraphBG);
 		(cmd(sleep,2;linear,0.5;diffusealpha,0))(c.ProtimingGraphUnderlay);
 		(cmd(sleep,2;linear,0.5;diffusealpha,0))(c.ProtimingGraphWindowW3);
