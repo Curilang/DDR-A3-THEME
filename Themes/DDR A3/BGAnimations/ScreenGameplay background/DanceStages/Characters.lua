@@ -27,7 +27,7 @@ local function CharaAnimRate(self)
 	self:SetUpdateRate(spdRate)
 end
 
-local t = Def.ActorFrame{};
+local t = Def.ActorFrame{}
 
 ------- READ SELECTED CHARACTER -------
 local CharaRandom = GetAllCharacterNames()
@@ -36,7 +36,7 @@ table.remove(CharaRandom,IndexKey(CharaRandom,"None"))
 
 for pn in ivalues(GAMESTATE:GetEnabledPlayers()) do
     if GetUserPref("SelectCharacter"..pn) == "Random" then
-        WritePrefToFile("CharaRandom"..pn,CharaRandom[math.random(#CharaRandom)]);
+        WritePrefToFile("CharaRandom"..pn,CharaRandom[math.random(#CharaRandom)])
     end
 end
 
@@ -85,13 +85,16 @@ Listed = {
 
 ------- GENDER AND SIZE CHECK -------
 
-function CharacterInfoo(Chara,Read)
-	local CharaCfg = "/Characters/"..Chara.."/character.ini";
+local function CharacterInfoo(Chara,Read,default)
+	local CharaCfg = "/Characters/"..Chara.."/character.ini"
 	local Info = Config.Load(Read,CharaCfg)
+	if not Info then
+		return default
+	end
 	return Info
 end
 
-function NewChara(Chara)
+local function NewChara(Chara)
 	if CharacterInfoo("Size",Chara) ~= nil then
 		return true
 	else
@@ -103,8 +106,8 @@ Gender = {}
 Size = {}
 
 for i=1,#Listed do
-	Gender[i]=CharacterInfoo(Listed[i],"Genre")
-	Size[i]=CharacterInfoo(Listed[i],"Size")
+	Gender[i]=CharacterInfoo(Listed[i],"Genre","M")
+	Size[i]=CharacterInfoo(Listed[i],"Size",1)
 end
 
 ------- DANCEROUTINES-------
@@ -148,7 +151,7 @@ end
 
 for i=1,#Listed do
 
-	if tonumber(CharacterInfoo(Listed[i],"Size")) <= 0.5 then
+	if tonumber(CharacterInfoo(Listed[i],"Size",1)) <= 0.5 then
 		ShadowModel = "Model_Small.txt"
 	else
 		ShadowModel = "Model.txt"
@@ -171,7 +174,7 @@ for i=1,#Listed do
 						:x(PositionX[i]):z(PositionZ[i])
 						:position(Position)
 				end,
-		};
+		},
 		Def.Model {
 			Meshes="/Characters/DanceRepo/Shadow/"..ShadowModel,
 			Materials="/Characters/DanceRepo/Shadow/Model.txt",
@@ -182,9 +185,9 @@ for i=1,#Listed do
 						:x(PositionX[i]):z(PositionZ[i])
 						:position(Position)
 				end,
-		};
+		}
 	}
 
 end
 
-return t;
+return t
