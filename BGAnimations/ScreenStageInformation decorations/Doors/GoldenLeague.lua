@@ -21,7 +21,7 @@ return Def.ActorFrame{
 			InitCommand = function(s) s:FullScreen() end,
 		};
 		Def.Sprite{
-			Texture=THEME:GetPathG("","_doors/"..GetCurrentModel().."/lines"),
+			Texture=THEME:GetPathG("","_doors/lines"),
 			InitCommand=function(s)
 				s:FullScreen():diffusealpha(0.3)
 				local w = DISPLAY:GetDisplayWidth() / s:GetWidth();
@@ -159,11 +159,11 @@ return Def.ActorFrame{
 	};
 	Def.ActorFrame{
 		InitCommand=cmd(CenterX);	
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/door"))..{
+		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/"..Model().."door"))..{
 			InitCommand=function(s) s:zoom(0.667):y(SCREEN_TOP+30):diffusealpha(0) end,
 			OnCommand=function(s) s:sleep(0.68):linear(0.1):y(SCREEN_TOP+75):diffusealpha(1) end, 
 		};
-		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/door"))..{
+		LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/"..Model().."door"))..{
 				InitCommand=function(s) s:rotationz(180):zoom(0.667):y(SCREEN_BOTTOM-30):diffusealpha(0) end,
 				OnCommand=function(s) s:sleep(0.68):linear(0.1):y(SCREEN_BOTTOM-75):diffusealpha(1) end, 
 			};

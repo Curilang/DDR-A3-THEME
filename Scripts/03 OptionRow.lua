@@ -426,6 +426,35 @@ function OptionRowModel()
 	return t;
 end
 
+function OptionRowLogo()
+	local t = {
+		Name = "Logo";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = true;
+		ExportOnChange = true,
+		Choices = {"ARCADE", "GRANDPRIX", };
+		LoadSelections = function(self, list, pn)
+			if ReadPrefFromFile("OptionRowLogo") ~= nil then
+				if GetUserPref("OptionRowLogo")=='ARCADE' then list[1] = true
+				elseif GetUserPref("OptionRowLogo")=='GRANDPRIX' then list[2] = true
+				else list[2] = true
+				end
+			else
+				WritePrefToFile("OptionRowLogo",'ARCADE'); list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			if list[1] then WritePrefToFile("OptionRowLogo",'ARCADE');
+			elseif list[2] then WritePrefToFile("OptionRowLogo",'GRANDPRIX');
+			else WritePrefToFile("OptionRowLogo",'ARCADE');
+			end;
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end
+
 function OptionRowGoldenLeague()
 	local t = {
 		Name = "GoldenLeague";
@@ -470,35 +499,35 @@ function OptionRowGoldenLeague()
 	return t;
 end
 
-function OptionRowStreamMode()
+function OptionRowBGM()
 	local t = {
-		Name = "StreamMode";
+		Name = "BGM";
 		LayoutType = "ShowAllInRow";
 		SelectType = "SelectOne";
 		OneChoiceForAllPlayers = true;
 		ExportOnChange = true;
-		Choices = {"Off", "On", };
+		Choices = {"On", "Off", };
 		LoadSelections = function(self, list, pn)
-			if ReadPrefFromFile("OptionRowStreamMode") ~= nil then
-				if GetUserPref("OptionRowStreamMode")=='Off' then
+			if ReadPrefFromFile("OptionRowBGM") ~= nil then
+				if GetUserPref("OptionRowBGM")=='On' then
 					list[1] = true
-				elseif GetUserPref("OptionRowStreamMode")=='On' then
+				elseif GetUserPref("OptionRowBGM")=='Off' then
 					list[2] = true
 				else
 					list[1] = true
 				end
 			else
-				WritePrefToFile("OptionRowStreamMode",'Off');
+				WritePrefToFile("OptionRowBGM",'On');
 				list[1] = true;
 			end;
 		end;
 		SaveSelections = function(self, list, pn)
 			if list[1] then
-				WritePrefToFile("OptionRowStreamMode",'Off');
+				WritePrefToFile("OptionRowBGM",'On');
 			elseif list[2] then
-				WritePrefToFile("OptionRowStreamMode",'On');
+				WritePrefToFile("OptionRowBGM",'Off');
 			else
-				WritePrefToFile("OptionRowStreamMode",'Off');
+				WritePrefToFile("OptionRowBGM",'On');
 			end;
 			THEME:ReloadMetrics();
 		end;
@@ -801,6 +830,98 @@ function OptionRowEXScore()
 	return t;
 end
 
+--DanceStages
+function OptionRowGameplayBackground()
+	local t = {
+		Name = "GameplayBackground";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = true;
+		ExportOnChange = false;
+		Choices = {"Background", "DanceStages", "SNCharacters" };
+		LoadSelections = function(self, list, pn)
+			if ReadPrefFromFile("OptionRowGameplayBackground") ~= nil then
+				if GetUserPref("OptionRowGameplayBackground")=='Background' then
+					list[1] = true
+				elseif GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
+					list[2] = true
+				elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
+					list[3] = true
+				else
+					list[1] = true
+				end
+			else
+				WritePrefToFile("OptionRowGameplayBackground",'Background');
+				list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			if list[1] then
+				WritePrefToFile("OptionRowGameplayBackground",'Background');
+			elseif list[2] then
+				WritePrefToFile("OptionRowGameplayBackground",'DanceStages');
+			elseif list[3] then
+				WritePrefToFile("OptionRowGameplayBackground",'SNCharacters');
+			else
+				WritePrefToFile("OptionRowGameplayBackground",'Background');
+			end;
+			THEME:ReloadMetrics();
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end
+
+function OptionRowCutIns()
+	local t = {
+		Name = "CutIns";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = true;
+		ExportOnChange = false;
+		Choices = {"Off", "On", };
+		LoadSelections = function(self, list, pn)
+			if ReadPrefFromFile("OptionRowCutIns") ~= nil then
+				if GetUserPref("OptionRowCutIns")=='Off' then
+					list[1] = true
+				elseif GetUserPref("OptionRowCutIns")=='On'then
+					list[2] = true
+				else
+					list[1] = true
+				end
+			else
+				WritePrefToFile("OptionRowCutIns",'Off');
+				list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			if list[1] then
+				WritePrefToFile("OptionRowCutIns",'Off');
+			elseif list[2] then
+				WritePrefToFile("OptionRowCutIns",'On');
+			else
+				WritePrefToFile("OptionRowCutIns",'Off');
+			end;
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end
+
+function ShowCutIns()
+	if ReadPrefFromFile("OptionRowCutIns") ~= nil then
+		if GetUserPref("OptionRowCutIns")=='On' then
+			return true
+		else
+			return false
+		end
+	else
+		return false
+	end
+end
+--DanceStages
+
+--Code by Midflight Digital
 function OptionRowGauge()
 	local t = {
 		Name="Gauge",
@@ -837,34 +958,5 @@ function OptionRowGauge()
 	return t;
 end
 
---CODE BY Simply Love
-function EditorNoteskin()
-	local skins = NOTESKIN:GetNoteSkinNames()
-	return {
-		Name = "EditorNoteSkin",
-		LayoutType = "ShowOneInRow",
-		SelectType = "SelectOne",
-		OneChoiceForAllPlayers = true,
-		ExportOnChange = false,
-		Choices = skins,
-		LoadSelections = function(self, list, pn)
-			local skin = PREFSMAN:GetPreference("EditorNoteSkinP1") or
-				PREFSMAN:GetPreference("EditorNoteSkinP2") or
-				THEME:GetMetric("Common", "DefaultNoteSkinName")
-			if not skin then return end
+--Code by Midflight Digital
 
-			local i = FindInTable(skin, skins) or 1
-			list[i] = true
-		end,
-		SaveSelections = function(self, list, pn)
-			for i = 1, #skins do
-				if list[i] then
-					PREFSMAN:SetPreference("EditorNoteSkinP1", skins[i])
-					PREFSMAN:SetPreference("EditorNoteSkinP2", skins[i])
-					break
-				end
-			end
-		end,
-	}
-end
---CODE BY Simply Love

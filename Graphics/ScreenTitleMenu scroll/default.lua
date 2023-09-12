@@ -7,14 +7,14 @@ return Def.ActorFrame{
 		Def.Sprite{
 			Texture=Model().."high",
 			InitCommand=function(s) s:diffuseramp():effectcolor1(color("1,1,1,0.2")):effectcolor2(color("1,1,1,1")):effectperiod(0.5) end,
-			GainFocusCommand=function(s) s:linear(0.09):zoom(1):diffusealpha(1) end,
-			LoseFocusCommand=function(s) s:linear(0.09):zoom(0.9):diffusealpha(0) end,
+			GainFocusCommand=function(s) s:stoptweening():linear(0.09):zoom(1):diffusealpha(1) end,
+			LoseFocusCommand=function(s) s:stoptweening():linear(0.09):zoom(0.9):diffusealpha(0) end,
 		};	
 		Def.BitmapText{
 			Font="ScreenTitleMenu Title",
 			InitCommand=function(s) s:settext(Var("GameCommand"):GetText()):maxwidth(180) end,
-			GainFocusCommand=function(s) s:linear(0.09):zoom(0.85):diffusealpha(1) end,
-			LoseFocusCommand=function(s) s:linear(0.09):zoom(0.8):diffusealpha(1) end,
+			GainFocusCommand=function(s) s:stoptweening():linear(0.09):zoom(0.85):diffusealpha(1) end,
+			LoseFocusCommand=function(s) s:stoptweening():linear(0.09):zoom(0.8):diffusealpha(1) end,
 		};
 	};
 };

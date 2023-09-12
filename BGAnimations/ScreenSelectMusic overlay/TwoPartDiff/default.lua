@@ -161,14 +161,9 @@ local function genScrollerFrame(player)
 				Def.Sprite{
 					InitCommand=function(s) s:queuecommand("Set"):xy(29,13):zoom(1.2) end,
 					SetCommand=function(s)
-						local profile;
+						local profile = MachineOrProfile(player)
 						local st = GAMESTATE:GetCurrentStyle():GetStepsType()
 						local steps = song:GetOneSteps(st,diff)
-						if PROFILEMAN:IsPersistentProfile(player) then
-							profile = PROFILEMAN:GetProfile(player)
-						else
-							profile = PROFILEMAN:GetMachineProfile()
-						end
 						local scorelist = profile:GetHighScoreList(song,steps)
 						local scores = scorelist:GetHighScores()
 						local topscore;
@@ -181,28 +176,34 @@ local function genScrollerFrame(player)
 							local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
 							local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
 							local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
+							local hasUsedBattery = string.find(topscore:GetModifiers(),"Lives")
 							if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
 								if (greats+perfects) == 0 then
-									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","MarvelousFC"))
+									s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","MarvelousFC"))
 									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
 								elseif greats == 0 then
-									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","PerfectFC"))
+									s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","PerfectFC"))
 									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
 								elseif (misses+boos+goods) == 0 then
-									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","GreatFC"))
+									s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","GreatFC"))
 									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
 								elseif (misses+boos) == 0 then
-									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","GoodFC"))
+									s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","GoodFC"))
 									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
 								end
 								s:visible(true)
 							else
 								if topscore:GetGrade() ~= 'Grade_Failed' then
-									s:visible(true)
-									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","Cleared"))
+									if hasUsedBattery then
+										s:visible(true)
+										s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","Risky"))
+									else
+										s:visible(true)
+										s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","LifeBar"))
+									end
 								else
 									s:visible(true)
-									s:Load(THEME:GetPathG("_shared/grade hex/Cleared","Failed"))
+									s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","Failed"))
 								end
 							end
 						else

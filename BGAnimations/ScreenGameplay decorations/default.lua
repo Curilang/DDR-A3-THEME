@@ -40,7 +40,17 @@ t[#t+1] = Def.ActorFrame {
 			SOUND:PlayAnnouncer('gameplay ready') end,
 	},
 };
-	
+
+if not GAMESTATE:IsDemonstration() then
+	if ShowCutIns() then
+		if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
+			t[#t+1] = LoadActor("Cut-In/DanceStages")
+		elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
+			t[#t+1] = LoadActor("Cut-In/SNCharacters")
+		end
+	end
+end
+
 for _, pn in ipairs(GAMESTATE:GetEnabledPlayers()) do	
 	t[#t+1] = LoadActor("ScreenFilter",pn);	
 end;
@@ -53,8 +63,8 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 	t[#t+1] = LoadActor("lifeframe",pn);
 	t[#t+1] = LoadActor(THEME:GetPathG("","OptionIcon"),pn)..{
 		InitCommand=function(s) 
-			s:player(pn):zoomx(0.64):zoomy(0.63):draworder(1):x(pn==PLAYER_1 and _screen.cx-296 or _screen.cx+318)
-			s:y(IsReverse(pn) and _screen.cy-179 or _screen.cy+161)
+			s:zoomx(0.64):zoomy(0.63):draworder(1):x(pn==PLAYER_1 and _screen.cx-296 or _screen.cx+318)
+			s:y(IsReverse(pn) and _screen.cy-178 or _screen.cy+161)
 		end,
 	};
 end

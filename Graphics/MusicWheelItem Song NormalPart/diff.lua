@@ -2,22 +2,22 @@ local pn = ...
 local t = Def.ActorFrame{};
 
 local function setDiffBG1(self,param)
-  local st = GAMESTATE:GetCurrentStyle():GetStepsType()
-  if self.ParamSong then
-    local steps = GAMESTATE:GetCurrentSteps(pn)
-    if steps then
-      local sDiff = steps:GetDifficulty()
-			 local diff = self.ParamSong:GetOneSteps( st, sDiff)
-      local diffname = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
-      if diff then
-  			self:diffuse(color("1,1,1,1"))
-  		else
-  			self:diffuse(color("1,1,1,0"))
-  		end;
-  	else
-  		self:diffuse(color("1,1,1,0"))
-  	end;
-  end;
+	local st = GAMESTATE:GetCurrentStyle():GetStepsType()
+	if self.ParamSong then
+		local steps = GAMESTATE:GetCurrentSteps(pn)
+		if steps then
+			local sDiff = steps:GetDifficulty()
+			local diff = self.ParamSong:GetOneSteps( st, sDiff)
+			local diffname = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
+			if diff then
+				self:diffuse(color("1,1,1,1"))
+			else
+				self:diffuse(color("1,1,1,0"))
+			end;
+		else
+			self:diffuse(color("1,1,1,0"))
+		end;
+	end;
 end;
 
 local function setDiffBG2(self,param)

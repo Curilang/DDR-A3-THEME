@@ -5,7 +5,7 @@ if (GAMESTATE:HasEarnedExtraStage() and GAMESTATE:IsExtraStage()) or (GAMESTATE:
 	Sound = THEME:GetPathS("","_silent")
 	SoundTime = 1
 else	
-	Sound = THEME:GetPathS("","_systembgm3 (loop)")
+	Sound = THEME:GetPathS("","03 - Evaluation (loop)")
 	SoundTime = 2.4
 end
 

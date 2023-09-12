@@ -12,7 +12,7 @@ return Def.ActorFrame{
 		OnCommand=function(s) s:linear(0.05):diffusealpha(0) end,
 	};
 	Def.Sprite{
-		Texture=THEME:GetPathG("","_doors/"..GetCurrentModel().."/lines"),
+		Texture=THEME:GetPathG("","_doors/lines"),
 		InitCommand=function(s) s:FullScreen():diffusealpha(0.3) end,
 		OnCommand=function(s) s:linear(0.05):diffusealpha(0) end,
 	};
@@ -56,7 +56,7 @@ return Def.ActorFrame{
 		InitCommand=cmd(CenterX);
 		Def.ActorFrame{
 		OnCommand=function(s) s:linear(0.25):y(SCREEN_TOP-30):diffusealpha(0) end,
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/door"))..{
+			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/"..Model().."door"))..{
 				InitCommand=function(s) s:zoom(0.667):y(SCREEN_TOP+75):diffusealpha(1) end, 
 			};
 			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/light"))..{
@@ -65,7 +65,7 @@ return Def.ActorFrame{
 		};
 		Def.ActorFrame{
 		OnCommand=function(s) s:linear(0.25):y(SCREEN_TOP+30):diffusealpha(0) end,
-			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/door"))..{
+			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/"..Model().."door"))..{
 				InitCommand=function(s) s:rotationz(180):zoom(0.667):y(SCREEN_BOTTOM-75):diffusealpha(1) end, 
 			};
 			LoadActor(THEME:GetPathG("","_doors/GoldenLeague/"..GoldenLeague().."/light"))..{

@@ -1,19 +1,9 @@
 local t = Def.ActorFrame{
-LoadActor(THEME:GetPathB("","ModDate.lua"));
-}
-
-
-
-
+	LoadActor(THEME:GetPathB("","ModDate.lua"));
+};
 local xspacing = 40
-
 local curIndex = 2;
-
-local LangItems = {
-    "jp",
-    "en",
-    "kor"
-}
+local LangItems = { "jp", "en", "kor" };
 
 local function MakeRowItem(LangItems, idx)
     return Def.ActorFrame{

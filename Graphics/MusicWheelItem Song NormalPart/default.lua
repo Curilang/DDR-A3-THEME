@@ -30,7 +30,7 @@ local function GetExpandedSectionIndex()
 	end
 end
 
-function IndexStage(param)
+local function IndexStage(param)
 	if GAMESTATE:IsExtraStage() or GAMESTATE:IsExtraStage2() then
 		return param.Index ~= nil
 	else
@@ -38,14 +38,13 @@ function IndexStage(param)
 	end
 end
 
-function IndexStage2(param)
+local function IndexStage2(param)
 	if GAMESTATE:IsExtraStage() or GAMESTATE:IsExtraStage2() then
 		return param.Index
 	else
 		return param.Index-GetExpandedSectionIndex()-1
 	end
 end
-
 
 local function SetXYPosition(self, param)
 	if IndexStage(param) then
@@ -85,6 +84,7 @@ for i,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 	diff[#diff+1] = loadfile(THEME:GetPathG("MusicWheelItem","Song NormalPart/diff.lua"))(pn)..{
 		InitCommand=function(s) s:xy(pn == PLAYER_1 and -74 or 74,-36) end,
 	};
+	--diff[#diff+1] = loadfile(THEME:GetPathB("ScreenSelectMusic","overlay/ShockArrows/default.lua"))(pn);
 end;
 
 
@@ -208,7 +208,9 @@ return Def.ActorFrame{
 			SetMessageCommand=function(s,p)
 				local song = p.Song
 				if song then
-					s:settext(song:GetDisplayMainTitle()):diffuse(SongAttributes.GetMenuColor(song)):strokecolor(color("0.15,0.15,0.0,0.9"))
+					s:settext(GetSongName(song))
+					s:diffuse(SongAttributes.GetMenuColor(song))
+					s:strokecolor(color("0.15,0.15,0.0,0.9"))
 				end
 			end;
 		};

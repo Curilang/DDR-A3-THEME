@@ -8,8 +8,9 @@ return Def.ActorFrame {
 		OnCommand=function(s) s:sleep(4.5):linear(0.5):diffusealpha(0) end,
 	};
 	Def.Sprite{
-		InitCommand=function(s) s:Center():diffusealpha(0) end,
-		OnCommand=function(s) s:Load(THEME:GetPathB("ScreenCompany","background/KONAMI_1")):FullScreen()
+		Texture="KONAMI_1",
+		InitCommand=function(s) s:FullScreen():diffusealpha(0) end,
+		OnCommand=function(s) 
 			s:diffusealpha(0):linear(0.5):diffusealpha(1):sleep(4):linear(0.5):diffusealpha(0)
 		end,
 	};
@@ -18,26 +19,30 @@ return Def.ActorFrame {
 		OnCommand=function(s) s:diffusealpha(0):sleep(4):linear(0.5):diffusealpha(1) end,
 	};
 	Def.Sprite{
-		InitCommand=function(s) s:Center():diffusealpha(0) end,
-		OnCommand=function(s) s:Load(THEME:GetPathB("ScreenCompany","background/"..Language().."BEMANI")):zoom(0.766)
+		Texture=Language().."BEMANI",
+		InitCommand=function(s) s:Center():diffusealpha(0):zoom(0.766) end,
+		OnCommand=function(s)
 			s:sleep(4):linear(0.5):diffusealpha(1):sleep(2):linear(0.5):diffusealpha(0)
 		end,
 	};
 	Def.Sprite{
-		InitCommand=function(s) s:Center():diffusealpha(0) end,
-		OnCommand=function(s) s:Load(THEME:GetPathB("ScreenCompany","background/EAMUSEMENT")):zoom(0.6)
+		Texture="EAMUSEMENT",
+		InitCommand=function(s) s:Center():diffusealpha(0):zoom(0.6) end,
+		OnCommand=function(s)
 			s:sleep(7):linear(0.5):diffusealpha(1):sleep(2):linear(0.5):diffusealpha(0)
 		end,
 	};
 	Def.Sprite{
-		InitCommand=function(s) s:Center():diffusealpha(0) end,
-		OnCommand=function(s) s:Load(THEME:GetPathB("ScreenCompany","background/"..Language().."RSA")):zoom(0.667)
+		Texture=Language().."RSA",
+		InitCommand=function(s) s:Center():diffusealpha(0):zoom(0.667) end,
+		OnCommand=function(s)
 			s:sleep(10):linear(0.5):diffusealpha(1):sleep(2):linear(0.5):diffusealpha(0)
 		end,
 	};
 	Def.Sprite{
-		InitCommand=function(s) s:Center():diffusealpha(0) end,
-		OnCommand=function(s) s:Load(THEME:GetPathB("ScreenCompany","background/THANK YOU")):FullScreen()
+		Texture="THANK YOU",
+		InitCommand=function(s) s:FullScreen():diffusealpha(0) end,
+		OnCommand=function(s)
 			s:sleep(12):linear(0.5):diffusealpha(1):sleep(3):linear(0.5):diffusealpha(0)
 		end,
 	};

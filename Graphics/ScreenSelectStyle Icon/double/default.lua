@@ -1,47 +1,42 @@
-local t = Def.ActorFrame{};
-
-t[#t+1] = Def.ActorFrame{
-  InitCommand=cmd(xy,SCREEN_CENTER_X+362,SCREEN_CENTER_Y+10);
-  Def.ActorFrame{
-   LoadActor(THEME:GetPathG("ScreenSelectStyle","icon/infomiddle"))..{
-      OffCommand=cmd(smooth,0.2;zoomy,0;diffusealpha,0);
-      GainFocusCommand=function(self)
-        setenv("SelDoub",1)
-        self:finishtweening():diffusealpha(0):zoomy(0):sleep(0.2):smooth(0.1):zoomy(1.5):diffusealpha(1):smooth(0.05):zoomy(1.1)
-      end;
-      LoseFocusCommand=function(self)
-        setenv("SelDoub",0)
-        self:finishtweening():queuecommand("Off")
-      end;
-    };
-    LoadActor(Language().."text")..{
-      OffCommand=cmd(smooth,0.1;diffusealpha,0);
-      GainFocusCommand=cmd(finishtweening;diffusealpha,0;sleep,0.1;sleep,0.1;smooth,0.2;diffusealpha,1);
-      LoseFocusCommand=cmd(finishtweening;queuecommand,"Off");
-    };
-    LoadActor(Model().."pad")..{
-      InitCommand=cmd(xy,166,34);
-      OffCommand=cmd(smooth,0.1;diffusealpha,0);
-      GainFocusCommand=cmd(finishtweening;diffusealpha,0;sleep,0.1;sleep,0.1;smooth,0.2;diffusealpha,1);
-      LoseFocusCommand=cmd(finishtweening;queuecommand,"Off");
-    };
-  };
+return Def.ActorFrame{
 	Def.ActorFrame{
-    InitCommand=cmd(y,-94);
-    OffCommand=cmd(smooth,0.2;y,0;diffusealpha,0);
-    GainFocusCommand=cmd(finishtweening;diffusealpha,0;y,0;sleep,0.1;smooth,0.2;y,-100;diffusealpha,1;smooth,0.05;y,-92);
-    LoseFocusCommand=cmd(finishtweening;queuecommand,"Off");
-    LoadActor(THEME:GetPathG("ScreenSelectStyle","icon/"..Model().."top"));
-	LoadActor(Language().."title")..{
-		InitCommand=cmd(x,10);
+	InitCommand=function(s) s:xy(_screen.cx+362,_screen.cy+20) end,
+		LoadActor(THEME:GetPathG("","_shared/infomiddle"))..{
+			InitCommand=function(s) s:diffusealpha(0):zoomy(0) end,
+			GainFocusCommand=function(s) setenv("SelDoub",1) s:stoptweening():sleep(0.1):queuecommand("Anim") end,
+			AnimCommand=function(s)
+				s:smooth(0.2):zoomy(1.4):diffusealpha(1)
+				s:smooth(0.1):zoomy(1.1) 
+			end,
+			LoseFocusCommand=function(s) setenv("SelDoub",0) s:queuecommand("Off") end,
+			OffCommand=function(s) s:stoptweening():smooth(0.2):zoomy(0):diffusealpha(0) end,
+		};
+		Def.ActorFrame{
+			InitCommand=function(s) s:diffusealpha(0) end,
+			GainFocusCommand=function(s) s:stoptweening():sleep(0.2):queuecommand("Anim") end,
+			AnimCommand=function(s) s:smooth(0.2):diffusealpha(1) end,
+			LoseFocusCommand=function(s) s:queuecommand("Off") end,
+			OffCommand=function(s) s:stoptweening():smooth(0.07):diffusealpha(0) end,
+			LoadActor(THEME:GetPathG("ScreenSelectStyle","Icon/Double/"..Language().."text"));
+			LoadActor(THEME:GetPathG("ScreenSelectStyle","Icon/Double/"..Model().."pad"))..{
+				InitCommand=function(s) s:xy(166,34) end,
+			};
+		};
+		Def.ActorFrame{
+			InitCommand=function(s) s:diffusealpha(0) end,
+			GainFocusCommand=function(s) s:stoptweening():sleep(0.1):queuecommand("Anim") end,
+			AnimCommand=function(s) s:y(0):smooth(0.2):y(-100):diffusealpha(1):smooth(0.1):y(-92) end, 
+			LoseFocusCommand=function(s) s:queuecommand("Off") end,
+			OffCommand=function(s) s:stoptweening():smooth(0.2):y(0):diffusealpha(0) end,
+			LoadActor(THEME:GetPathG("","_shared/"..Model().."infotop"));
+			LoadActor(Language().."title");
+		};
+		LoadActor(THEME:GetPathG("","_shared/"..Model().."infobottom"))..{
+			InitCommand=function(s) s:diffusealpha(0) end,
+			GainFocusCommand=function(s) s:stoptweening():sleep(0.1):queuecommand("Anim") end,
+			AnimCommand=function(s) s:y(0):smooth(0.2):y(100):diffusealpha(1):smooth(0.1):y(88) end,
+			LoseFocusCommand=function(s) s:queuecommand("Off") end,
+			OffCommand=function(s) s:stoptweening():smooth(0.2):y(0):diffusealpha(0) end,
+		};
 	};
-	};
-  LoadActor(THEME:GetPathG("ScreenSelectStyle","icon/"..Model().."bottom"))..{
-    InitCommand=cmd(zoom,0.996;y,86);
-    OffCommand=cmd(smooth,0.2;y,0;diffusealpha,0);
-    GainFocusCommand=cmd(finishtweening;diffusealpha,0;y,0;sleep,0.1;smooth,0.2;y,100;diffusealpha,1;smooth,0.05;y,88);
-    LoseFocusCommand=cmd(finishtweening;queuecommand,"Off");
-  };
 };
-
-return t;

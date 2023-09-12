@@ -6,17 +6,26 @@ t[#t+1] = Def.Quad{
 
 t[#t+1] = Def.ActorFrame{
 	OnCommand=function(s) s:queuecommand("Play") end,
-	PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("ScreenStageInformation","StageSound")) end,
+	PlayCommand=function(s) 
+		local sound = THEME:GetPathS("ScreenStageInformation","StageSound")
+		SOUND:PlayOnce(StreamingSound(sound)) 
+	end,
 };
 
 t[#t+1] = Def.ActorFrame{
 	OnCommand=function(s) s:sleep(0.3):queuecommand("Play") end,
-	PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("","DoorClose")) end,
+	PlayCommand=function(s) 
+		local sound = THEME:GetPathS("","DoorClose")
+		SOUND:PlayOnce(StreamingSound(sound)) 
+	end,
 };
 
 t[#t+1] = Def.ActorFrame{
 	OnCommand=function(s) s:sleep(1.55):queuecommand("Play") end,
-	PlayCommand=function(s) SOUND:PlayOnce(THEME:GetPathS("ScreenStageInformation","JacketSound")) end,
+	PlayCommand=function(s) 
+		local sound = THEME:GetPathS("ScreenStageInformation","JacketSound")
+		SOUND:PlayOnce(StreamingSound(sound)) 
+	end,
 };
 
 t[#t+1] = LoadActor("Doors");

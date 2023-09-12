@@ -8,7 +8,7 @@ local sortorders = {
 	"Group",
 	"Artist",
 	"TopGrades",
-	"Bpm",
+	"BPM",
 	"EasyMeter",
 	"Popularity",
 	"Length",
@@ -148,41 +148,48 @@ for i=1,#sortorders do
 end;
 
 local t = Def.ActorFrame{
-	InitCommand=function(s) s:zoom(0.667):Center():queuecommand("Capture") end,
-	CaptureCommand=function(s) 
-		SCREENMAN:GetTopScreen():AddInputCallback(input)
-	end,
-	LoadActor("bg")..{
-		OnCommand=function(s) s:xy(-6,48):zoomy(0):decelerate(0.2):zoomy(1) end,
-	},
+	Def.Quad{
+		InitCommand=function(s) s:diffuse(color("0,0,0,0.5")):FullScreen() end,
+		OnCommand=function(s) s:diffusealpha(0):sleep(0.1):smooth(0.15):diffusealpha(0.6) end,
+		OffCommand=function(s) s:linear(0.2):diffusealpha(0) end,
+	};
 	Def.ActorFrame{
-		OnCommand=function(s) s:x(-6):valign(1):y(0):decelerate(0.2):y(-195) end,
-		LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."upper"))..{
-			InitCommand=function(s) s:valign(1):zoom(0.89):y(2) end,
+		InitCommand=function(s) s:zoom(0.667):xy(_screen.cx,_screen.cy-25):queuecommand("Capture") end,
+		CaptureCommand=function(s) 
+			SCREENMAN:GetTopScreen():AddInputCallback(input)
+		end,
+		LoadActor("bg")..{
+			OnCommand=function(s) s:xy(-6,48):zoomy(0):decelerate(0.2):zoomy(1) end,
 		},
-		LoadActor(Language().."title")..{
-			InitCommand=function(s) s:y(-25) end,
+		Def.ActorFrame{
+			OnCommand=function(s) s:x(-6):valign(1):y(0):decelerate(0.2):y(-195) end,
+			LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."upper"))..{
+				InitCommand=function(s) s:valign(1):zoom(0.89):y(2) end,
+			},
+			LoadActor(Language().."title")..{
+				InitCommand=function(s) s:y(-25) end,
+			}
+		};
+		LoadActor(THEME:GetPathG("","_shared/"..Model().."infobottom"))..{
+			InitCommand=function(s) s:zoom(0.85) end,
+			OnCommand=function(s) s:x(-6):valign(0):y(0):decelerate(0.2):y(289) end,
+		},
+		Def.ActorScroller{
+			SecondsPerItem=0;
+			NumItemsToDraw=20;
+			TransformFunction=function(self,offsetFromCenter,itemIndex,numItems)
+				self:y((offsetFromCenter*32)-170):draworder(math.abs(offsetFromCenter)*10)
+					if itemIndex%2==0 then
+						self:x(-84)
+					else
+						self:x(78)
+					end;
+			end,
+			children=ItemList;
 		}
 	};
-	LoadActor(THEME:GetPathG("ScreenSelectStyle","Icon/"..Model().."bottom"))..{
-		InitCommand=function(s) s:zoom(0.85) end,
- 		OnCommand=function(s) s:x(-6):valign(0):y(0):decelerate(0.2):y(289) end,
-	},
-	Def.ActorScroller{
-		SecondsPerItem=0;
-		NumItemsToDraw=20;
-		TransformFunction=function(self,offsetFromCenter,itemIndex,numItems)
-			self:y((offsetFromCenter * 32)-170);
-			self:draworder( math.abs(offsetFromCenter)*10 );
-			if itemIndex%2==0 then
-			  self:x(-84)
-			else
-			  self:x(78)
-			end;
-		end,
-		children=ItemList;
-	}
 };
+
 t[#t+1] = LoadActor( THEME:GetPathS("", "_MusicWheel change") )..{ Name="change_sound", SupportPan = false }
 t[#t+1] = LoadActor( THEME:GetPathS("", "player mine") )..{ Name="change_invalid", SupportPan = false }
 t[#t+1] = LoadActor( THEME:GetPathS("common", "start") )..{ Name="start_sound", SupportPan = false }

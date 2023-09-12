@@ -3,19 +3,19 @@ local env = GAMESTATE:Env()
 	
 t[#t+1] = Def.ActorFrame{
 	Def.ActorFrame{
-		GainFocusCommand=function(s) s:linear(0.2):y(0) end,
+		GainFocusCommand=function(s) s:stoptweening():linear(0.2):y(0) end,
 		LoseFocusCommand=function(s) s:linear(0.2):y(102) end,
 		Def.ActorFrame{
 			InitCommand=cmd(diffusealpha,0;zoom,0.667;x,-11;y,-52);
 			OnCommand=cmd(zoom,0;sleep,0.5;linear,0.1;diffusealpha,1.0;zoom,0.667;smooth,0.1;zoom,0.6;smooth,0.1;zoom,0.667);
-			LoadActor(Model().."pad");
-			LoadActor(Model().."pad")..{
+			LoadActor(THEME:GetPathG("ScreenSelectStyle","Scroll/Single/"..Model().."pad"));
+			LoadActor(THEME:GetPathG("ScreenSelectStyle","Scroll/Single/"..Model().."pad"))..{
 				InitCommand=cmd(blend,Blend.Add);
 				GainFocusCommand=cmd(smooth,0.3;diffusealpha,0.5;diffuseramp;effectcolor1,color("1,1,1,1");effectcolor2,color("1,1,1,0");effectperiod,0.43);
 				LoseFocusCommand=cmd(diffusealpha,0;stoptweening);
 			};
 		};
-		LoadActor(Model().."character") ..{
+		LoadActor(THEME:GetPathG("ScreenSelectStyle","Scroll/Single/"..Model().."character")) ..{
 			InitCommand=cmd(diffusealpha,0;zoom,0.667;x,-12;y,-52);
 			OnCommand=cmd(sleep,0.6;linear,0.1;diffusealpha,1;zoomy,0.6;linear,0.1;zoomy,0.667;zoomx,0.9;linear,0.1;zoomx,0.667);
 		};

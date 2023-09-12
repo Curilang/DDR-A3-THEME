@@ -15,128 +15,107 @@ function(table, ind)
 end
 })
 
---?d?????e????---------------------------
-function LoadCard(cColor,cColor2,Player,IsJoinFrame)
+local function LoadCard(cColor,cColor2,Player,IsJoinFrame)
 	local t = Def.ActorFrame {
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/BG01") ) .. {
-			InitCommand=function(s) s:shadowlength(0):zoomy(0) end,
+		
+		Def.ActorFrame{
+		--Background Stuff
+			InitCommand=function(s) s:zoomy(0) end,
 			OnCommand=function(s) s:linear(0.3):zoomy(1) end,
 			OffCommand=function(s) 
 				local slp if IsJoinFrame then slp = 0.1 else slp = 0.3 end 
 				s:sleep(slp):linear(0.1):zoomy(0) 
 			end,
-		};
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/BG02") ) .. {
-			InitCommand=function(s) s:y(-10):zoomy(0) end,
-			OnCommand=function(s) s:linear(0.3):zoomy(1.1) end,
-			OffCommand=function(s) 
-				local slp if IsJoinFrame then slp = 0.1 else slp = 0.3 end 
-				s:sleep(slp):linear(0.1):zoomy(0) 
-			end,
-		};
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Language().."dataload") )..{
-			InitCommand=function(s) s:diffusealpha(0):y(-165) end,
-			OnCommand=function(s)
-				local difu if IsJoinFrame then difu = 0 else difu = 1 end
-				s:sleep(0.7):linear(0.1):diffusealpha(difu):zoom(1.1):linear(0.1):zoom(1) 
-			end,
-			OffCommand=function(s) s:diffusealpha(0) end,
+			LoadActor(THEME:GetPathG("","ScreenSelectProfile/BG01"));
+			LoadActor(THEME:GetPathG("","ScreenSelectProfile/BG02"))..{
+				InitCommand=function(s) s:y(-10):zoomy(1.1) end,
+			};
 		};
 		LoadActor(THEME:GetPathG("","_shared/stars"))..{
-			InitCommand=function(s) s:diffusealpha(0):zoom(0.75):y(-17) end,
-			OnCommand=function(s)
+			InitCommand=function(s) s:diffusealpha(0):y(-55) end,
+			OnCommand=function(s) 
 				local difu if IsJoinFrame then difu = 0 else difu = 1 end
-				s:sleep(0.7):linear(0.1):diffusealpha(difu):zoom(1.1):linear(0.1):zoom(1)
-			end,
-			OffCommand=function(s) s:diffusealpha(0) end,
-		};
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."profile") )..{
-			InitCommand=function(s) s:diffusealpha(0):y(-76) end,
-			OnCommand=function(s)
-				local difu if IsJoinFrame then difu = 0 else difu = 1 end
-				s:sleep(0.7):linear(0.1):diffusealpha(difu):zoom(1.1):linear(0.1):zoom(1)
-			end,
-			OffCommand=function(s) s:diffusealpha(0) end,
-		};
-		LoadActor(RegionFile())..{
-			InitCommand=function(s) s:diffusealpha(0):x(130) end,
-			OnCommand=function(s)
-				local difu if IsJoinFrame then difu = 0 else difu = 1 end
-				if GetCurrentLanguage() == "English" or GetCurrentLanguage() == "Korean" then
-					s:y(-82):zoom(1):sleep(0.7):linear(0.1):diffusealpha(difu)
-				else
-					s:y(-81):zoomx(1):zoomy(0.8):sleep(0.7):linear(0.1):diffusealpha(difu)
-				end
-			end,
-			OffCommand=function(s) s:diffusealpha(0) end,
-		};
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model()..Language().."dan") )..{
-			InitCommand=function(s) s:diffusealpha(0):y(50) end,
-			OnCommand=function(s)
-				local difu if IsJoinFrame then difu = 0 else difu = 1 end
-				s:sleep(0.7):linear(0.1):diffusealpha(difu):zoom(1.1):linear(0.1):zoom(1) 
-			end,
-			OffCommand=function(s) s:diffusealpha(0) end,
-		};
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/Dan/"..DanCourse()) )..{
-			InitCommand=function(s) s:diffusealpha(0):xy(-56,60) end,
-			OnCommand=function(s)
-				local difu if IsJoinFrame then difu = 0 else difu = 1 end
-				s:sleep(0.7):linear(0.1):diffusealpha(difu):zoom(1.1):linear(0.1):zoom(1) 
-			end,
-			OffCommand=function(s) s:diffusealpha(0) end,
-		};
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/Dan/"..DanCourse()) )..{
-			InitCommand=function(s) s:diffusealpha(0):xy(136,60) end,
-			OnCommand=function(s)
-				local difu if IsJoinFrame then difu = 0 else difu = 1 end
-				s:sleep(0.7):linear(0.1):diffusealpha(difu):zoom(1.1):linear(0.1):zoom(1) 
-			end,
-			OffCommand=function(s) s:diffusealpha(0) end,
-		};
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."league") )..{
-			InitCommand=function(s) s:diffusealpha(0):y(154) end,
-			OnCommand=function(s)
-				local difu if IsJoinFrame then difu = 0 else difu = 1 end
-				s:sleep(0.7):linear(0.1):diffusealpha(difu):zoom(1.1):linear(0.1):zoom(1)
-			end,
-			OffCommand=function(s) s:diffusealpha(0) end,
-		};
-		Def.Sprite{
-			InitCommand=function(s) s:diffusealpha(0):y(154)
-				if GoldenLeague() then
-					s:Load(THEME:GetPathG("","ScreenSelectProfile/"..League().."icon")):zoom(0.3):x(43)
-				else	
-					s:Load(THEME:GetPathG("","ScreenSelectProfile/icon_none")):zoom(1):x(98)
-				end
-			end,
-			OnCommand=function(s)
-				local difu if IsJoinFrame then difu = 0 else difu = 1 end
-				s:sleep(0.7):linear(0.1):diffusealpha(difu)
-			end,
-			OffCommand=function(s) s:diffusealpha(0) end,
-		};
-		Def.Sprite{
-			InitCommand=function(s) s:diffusealpha(0):zoom(0.667):x(120):y(154)
-				if GoldenLeague() then
-					s:Load(THEME:GetPathG("","ScreenSelectProfile/"..League().."sort"))
-				end
-			end,
-			OnCommand=function(s)
-				local difu if IsJoinFrame then difu = 0 else difu = 1 end
-				s:sleep(0.7):linear(0.1):diffusealpha(difu)
+				s:sleep(0.87):diffusealpha(difu):linear(0.18):y(-17) 
 			end,
 			OffCommand=function(s) s:diffusealpha(0) end,
 		};
 		Def.ActorFrame{
-			Name="Topper";
+		--Player decoration
+			InitCommand=function(s) s:zoom(1.08):diffusealpha(0) end,
+			OnCommand=function(s)
+				local difu if IsJoinFrame then difu = 0 else difu = 1 end
+				s:sleep(0.7):linear(0.18):diffusealpha(difu):zoom(1) 
+			end,
+			OffCommand=function(s) s:diffusealpha(0) end,
+			LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."profile") )..{
+				InitCommand=function(s) s:y(-76) end,
+			};
+			LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model()..Language().."dan") )..{
+				InitCommand=function(s) s:y(50) end,
+			};
+			LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."league") )..{
+				InitCommand=function(s) s:y(154) end,
+			};
+		};
+		Def.ActorFrame{
+		--Player text
+			OnCommand=function(s)
+				local difu if IsJoinFrame then difu = 0 else difu = 1 end
+				s:diffusealpha(0):sleep(0.87):linear(0.3):diffusealpha(difu)
+			end,
+			OffCommand=function(s) s:diffusealpha(0) end,
+			Def.ActorFrame{
+				InitCommand=function(s) s:y(60) end,
+				Def.Sprite{ Texture=THEME:GetPathG("","ScreenSelectProfile/"..Language().."dan"),
+					InitCommand=function(s) s:x(-56):animate(0) 
+							if DanCourse() == "None"   then s:setstate(0)
+						elseif DanCourse() == "Dan 01" then s:setstate(1)
+						elseif DanCourse() == "Dan 02" then s:setstate(2)
+						elseif DanCourse() == "Dan 03" then s:setstate(3)
+						elseif DanCourse() == "Dan 04" then s:setstate(4)
+						elseif DanCourse() == "Dan 05" then s:setstate(5)
+						elseif DanCourse() == "Dan 06" then s:setstate(6)
+						elseif DanCourse() == "Dan 07" then s:setstate(7)
+						elseif DanCourse() == "Dan 08" then s:setstate(8)
+						elseif DanCourse() == "Dan 09" then s:setstate(9)
+						elseif DanCourse() == "Dan 10" then s:setstate(10)
+						elseif DanCourse() == "Kaiden" then s:setstate(11)
+						end
+					end,
+				};
+				Def.Sprite{ Texture=THEME:GetPathG("","ScreenSelectProfile/"..Language().."dan"),
+					InitCommand=function(s) s:x(136):animate(0) 
+							if DanCourse() == "None"   then s:setstate(0)
+						elseif DanCourse() == "Dan 01" then s:setstate(1)
+						elseif DanCourse() == "Dan 02" then s:setstate(2)
+						elseif DanCourse() == "Dan 03" then s:setstate(3)
+						elseif DanCourse() == "Dan 04" then s:setstate(4)
+						elseif DanCourse() == "Dan 05" then s:setstate(5)
+						elseif DanCourse() == "Dan 06" then s:setstate(6)
+						elseif DanCourse() == "Dan 07" then s:setstate(7)
+						elseif DanCourse() == "Dan 08" then s:setstate(8)
+						elseif DanCourse() == "Dan 09" then s:setstate(9)
+						elseif DanCourse() == "Dan 10" then s:setstate(10)
+						elseif DanCourse() == "Kaiden" then s:setstate(11)
+						end
+					end,
+				};
+			};
+			Def.Sprite{ Texture=THEME:GetPathG("","ScreenSelectProfile/league"),
+				InitCommand=function(s) s:xy(90,154):animate(0)
+						if GoldenLeague() == "Bronze"   then s:setstate(1)
+					elseif GoldenLeague() == "Silver" 	then s:setstate(2)
+					elseif GoldenLeague() == "Gold" 	then s:setstate(3)
+					else								     s:setstate(0)
+					end
+				end
+			};
+		};
+		Def.ActorFrame{
 			OnCommand=cmd(y,0;linear,0.3;y,-238;);
 			OffCommand=function(s) 
-				if IsJoinFrame then
-					s:sleep(0.1):linear(0.1):y(0):sleep(0):diffusealpha(0)
-				else
-					s:sleep(0.3):linear(0.1):y(0):sleep(0):diffusealpha(0)
-				end
+				local slp if IsJoinFrame then slp = 0.1 else slp = 0.3 end 
+				s:sleep(slp):linear(0.1):y(0):sleep(0):diffusealpha(0)
 			end,
 			LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."upper"))..{
 				InitCommand=function(s) s:valign(1):y(1) end,				
@@ -152,14 +131,10 @@ function LoadCard(cColor,cColor2,Player,IsJoinFrame)
 			};
 		};
 		Def.ActorFrame{
-			Name="Bottom";
 			OnCommand=function(s) s:linear(0.3):y(224) end,
 			OffCommand=function(s) 
-				if IsJoinFrame then
-					s:sleep(0.1):linear(0.1):y(0):sleep(0):diffusealpha(0)
-				else
-					s:sleep(0.3):linear(0.1):y(0):sleep(0):diffusealpha(0)
-				end
+				local slp if IsJoinFrame then slp = 0.1 else slp = 0.3 end 
+				s:sleep(slp):linear(0.1):y(0):sleep(0):diffusealpha(0)
 			end,
 			LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."bottom"))..{
 				InitCommand=function(s) s:valign(0):y(-6) end,
@@ -170,121 +145,90 @@ function LoadCard(cColor,cColor2,Player,IsJoinFrame)
 	return t
 end
 
-function LoadPlayerStuff(Player)
-
-	local t = {};
-	local pn = (Player == PLAYER_1) and 1 or 2;
-
-
-	t[#t+1] = Def.ActorFrame {
-		Name = 'JoinFrame';
-		LoadCard(Color('Outline'),color('0,0,0,0'),Player,true);
-
-		LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."press") ) .. {
-			InitCommand=cmd(zoomy,0;diffuseshift;effectcolor1,Color('White');effectcolor2,color("#A5A6A5"));
-			OnCommand=cmd(x,0;y,-15;sleep,0.5;linear,0.1;zoomx,1;zoomy,1);
-			OffCommand=function(s) s:linear(0.1):zoomy(0):diffusealpha(0) end,
+function LoadPlayerStuff(pn)
+	local t = Def.ActorFrame {
+		--No Player yet
+		Def.ActorFrame {
+			Condition=not IsDataSaveSummary();
+			Name = 'JoinFrame';
+			LoadCard(Color('Outline'),color('0,0,0,0'),pn,true);
+			LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model().."press") ) .. {
+				InitCommand=cmd(zoomy,0;diffuseshift;effectcolor1,Color('White');effectcolor2,color("#A5A6A5"));
+				OnCommand=cmd(x,0;y,-15;sleep,0.5;linear,0.1;zoomx,1;zoomy,1);
+				OffCommand=function(s) s:linear(0.1):zoomy(0):diffusealpha(0) end,
+			};
 		};
-
+		--Player
+		Def.ActorFrame {
+			Name = 'BigFrame';
+			LoadCard(PlayerColor(),color('1,1,1,1'),pn,false);
+			Def.Sprite{
+				InitCommand=function(s) s:y(-165) 
+					if IsDataSaveSummary() then 
+						s:Load(THEME:GetPathG("","ScreenSelectProfile/"..Language().."datasave"))
+					else
+						s:Load(THEME:GetPathG("","ScreenSelectProfile/"..Language().."dataload"))
+					end
+				end,
+				OnCommand=function(s) s:diffusealpha(0):sleep(0.87):linear(0.3):diffusealpha(1) end,
+				OffCommand=function(s) s:diffusealpha(0) end,
+			};
+		};
+		--Player deco
+		Def.Sprite{
+			InitCommand=function(s) 
+				if IsDataSaveSummary() then 
+					s:Load(THEME:GetPathG("","ScreenSelectProfile/"..Model()..Language().."gameskip"))
+					s:xy(10,271) 
+				else
+					s:Load(THEME:GetPathG("","ScreenSelectProfile/"..Model()..Language().."gamestart"))
+					s:xy(2,271)
+				end
+			end,
+				OnCommand=function(s) s:diffusealpha(0):sleep(0.87):linear(0.3):diffusealpha(1) end,
+				OffCommand=function(s) s:diffusealpha(0) end,
+		};
+		LoadFont("ProfileText 24px") .. {
+			Name = 'ProfileText';
+			InitCommand=function(s) s:uppercase(true):xy(-175,-83):halign(0):zoomy(0.7):maxwidth(245) end,
+				OnCommand=function(s) s:diffusealpha(0):sleep(0.87):linear(0.3):diffusealpha(1) end,
+				OffCommand=function(s) s:diffusealpha(0) end,
+		};
+		LoadFont("ProfileText 24px") .. {
+			Name = 'ProfileUID';
+			InitCommand=function(s) s:uppercase(true):xy(-175,-53):halign(0):zoomy(0.7) end,
+				OnCommand=function(s) s:diffusealpha(0):sleep(0.87):linear(0.3):diffusealpha(1) end,
+				OffCommand=function(s) s:diffusealpha(0) end,
+		};
 	};
-
-	t[#t+1] = Def.ActorFrame {
-		Name = 'BigFrame';
-		LoadCard(PlayerColor(),color('1,1,1,1'),Player,false);
-	};
-	t[#t+1] = Def.ActorFrame {
-		Name = 'SmallFrame';
-		InitCommand=cmd(y,5);
-	};
-	t[#t+1] = Def.ActorScroller{
-		Name = 'Scroller';
-		NumItemsToDraw=1;
-
-		OnCommand=cmd(draworder,1000;y,5;SetFastCatchup,true;SetMask,0,29;SetSecondsPerItem,0.15);
-		TransformFunction=function(self, offset, itemIndex, numItems)
-			local focus = scale(math.abs(offset),0,2,1,0);
-			self:visible(false);
-			self:y(math.floor( offset*20 ));
-
-		end;
-	};
-
-
-	t[#t+1] = Def.ActorFrame {
-		Name = "EffectFrame";
-	};
-	
-	t[#t+1] = LoadActor( THEME:GetPathG("","ScreenSelectProfile/"..Model()..Language().."gamestart") )..{
-		Name = "FrameInstWord";
-		InitCommand=cmd(x,0;y,273;zoom,1);
-		OnCommand=cmd(diffusealpha,0;sleep,0.8;linear,0.3;diffusealpha,1);
-		OffCommand=function(self)
-		(cmd(stoptweening;linear,0.05;;diffusealpha,0))(self);
-		end;
-	};
-
-	--?U???d??-----------------
-	t[#t+1] = LoadFont("ProfileText 24px") .. {
-		Name = 'SelectedProfileText';
-    InitCommand=function(self)
-      (cmd(uppercase,true;xy,-175,-83;halign,0;zoomy,0.7;diffusealpha,0;maxwidth,245))(self);
-    end;
-		OnCommand=cmd(sleep,0.7;linear,0.2;diffusealpha,1);
-    OffCommand=function(self)
-      self:diffusealpha(0)
-    end;
-	};
-
-	t[#t+1] = LoadFont("ProfileText 24px") .. {
-		Name = 'selectPlayerUID';
-		InitCommand=cmd(uppercase,true;xy,-175,-54;halign,0;zoomx,1.25;zoomy,0.7;diffusealpha,0);
-		OnCommand=function(s) s:sleep(0.7):linear(0.2):diffusealpha(1) end,
-    OffCommand=function(self)
-      self:diffusealpha(0)
-    end;
-	};
-
 	return t;
-end;
+end
 
-function UpdateInternal3(self, Player)
-
+local function UpdateInternal3(self, Player)
 	local pn = (Player == PLAYER_1) and 1 or 2;
 	local frame = self:GetChild(string.format('P%uFrame', pn));
-	local scroller = frame:GetChild('Scroller');
-	local seltext = frame:GetChild('SelectedProfileText');
+	local ProfileText = frame:GetChild('ProfileText');
 	local joinframe = frame:GetChild('JoinFrame');
-	local smallframe = frame:GetChild('SmallFrame');
 	local bigframe = frame:GetChild('BigFrame');
-	local selectPlayerUID = frame:GetChild('selectPlayerUID');
-	--MyGrooveRadar
-	local selPlayerUID;
-
-	local PcntLarger;
-	--local selMostCoursePlayed = frame:GetChild('selectedMostCoursePlayed');
+	local ProfileUID = frame:GetChild('ProfileUID');
+	
 	if GAMESTATE:IsHumanPlayer(Player) then
 		frame:visible(true);
 		if MEMCARDMAN:GetCardState(Player) == 'MemoryCardState_none' then
-			--using profile if any
 			joinframe:visible(false);
-			smallframe:visible(true);
 			bigframe:visible(false);
-			seltext:visible(true);
-			scroller:visible(true);
-      selectPlayerUID:visible(true);
+			ProfileText:visible(true);
+      ProfileUID:visible(true);
 
 			local ind = SCREENMAN:GetTopScreen():GetProfileIndex(Player);
-
-
 			if ind > 0 then
 				local profile = PROFILEMAN:GetLocalProfileFromIndex(ind-1);
 
 				bigframe:visible(true);
-				scroller:SetDestinationItem(ind-1);
-				seltext:settext(ProfileInfoCache[ind].DisplayName);
+				ProfileText:settext(ProfileInfoCache[ind].DisplayName);
 
-				selPlayerUID = PROFILEMAN:GetLocalProfileFromIndex(ind-1):GetGUID();
-				selectPlayerUID:settext(string.upper(string.sub(selPlayerUID,1,4).."-"..string.sub(selPlayerUID,5,8)));
+				local selPlayerUID = profile:GetGUID();
+				ProfileUID:settext(string.upper(string.sub(selPlayerUID,1,4).."-"..string.sub(selPlayerUID,5,8)));
 
 				local profileID = PROFILEMAN:GetLocalProfileIDFromIndex(ind-1)
 				local prefs = ProfilePrefs.Read(profileID)
@@ -295,39 +239,29 @@ function UpdateInternal3(self, Player)
 			else
 				if SCREENMAN:GetTopScreen():SetProfileIndex(Player, 1) then
 					bigframe:visible(false);
-					scroller:SetDestinationItem(0);
 					self:queuecommand('UpdateInternal2');
 				else
 					joinframe:visible(false);
-					smallframe:visible(false);
 					bigframe:visible(false);
-					scroller:visible(false);
-					seltext:settext('No profile');
-					selectPlayerUID:settext('------------');
+					ProfileText:settext('No profile');
+					ProfileUID:settext('------------');
 				end;
 			end;
 		else
 			--using card
-			smallframe:visible(false);
-			scroller:visible(false);
-			seltext:settext('CARD');
+			ProfileText:settext('CARD');
 			SCREENMAN:GetTopScreen():SetProfileIndex(Player, 0);
 		end;
 	else
 		joinframe:visible(true);
-		scroller:visible(false);
-		seltext:visible(false);
-		selectPlayerUID:visible(false);
-		smallframe:visible(false);
+		ProfileText:visible(false);
+		ProfileUID:visible(false);
 		bigframe:visible(false);
 	end;
 end;
 
 local screen = Var("LoadingScreen")
-
---?D?{??
 local t = Def.ActorFrame {
-
 	StorageDevicesChangedMessageCommand=function(self, params)
 		self:queuecommand('UpdateInternal2');
 	end;

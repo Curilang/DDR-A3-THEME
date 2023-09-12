@@ -87,66 +87,55 @@ local function DrawDiffListItem(diff)
         end;
       end;
     };
-    Def.ActorFrame{
-      InitCommand=function(s) s:x(90) end,
-      LoadActor(THEME:GetPathG("Player","Badge FullCombo"))..{
-        InitCommand=function(s) s:shadowlength(1):zoom(0):draworder(5):x(24):diffusealpha(0.8) end,
-        SetCommand=function(self)
-          local st=GAMESTATE:GetCurrentStyle():GetStepsType();
-          local song=GAMESTATE:GetCurrentSong();
-          local course = GAMESTATE:GetCurrentCourse();
-          if song then
-            if song:HasStepsTypeAndDifficulty(st,diff) then
-              local steps = song:GetOneSteps( st, diff );
-              if PROFILEMAN:IsPersistentProfile(pn) then
-                profile = PROFILEMAN:GetProfile(pn);
-              else
-                profile = PROFILEMAN:GetMachineProfile();
-              end;
-              scorelist = profile:GetHighScoreList(song,steps);
-              assert(scorelist);
-              local scores = scorelist:GetHighScores();
-              assert(scores);
-              local topscore;
-              if scores[1] then
-                topscore = scores[1];
-                assert(topscore);
-                local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
-                local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
-                local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
-                local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
-                local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
-                local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
-                if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
-                  if (greats+perfects) == 0 then
-                    self:diffuse(GameColor.Judgment["JudgmentLine_W1"]);
-                    self:glowblink();
-                    self:effectperiod(0.20);
-                  elseif greats == 0 then
-                    self:diffuse(GameColor.Judgment["JudgmentLine_W2"]);
-                    self:glowshift();
-                  elseif (misses+boos+goods) == 0 then
-                    self:diffuse(GameColor.Judgment["JudgmentLine_W3"]);
-                    self:stopeffect();
-                  elseif (misses+boos) == 0 then
-                    self:diffuse(GameColor.Judgment["JudgmentLine_W4"]);
-                    self:stopeffect();
-                  end;
-                  self:visible(true)
-                  self:zoom(0.25);
-                else
-                  self:visible(false)
-                end;
-              else
-                self:visible(false)
-              end;
-            else
-              self:visible(false)
-            end;
-          else
-            self:visible(false)
-          end;
-        end
+	Def.ActorFrame{
+		InitCommand=function(s) s:x(90) end,
+		Def.Sprite{
+			InitCommand=function(s) s:xy(24,2) end,
+			SetCommand=function(self)
+				local st = GAMESTATE:GetCurrentStyle():GetStepsType();
+				local song = GAMESTATE:GetCurrentSong();
+				local profile = MachineOrProfile(pn)
+				if song then
+					if song:HasStepsTypeAndDifficulty(st,diff) then
+						local steps = song:GetOneSteps( st, diff );
+						local scorelist = profile:GetHighScoreList(song,steps);
+							assert(scorelist);
+						local scores = scorelist:GetHighScores();
+							assert(scores);
+						local topscore;
+						if scores[1] then
+							topscore = scores[1];
+								assert(topscore);
+							local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
+							local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
+							local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
+							local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
+							local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
+							local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
+							if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
+								if (greats+perfects) == 0 then
+									self:Load(THEME:GetPathG("","ScreenSelectMusic/MarvelousFullCombo_ring"))
+								elseif greats == 0 then
+									self:Load(THEME:GetPathG("","ScreenSelectMusic/PerfectFullCombo_ring"))
+								elseif (misses+boos+goods) == 0 then
+									self:Load(THEME:GetPathG("","ScreenSelectMusic/GreatFullCombo_ring"))
+								elseif (misses+boos) == 0 then
+									self:Load(THEME:GetPathG("","ScreenSelectMusic/GoodFullCombo_ring"))
+								end;
+								self:visible(true):zoom(0.66):spin():effectmagnitude(0,0,170)
+							else
+								self:visible(false)
+							end;
+						else
+							self:visible(false)
+						end;
+					else
+						self:visible(false)
+					end;
+				else
+					self:visible(false)
+			end;
+		end
       };
       Def.Quad{
         Name="Grade";

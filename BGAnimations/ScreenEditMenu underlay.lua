@@ -5,7 +5,7 @@ return Def.ActorFrame {
 		OffCommand=function(s) s:sleep(0.3):linear(0.25):zoomx(0) end,
 	};
 	LoadActor(THEME:GetPathG("","ScreenSelectProfile/"..Model().."bottom")) .. {
-		InitCommand=function(s) s:xy(_screen.cx,SCREEN_BOTTOM-60):setsize(400,55) end,
+		InitCommand=function(s) s:xy(_screen.cx,SCREEN_BOTTOM-60):setsize(400,62) end,
 		OnCommand=function(s) s:zoomx(0):linear(0.25):zoomx(1) end,
 		OffCommand=function(s) s:sleep(0.3):linear(0.25):zoomx(0) end,
 	};

@@ -137,102 +137,56 @@ t[#t+1]=Def.ActorFrame{
 			self:x(pn == PLAYER_1 and cx-436 or cx+436);
 		end;
 	};
-	LoadActor(THEME:GetPathG("StageIn","Spin FullCombo"))..{
+	Def.Sprite{
 	InitCommand=function(s) s:zoom(0.27):shadowlength(1)
 	s:x(pn == PLAYER_1 and cx-268-ox or cx+603+ox)
 	s:y(SCREEN_BOTTOM+78):horizalign(center):draworder(2) end,
-	OnCommand=function(self)
-			local SongOrCourse, StepsOrTrail;
-			if GAMESTATE:IsCourseMode() then
-				SongOrCourse = GAMESTATE:GetCurrentCourse();
-				StepsOrTrail = GAMESTATE:GetCurrentTrail(pn);
-			else
-				SongOrCourse = GAMESTATE:GetCurrentSong();
-				StepsOrTrail = GAMESTATE:GetCurrentSteps(pn);
-			end;
-			local profile, scorelist;
-			local text = "";
-			if SongOrCourse and StepsOrTrail then
-				local st = StepsOrTrail:GetStepsType();
-				local diff = StepsOrTrail:GetDifficulty();
-				local courseType = GAMESTATE:IsCourseMode() and SongOrCourse:GetCourseType() or nil;
-
-				if PROFILEMAN:IsPersistentProfile(pn) then
-					--player profile
-					profile = PROFILEMAN:GetProfile(pn);
-				else
-					--machine profile
-					profile = PROFILEMAN:GetMachineProfile();
-				end;
-
-				scorelist = profile:GetHighScoreList(SongOrCourse,StepsOrTrail);
-				
-				assert(scorelist);
+	OnCommand=function(self) self:sleep(SleepOffset+0.2):linear(0.05):x(pn == PLAYER_1 and cx-268 or cx+603)
+            local song = GAMESTATE:GetCurrentSong();
+			local st = GAMESTATE:GetCurrentStyle():GetStepsType();
+			local diff = GAMESTATE:GetCurrentSteps(pn):GetDifficulty();
+			if song then
+				if song:HasStepsTypeAndDifficulty(st,diff) then
+					local steps = song:GetOneSteps( st, diff );
+					local profile = MachineOrProfile(pn)
+					local scorelist = profile:GetHighScoreList(song,steps);
+						assert(scorelist);
 					local scores = scorelist:GetHighScores();
-					assert(scores);
-					local temp=#scores;
+						assert(scores);
 					local topscore=0;
 					if scores[1] then
-						topscore = scores[1]:GetScore();
-					end;
-					assert(topscore);
-					local topgrade;
-					if scores[1] then
-						for i=1,temp do 
-							if scores[i] then
-								topscore = scores[i];
-								assert(topscore);
-								local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")+topscore:GetTapNoteScore("TapNoteScore_HitMine")+topscore:GetHoldNoteScore("HoldNoteScore_LetGo")
-								local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
-								local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
-								local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
-								local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
-								local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
-								local hasUsedLittle = string.find(topscore:GetModifiers(),"Little")
-								if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 and (not hasUsedLittle) and topscore:GetGrade()~="Grade_Failed"  then
-										if (goods+greats+perfects) == 0 then
-												self:diffuse(GameColor.Judgment["JudgmentLine_W1"]);
-												self:glowblink();
-												self:effectperiod(0.20);
-												break;
-										elseif goods+greats == 0 then
-												self:diffuse(GameColor.Judgment["JudgmentLine_W2"]);
-												break;
-										elseif (misses+boos+goods) == 0 then
-												self:diffuse(BoostColor(GameColor.Judgment["JudgmentLine_W3"],0.75));
-												self:stopeffect();
-												if i==1 then
-													self:diffuse(BoostColor(GameColor.Judgment["JudgmentLine_W3"],1));
-												end;
-												break;
-										elseif (misses+boos) == 0 then
-												self:diffuse(BoostColor(GameColor.Judgment["JudgmentLine_W4"],0.75));
-												self:stopeffect();
-												if i==1 then
-													self:diffuse(BoostColor(GameColor.Judgment["JudgmentLine_W4"],1));
-												end;
-												break;
-										end;
-										
-										self:diffusealpha(0.8);
-										
-								else
-										self:diffusealpha(0);
-								end;
-							else
-								self:diffusealpha(0);
-								break;
+						topscore = scores[1];
+							assert(topscore);
+						local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
+						local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
+						local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
+						local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
+						local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
+						local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
+						if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
+							if (greats+perfects) == 0 then
+								self:Load(THEME:GetPathG("","ScreenSelectMusic/MarvelousFullcombo_ring"))
+							elseif greats == 0 then
+								self:Load(THEME:GetPathG("","ScreenSelectMusic/PerfectFullcombo_ring"))
+							elseif (misses+boos+goods) == 0 then
+								self:Load(THEME:GetPathG("","ScreenSelectMusic/GreatFullcombo_ring"))
+							elseif (misses+boos) == 0 then
+								self:Load(THEME:GetPathG("","ScreenSelectMusic/GoodFullcombo_ring"))
 							end;
+							self:visible(true):spin():zoom(1):effectmagnitude(0,0,170)
+						else
+							self:visible(false)
 						end;
 					else
-							self:diffusealpha(0);
+						self:visible(false)
 					end;
-			else
-				self:diffusealpha(0);
-			end;
-			self:sleep(SleepOffset+0.2):linear(0.05)
-			self:x(pn == PLAYER_1 and cx-268 or cx+603)
-		end;
+                else
+					self:visible(false)
+				end;
+            else
+                self:visible(false)
+            end;
+        end;
 	};
 	Def.Quad{
 	InitCommand=function(s) s:zoom(0.29):shadowlength(1)
@@ -280,23 +234,23 @@ t[#t+1]=Def.ActorFrame{
 								curgrade = scores[i]:GetGrade();
 								assert(topgrade);
 								if scores[1]:GetScore()>1  then
-									if scores[1]:GetScore()==1000000 and scores[1]:GetGrade() =="Grade_Tier07" then --AutoPlayHack
-										self:LoadBackground(THEME:GetPathG("Grade/Grade","Tier01"));
-										self:diffusealpha(1);
-										break;
-									else --Normal
-										if ToEnumShortString(curgrade) ~= "Failed" then --current Rank is not Failed
-											self:LoadBackground(THEME:GetPathG("Grade/Grade",ToEnumShortString(curgrade)));
-											self:diffusealpha(1);
-											break;
-										else --current Rank is Failed
-											if i == temp then
-												self:LoadBackground(THEME:GetPathG("Grade/Grade",ToEnumShortString(curgrade)));
-												self:diffusealpha(1);
-												break;
-											end;
-										end;
-									end;
+									if scores[1]:GetScore()==1000000 and scores[1]:GetGrade() =="Grade_Tier17" then --AutoPlayHack
+                                self:LoadBackground(THEME:GetPathG("","Grade/Grade_Tier01"));
+                                self:diffusealpha(1);
+                                break;
+                            else --Normal
+                                if ToEnumShortString(curgrade) ~= "Failed" then --current Rank is not Failed
+                                    self:LoadBackground(THEME:GetPathG("","Grade/Grade_"..ToEnumShortString(curgrade)));
+                                    self:diffusealpha(1);
+                                    break;
+                                else --current Rank is Failed
+                                    if i == temp then
+                                        self:LoadBackground(THEME:GetPathG("","Grade/Grade_"..ToEnumShortString(curgrade)));
+                                        self:diffusealpha(1);
+                                        break;
+                                    end;
+                                end;
+                            end;
 								else
 									self:diffusealpha(0);
 								end;
@@ -378,18 +332,6 @@ t[#t+1]=Def.ActorFrame{
 			self:sleep(SleepOffset+0.2):linear(0.05)
 			self:x(pn == PLAYER_1 and cx-527 or cx+342);
 		end;
-	};
-
-	LoadActor(RegionFile())..{
-		InitCommand=function(s) s:x(pn == PLAYER_1 and cx-316-ox or cx+555+ox):y(SCREEN_BOTTOM+111)
-			if GetCurrentLanguage() == "English" or GetCurrentLanguage() == "Korean" then
-				s:zoom(1):y(SCREEN_BOTTOM+111)
-			else
-				s:zoomx(1):zoomy(0.8):y(SCREEN_BOTTOM+112)
-			end 
-		end,
-		OnCommand=function(s) s:sleep(SleepOffset+0.2):linear(0.05)
-		s:x(pn == PLAYER_1 and cx-316 or cx+555) end,
 	};
 };
 end;

@@ -19,8 +19,11 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 			OffCommand=function(s) s:decelerate(0.05):zoomy(0) end,
 		};
 		t[#t+1] = Def.Sound {
-			File=THEME:GetPathS("ScreenEvaluation", "NewRecord"),
-			OnCommand=function(s) s:play() end,
+			OnCommand=function(s) s:queuecommand("Play") end,
+			PlayCommand=function(s) 
+				local sound = THEME:GetPathS("ScreenEvaluation", "NewRecord")
+				SOUND:PlayOnce(StreamingSound(sound)) 
+			end,
 		};
 	end
 	t[#t+1] = Def.Sprite{
@@ -44,8 +47,8 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
         InitCommand=function(s) s:zoom(0.667):xy(pn==PLAYER_1 and _screen.cx-200 or _screen.cx+200,_screen.cy-42) end,
         OffCommand=function(s) s:sleep(0.2):linear(0.2):diffusealpha(0) end,
         Def.RollingNumbers{
-            File="ScreenEvaluation ScoreNumber",
-            InitCommand=function(s) s:x(0):playcommand("Set") end,
+            File="A3/ScreenEvaluation ScoreNumber",
+            InitCommand=function(s) s:playcommand("Set") end,
             OffCommand=function(s) s:sleep(0.067):zoom(0) end,
             SetCommand=function(s)
             local score
@@ -80,27 +83,42 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 				end;
 			end;
 		};
-        Def.BitmapText{
-            Font="_impact 32px",
-            InitCommand=function(self)
-                self:x(3):y(31):zoom(0.74)
-                self:settext(THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentSteps(pn):GetDifficulty())));
-				self:diffuse(GameColor.Difficulty[GAMESTATE:GetCurrentSteps(pn):GetDifficulty()])
+        Def.Sprite{
+            Texture=THEME:GetPathG("","_shared/Diff"),
+            InitCommand=function(s) s:x(3):y(32):pause():queuecommand("Set") end,
+			SetCommand=function(s)
+				local diff = ToEnumShortString(GAMESTATE:GetCurrentSteps(pn):GetDifficulty())
+                if diff == "Beginner" then
+					s:setstate(0)
+				elseif diff == "Easy" then
+					s:setstate(1)
+				elseif diff == "Medium" then
+					s:setstate(2)
+				elseif diff == "Hard" then
+					s:setstate(3)
+				elseif diff == "Challenge" then
+					s:setstate(4)
+				elseif diff == "Edit" then
+					s:setstate(5)
+				end
             end,
         };
 		Def.BitmapText{
-            Font="EvaluationMeter",
-            InitCommand=function(self)
-                self:xy(-3,52):shadowlength(0):zoom(0.34):diffuse(color("White"))
+            Font="A3/EvaluationMeter",
+            InitCommand=function(s) s:zoom(0.34):xy(-3,55)
                 local meter = GAMESTATE:GetCurrentSteps(pn):GetMeter();
-				self:settext(meter)
+				s:settext(meter)
             end,
         };
     };
+	
 	t[#t+1] = Def.ActorFrame{ 
 		Def.Sprite{
 			Texture=THEME:GetPathG("","_shared/"..Model().."player"),
-			InitCommand=function(s) s:xy(pn==PLAYER_1 and SCREEN_LEFT+48 or SCREEN_RIGHT-48,_screen.cy-181):zoom(0.667):rotationy(pn==PLAYER_1 and 0 or 180) end,
+			InitCommand=function(s) 
+				s:xy(pn==PLAYER_1 and SCREEN_LEFT+48 or SCREEN_RIGHT-48,_screen.cy-181):zoom(0.667)
+				s:rotationy(pn==PLAYER_1 and 0 or 180)
+			end,
 			OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -300 or 300) end,
 		};
 		Def.BitmapText{
@@ -186,11 +204,11 @@ t[#t+1] = Def.ActorFrame{
     Def.BitmapText{
         Font="_swis721 blk bt 28px",
         InitCommand=function(s)
-            s:maxwidth(320):zoom(0.9)
+            s:maxwidth(290):zoom(0.9)
             local song = GAMESTATE:GetCurrentSong()
             local course = GAMESTATE:GetCurrentCourse()
             if song then
-                s:settext(GetSongName(song)):y(-12)
+                s:settext(GetSongName(song)):y(-10)
             end
         end,
     };		

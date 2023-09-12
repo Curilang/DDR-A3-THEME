@@ -1,17 +1,17 @@
 local t = Def.ActorFrame {};
 
-t[#t+1] = Def.Sprite{
-	Texture="icon",
-	InitCommand=function(s) s:zoom(0.655):x(SCREEN_RIGHT-29.3):y(SCREEN_TOP+115) end,
-};
-
-t[#t+1] = Def.Sprite{
-	Texture=Language().."paseli",
-	InitCommand=function(s) s:zoom(0.667):xy(_screen.cx+355,IsTitleMenu() and _screen.cy+135 or _screen.cy+201) end,
-};
-	
-t[#t+1] = LoadActor(Model().."base")..{
-	InitCommand=function(s) s:zoom(IsTitleMenu() and 0 or 1):xy(_screen.cx,_screen.cy+187):setsize(386,56) end,
+t[#t+1] = Def.ActorFrame {
+	Def.Sprite{
+		Texture="icon",
+		InitCommand=function(s) s:zoom(0.655):x(SCREEN_RIGHT-29.3):y(SCREEN_TOP+115) end,
+	};
+	Def.Sprite{
+		Texture=Language().."paseli",
+		InitCommand=function(s) s:zoom(0.667):xy(_screen.cx+355,IsTitleMenu() and _screen.cy+135 or _screen.cy+201) end,
+	};
+	LoadActor(Model().."base")..{
+		InitCommand=function(s) s:diffusealpha(IsTitleMenu() and 0 or 1):xy(_screen.cx,_screen.cy+187):setsize(386,56) end,
+	};
 };
 	
 if not IsTitleMenu() then
@@ -53,6 +53,6 @@ if not IsTitleMenu() then
 			end
 		};
 	end
-end  
+end 
 
-return t;
+return t

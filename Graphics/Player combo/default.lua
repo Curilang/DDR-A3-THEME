@@ -1,6 +1,5 @@
 local c;
 local cf;
-local cfInv;
 local player = Var "Player";
 local ShowComboAt = THEME:GetMetric("Combo", "ShowComboAt");
 local Pulse = THEME:GetMetric("Combo", "PulseCommand");
@@ -37,22 +36,27 @@ local t = Def.ActorFrame {
 		Name="ComboFrame";
 		Def.BitmapText{
 			Name="NumberW1";
-			Font="combo marv",
+			Font="A3/combo marv",
 			OnCommand = THEME:GetMetric("Combo", "NumberOnCommand");
 		};
 		Def.BitmapText{
 			Name="NumberW2";
-			Font="combo perf",
+			Font="A3/combo perf",
 			OnCommand = THEME:GetMetric("Combo", "NumberOnCommand");
 		};
 		Def.BitmapText{
 			Name="NumberW3";
-			Font="combo great",
+			Font="A3/combo great",
 			OnCommand = THEME:GetMetric("Combo", "NumberOnCommand");
 		};
 		Def.BitmapText{
 			Name="NumberW4";
-			Font="combo good",
+			Font="A3/combo good",
+			OnCommand = THEME:GetMetric("Combo", "NumberOnCommand");
+		};
+		Def.BitmapText{
+			Name="NumberNormal";
+			Font="A3/combo normal",
 			OnCommand = THEME:GetMetric("Combo", "NumberOnCommand");
 		};
 		Def.Sprite{
@@ -77,6 +81,12 @@ local t = Def.ActorFrame {
 			Name="LabelW4";
 			Texture="combo",
 			InitCommand=function(s) s:pause():setstate(3) end,
+			OnCommand = THEME:GetMetric("Combo", "LabelOnCommand");
+		};
+		Def.Sprite{
+			Name="LabelNormal";
+			Texture="combo",
+			InitCommand=function(s) s:pause():setstate(4) end,
 			OnCommand = THEME:GetMetric("Combo", "LabelOnCommand");
 		};
 	};
@@ -104,60 +114,30 @@ local t = Def.ActorFrame {
 		local Number = xxState.Number;
 		local Label = xxState.Label
 
-		param.LabelZoom = scale( iCombo, 0, 4, 0.67, 0.67 );
-		param.LabelZoom = clamp( param.LabelZoom, 0.67, 0.67);
+		local NumberZoom;
+		local LabelZoom = 0.67
+		
+		 if iCombo < 10 then NumberZoom = 0.38 end
+		  if iCombo > 9 then NumberZoom = 0.39 end
+		 if iCombo > 19 then NumberZoom = 0.4 end
+		 if iCombo > 29 then NumberZoom = 0.41 end
+		 if iCombo > 39 then NumberZoom = 0.425 end
+		 if iCombo > 49 then NumberZoom = 0.435 end
+		 if iCombo > 59 then NumberZoom = 0.45 end
+		 if iCombo > 69 then NumberZoom = 0.46 end
+		 if iCombo > 79 then NumberZoom = 0.48 end
+		 if iCombo > 89 then NumberZoom = 0.5 end
+		 if iCombo > 99 then NumberZoom = 0.55 end
+		if iCombo > 999 then NumberZoom = 0.478 end
+		
+		--Number
+		param.Zoom = scale( iCombo, 0, 4, NumberZoom, NumberZoom );
+		param.Zoom = clamp( param.Zoom, NumberZoom, NumberZoom );
+		
+		--Combo
+		param.LabelZoom = scale( iCombo, 0, 4, LabelZoom, LabelZoom );
+		param.LabelZoom = clamp( param.LabelZoom, LabelZoom, LabelZoom);
 
---1 to 9
-		if iCombo < 10 then
-			param.Zoom = scale( iCombo, 0, 4, 0.38, 0.38 );
-			param.Zoom = clamp( param.Zoom, 0.38, 0.38 );
-		end
-		if iCombo > 9 then
-			param.Zoom = scale( iCombo, 0, 4, 0.39, 0.39 );
-			param.Zoom = clamp( param.Zoom, 0.39, 0.39 );
-		end
-		
-		if iCombo > 19 then
-			param.Zoom = scale( iCombo, 0, 4, 0.40, 0.40 );
-			param.Zoom = clamp( param.Zoom, 0.40, 0.40 );
-		end
-		if iCombo > 29 then
-			param.Zoom = scale( iCombo, 0, 4, 0.41, 0.41 );
-			param.Zoom = clamp( param.Zoom, 0.41, 0.41 );
-		end
-		if iCombo > 39 then
-			param.Zoom = scale( iCombo, 0, 4, 0.425, 0.425 );
-			param.Zoom = clamp( param.Zoom, 0.425, 0.425 );
-		end
-		if iCombo > 49 then
-			param.Zoom = scale( iCombo, 0, 4, 0.435, 0.435 );
-			param.Zoom = clamp( param.Zoom, 0.435, 0.435 );
-		end
-		if iCombo > 59 then
-			param.Zoom = scale( iCombo, 0, 4, 0.45, 0.45 );
-			param.Zoom = clamp( param.Zoom, 0.45, 0.45 );
-		end
-		if iCombo > 69 then
-			param.Zoom = scale( iCombo, 0, 4, 0.46, 0.46 );
-			param.Zoom = clamp( param.Zoom, 0.46, 0.46 );
-		end
-		if iCombo > 79 then
-			param.Zoom = scale( iCombo, 0, 4, 0.48, 0.48 );
-			param.Zoom = clamp( param.Zoom, 0.48, 0.48 );		
-		end
-		if iCombo > 89 then
-			param.Zoom = scale( iCombo, 0, 4, 0.50, 0.50 );
-			param.Zoom = clamp( param.Zoom, 0.50, 0.50 );
-		end
-		if iCombo > 99 then
-			param.Zoom = scale( iCombo, 0,  4, 0.55, 0.55 );
-			param.Zoom = clamp( param.Zoom, 0.55, 0.55 );
-		end
-		if iCombo > 999 then
-			param.Zoom = scale( iCombo, 0,  4, 0.478, 0.478 );
-			param.Zoom = clamp( param.Zoom, 0.478, 0.478 );
-		end
-		
 		cfShowOnly(Number, Label);
 
 		-- Pulse

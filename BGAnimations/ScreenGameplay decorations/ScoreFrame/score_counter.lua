@@ -18,11 +18,7 @@ return Def.ActorFrame{
 	Def.RollingNumbers{
 		Name="ScoreCounter"..short_plr,
 		Font=THEME:GetPathF("ScreenGameplay","Score"),
-		InitCommand=function(s) 
-			s:Load(rn_type)
-			s:xy(player==PLAYER_1 and (IsEXScore() and 69 or 7.5) or (IsEXScore() and 69 or 10 ),-7)
-			s:zoomx(0.556):zoomy(0.29) 
-		end,
+		InitCommand=function(s) s:Load(rn_type):xy(IsEXScore() and 69 or 7.5,-7):zoomx(0.556):zoomy(0.29) end,
 		AfterStatsEngineMessageCommand=function(s,p)
 			if p.Player == player then
 				local value = p.Data[data_source].Score 

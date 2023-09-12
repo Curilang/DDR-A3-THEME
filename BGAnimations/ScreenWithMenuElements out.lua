@@ -1,6 +1,3 @@
-local fTileSize = 32;
-local iTilesX = math.ceil( SCREEN_WIDTH/fTileSize );
-local iTilesY = math.ceil( SCREEN_HEIGHT/fTileSize );
 local fSleepTime = THEME:GetMetric( Var "LoadingScreen","ScreenOutDelay");
 
 local t = Def.ActorFrame {

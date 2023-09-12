@@ -7,7 +7,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 	diff[#diff+1] = loadfile(THEME:GetPathB("ScreenSelectMusic","overlay/Difficulty"))(pn)..{
 		InitCommand=function(s) s:xy(pn==PLAYER_1 and SCREEN_LEFT+94 or SCREEN_RIGHT-94,_screen.cy-97):zoom(0.667) end,
 	};
-	Radar[#Radar+1] = loadfile(THEME:GetPathB("ScreenSelectMusic","overlay/RadarHandler"))(pn)..{
+	Radar[#Radar+1] = loadfile(THEME:GetPathB("ScreenSelectMusic","overlay/RadarHandler/default.lua"))(pn)..{
 		InitCommand=function(s) s:xy(pn==PLAYER_1 and SCREEN_LEFT+86 or SCREEN_RIGHT-86,_screen.cy+24):zoom(0.667) end,
 	}
 	Target[#Target+1] = loadfile(THEME:GetPathB("ScreenSelectMusic","overlay/TargetScore/default.lua"))(pn);

@@ -1,5 +1,12 @@
+local function Logo()
+	if GetUserPref("OptionRowLogo")=='GRANDPRIX' then
+		return "GrandPrix"
+	else
+		return "Arcade"
+	end
+end
+
 return Def.ActorFrame { 
-	
 	Def.ActorFrame{
 		OnCommand=function(s)
 			if IsLogo() then
@@ -8,14 +15,10 @@ return Def.ActorFrame {
 		end,
 	};
 	
-	LoadActor(Model().."logo")..{
-		InitCommand=function(s) s:x(_screen.cx):y(_screen.cy-14):zoom(0.667) end,
-	};
-	
+	LoadActor(Logo());
 	LoadActor(THEME:GetPathB("ScreenLogo","decorations/copyright"))..{
 		InitCommand=function(s) s:xy(_screen.cx,SCREEN_BOTTOM-98):zoom(0.54) end,
 	};
-	
 	Def.Quad{
 		InitCommand=function(s) s:diffuse(Color("White")):FullScreen() end,
 		OnCommand=function(s) 
@@ -27,6 +30,5 @@ return Def.ActorFrame {
 		end
 	};
 	LoadActor(THEME:GetPathB("","ModDate"));
-	
 	LoadActor(THEME:GetPathG("","ArcadeDecorations"));
 };

@@ -86,10 +86,12 @@ end
 
 local t = Def.ActorFrame{};
 
-t[#t+1] = LoadActor(THEME:GetPathS("ScreenGameplay","ComboSplash"))..{
-	OffCommand=function(s)
+t[#t+1] = Def.Sound {
+	OffCommand=function(s) s:queuecommand("Play") end,
+	PlayCommand=function(s) 
 		if IsFullCombo() then
-			s:play()
+			local sound = THEME:GetPathS("ScreenGameplay","ComboSplash")
+			SOUND:PlayOnce(StreamingSound(sound)) 
 		end
 	end,
 };

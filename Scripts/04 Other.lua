@@ -30,6 +30,14 @@ function SameDiffSteps(song, pn)
 	end;
 end;
 
+function MachineOrProfile(pn)
+	if PROFILEMAN:IsPersistentProfile(pn) then
+		return PROFILEMAN:GetProfile(pn)
+	else
+		return PROFILEMAN:GetMachineProfile()
+	end
+end
+
 function ReadOrCreateAppearancePlusValueForPlayer(PlayerUID, MyValue)
 	local AppearancePlusFile = RageFileUtil:CreateRageFile()
 	if AppearancePlusFile:Open("Save/AppearancePlus/"..PlayerUID..".txt",1) then 
@@ -72,16 +80,9 @@ function ScreenGameplay_P2X()
 	end
 end
 
-function RegionFile()
-	if FILEMAN:DoesFileExist("/Themes/Region.lua") then
-		return "/Themes/Region.lua"
-	else
-		return THEME:GetPathB("","_none")
-	end
-end
-
 function GetSongName(item)
-	if item:GetDisplayMainTitle() == "OurMemories" then
+	local name = Basename(item:GetSongDir())
+	if name == "OurMemories" then
 		return "#OurMemories"
 	else
 		return item:GetDisplayMainTitle()
@@ -167,7 +168,7 @@ function IsEXScore()
 end
 
 function IsGoldenLeague()
-	if (GoldenLeague() == "Bronze" or GoldenLeague() == "Silver" or GoldenLeague() == "Gold") and GetCurrentModel() == "Gold" then
+	if (GoldenLeague() == "Bronze" or GoldenLeague() == "Silver" or GoldenLeague() == "Gold") then
 		return true
 	else
 		return false
@@ -223,6 +224,11 @@ end
 function IsCustomOptions()
 	local curScreen = Var "LoadingScreen"
 	return curScreen == "ScreenCustomOptions"
+end
+
+function IsDataSaveSummary()
+	local curScreen = Var "LoadingScreen"
+	return curScreen == "ScreenDataSaveSummary"
 end
 
 --Screens
@@ -312,27 +318,27 @@ function DanCourse()
 		if GetUserPref("OptionRowDanCourse")=='None' then
 			return "None" 
 		elseif GetUserPref("OptionRowDanCourse")=='1st' then
-			return GetCurrentLanguage().."/Dan01"
+			return "Dan 01"
 		elseif GetUserPref("OptionRowDanCourse")=='2nd' then
-			return GetCurrentLanguage().."/Dan02"
+			return "Dan 02"
 		elseif GetUserPref("OptionRowDanCourse")=='3rd' then
-			return GetCurrentLanguage().."/Dan03"
+			return "Dan 03"
 		elseif GetUserPref("OptionRowDanCourse")=='4th' then
-			return GetCurrentLanguage().."/Dan04"
+			return "Dan 04"
 		elseif GetUserPref("OptionRowDanCourse")=='5th' then
-			return GetCurrentLanguage().."/Dan05"
+			return "Dan 05"
 		elseif GetUserPref("OptionRowDanCourse")=='6th' then
-			return GetCurrentLanguage().."/Dan06"
+			return "Dan 06"
 		elseif GetUserPref("OptionRowDanCourse")=='7th' then
-			return GetCurrentLanguage().."/Dan07"
+			return "Dan 07"
 		elseif GetUserPref("OptionRowDanCourse")=='8th' then
-			return GetCurrentLanguage().."/Dan08"
+			return "Dan 08"
 		elseif GetUserPref("OptionRowDanCourse")=='9th' then
-			return GetCurrentLanguage().."/Dan09"
+			return "Dan 09"
 		elseif GetUserPref("OptionRowDanCourse")=='10th' then
-			return GetCurrentLanguage().."/Dan10"
+			return "Dan 10"
 		elseif GetUserPref("OptionRowDanCourse")=='Kaiden' then
-			return GetCurrentLanguage().."/Dan11"
+			return "Kaiden"
 		else
 			return "None"
 		end
@@ -346,10 +352,24 @@ end
 --Player Options
 
 function OptionNumber()
-	if GetUserPref("NTOption")=='On' then
-		return "Speed,Accel,Appearance,Turn,Hide,Scroll,ArrowType,NoteSkins,Cut,Freeze,Jump,Visual,Risky"
+	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
+		if GetUserPref("NTOption")=='On' then
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ArrowType,SelectStage,Risky"
+		else
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,SelectStage,Risky"
+		end
+	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
+		if GetUserPref("NTOption")=='On' then
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ArrowType,Characters,Risky"
+		else
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Characters,Risky"
+		end
 	else
-		return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Visual,Risky"
+		if GetUserPref("NTOption")=='On' then
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ArrowType,Risky"
+		else
+			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Risky"
+		end
 	end
 end
 
@@ -389,6 +409,18 @@ function NoteSkinOption()
 	end
 end
 
+function UseStaticBackground()
+	if ReadPrefFromFile("OptionRowGameplayBackground") ~= nil then
+		if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
+			return false
+		else
+			return true
+		end
+	else
+		return true
+	end
+end
+
 --Player Options
 
 function ClearedToLoad()
@@ -407,13 +439,13 @@ function FilterReadPref(pn)
 end
 
 function StreamingMode()
-	if GetUserPref("OptionRowStreamMode")=='On' then
+	if GetUserPref("OptionRowBGM")=='Off' then
 		return true
 	end
 end
 
 function StreamingSound(item)
-	if GetUserPref("OptionRowStreamMode")=='On' then
+	if GetUserPref("OptionRowBGM")=='Off' then
 		return THEME:GetPathS("","_silent")
 	else
 		return item
@@ -448,25 +480,7 @@ function ComboAnim()
 	if GetUserPref("OptionRowJudgementAnimation")=='Simple' then
 		return 1
 	else
-		return 1.28
-	end
-end
-
-function SelectMusicBGM()
-	local Music = THEME:GetAbsolutePath("Sounds/ScreenSelectMusic music (loop).redir")
-	local file = RageFileUtil.CreateRageFile()
-
-	
-	if GetUserPref("OptionRowStreamMode")=='On' then
-		file:Open(Music,2)
-		file:Write("_silent")
-		file:Close()
-		file:destroy()
-	else
-		file:Open(Music,2)
-		file:Write("_systembgm2 (loop)")
-		file:Close()
-		file:destroy()
+		return 1.297
 	end
 end
 
@@ -482,6 +496,24 @@ function MenuTimer()
 	else
 		file:Open(TimerNumbers,2)
 		file:Write("GoldTimerNumbers")
+		file:Close()
+		file:destroy()
+	end
+end
+
+function SelectMusicBGM()
+	local Music = THEME:GetAbsolutePath("Sounds/ScreenSelectMusic music (loop).redir")
+	local file = RageFileUtil.CreateRageFile()
+
+	
+	if GetUserPref("OptionRowBGM")=='Off' then
+		file:Open(Music,2)
+		file:Write("_silent")
+		file:Close()
+		file:destroy()
+	else
+		file:Open(Music,2)
+		file:Write("02 - SelectMusic (loop)")
 		file:Close()
 		file:destroy()
 	end
@@ -552,6 +584,9 @@ GoldenLeagueSong = {
 	["Sector"] = "league";									--9th
 	["Ability"] = "league";									--10th
 	["SURVIVAL AT THE END OF THE UNIVERSE"] = "league";		--11th
+	["Jungle Dance"] = "league";							--12th
+	["Rave in the Shell"] = "league";						--13th
+	["Not Alone"] = "league";								--14th
 };
 
 function AttackPerfectFullCombo()

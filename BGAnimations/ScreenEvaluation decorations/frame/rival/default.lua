@@ -7,15 +7,8 @@ local function RivalScore(pn,rival)
         ["CurrentSteps" .. ToEnumShortString(pn) .. "ChangedMessageCommand"]=function(s) s:finishtweening():queuecommand("Set") end,
         Def.BitmapText{
             Font="_geo 9 20px",
-            InitCommand=function(self)
-                self:xy(-50,8);
-                self:halign(0)
-                self:diffuse(Color("Black"));
-                if (rival ~= 1) then
-                    self:diffuse(Color("White"));
-                end;
-            end;
-            SetCommand=function(self)
+            InitCommand=function(s) s:xy(-62,8):halign(0):diffuse(Color(rival ~= 1 and "White" or "Black")):maxwidth(115) end,
+            OnCommand=function(self)
                 local SongOrCourse, StepsOrTrail;
                 if GAMESTATE:IsCourseMode() then
                     SongOrCourse = GAMESTATE:GetCurrentCourse();
@@ -30,8 +23,8 @@ local function RivalScore(pn,rival)
                     local st = StepsOrTrail:GetStepsType();
                     local diff = StepsOrTrail:GetDifficulty();
                     local courseType = GAMESTATE:IsCourseMode() and SongOrCourse:GetCourseType() or nil;
-                    local profile;
-                    if rival == 1 then
+
+                    if PROFILEMAN:IsPersistentProfile(pn) then
                         profile = PROFILEMAN:GetProfile(pn)
                     else
                         profile = PROFILEMAN:GetMachineProfile();
@@ -41,7 +34,7 @@ local function RivalScore(pn,rival)
                     local scores = scorelist:GetHighScores();
                     
                     if scores[rival] then
-                            self:settext(string.upper(PROFILEMAN:GetPlayerName(pn)))
+                        self:settext(string.upper(PROFILEMAN:GetPlayerName(pn)))
                     else
                         self:settext("")
                     end;
@@ -76,7 +69,7 @@ local function RivalScore(pn,rival)
                     local diff = StepsOrTrail:GetDifficulty();
                     local courseType = GAMESTATE:IsCourseMode() and SongOrCourse:GetCourseType() or nil;
                     local profile;
-                    if rival == 1 then
+                    if PROFILEMAN:IsPersistentProfile(pn) then
                         profile = PROFILEMAN:GetProfile(pn)
                     else
                         profile = PROFILEMAN:GetMachineProfile();

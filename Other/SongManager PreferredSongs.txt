@@ -15,11 +15,16 @@
 20 - DDR A3\SHIN HEBI HIME
 20 - DDR A3\Scarlet keisatsu no ghetto patrol 24 ji
 20 - DDR A3\Chucchu Machu Picchu
+20 - DDR A3\Tokonyatsu tropical
 20 - DDR A3\Nanahoshi
+20 - DDR A3\Perfect eater
 20 - DDR A3\Vajra
+20 - DDR A3\Positive dance time
+20 - DDR A3\Poppin' candy fever!
 20 - DDR A3\Mixed nuts
 20 - DDR A3\Myu, myu, Mullru
 20 - DDR A3\Murasakibana
+20 - DDR A3\Mentanpindoradora
 20 - DDR A3\Yasaimashi ninniku abura oome
 20 - DDR A3\Yoidore shirazu
 20 - DDR A3\Youhishi no ue no ginga
@@ -30,11 +35,14 @@
 20 - DDR A3\Wakusei lollipop
 
 20 - DDR A3\Ability
+20 - DDR A3\Abrupt Madness
 20 - DDR A3\Acid,Tribal & Dance (DDR EDITION)
 20 - DDR A3\ALBIDA
 20 - DDR A3\Anthurium
 20 - DDR A3\Are U Ready
+20 - DDR A3\Aria
 20 - DDR A3\Awakening Wings
+20 - DDR A3\Battle Against a True Hero
 20 - DDR A3\Be With You (Still Miss you)
 20 - DDR A3\Beluga
 20 - DDR A3\Black Emperor
@@ -43,22 +51,29 @@
 20 - DDR A3\BREDLI
 20 - DDR A3\Broken
 20 - DDR A3\CANDY (UFO mix)
+20 - DDR A3\C-C-C-N-N-N
 20 - DDR A3\chaplet
+20 - DDR A3\Chromatic Burst
 20 - DDR A3\Closer to my Heart (jun remix)
 20 - DDR A3\Come Back to Me (Feel It)
+20 - DDR A3\Complete Game Victory
 20 - DDR A3\Concertino in Blue
 20 - DDR A3\concon
 20 - DDR A3\Crystarium
 20 - DDR A3\Curry Up
 20 - DDR A3\Dance Phenomena
+20 - DDR A3\Death by Glamour
 20 - DDR A3\Debug Dance
 20 - DDR A3\Deep tenDon Reflex
+20 - DDR A3\DIABLOSIS Naga
 20 - DDR A3\DOUBLE TORNARD
+20 - DDR A3\Drive Away
 20 - DDR A3\Drive My Heart
 20 - DDR A3\DUAL STRIKER
 20 - DDR A3\Easy Peasy
 20 - DDR A3\Environ [De-SYNC] (feat. lythe)
 20 - DDR A3\Eon Break
+20 - DDR A3\Finale
 20 - DDR A3\Fleur
 20 - DDR A3\Flip Flap
 20 - DDR A3\GERBERA
@@ -67,6 +82,7 @@
 20 - DDR A3\glacia
 20 - DDR A3\GLITTER
 20 - DDR A3\Glitter Flatter Scatter
+20 - DDR A3\GLOW THE CROWN
 20 - DDR A3\Go Down
 20 - DDR A3\Go To The Oasis
 20 - DDR A3\Good Sound United
@@ -75,6 +91,8 @@
 20 - DDR A3\Hold Tight
 20 - DDR A3\insist
 20 - DDR A3\I WANT YOUR LOVE (Darwin remix)
+20 - DDR A3\I-W-U (I Want U)
+20 - DDR A3\Jungle Dance
 20 - DDR A3\JUST BELIEVE
 20 - DDR A3\Kilonova
 20 - DDR A3\KING
@@ -93,8 +111,9 @@
 20 - DDR A3\MEGALOVANIA
 20 - DDR A3\Mess With My Emotions
 20 - DDR A3\Musician
-20 - DDR A3\On the Night of a Still Wind
+20 - DDR A3\Not Alone
 20 - DDR A3\ON-DO
+20 - DDR A3\On the Night of a Still Wind
 20 - DDR A3\Open Your Eyes
 20 - DDR A3\PARADISE
 20 - DDR A3\perditus paradisus
@@ -103,15 +122,20 @@
 20 - DDR A3\Playing With Fire
 20 - DDR A3\Prettiful!
 20 - DDR A3\Pump Pump Pump
+20 - DDR A3\Pure Rude
 20 - DDR A3\Qwerty
 20 - DDR A3\Racing with Time (NAOKI's 999 remix)
+20 - DDR A3\Rave in the Shell
+20 - DDR A3\Rise As One
 20 - DDR A3\SAY A PRAYER
 20 - DDR A3\SAYONARA disco light
 20 - DDR A3\Sector
 20 - DDR A3\Settin' the Scene
+20 - DDR A3\SMASH
 20 - DDR A3\Snow Garland Fairy
 20 - DDR A3\Something Comforting
 20 - DDR A3\SOUVENIR
+20 - DDR A3\Sparkle Dreams
 20 - DDR A3\spring pony
 20 - DDR A3\STAY (Joey Riot remix)
 20 - DDR A3\STAY GOLD
@@ -120,6 +144,7 @@
 20 - DDR A3\Surface
 20 - DDR A3\Surrender (PureFocus remix)
 20 - DDR A3\SURVIVAL AT THE END OF THE UNIVERSE
+20 - DDR A3\suspicions
 20 - DDR A3\Take Me
 20 - DDR A3\TAKE ME HIGHER
 20 - DDR A3\Teleportation
@@ -331,7 +356,7 @@
 17 - DDR A20\Hikari eureka
 17 - DDR A20\Baby step
 17 - DDR A20\Haunted maid lunch
-17 - DDR A20\Hoshikuzu no yoru hate
+17 - DDR A20\Hoshikuzu no yo hate
 17 - DDR A20\Mikansei no jouki kudou otome (DDR Edition)
 17 - DDR A20\Midnight WAR
 17 - DDR A20\Mirai (da) FUTURE
@@ -574,6 +599,37 @@
 
 16 - DDR A\39
 
+---U.M.U × BEMANI
+
+15 - DDR 2014\Rairara
+15 - DDR 2014\Kiraijanaino
+15 - DDR 2014\That's! KAIYODO
+15 - DDR 2014\DREAM CATCHER
+15 - DDR 2014\Mermaid
+15 - DDR 2014\Love love cute na happy happy sunday
+15 - DDR 2014\Le Siana no kimochi
+15 - DDR 2014\Otome no shinkocchou
+15 - DDR 2014\Boku wa kimi ni koi wo shita
+15 - DDR 2014\Kawasaki junjo ondo
+15 - DDR 2014\Shunkan I LOVE YOU
+
+15 - DDR 2014\A to Z
+15 - DDR 2014\Boom! Boom! Miracle Emotion
+15 - DDR 2014\CAPTIVE
+15 - DDR 2014\Che Che Chelip ~mahou no kotoba~
+15 - DDR 2014\Determination
+15 - DDR 2014\Dong! Dong!
+15 - DDR 2014\Everybody Say EDOGAWA
+15 - DDR 2014\Field on!
+15 - DDR 2014\HAPPY kitakata
+15 - DDR 2014\HeartLatte
+15 - DDR 2014\LoveLove DokiDoki
+15 - DDR 2014\LUCKY-YO!!
+15 - DDR 2014\MITOrete! Ibarakisshuda~rin
+15 - DDR 2014\my cosmic world
+15 - DDR 2014\MY HERO
+15 - DDR 2014\We are Charinko Angels
+
 ---DanceDanceRevolution(2014)
 
 15 - DDR 2014\Asa-iro no kami hikouki
@@ -745,8 +801,8 @@
 14 - DDR 2013\nightbird lost wing
 14 - DDR 2013\PRANA
 14 - DDR 2013\printemps
-14 - DDR 2013\Qipchãq
-14 - DDR 2013\Right on time (Ryu☆Remix)
+14 - DDR 2013\Qipchaq
+14 - DDR 2013\Right on time (Ryu Remix)
 14 - DDR 2013\REVOLUTION
 14 - DDR 2013\sola
 14 - DDR 2013\Somehow You Found Me
@@ -783,12 +839,13 @@
 13 - DDR X3 VS 2ndMIX\Memeshikute
 13 - DDR X3 VS 2ndMIX\Ryouran Hit Chart
 13 - DDR X3 VS 2ndMIX\Rensen ryouran
+
 13 - DDR X3 VS 2ndMIX\Amalgamation
 13 - DDR X3 VS 2ndMIX\BRILLIANT 2U (AKBK MIX)
 13 - DDR X3 VS 2ndMIX\Chronos
 13 - DDR X3 VS 2ndMIX\COME BACK TO MY HEART
 13 - DDR X3 VS 2ndMIX\Cosmic Hurricane
-13 - DDR X3 VS 2ndMIX\CRAZY♥LOVE
+13 - DDR X3 VS 2ndMIX\CRAZY LOVE
 13 - DDR X3 VS 2ndMIX\Diamond Dust
 13 - DDR X3 VS 2ndMIX\dreaming can make a wish come true
 13 - DDR X3 VS 2ndMIX\ever snow
@@ -810,7 +867,7 @@
 13 - DDR X3 VS 2ndMIX\London EVOLVED Ver.B
 13 - DDR X3 VS 2ndMIX\London EVOLVED Ver.C
 13 - DDR X3 VS 2ndMIX\LOVE & JOY
-13 - DDR X3 VS 2ndMIX\LOVE IS THE POWER -Re:born-
+13 - DDR X3 VS 2ndMIX\LOVE IS THE POWER -Reborn-
 13 - DDR X3 VS 2ndMIX\MAGIC PARADE
 13 - DDR X3 VS 2ndMIX\Mermaid girl
 13 - DDR X3 VS 2ndMIX\message
@@ -836,7 +893,7 @@
 13 - DDR X3 VS 2ndMIX\Seule
 13 - DDR X3 VS 2ndMIX\Share The Love
 13 - DDR X3 VS 2ndMIX\SigSig
-13 - DDR X3 VS 2ndMIX\SILVER☆DREAM
+13 - DDR X3 VS 2ndMIX\SILVER DREAM
 13 - DDR X3 VS 2ndMIX\snow prism
 13 - DDR X3 VS 2ndMIX\Something Special
 13 - DDR X3 VS 2ndMIX\STRAIGHT JET
@@ -848,9 +905,9 @@
 13 - DDR X3 VS 2ndMIX\tokyoEVOLVED (TYPE2)
 13 - DDR X3 VS 2ndMIX\tokyoEVOLVED (TYPE3)
 13 - DDR X3 VS 2ndMIX\Tribe
-13 - DDR X3 VS 2ndMIX\TRIP MACHINE (xac nanoglide mix)
 13 - DDR X3 VS 2ndMIX\TRIP MACHINE EVOLUTION
-13 - DDR X3 VS 2ndMIX\TWINKLE♡HEART
+13 - DDR X3 VS 2ndMIX\TRIP MACHINE (xac nanoglide mix)
+13 - DDR X3 VS 2ndMIX\TWINKLE HEART
 13 - DDR X3 VS 2ndMIX\UNBELIEVABLE (Sparky remix)
 13 - DDR X3 VS 2ndMIX\Until the End
 13 - DDR X3 VS 2ndMIX\Wicked Plastik
@@ -890,13 +947,14 @@
 12 - DDR X2\GOLD RUSH
 12 - DDR X2\Gotta Dance
 12 - DDR X2\Heatstroke
+12 - DDR X2\HERO
 12 - DDR X2\Hide-away
 12 - DDR X2\ICE ICE BABY
 12 - DDR X2\IF YOU WERE HERE
-12 - DDR X2\IF YOU WERE HERE (L.E.D.-G STYLE REMIX)
+12 - DDR X2\IF YOU WERE HERE(L.E.D.-G STYLE REMIX)
 12 - DDR X2\I'm so Happy
 12 - DDR X2\in love wit you
-12 - DDR X2\KIMONO♥PRINCESS
+12 - DDR X2\KIMONO PRINCESS
 12 - DDR X2\KISS KISS KISS AKBK MIX
 12 - DDR X2\La libertad
 12 - DDR X2\La receta
@@ -928,9 +986,9 @@
 12 - DDR X2\Shiny World
 12 - DDR X2\Sky Is The Limit
 12 - DDR X2\smooooch
-12 - DDR X2\someday...
+12 - DDR X2\someday
 12 - DDR X2\Super Driver
-12 - DDR X2\SUPER EUROBEAT <GOLD MIX>
+12 - DDR X2\SUPER EUROBEAT (GOLD MIX)
 12 - DDR X2\Taking It To The Sky
 12 - DDR X2\TENSHI
 12 - DDR X2\Theory of Eternity
@@ -962,6 +1020,7 @@
 11 - DDR X\Beautiful Inside (Cube Hard Mix)
 11 - DDR X\Big Girls Don't Cry
 11 - DDR X\Blue Rain
+11 - DDR X\Boy (DJ Irene Rockstar Mix)
 11 - DDR X\Boys (2008 X-edit)
 11 - DDR X\Butterfly (2008 X-edit)
 11 - DDR X\CANDY(X-Special)
@@ -981,6 +1040,7 @@
 11 - DDR X\Happy
 11 - DDR X\Healing Vision(X-Special)
 11 - DDR X\Here It Goes Again
+11 - DDR X\Here We Go
 11 - DDR X\Horatio
 11 - DDR X\Inspiration
 11 - DDR X\INTO YOUR HEART (Ruffage remix)
@@ -993,9 +1053,11 @@
 11 - DDR X\MAXX UNLIMITED(X-Special)
 11 - DDR X\on the bounce
 11 - DDR X\On The Break
+11 - DDR X\Open
 11 - DDR X\PARANOiA(X-Special)
 11 - DDR X\PARANOiA ETERNAL(X-Special)
 11 - DDR X\PARANOIA EVOLUTION(X-Special)
+11 - DDR X\PARANOiA MAX~DIRTY MIX~(SMM-Special)
 11 - DDR X\PARANOiA MAX~DIRTY MIX~(X-Special)
 11 - DDR X\PARANOiA MAX~DIRTY MIX~in roulette(X-Special)
 11 - DDR X\PARANOiA Rebirth(X-Special)
@@ -1009,9 +1071,12 @@
 11 - DDR X\SAGA
 11 - DDR X\Slip Out
 11 - DDR X\Slip Out (bounce in beat mix)
+11 - DDR X\Sound Of Freedom
+11 - DDR X\SP-TRIP MACHINE~JUNGLE MIX~(SMM-Special)
 11 - DDR X\SP-TRIP MACHINE~JUNGLE MIX~(X-Special)
 11 - DDR X\SUPER SAMURAI
 11 - DDR X\Swingin'
+11 - DDR X\Synthesized
 11 - DDR X\Taj He Spitz
 11 - DDR X\Taj He Spitz (Tommie Sunshine's Brooklyn Fire Re-Touch)
 11 - DDR X\Take A Chance
@@ -1031,6 +1096,7 @@
 11 - DDR X\We Come Alive
 11 - DDR X\We've Got To Make It Tonight
 11 - DDR X\will
+11 - DDR X\Wine Red (Tommie Sunshine's Brooklyn Fire Retouch)
 11 - DDR X\Xmix1 (Midnight Dawn)
 11 - DDR X\Xmix2 (Beats 'n Bangs)
 11 - DDR X\Xmix3 (Stomp Dem Groove)
@@ -1041,56 +1107,93 @@
 
 ---DDR SuperNOVA 2
 
+10 - DDR SuperNOVA2\JUPITER The Bringer of Jollity
+
 10 - DDR SuperNOVA2\A thing called LOVE
 10 - DDR SuperNOVA2\AIN'T NO MOUNTAIN HIGH ENOUGH
 10 - DDR SuperNOVA2\AM-3P (CHAOS Special)
+10 - DDR SuperNOVA2\And Then We Kiss (Junkie XL Mix)
+10 - DDR SuperNOVA2\ANGELUS
 10 - DDR SuperNOVA2\Arrabbiata
 10 - DDR SuperNOVA2\B4U (VOLTAGE Special)
+10 - DDR SuperNOVA2\Baby's Tears (SKY GIRLS opening theme)
+10 - DDR SuperNOVA2\Beginning of the End
 10 - DDR SuperNOVA2\Blind Justice ~Torn souls Hurt Faiths~
 10 - DDR SuperNOVA2\Bloody Tears (IIDX EDITION)
 10 - DDR SuperNOVA2\BRILLIANT 2U (STREAM Special)
-10 - DDR SuperNOVA2\CaptivAte~誓い~
+10 - DDR SuperNOVA2\Burn Baby Burn
+10 - DDR SuperNOVA2\Can't Stop the Rain
+10 - DDR SuperNOVA2\CaptivAte~CHIKAI~
+10 - DDR SuperNOVA2\COME CLEAN
 10 - DDR SuperNOVA2\D2R (FREEZE Special)
 10 - DDR SuperNOVA2\DEAD END (GROOVE RADAR Special)
 10 - DDR SuperNOVA2\dream of love
 10 - DDR SuperNOVA2\DYNAMITE RAVE (AIR Special)
 10 - DDR SuperNOVA2\Electrified
+10 - DDR SuperNOVA2\EternuS
 10 - DDR SuperNOVA2\Every Day, Every Night(NM STYLE)
+10 - DDR SuperNOVA2\Every Little Step
+10 - DDR SuperNOVA2\FAINT
+10 - DDR SuperNOVA2\Faster Kill Pussycat
 10 - DDR SuperNOVA2\Feelings Won't Fade(Extend Trance Mix)
+10 - DDR SuperNOVA2\Fevah
 10 - DDR SuperNOVA2\FIRE
 10 - DDR SuperNOVA2\Flow (Jammin' Ragga Mix)
 10 - DDR SuperNOVA2\Fly away -mix del matador-
 10 - DDR SuperNOVA2\Freeway Shuffle
-10 - DDR SuperNOVA2\GIRIGILI門前雀羅
+10 - DDR SuperNOVA2\GIRIGILI Burning 24H!
+10 - DDR SuperNOVA2\Got To Be Real
+10 - DDR SuperNOVA2\He Said She Said
+10 - DDR SuperNOVA2\Just A Girl (Radio Edit)
 10 - DDR SuperNOVA2\L'amour et la liberté(Darwin & DJ Silver remix)
+10 - DDR SuperNOVA2\LE FREAK
+10 - DDR SuperNOVA2\LEAVE ME ALONE
+10 - DDR SuperNOVA2\Love On My Mind (Radio Mix)
 10 - DDR SuperNOVA2\MARS WAR 3
+10 - DDR SuperNOVA2\ME AGAINST THE MUSIC
 10 - DDR SuperNOVA2\MOONSTER
 10 - DDR SuperNOVA2\Music In The Rhythm
+10 - DDR SuperNOVA2\My Favorite Things
 10 - DDR SuperNOVA2\NGO
+10 - DDR SuperNOVA2\Number 1 (Alan Braxe & Fred Falke Main Remix)
 10 - DDR SuperNOVA2\PARANOiA ~HADES~
 10 - DDR SuperNOVA2\Pluto
 10 - DDR SuperNOVA2\Pluto Relinquish
 10 - DDR SuperNOVA2\Poseidon
-10 - DDR SuperNOVA2\Raspberry♡Heart(English version) 
+10 - DDR SuperNOVA2\Raspberry Heart (English version)
+10 - DDR SuperNOVA2\Rock Your Body
 10 - DDR SuperNOVA2\Saturn
+10 - DDR SuperNOVA2\Say Goodbye
 10 - DDR SuperNOVA2\Shades of Grey
 10 - DDR SuperNOVA2\Silver Platform - I wanna get your heart -
 10 - DDR SuperNOVA2\SOUL CRASH
-10 - DDR SuperNOVA2\Star Gate Heaven (FUTURE LOVE Mix) 
-10 - DDR SuperNOVA2\STARS☆☆☆（Re-tuned by HΛL） - DDR EDITION -
+10 - DDR SuperNOVA2\Star Gate Heaven (FUTURE LOVE Mix)
+10 - DDR SuperNOVA2\STARS (Re-tuned by HAL) - DDR EDITION -
 10 - DDR SuperNOVA2\stealth
-10 - DDR SuperNOVA2\SUNKiSS♥DROP
+10 - DDR SuperNOVA2\Strict Machine
+10 - DDR SuperNOVA2\Suddenly I See
+10 - DDR SuperNOVA2\SUNKiSS DROP
+10 - DDR SuperNOVA2\SUNRISE(JASON NEVINS REMIX)
 10 - DDR SuperNOVA2\switch
+10 - DDR SuperNOVA2\Temperature
+10 - DDR SuperNOVA2\The Rockafeller Skank
+10 - DDR SuperNOVA2\The World Around Me
 10 - DDR SuperNOVA2\Trim
 10 - DDR SuperNOVA2\TRIP MACHINE PhoeniX
 10 - DDR SuperNOVA2\Trust -DanceDanceRevolution mix-
+10 - DDR SuperNOVA2\Two Months Off
+10 - DDR SuperNOVA2\Unbelievable
 10 - DDR SuperNOVA2\Unreal
+10 - DDR SuperNOVA2\Until Forever
+10 - DDR SuperNOVA2\Unwritten (Vicious Club Mix)
 10 - DDR SuperNOVA2\Uranus
 10 - DDR SuperNOVA2\Vem brincar
 10 - DDR SuperNOVA2\Venus
 10 - DDR SuperNOVA2\volcano
 10 - DDR SuperNOVA2\Votum stellarum -forest #25 DDR RMX-
+10 - DDR SuperNOVA2\WAITING FOR TONIGHT
 10 - DDR SuperNOVA2\Why not
+10 - DDR SuperNOVA2\Wind It Up (Original Neptunes Mix)
 
 ---DDR SuperNOVA
 
@@ -1103,41 +1206,73 @@
 09 - DDR SuperNOVA\NIJIIRO
 09 - DDR SuperNOVA\Hana Ranman -Flowers-
 09 - DDR SuperNOVA\Himawari
+09 - DDR SuperNOVA\MATSURI (J-SUMMER MIX)
 09 - DDR SuperNOVA\Mugen
 
+09 - DDR SuperNOVA\A LOVE LIKE THIS
 09 - DDR SuperNOVA\A Stupid Barber
 09 - DDR SuperNOVA\AA
+09 - DDR SuperNOVA\Baby's Tears
 09 - DDR SuperNOVA\Bad Routine
+09 - DDR SuperNOVA\BAILA! BAILA!
 09 - DDR SuperNOVA\Baile Le Samba
+09 - DDR SuperNOVA\BALALAIKA,CARRIED WITH THE WIND
 09 - DDR SuperNOVA\BALLAD FOR YOU
+09 - DDR SuperNOVA\Battle Without Honor Or Humanity
+09 - DDR SuperNOVA\Beautiful Life
 09 - DDR SuperNOVA\Brazilian Anthem
+09 - DDR SuperNOVA\Brilliant R.E.D
 09 - DDR SuperNOVA\cachaca
 09 - DDR SuperNOVA\Can Be Real
 09 - DDR SuperNOVA\CAN'T STOP FALLIN' IN LOVE -super euro version-
 09 - DDR SuperNOVA\CENTAUR
+09 - DDR SuperNOVA\CENTERFOLD(130BPM move it remix)
 09 - DDR SuperNOVA\CHAOS
 09 - DDR SuperNOVA\CURUS
+09 - DDR SuperNOVA\DA CAPO
+09 - DDR SuperNOVA\Dance, Dance
+09 - DDR SuperNOVA\Do You Want To
+09 - DDR SuperNOVA\DOESN'T REALLY MATTER
 09 - DDR SuperNOVA\DoLL
 09 - DDR SuperNOVA\Dragon Blade
+09 - DDR SuperNOVA\Drivin'
+09 - DDR SuperNOVA\DYNAMITE RAVE-super euro version-
 09 - DDR SuperNOVA\Fascination ~eternal love mix~
 09 - DDR SuperNOVA\Fascination MAXX
+09 - DDR SuperNOVA\FEELS JUST LIKE IT SHOULD
 09 - DDR SuperNOVA\Flow
 09 - DDR SuperNOVA\Flow (True Style)
 09 - DDR SuperNOVA\Fly away
 09 - DDR SuperNOVA\Forever Sunshine
 09 - DDR SuperNOVA\Freedom
 09 - DDR SuperNOVA\Funk Boogie
+09 - DDR SuperNOVA\Funkytown
+09 - DDR SuperNOVA\GIRL IN A DAYDREAM
+09 - DDR SuperNOVA\GIVE ME UP
+09 - DDR SuperNOVA\GOLDEN SKY
 09 - DDR SuperNOVA\GORGEOUS 2012
 09 - DDR SuperNOVA\HAPPY ANGEL
 09 - DDR SuperNOVA\Healing-D-Vision
+09 - DDR SuperNOVA\HONEY PUNCH
+09 - DDR SuperNOVA\Hunting for you
 09 - DDR SuperNOVA\I Need You
+09 - DDR SuperNOVA\I'll Make Love To You
+09 - DDR SuperNOVA\I'M FOR REAL
 09 - DDR SuperNOVA\iFUTURELIST(DDR VERSION)
 09 - DDR SuperNOVA\INNOCENCE OF SILENCE
+09 - DDR SuperNOVA\INSERTiON(Machine Gun Kelly Mix)
 09 - DDR SuperNOVA\INSIDE YOUR HEART
 09 - DDR SuperNOVA\Jam & Marmalade
+09 - DDR SuperNOVA\JERK IT OUT
+09 - DDR SuperNOVA\Keep On Liftin'
 09 - DDR SuperNOVA\KEEP ON MOVIN' ~DMX MIX~
+09 - DDR SuperNOVA\KI SE KI (DDR EDIT)
+09 - DDR SuperNOVA\Knock Out Regrets
+09 - DDR SuperNOVA\L.E.F. (Loud Electronic Ferocious)
 09 - DDR SuperNOVA\LA BAMBA
 09 - DDR SuperNOVA\LOGICAL DASH
+09 - DDR SuperNOVA\LONG TRAIN RUNNIN'
+09 - DDR SuperNOVA\LOVE AT FIRSTSIGHT(TwinMasterplan Mix)
 09 - DDR SuperNOVA\LOVE IS ORANGE
 09 - DDR SuperNOVA\Make A Difference
 09 - DDR SuperNOVA\MARIA(I believe...)
@@ -1145,13 +1280,19 @@
 09 - DDR SuperNOVA\MAXIMIZER
 09 - DDR SuperNOVA\MIDNIGHT SPECIAL
 09 - DDR SuperNOVA\Mind Parasite
+09 - DDR SuperNOVA\MODERN GIRL
+09 - DDR SuperNOVA\MONDO STREET
 09 - DDR SuperNOVA\Monkey Punk
 09 - DDR SuperNOVA\MOON
+09 - DDR SuperNOVA\Morning Glory
+09 - DDR SuperNOVA\MR.DABADA (Groove Wonder Remix)
 09 - DDR SuperNOVA\murmur twins
 09 - DDR SuperNOVA\My Only Shining Star
 09 - DDR SuperNOVA\No.13
 09 - DDR SuperNOVA\PARANOiA-Respect-
 09 - DDR SuperNOVA\PASSION OF LOVE
+09 - DDR SuperNOVA\PEACE(^^)v
+09 - DDR SuperNOVA\peace-out
 09 - DDR SuperNOVA\Polovtsian Dances And Chorus
 09 - DDR SuperNOVA\PUT YOUR FAITH IN ME ~SATURDAY NIGHT MIX~
 09 - DDR SuperNOVA\Quick Master
@@ -1159,23 +1300,34 @@
 09 - DDR SuperNOVA\rainbow flyer
 09 - DDR SuperNOVA\rainbow rainbow
 09 - DDR SuperNOVA\RED ZONE
+09 - DDR SuperNOVA\Robogirl
 09 - DDR SuperNOVA\Saturday Night Love
 09 - DDR SuperNOVA\Scorching Moon
 09 - DDR SuperNOVA\SEDUCTION
 09 - DDR SuperNOVA\SEDUCTION(Vocal Remix)
+09 - DDR SuperNOVA\Shivers (Radio Edit)
+09 - DDR SuperNOVA\SINCE U BEEN GONE
 09 - DDR SuperNOVA\Ska Ska No.3
 09 - DDR SuperNOVA\Star Gate Heaven
 09 - DDR SuperNOVA\STARS (2nd NAOKI's style)
+09 - DDR SuperNOVA\SURRENDER(YOUR LOVE)
+09 - DDR SuperNOVA\The Other Side (radio mix)
 09 - DDR SuperNOVA\THE SHINING POLARIS
 09 - DDR SuperNOVA\TIERRA BUENA
 09 - DDR SuperNOVA\TOMORROW
 09 - DDR SuperNOVA\Tomorrow Perfume
+09 - DDR SuperNOVA\TOXIC (FT company Edit)
 09 - DDR SuperNOVA\TRUE LOVE
 09 - DDR SuperNOVA\Try 2 Luv. U
+09 - DDR SuperNOVA\Turn On the Music (Axwell Radio Edit)
 09 - DDR SuperNOVA\un deux trois
 09 - DDR SuperNOVA\Under the Sky
+09 - DDR SuperNOVA\WHAT A WONDERFUL WORLD
+09 - DDR SuperNOVA\WOOKIE WOOKIE
 09 - DDR SuperNOVA\Xepher
 09 - DDR SuperNOVA\You gotta move it (feat. Julie Rugaard)
+09 - DDR SuperNOVA\You're Not Here
+09 - DDR SuperNOVA\Your Rain(RAGE MIX)
 
 ---DDR FESTIVAL 
 
@@ -1400,6 +1552,7 @@
 08 - DDR EXTREME\BLUE IMPULSE ~for EXTREME~
 08 - DDR EXTREME\SAKURA
 08 - DDR EXTREME\DAIKENKAI
+08 - DDR EXTREME\MAGIC DOOR(Theme of SPACE MACO)
 08 - DDR EXTREME\CALICO CAT ROCK
 
 08 - DDR EXTREME\A
@@ -1408,31 +1561,48 @@
 08 - DDR EXTREME\AM-3P -303 BASS MIX-
 08 - DDR EXTREME\bag
 08 - DDR EXTREME\BE LOVIN
+08 - DDR EXTREME\BURNIN' THE FLOOR (MOMO MIX)
+08 - DDR EXTREME\CARTOON HEROES (Speedy Mix)
 08 - DDR EXTREME\Colors ~for EXTREME~
+08 - DDR EXTREME\CRASH!
 08 - DDR EXTREME\CUTIE CHASER(MORNING MIX)
 08 - DDR EXTREME\Dance Dance Revolution
 08 - DDR EXTREME\Destiny lovers
+08 - DDR EXTREME\Do It Right(Harmonized 2Step Mix)
 08 - DDR EXTREME\DROP THE BOMB(SyS.F. Mix)
-08 - DDR EXTREME\Frozen Ray ~for EXTREME~
+08 - DDR EXTREME\DYNAMITE RAVE(Down Bird SOTA Mix)
+08 - DDR EXTREME\feeling of love
+08 - DDR EXTREME\Frozen Ray(for EXTREME)
 08 - DDR EXTREME\Gamelan de Couple
-08 - DDR EXTREME\GRADUATION ~それぞれの明日~
+08 - DDR EXTREME\GRADUATION
 08 - DDR EXTREME\Happy Wedding
 08 - DDR EXTREME\Heaven is a '57 metallic gray ~gimmix~
+08 - DDR EXTREME\HOLD ON ME
 08 - DDR EXTREME\HYPER EUROBEAT
+08 - DDR EXTREME\I DO I DO I DO
 08 - DDR EXTREME\I'm gonna get you!
+08 - DDR EXTREME\IRRESISTIBLEMENT
 08 - DDR EXTREME\jane jana
 08 - DDR EXTREME\JET WORLD
+08 - DDR EXTREME\Kind Lady
 08 - DDR EXTREME\KISS KISS KISS
 08 - DDR EXTREME\Kiss me all night long
 08 - DDR EXTREME\LA BAMBA
-08 - DDR EXTREME\L'amour et la liberté(DDR Ver.)
+08 - DDR EXTREME\LA COPA DE LA VIDA
+08 - DDR EXTREME\Last Message
+08 - DDR EXTREME\Look To The Sky(True Color Mix)
+08 - DDR EXTREME\L'amour et la liberte(DDR Ver.)
 08 - DDR EXTREME\LOVE LOVE SHINE
 08 - DDR EXTREME\LOVE LOVE SUGAR
+08 - DDR EXTREME\MEMORIES
 08 - DDR EXTREME\Miracle Moon ~L.E.D.LIGHT STYLE MIX~
+08 - DDR EXTREME\MOBO MOGA
 08 - DDR EXTREME\PARANOIA survivor
 08 - DDR EXTREME\PARANOIA survivor MAX
 08 - DDR EXTREME\Pink Rose
+08 - DDR EXTREME\SENORITA(Speedy Mix)
 08 - DDR EXTREME\SO IN LOVE
+08 - DDR EXTREME\SPEED OVER BEETHOVEN
 08 - DDR EXTREME\STAY (Organic house Version)
 08 - DDR EXTREME\stoic (EXTREME version)
 08 - DDR EXTREME\sync (EXTREME version)
@@ -1443,6 +1613,9 @@
 08 - DDR EXTREME\Twin Bee -Generation X-
 08 - DDR EXTREME\V ~for EXTREME~
 08 - DDR EXTREME\VANITY ANGEL
+08 - DDR EXTREME\WE ARE THE CHAMPIONS (Factory Team Remix)
+08 - DDR EXTREME\WE WILL ROCK YOU
+08 - DDR EXTREME\White Lovers
 08 - DDR EXTREME\xenon
 
 08 - DDR EXTREME\1998
@@ -1452,36 +1625,47 @@
 
 07 - DDR MAX2\KAKUMEI
 07 - DDR MAX2\MATSURI JAPAN (FROM NONSTOP MEGAMIX)
+
+07 - DDR MAX2\A Little Bit Of Ecstasy
 07 - DDR MAX2\A MINUTE (EXTENDED MIX)
 07 - DDR MAX2\AFRONOVA(FROM NONSTOP MEGAMIX)
-07 - DDR MAX2\AM-3P(AM EAST mix)
+07 - DDR MAX2\AM-3P (AM EAST mix)
 07 - DDR MAX2\B4U(B4 ZA BEAT MIX)
 07 - DDR MAX2\BABY LOVE ME
 07 - DDR MAX2\BREAK DOWN!
 07 - DDR MAX2\BRILLIANT 2U(K.O.G G3 MIX)
-07 - DDR MAX2\BURNIN' THE FLOOR(BLUE FIRE mix)
+07 - DDR MAX2\BURNIN' THE FLOOR (BLUE FIRE mix)
 07 - DDR MAX2\BURNING HEAT！（3 Option MIX）
+07 - DDR MAX2\Busy Child
 07 - DDR MAX2\CANDY HEART
 07 - DDR MAX2\CELEBRATE NITE(EURO TRANCE STYLE)
 07 - DDR MAX2\D2R
+07 - DDR MAX2\Days Go By
 07 - DDR MAX2\DESTINY
 07 - DDR MAX2\DIVE TO THE NIGHT
+07 - DDR MAX2\Do It Right (80's Electro Mix)
 07 - DDR MAX2\DRIFTING AWAY
 07 - DDR MAX2\DROP OUT(FROM NONSTOP MEGAMIX)
 07 - DDR MAX2\DYNAMITE RAVE (B4 ZA BEAT MIX)
 07 - DDR MAX2\ECSTASY (midnight blue mix)
 07 - DDR MAX2\ever snow
 07 - DDR MAX2\FANTASY
+07 - DDR MAX2\Get Down Tonight
+07 - DDR MAX2\Heaven
 07 - DDR MAX2\HIGHER(next morning mix)
 07 - DDR MAX2\HYSTERIA 2001
 07 - DDR MAX2\i feel
 07 - DDR MAX2\IT'S RAINING MEN (Almighty Mix)
+07 - DDR MAX2\Kind Lady (interlude)
 07 - DDR MAX2\LITTLE BOY (BOY ON BOY MIX)
 07 - DDR MAX2\LIVING IN AMERICA
 07 - DDR MAX2\LONG TRAIN RUNNIN'
 07 - DDR MAX2\LOOK AT US (Daddy DJ Remix)
+07 - DDR MAX2\Look To The Sky (Trance Mix)
+07 - DDR MAX2\Love At First Sight
 07 - DDR MAX2\MAXIMUM OVERDRIVE (KC Club Mix)
 07 - DDR MAX2\MAXX UNLIMITED
+07 - DDR MAX2\more deep (ver.2.1)
 07 - DDR MAX2\MORE THAN I NEEDED TO KNOW
 07 - DDR MAX2\MY SUMMER LOVE(TOMMY'S SMILE MIX)
 07 - DDR MAX2\NOTHING GONNA STOP (Dance Mania Mix)
@@ -1495,6 +1679,7 @@
 07 - DDR MAX2\STILL IN MY HEART(MOMO MIX)
 07 - DDR MAX2\SUPER STAR(FROM NONSTOP MEGAMIX)
 07 - DDR MAX2\Sweet Sweet Love Magic
+07 - DDR MAX2\Take Me Away (into the night)(radio vocal)
 07 - DDR MAX2\THE REFLEX
 07 - DDR MAX2\THE WHISTLE SONG (Blow My Whistle Baby)
 07 - DDR MAX2\THERE YOU'LL BE
@@ -1503,6 +1688,7 @@
 07 - DDR MAX2\TSUGARU (APPLE MIX)
 07 - DDR MAX2\WAKA LAKA
 07 - DDR MAX2\WILD RUSH(FROM NONSTOP MEGAMIX)
+07 - DDR MAX2\Will I
 
 ---DDRMAX
 
@@ -1760,6 +1946,8 @@
 
 ---HOW TO PLAY
 
+11 - DDR X\HOW TO PLAY (English)
+11 - DDR X\HOW TO PLAY
 16 - DDR A\Lesson by DJ
 18 - DDR A20 PLUS\LET'S CHECK YOUR LEVEL!
 
@@ -2042,19 +2230,24 @@ DanceDanceRevolution II\in love wit you
 DanceDanceRevolution II\real-high-SPEED
 DanceDanceRevolution II\Dummy
 DanceDanceRevolution II\HEARTBREAK (Sound Selektaz remix)
+DanceDanceRevolution II\HEARTBREAK (Sound Selektaz remix) (Full Song)
 DanceDanceRevolution II\Your Angel
 DanceDanceRevolution II\sakura storm
 DanceDanceRevolution II\DROP
 DanceDanceRevolution II\Something Special
+DanceDanceRevolution II\Something Special (Full Song)
 DanceDanceRevolution II\dirty digital
 DanceDanceRevolution II\smooooch
 DanceDanceRevolution II\Wings of an Angel (Fly With Me)
+DanceDanceRevolution II\Wings of an Angel (Fly With Me) (Full Song)
 DanceDanceRevolution II\someday
 DanceDanceRevolution II\Summer Fairytale
 DanceDanceRevolution II\She is my wife
 DanceDanceRevolution II\Haunted Rhapsody
+DanceDanceRevolution II\Haunted Rhapsody (Full Song)
 DanceDanceRevolution II\All My Love
 DanceDanceRevolution II\SAY A PRAYER
+DanceDanceRevolution II\SAY A PRAYER (Full Song)
 DanceDanceRevolution II\Dazzlin' Darlin-AKBKmix-
 DanceDanceRevolution II\Decade
 DanceDanceRevolution II\GOLD RUSH
@@ -2062,25 +2255,35 @@ DanceDanceRevolution II\Diamond Night
 DanceDanceRevolution II\KISS KISS KISS AKBK MIX
 DanceDanceRevolution II\FIRE FIRE
 DanceDanceRevolution II\El ritmo te controla
+DanceDanceRevolution II\El ritmo te controla (Full Song)
 DanceDanceRevolution II\Sky Is The Limit
+DanceDanceRevolution II\Sky Is The Limit (Full Song)
 DanceDanceRevolution II\Still unbreakable
+DanceDanceRevolution II\Still unbreakable (Full Song)
 DanceDanceRevolution II\Second Heaven
 DanceDanceRevolution II\CG Project
 DanceDanceRevolution II\Dance Partay
+DanceDanceRevolution II\Dance Partay (Full Song)
 DanceDanceRevolution II\aftershock!!
 DanceDanceRevolution II\Surrender (PureFocus remix)
+DanceDanceRevolution II\Surrender (PureFocus remix) (Full Song)
 DanceDanceRevolution II\Poseidon (kors k mix)
 DanceDanceRevolution II\I'm so Happy
 DanceDanceRevolution II\Dazzlin' Darlin
 DanceDanceRevolution II\In The Air
 DanceDanceRevolution II\Tell Me What To Do
+DanceDanceRevolution II\Tell Me What To Do (Full Song)
 DanceDanceRevolution II\Theory of Eternity
 DanceDanceRevolution II\YELLOW CANDY
 DanceDanceRevolution II\Seule
 DanceDanceRevolution II\ZETA ~The World of Prime Numbers and the Transcendental Being~
+DanceDanceRevolution II\ZETA ~The World of Prime Numbers and the Transcendental Being~ (Full Song)
 DanceDanceRevolution II\Take A Step Forward
+DanceDanceRevolution II\Take A Step Forward (Full Song)
 DanceDanceRevolution II\The Heavens Above
+DanceDanceRevolution II\The Heavens Above (Full Song)
 DanceDanceRevolution II\Get Back Up!
+DanceDanceRevolution II\Get Back Up! (Full Song)
 DanceDanceRevolution II\VANESSA
 DanceDanceRevolution II\Mei
 DanceDanceRevolution II\HOTTEST PARTY
@@ -2092,6 +2295,7 @@ DanceDanceRevolution II\deltaMAX
 DanceDanceRevolution II\888
 DanceDanceRevolution II\Sakura Sunrise
 DanceDanceRevolution II\UNBELIEVABLE (Sparky remix)
+DanceDanceRevolution II\UNBELIEVABLE (Sparky remix) (Full Song)
 DanceDanceRevolution II\Pierce The Sky
 DanceDanceRevolution II\Shiny World
 DanceDanceRevolution II\London EVOLVED ver.A
@@ -2100,4 +2304,5 @@ DanceDanceRevolution II\London EVOLVED ver.C
 DanceDanceRevolution II\Anti-Matter
 DanceDanceRevolution II\POSSESSION
 DanceDanceRevolution II\New Decade
+DanceDanceRevolution II\New Decade (Full Song)
 DanceDanceRevolution II\Valkyrie dimension
