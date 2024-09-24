@@ -4,8 +4,14 @@ local screenName = Var "LoadingScreen"
 local disp_stage
 
 if PREFSMAN:GetPreference("EventMode") then
-	disp_stage = "EVENT";
+	if GAMESTATE:IsCourseMode() then
+		disp_stage = "COURSE";
+	else
+		disp_stage = "EVENT";
+	end
 	--Final
+elseif GAMESTATE:IsCourseMode() then 
+	disp_stage = "COURSE";
 elseif GAMESTATE:GetCurrentStageIndex() == PREFSMAN:GetPreference("SongsPerPlay") then
 	disp_stage = "FINAL";
 	--Extra1
@@ -50,12 +56,7 @@ if headerTextImage then
 	};
 	t[#t+1] = LoadActor(Model()..headerTextImage)..{
 		InitCommand=function(self)
-			self:y(-11)
-			if disp_stage == "ENCORE" then
-				self:setsize(270,27)
-			else
-				self:setsize(340,27)
-			end
+			self:y(-11):setsize(340,27)
 		end;
 	};
 end;

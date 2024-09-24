@@ -29,7 +29,7 @@ if GAMESTATE:IsDemonstration()  then Darkness = 0.65 end
 
 return Def.ActorFrame {
 	InitCommand=function(s) s:xy(Position,_screen.cy):diffusealpha(GuideLines() and Darkness or 0) end,
-	CurrentSongChangedMessageCommand=function(s) s:sleep(BeginReadyDelay()+SongMeasureSec()):diffusealpha(Darkness) end,
+	CurrentSongChangedMessageCommand=function(s) s:sleep(BeginReadyDelay()+SongMeasureSec()):diffusealpha(1) end,
 	ChangeCourseSongInMessageCommand=function(s) s:playcommand('FilterOff') end,
 	OffCommand=function(s) 
 		if (GAMESTATE:GetSongBeat() >= GAMESTATE:GetCurrentSong():GetLastBeat()) then 
@@ -37,6 +37,8 @@ return Def.ActorFrame {
 		end
 	end,
 	Def.Sprite { 
-		InitCommand=function(s) s:zoom(0.67):Load(Filter) end, 
+		Texture=Filter,
+		InitCommand=function(s) s:zoom(0.67) end, 
+		BeginCommand=function(s) s:diffusealpha(Darkness) end,
 	};
 };

@@ -89,8 +89,7 @@ function BeginReadyDelay()
 		delay = 0
 	end
 	
-	return round(delay,3)
-	
+	return round(delay,3)	
 end
 
 function SongMeasureSec()

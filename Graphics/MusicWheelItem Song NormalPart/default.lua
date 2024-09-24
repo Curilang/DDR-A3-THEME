@@ -47,8 +47,8 @@ local function IndexStage2(param)
 end
 
 local function SetXYPosition(self, param)
-	if IndexStage(param) then
-		local index = IndexStage2(param)
+	if GetExpandedSectionIndex() then
+		local index = param.Index-GetExpandedSectionIndex()-1
 		
 		if index%3 == 0 then
 			self:x(-304):y(107)
@@ -84,7 +84,6 @@ for i,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 	diff[#diff+1] = loadfile(THEME:GetPathG("MusicWheelItem","Song NormalPart/diff.lua"))(pn)..{
 		InitCommand=function(s) s:xy(pn == PLAYER_1 and -74 or 74,-36) end,
 	};
-	--diff[#diff+1] = loadfile(THEME:GetPathB("ScreenSelectMusic","overlay/ShockArrows/default.lua"))(pn);
 end;
 
 
@@ -193,7 +192,7 @@ return Def.ActorFrame{
 			SetMessageCommand=function(s,p)
 				local song = p.Song;
 				if song then
-					s:Load(GetJacketPath(song))
+					s:LoadFromCached("Jacket",GetJacketPath(song))
 				end
 				s:setsize(103,103)
 			end,

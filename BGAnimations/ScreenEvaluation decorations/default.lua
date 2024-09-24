@@ -26,11 +26,6 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 			end,
 		};
 	end
-	t[#t+1] = Def.Sprite{
-		Texture=Language().."exp",
-		InitCommand=function(s) s:xy(pn==PLAYER_1 and _screen.cx-212.5 or _screen.cx+212.5,_screen.cy+179):zoom(0.6) end,
-		OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -700 or 700)  end,
-	};
 	local IsScore = "NORMAL.png"
 	if IsEXScore() then
 		IsScore = "EX.png"
@@ -62,7 +57,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
         };
     };
 	t[#t+1] = LoadActor("Grade")..{
-		InitCommand=cmd(zoom,0.667;draworder,11;x,_screen.cx-282;y,_screen.cy-210.5);
+		InitCommand=cmd(zoom,0.667;x,_screen.cx-282;y,_screen.cy-210.5);
 		OffCommand=cmd(sleep,0.2;linear,0.2;diffusealpha,0);
 	};
     t[#t+1] = Def.ActorFrame{
@@ -87,7 +82,13 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
             Texture=THEME:GetPathG("","_shared/Diff"),
             InitCommand=function(s) s:x(3):y(32):pause():queuecommand("Set") end,
 			SetCommand=function(s)
-				local diff = ToEnumShortString(GAMESTATE:GetCurrentSteps(pn):GetDifficulty())
+				local CoS;
+				if GAMESTATE:IsCourseMode() then
+					CoS = GAMESTATE:GetCurrentTrail(pn):GetDifficulty()
+				else
+					CoS = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
+				end
+				local diff = ToEnumShortString(CoS)
                 if diff == "Beginner" then
 					s:setstate(0)
 				elseif diff == "Easy" then
@@ -104,11 +105,18 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
             end,
         };
 		Def.BitmapText{
-            Font="A3/EvaluationMeter",
+			Font="A3/EvaluationMeter",
             InitCommand=function(s) s:zoom(0.34):xy(-3,55)
-                local meter = GAMESTATE:GetCurrentSteps(pn):GetMeter();
-				s:settext(meter)
-            end,
+                local meter
+				if GAMESTATE:IsCourseMode() then
+					meter = GAMESTATE:GetCurrentTrail(pn):GetMeter();
+				else
+					meter = GAMESTATE:GetCurrentSteps(pn):GetMeter();
+				end
+				if meter ~= 0 then
+					s:settext(meter)
+				end
+			end,
         };
     };
 	
@@ -180,14 +188,14 @@ end
 
 t[#t+1] = Def.ActorFrame{
     Name="Jacket";
-    InitCommand=cmd(x,_screen.cx+1;y,_screen.cy-134;draworder,1);
 	Def.Sprite {
 		OnCommand=function(s)
-			local song = GAMESTATE:GetCurrentSong()
-			if song then
-				s:Load(GetJacketPath(song))
-			end;
-			s:setsize(144,144)
+		local song; if GAMESTATE:IsCourseMode() then song = GAMESTATE:GetCurrentCourse() else song = GAMESTATE:GetCurrentSong(); end
+			if GAMESTATE:IsCourseMode() then
+                s:Load(song:GetBannerPath()):zoomto(290,52):xy(_screen.cx+3,_screen.cy-114)
+			else	
+				s:Load(GetJacketPath(song)):setsize(144,144):xy(_screen.cx+1,_screen.cy-134)
+			end
 		end;
 		OffCommand=cmd(sleep,0.2;bouncebegin,0.175;zoomy,0);
 	};
@@ -207,9 +215,11 @@ t[#t+1] = Def.ActorFrame{
             s:maxwidth(290):zoom(0.9)
             local song = GAMESTATE:GetCurrentSong()
             local course = GAMESTATE:GetCurrentCourse()
-            if song then
-                s:settext(GetSongName(song)):y(-10)
-            end
+            if GAMESTATE:IsCourseMode() then
+                s:settext(GAMESTATE:GetCurrentCourse() and GAMESTATE:GetCurrentCourse():GetDisplayFullTitle() or "")
+			else
+				s:settext(GetSongName(song)):y(-10)
+			end
         end,
     };		
     Def.BitmapText{
@@ -217,7 +227,7 @@ t[#t+1] = Def.ActorFrame{
         InitCommand=function(s)
 			s:maxwidth(390):y(12):x(2):zoom(0.7)
             local song = GAMESTATE:GetCurrentSong()
-			if song then
+			if not GAMESTATE:IsCourseMode() then
                 s:settext(GetArtistName(song))
             end
         end,

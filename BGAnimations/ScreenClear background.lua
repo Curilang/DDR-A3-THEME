@@ -1,3 +1,6 @@
+PREFSMAN:SetPreference('SongBackgrounds', true)
+GAMESTATE:GetSongOptionsObject("ModsLevel_Preferred"):RandomBGOnly(false)
+
 return Def.ActorFrame { 
 	Def.Actor{
 		OnCommand=function(self)

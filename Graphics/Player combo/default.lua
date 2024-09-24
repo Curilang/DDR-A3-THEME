@@ -8,7 +8,6 @@ local xxState;
 
 local NumberMinZoom = THEME:GetMetric("Combo", "NumberMinZoom");
 local NumberMaxZoom = THEME:GetMetric("Combo", "NumberMaxZoom");
-local NumberMaxZoomAt = THEME:GetMetric("Combo", "NumberMaxZoomAt");
 
 local LabelMinZoom = THEME:GetMetric("Combo", "LabelMinZoom");
 local LabelMaxZoom = THEME:GetMetric("Combo", "LabelMaxZoom");

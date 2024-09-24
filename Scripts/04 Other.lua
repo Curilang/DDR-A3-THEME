@@ -69,6 +69,7 @@ function ScreenGameplay_P1X()
 		return WideScale(SCREEN_CENTER_X-180,SCREEN_CENTER_X-240);
 	end
 end
+
 function ScreenGameplay_P2X()
 	local st = GAMESTATE:GetCurrentStyle():GetStepsType();
 	if st == "StepsType_Dance_Solo" then
@@ -77,6 +78,14 @@ function ScreenGameplay_P2X()
 		return WideScale(SCREEN_CENTER_X+180,SCREEN_CENTER_X+160);
 	else
 		return WideScale(SCREEN_CENTER_X+180,SCREEN_CENTER_X+240);
+	end
+end
+
+function SongORCourse()
+	if GAMESTATE:IsCourseMode() then 
+		return GAMESTATE:GetCurrentCourse() 
+	else
+		return GAMESTATE:GetCurrentSong()
 	end
 end
 
@@ -347,88 +356,16 @@ function DanCourse()
 	end
 end
 
---Theme Stuff
-
---Player Options
-
-function OptionNumber()
-	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		if GetUserPref("NTOption")=='On' then
-			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ArrowType,SelectStage,Risky"
-		else
-			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,SelectStage,Risky"
-		end
-	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
-		if GetUserPref("NTOption")=='On' then
-			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ArrowType,Characters,Risky"
-		else
-			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Characters,Risky"
-		end
-	else
-		if GetUserPref("NTOption")=='On' then
-			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,ArrowType,Risky"
-		else
-			return "Speed,Accel,Appearance,Turn,Hide,Scroll,NoteSkins,Cut,Freeze,Jump,Risky"
-		end
-	end
-end
-
-function GetNoteSkinType(pn)
-	local Type = ReadPrefFromFile("OptionRowArrowType"..ToEnumShortString(pn)); 
-		if Type == "Normal" 			then return "SCH-NORMAL-"
-	elseif Type == "Classic" 			then return "SCH-CLASSIC-"
-	elseif Type == "Cyber" 				then return "SCH-CYBER-"
-	elseif Type == "X" 					then return "SCH-X-"
-	elseif Type == "Medium" 			then return "SCH-MEDIUM-"
-	elseif Type == "Small" 				then return "SCH-SMALL-"
-	elseif Type == "Dot" 				then return "SCH-DOT-"
-	else									 return "SCH-NORMAL-"
-	end
-end
-
-function GetArrowColor(pn)
-	local Color = ReadPrefFromFile("OptionRowArrowColor"..ToEnumShortString(pn)); 
-		if Color == "Rainbow" 			then return "RAINBOW"
-	elseif Color == "Note" 				then return "NOTE"
-	elseif Color == "Vivid" 			then return "VIVID"
-	elseif Color == "Flat" 				then return "FLAT"
-	elseif Color == "SMNote" 			then return "SMNOTE"
-	else									 return "RAINBOW"
-	end
-end
-
-function GetPlayerNoteSkin(pn)
-	GAMESTATE:GetPlayerState(pn):GetPlayerOptions('ModsLevel_Preferred'):NoteSkin(GetNoteSkinType(pn)..GetArrowColor(pn))
-end
-
-function NoteSkinOption()
-	if GetUserPref("NTOption")=='On' then
-		return "lua,OptionRowArrowColor()"
-	else
-		return "list,NoteSkins"
-	end
-end
-
-function UseStaticBackground()
-	if ReadPrefFromFile("OptionRowGameplayBackground") ~= nil then
-		if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-			return false
-		else
-			return true
-		end
-	else
-		return true
-	end
-end
-
---Player Options
-
 function ClearedToLoad()
-	local GetSong = GAMESTATE:GetCurrentSong():GetDisplayFullTitle()
-	if GetSong == "Tohoku EVOLVED" or GetSong == "COVID" or GetSong == "Outbreak" then 
-		return "PRAY"
-	elseif GetSong == "Lesson by DJ" or GetSong == "LET'S CHECK YOUR LEVEL!" then
-		return "ENJOY"
+	if not GAMESTATE:IsCourseMode() then
+		local GetSong = GAMESTATE:GetCurrentSong():GetDisplayFullTitle()
+		if GetSong == "Tohoku EVOLVED" or GetSong == "COVID" or (GetSong == "Outbreak" and GAMESTATE:GetCurrentSong():GetDisplayArtist() == "RG+Ice") then 
+			return "PRAY"
+		elseif GetSong == "Lesson by DJ" or GetSong == "LET'S CHECK YOUR LEVEL!" then
+			return "ENJOY"
+		else
+			return "CLEARED"
+		end
 	else
 		return "CLEARED"
 	end
@@ -587,15 +524,12 @@ GoldenLeagueSong = {
 	["Jungle Dance"] = "league";							--12th
 	["Rave in the Shell"] = "league";						--13th
 	["Not Alone"] = "league";								--14th
+	["GROOVE 04"] = "league";								--15th
+	["Euphoric Fragmentation"] = "league";					--16th
+	["Continue to the real world"] = "league";				--17th
+	["9th Outburst"] = "league";							--18th
+	["My Drama"] = "league";								--19th
 };
-
-function AttackPerfectFullCombo()
-	if GAMESTATE:IsExtraStage2() then
-		return "TapNoteScore_W2"
-	else
-		return "TapNoteScore_W4"
-	end
-end
 
 function JudgmentTransformCommand( self, params )
 	local x = 0

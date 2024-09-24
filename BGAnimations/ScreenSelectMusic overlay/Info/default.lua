@@ -2,8 +2,9 @@ local AnimPlayed = true
 
 return Def.ActorFrame{
 	InitCommand=cmd(xy,_screen.cx,_screen.cy-274);
-	CurrentSongChangedMessageCommand=function(s)
-		if GAMESTATE:GetCurrentSong() then
+	CurrentSongChangedMessageCommand=function(s) 
+		local song = GAMESTATE:GetCurrentSong()
+		if song then
 			s:queuecommand("Show"):queuecommand("Set")
 		else
 			s:queuecommand("Hide")
@@ -94,7 +95,7 @@ return Def.ActorFrame{
 			SetCommand=function(s)
 				local song = GAMESTATE:GetCurrentSong()
 				if song then
-					s:Load(GetJacketPath(song))
+					s:LoadFromCached("Jacket",GetJacketPath(song))
 				end
 				s:setsize(150,150)
 			end

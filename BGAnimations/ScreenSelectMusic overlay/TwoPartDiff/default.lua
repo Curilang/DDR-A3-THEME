@@ -170,24 +170,26 @@ local function genScrollerFrame(player)
 						if scores[1] then
 							topscore = scores[1];
 							assert(topscore);
-							local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
-							local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
+							local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")
+									  +topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
+									  +topscore:GetTapNoteScore("TapNoteScore_HitMine")
+									  +topscore:GetTapNoteScore("TapNoteScore_W5")
 							local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
 							local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
 							local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
 							local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
 							local hasUsedBattery = string.find(topscore:GetModifiers(),"Lives")
-							if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
+							if (misses) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
 								if (greats+perfects) == 0 then
 									s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","MarvelousFC"))
 									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
 								elseif greats == 0 then
 									s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","PerfectFC"))
 									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
-								elseif (misses+boos+goods) == 0 then
+								elseif (misses+goods) == 0 then
 									s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","GreatFC"))
 									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
-								elseif (misses+boos) == 0 then
+								elseif (misses) == 0 then
 									s:Load(THEME:GetPathB("ScreenSelectMusic overlay/TwoPartDiff/Cleared","GoodFC"))
 									s:diffuseshift():effectcolor1(color("1,1,1,1")):effectcolor2(color("1,1,1,0.7")):effectperiod(0.09)
 								end

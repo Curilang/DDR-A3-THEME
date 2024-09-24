@@ -107,7 +107,12 @@ t[#t+1]=Def.ActorFrame{
 		s:x(pn == PLAYER_1 and cx-546-ox or cx+546+ox)
 		s:draworder(110):pause():queuecommand("Set") end,
 		SetCommand=function(self)
-			local diff = GAMESTATE:GetCurrentSteps(pn):GetDifficulty();
+			local diff;
+				if GAMESTATE:IsCourseMode() then
+					diff = GAMESTATE:GetCurrentTrail(pn):GetDifficulty()
+				else
+					diff = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
+				end
 			local sDifficulty = ToEnumShortString(diff);	
 				if sDifficulty == 'Beginner' then
 					self:setstate(0);
@@ -144,7 +149,12 @@ t[#t+1]=Def.ActorFrame{
 	OnCommand=function(self) self:sleep(SleepOffset+0.2):linear(0.05):x(pn == PLAYER_1 and cx-268 or cx+603)
             local song = GAMESTATE:GetCurrentSong();
 			local st = GAMESTATE:GetCurrentStyle():GetStepsType();
-			local diff = GAMESTATE:GetCurrentSteps(pn):GetDifficulty();
+			local diff;
+				if GAMESTATE:IsCourseMode() then
+					diff = GAMESTATE:GetCurrentTrail(pn):GetDifficulty()
+				else
+					diff = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
+				end
 			if song then
 				if song:HasStepsTypeAndDifficulty(st,diff) then
 					local steps = song:GetOneSteps( st, diff );
@@ -157,20 +167,22 @@ t[#t+1]=Def.ActorFrame{
 					if scores[1] then
 						topscore = scores[1];
 							assert(topscore);
-						local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
-						local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
+						local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")
+									  +topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
+									  +topscore:GetTapNoteScore("TapNoteScore_HitMine")
+									  +topscore:GetTapNoteScore("TapNoteScore_W5")
 						local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
 						local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
 						local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
 						local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
-						if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
+						if (misses) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
 							if (greats+perfects) == 0 then
 								self:Load(THEME:GetPathG("","ScreenSelectMusic/MarvelousFullcombo_ring"))
 							elseif greats == 0 then
 								self:Load(THEME:GetPathG("","ScreenSelectMusic/PerfectFullcombo_ring"))
-							elseif (misses+boos+goods) == 0 then
+							elseif (misses+goods) == 0 then
 								self:Load(THEME:GetPathG("","ScreenSelectMusic/GreatFullcombo_ring"))
-							elseif (misses+boos) == 0 then
+							elseif (misses) == 0 then
 								self:Load(THEME:GetPathG("","ScreenSelectMusic/GoodFullcombo_ring"))
 							end;
 							self:visible(true):spin():zoom(1):effectmagnitude(0,0,170)
@@ -323,9 +335,10 @@ t[#t+1]=Def.ActorFrame{
 
 	
 	--Name
-	LoadFont("_helveticaneuelt pro 65 md 24px") .. {
-		Text=PROFILEMAN:GetProfile(pn):GetDisplayName();
-		InitCommand=function(s) s:maxwidth(180):zoomy(0.8):zoomx(1.4)
+	Def.BitmapText{
+		Font="_helveticaneuelt pro 65 md 24px",
+		InitCommand=function(s) s:uppercase(true):settext(string.upper(PROFILEMAN:GetPlayerName(pn)))
+			s:maxwidth(180):zoomy(0.8):zoomx(1.4)
 			s:x(pn == PLAYER_1 and cx-527-ox or cx+342+ox)
 			s:y(SCREEN_BOTTOM+110):strokecolor(Color("Outline")):maxwidth(120) end,
 		OnCommand=function(self)

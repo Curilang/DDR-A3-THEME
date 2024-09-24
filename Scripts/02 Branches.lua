@@ -141,12 +141,7 @@ Branch = {
 	AfterProfileSave = function()
 		-- Might be a little too broken? -- Midiman
 		if GAMESTATE:IsCourseMode() then
-			if GAMESTATE:IsEventMode() then
-				return SelectMusicOrCourse()
-			else
-				return "ScreenGameOver"
-			end
-			
+			return "ScreenDataSaveSummary"
 		else
 			if GAMESTATE:IsEventMode() then
 				return SelectMusicOrCourse()
@@ -253,7 +248,7 @@ Branch = {
 		elseif GAMESTATE:GetCurrentStage() == "Stage_Extra1" or GAMESTATE:GetCurrentStage() == "Stage_Extra2" then
 			return "ScreenProfileSave"
 		elseif GAMESTATE:IsCourseMode() then
-			return "ScreenProfileSaveSummary"
+			return "ScreenDataSaveSummary"
 		elseif STATSMAN:GetCurStageStats():AllFailed() then
 			-- if string.find(string.lower(GAMESTATE:GetPlayerState("PlayerNumber_P1"):GetPlayerOptionsString("ModsLevel_Preferred")) ,"battery")  
 				-- or string.find(string.lower(GAMESTATE:GetPlayerState("PlayerNumber_P2"):GetPlayerOptionsString("ModsLevel_Preferred")) ,"battery") 

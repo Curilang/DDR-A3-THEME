@@ -106,20 +106,22 @@ local function DrawDiffListItem(diff)
 						if scores[1] then
 							topscore = scores[1];
 								assert(topscore);
-							local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
-							local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
+							local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")
+									  +topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
+									  +topscore:GetTapNoteScore("TapNoteScore_HitMine")
+									  +topscore:GetTapNoteScore("TapNoteScore_W5")
 							local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
 							local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
 							local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
 							local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
-							if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
+							if (misses) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
 								if (greats+perfects) == 0 then
 									self:Load(THEME:GetPathG("","ScreenSelectMusic/MarvelousFullCombo_ring"))
 								elseif greats == 0 then
 									self:Load(THEME:GetPathG("","ScreenSelectMusic/PerfectFullCombo_ring"))
-								elseif (misses+boos+goods) == 0 then
+								elseif (misses+goods) == 0 then
 									self:Load(THEME:GetPathG("","ScreenSelectMusic/GreatFullCombo_ring"))
-								elseif (misses+boos) == 0 then
+								elseif (misses) == 0 then
 									self:Load(THEME:GetPathG("","ScreenSelectMusic/GoodFullCombo_ring"))
 								end;
 								self:visible(true):zoom(0.66):spin():effectmagnitude(0,0,170)
@@ -213,7 +215,7 @@ return Def.ActorFrame{
 	};
     DiffList..{
 		InitCommand=function(s) s:x(pn==PLAYER_1 and 0 or -14) end,
-      OnCommand=function(s) s:diffusealpha(0):sleep(0.4):linear(0.05):diffusealpha(0.75):linear(0.1):diffusealpha(0.25):linear(0.1):diffusealpha(1) end,
+		OnCommand=function(s) s:diffusealpha(0):sleep(0.4):linear(0.05):diffusealpha(0.75):linear(0.1):diffusealpha(0.25):linear(0.1):diffusealpha(1) end,
     };
 	LoadActor(Model().."line")..{
 		InitCommand=function(s) s:x(pn==PLAYER_1 and 0 or -9)

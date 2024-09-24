@@ -6,7 +6,6 @@ else
 end
 
 return Def.ActorFrame{
-	--InitCommand=function(s) s:sleep(1) end,
 	LoadActor(THEME:GetPathS("ScreenGameOver","sound"))..{
 		OnCommand=cmd(queuecommand,"Play");
 		PlayCommand=cmd(play);
@@ -69,5 +68,7 @@ return Def.ActorFrame{
 		InitCommand=function(s) s:FullScreen():diffusecolor(color("1,1,1,1")) end,
 		OnCommand=function(s) s:diffusealpha(0):sleep(5):linear(0.4):diffusealpha(1) end,
 	};
-	LoadActor(loader);
+	loadfile(THEME:GetPathB("ScreenGameplay","out/_doors"))()..{
+		OnCommand=function(s) s:playcommand("AnimOpen") end,
+	},
 };

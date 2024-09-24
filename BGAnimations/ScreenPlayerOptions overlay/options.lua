@@ -20,27 +20,34 @@ local screen = SCREENMAN:GetTopScreen();
 
 local rownames;
 if GAMESTATE:IsExtraStage() or GAMESTATE:IsExtraStage2() then
-	rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump" }
+	rownames = { 
+		"Speed", 
+		"Accel", 
+		"Appearance", 
+		"Turn", 
+		"Hide", 
+		"Scroll", 
+		"NoteSkins", 
+		"Remove", 
+		"Freeze", 
+		"Jump",
+		"VisualDelaySeconds"
+	};
 else
-	if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-		if GetUserPref("NTOption")=='On' then
-			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "Gauge", "DanceStage", "Arrow" }
-		else
-			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "Gauge", "DanceStage" }
-		end
-	elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
-		if GetUserPref("NTOption")=='On' then
-			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "Gauge", "Characters", "Arrow" }
-		else
-			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "Gauge", "Characters" }
-		end
-	else
-		if GetUserPref("NTOption")=='On' then
-			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "Gauge", "Arrow" }
-		else
-			rownames = { "Speed", "Accel", "Appearance", "Turn", "Hide", "Scroll", "NoteSkins", "Remove", "Freeze", "Jump", "Gauge", }
-		end
-	end
+	rownames = { 
+		"Speed", 
+		"Accel", 
+		"Appearance", 
+		"Turn", 
+		"Hide", 
+		"Scroll", 
+		"NoteSkins", 
+		"Remove", 
+		"Freeze", 
+		"Jump",
+		"VisualDelaySeconds",
+		"Gauge" 
+	};
 end
 
 local function GetOptionName(screen, idx)
@@ -57,7 +64,12 @@ function setting(self,screen)
 	local choice = row:GetChoiceInRowWithFocus(pn);
 	if THEME:GetMetric( "ScreenOptionsMaster",name.."Explanation" ) then
 		self:settext(THEME:GetString("OptionItemExplanations",name..tostring(choice)));
-	else self:settext("");
+	elseif name == "NoteSkins" then
+		self:settext("Change the appearance of the arrows.");
+	elseif name == "VisualDelaySeconds" then
+		self:settext("Adjust the display timing of the arrows.\nIf you feel that the input is lagging behind the Step Zone, decrease the amount.");
+	else
+		self:settext("");
 	end;
 end;
 
@@ -119,7 +131,7 @@ local function MakeRow(rownames, idx)
 		};
 		--SPEED DISPLAY
 		Def.ActorFrame{
-			Condition=SpeedDisplay();
+			Condition=not GAMESTATE:IsCourseMode(),
 			OnCommand=function(s) s:queuecommand("Set") end,
 			SetCommand=function(self)
 				if not IsExitRow() then
@@ -127,10 +139,8 @@ local function MakeRow(rownames, idx)
 					local song = GAMESTATE:GetCurrentSong()
 					if screen then
 						if GetOptionName(screen,idx) == "Speed" then
-							if song then
-								self:visible(true)
-								self:y(-39)
-							end
+							self:visible(true)
+							self:y(-39)
 						end
 					else
 						self:queuecommand("Set");
@@ -188,54 +198,6 @@ local function MakeRow(rownames, idx)
 			};
 		};
 		--SPEED DISPLAY
-		--DANCESTAGES CARD
-		Def.ActorFrame{
-			Condition=GetUserPref("OptionRowGameplayBackground")=='DanceStages';
-			OnCommand=function(s) s:queuecommand("Set") end,
-			SetCommand=function(self)
-				if not IsExitRow() then
-					local screen = SCREENMAN:GetTopScreen();
-					local song = GAMESTATE:GetCurrentSong()
-					if screen then
-						if GetOptionName(screen,idx) == "DanceStage" then
-							self:visible(true):xy(pn==PLAYER_1 and -280 or 280,-150):zoom(0.3)
-						end
-					else
-						self:queuecommand("Set");
-					end;
-				end;
-			end;
-			GainFocusCommand=function(s) s:finishtweening()
-				local screen = SCREENMAN:GetTopScreen();
-				local song = GAMESTATE:GetCurrentSong()
-				s:diffusealpha(GetOptionName(screen,idx) == "DanceStage" and 1 or 0)
-			end,
-			LoseFocusCommand=function(s) s:finishtweening():diffusealpha(0) end,
-			[p"MenuLeft%MessageCommand"]=function(s) s:playcommand("Set") end,
-			[p"MenuRight%MessageCommand"]=function(s) s:playcommand("Set") end,	
-			Def.Sprite{
-				OnCommand=function(s) s:queuecommand("Set") end,
-				SetCommand=function(s)
-					local screen = SCREENMAN:GetTopScreen();
-					local choice = screen:GetOptionRow(idx-1):GetChoiceInRowWithFocus(pn);
-					local DanceStagesList = GetAllDanceStagesNames()
-					local DSName = DanceStagesList[IndexKey(DanceStagesList,GetUserPref("SelectDanceStage"))]
-					if choice == 0 then
-						s:Load(THEME:GetPathG("","_shared/stages_default"))
-					elseif choice == 1 then
-						s:Load(THEME:GetPathG("","_shared/stages_random"))
-					else	
-						if FILEMAN:DoesFileExist("/DanceStages/"..DanceStagesList[choice+1].."/Card.png") then
-							s:Load("/DanceStages/"..DanceStagesList[choice+1].."/Card.png")				
-						else
-							s:Load(THEME:GetPathG("","_blank"))
-						end
-					end
-				end,
-			};
-		};
-		--DANCESTAGES CARD
-		
 		LoadFont("_avenirnext lt pro bold Bold 20px")..{
 			InitCommand=cmd(x,64;uppercase,true;zoom,0.8;maxwidth,150);
 			OnCommand=cmd(queuecommand,"Set");
@@ -251,7 +213,7 @@ local function MakeRow(rownames, idx)
                             return ""
                         end
                     end
-					if name ~= "NoteSkins" and name ~= "DanceStage" and name ~= "Characters" then
+					if name ~= "NoteSkins" and name ~= "VisualDelaySeconds" then
 						--normal option, handle default choice coloring.
                         local ChoiceText = ChoiceToText(choice)
                         --for most options, 0 is the default choice, for Speed it is 3.
@@ -267,29 +229,11 @@ local function MakeRow(rownames, idx)
                         self:settext(ChoiceText);
 					elseif name == "NoteSkins" then
 						self:settext(NOTESKIN:GetNoteSkinNames()[choice+1])
-					elseif name == "DanceStage" then
-						local DanceStagesNames = GetAllDanceStagesNames()
-						if choice == 0 then
-							self:settext("DEFAULT"):diffuse(color("#06ff06")):diffusetopedge(color("#74ff74"))
-						elseif choice == 1 then
-							self:settext("RANDOM"):diffuse(color("1,1,1,1"))
-						else		
-							self:settext(DanceStagesNames[choice+1]):diffuse(color("1,1,1,1"))
-						end
-					elseif name == "Characters" then
-						if GetUserPref("OptionRowGameplayBackground")=='DanceStages' then
-							local chars = GetAllCharacterNames()
-							if choice == 0 then
-								self:settext("Random"):diffuse(color("#06ff06")):diffusetopedge(color("#74ff74"))
-							else
-								self:settext(chars[choice+1]):diffuse(color("1,1,1,1"))
-							end;
-						elseif GetUserPref("OptionRowGameplayBackground")=='SNCharacters' then
-							if choice == 0 then
-								self:settext("OFF"):diffuse(color("#06ff06")):diffusetopedge(color("#74ff74"))
-							else
-								self:settext(Characters.GetAllCharacterNames()[choice]):diffuse(color("1,1,1,1"))
-							end;
+					elseif name == "VisualDelaySeconds" then
+						if choice == 50 then
+							self:settext("±0.0"):diffuse(color("#06ff06")):diffusetopedge(color("#74ff74"));
+						else
+							self:settext(THEME:GetString("OptionItemNames","VisualDelaySeconds"..tostring(choice))):diffuse(color("1,1,1,1"));
 						end
 					else
 						self:settext("")

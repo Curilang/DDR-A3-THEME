@@ -1,6 +1,14 @@
 local pn = ...
 local player = ToEnumShortString(pn)
 
+local function SpeedMod()
+	if GetUserPref("OptionRowSpeedMod") == 'CMOD' then
+		return "CMOD"
+	else
+		return "XMOD"
+	end
+end
+
 return Def.ActorFrame {
 	-- Speed
 	Def.ActorFrame{
@@ -19,10 +27,20 @@ return Def.ActorFrame {
 			Texture=THEME:GetPathG("","OptionIcon/"..player.."/Speed"),
 		};
 		Def.BitmapText{
+			Condition=SpeedMod() == "XMOD";
 			Font="OptionIcon Speed",
 			OnCommand=function(self)
 				self:y(1):zoomx(0.78):zoomy(0.74):maxwidth(34)
 				self:settext("x"..GAMESTATE:GetPlayerState(pn):GetPlayerOptions("ModsLevel_Preferred"):ScrollSpeed());
+			end;	
+		};
+		Def.BitmapText{
+			Condition=SpeedMod() == "CMOD";
+			Font="OptionIcon Speed",
+			OnCommand=function(self)
+				local speed = math.round(GAMESTATE:GetPlayerState(pn):GetPlayerOptions("ModsLevel_Preferred"):ScrollBPM())				
+				self:y(1):zoomx(0.78):zoomy(0.74):maxwidth(34)
+				self:settext("C"..speed);
 			end;	
 		};
 	};
@@ -125,11 +143,15 @@ return Def.ActorFrame {
 		InitCommand=function(self)
 			self:x(16);
 			if not GAMESTATE:IsDemonstration() then
-				if GetUserPref("NTOption")=='On' then
-					self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Arrow/"..GetArrowColor(pn)));
-				else
+				if string.find(GAMESTATE:GetPlayerState(pn):GetPlayerOptions("ModsLevel_Preferred"):NoteSkin(),"flat") then
+					self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Arrow/Flat"));
+				elseif string.find(GAMESTATE:GetPlayerState(pn):GetPlayerOptions("ModsLevel_Preferred"):NoteSkin(),"note") then
 					self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Arrow/Note"));
-				end
+				elseif string.find(GAMESTATE:GetPlayerState(pn):GetPlayerOptions("ModsLevel_Preferred"):NoteSkin(),"vivid") then
+					self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Arrow/Vivid"));
+				elseif string.find(GAMESTATE:GetPlayerState(pn):GetPlayerOptions("ModsLevel_Preferred"):NoteSkin(),"smnote") then
+					self:Load(THEME:GetPathG("","OptionIcon/"..player.."/Arrow/SMNote"));
+				end;
 			end
 		end;
 		PlayerJoinedMessageCommand=function(self, params)

@@ -1,21 +1,28 @@
 local t = Def.ActorFrame{}
 
-t[#t+1] = Def.Quad{
-	InitCommand=function(s) s:FullScreen():diffusecolor(Color.Black):diffusealpha(1) end,
+--Thanks Razorblade!
+t[#t+1] = Def.Actor {
+	BeginCommand=function()		
+		THEME:ReloadMetrics()
+		
+		local song = GAMESTATE:GetCurrentSong();
+		
+		if song then
+			song:ReloadFromSongDir()		--- This fixes song movies with symbols in filenames from not playing in game
+		end
+		
+		for pn in ivalues(GAMESTATE:GetHumanPlayers()) do
+			local steps = GAMESTATE:GetCurrentSteps(pn);
+			
+			SCREENMAN:set_input_redirected( pn, false )
+		end
+	end;
 };
-
+--Thanks Razorblade!
 t[#t+1] = Def.ActorFrame{
 	OnCommand=function(s) s:queuecommand("Play") end,
 	PlayCommand=function(s) 
 		local sound = THEME:GetPathS("ScreenStageInformation","StageSound")
-		SOUND:PlayOnce(StreamingSound(sound)) 
-	end,
-};
-
-t[#t+1] = Def.ActorFrame{
-	OnCommand=function(s) s:sleep(0.3):queuecommand("Play") end,
-	PlayCommand=function(s) 
-		local sound = THEME:GetPathS("","DoorClose")
 		SOUND:PlayOnce(StreamingSound(sound)) 
 	end,
 };
@@ -28,8 +35,9 @@ t[#t+1] = Def.ActorFrame{
 	end,
 };
 
-t[#t+1] = LoadActor("Doors");
-
+t[#t+1] = LoadActor("_doors")..{
+	OnCommand=function(s) s:finishtweening():playcommand("AnimClose") end,
+};
 
 t[#t+1] = Def.ActorFrame{
 	Name="Jacket",
@@ -80,18 +88,15 @@ t[#t+1] = Def.ActorFrame{
 
 t[#t+1] = LoadActor("StageDisplay")..{ InitCommand=function(s) s:xy(140,80):zoom(0.667) end, };
 
-t[#t+1] = LoadActor("APFC")..{
-	Condition=GAMESTATE:IsExtraStage2();
-	InitCommand=function(s) s:xy(_screen.cx,_screen.cy-157):zoom(0.637) end, 
-	OnCommand=function(s) s:diffusealpha(0):sleep(1.85):linear(0.2):diffusealpha(1):sleep(0.5):linear(0.2):diffusealpha(0) end,
-};
-
 t[#t+1] = Def.Sprite {
 	InitCommand=function(s) s:x(_screen.cx):y(_screen.cy+12):diffusealpha(0) end,
 	OnCommand=function(s) s:queuecommand("Set"):sleep(1.85):linear(0.2):diffusealpha(1):sleep(0.7) end,
 	SetCommand=function(s)
-	local song = GAMESTATE:GetCurrentSong()
-		if song then
+		if GAMESTATE:IsCourseMode() then
+			local ent = GAMESTATE:GetCurrentTrail(GAMESTATE:GetMasterPlayerNumber()):GetTrailEntries()
+			s:Load(GetJacketPath(ent[1]:GetSong()))
+		else
+			local song = GAMESTATE:GetCurrentSong()
 			s:Load(GetJacketPath(song))
 		end;
 		s:setsize(300,300)

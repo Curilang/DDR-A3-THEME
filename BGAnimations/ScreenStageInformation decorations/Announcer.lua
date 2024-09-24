@@ -15,6 +15,8 @@ elseif (GAMESTATE:IsExtraStage2()) then
 	Announcer = "stage extra2"
 elseif (GAMESTATE:IsEventMode()) then
 	Announcer = "stage event"
+elseif (GAMESTATE:IsCourseMode()) then
+	Announcer = "stage event"
 end
 
 return Def.ActorFrame{

@@ -13,6 +13,19 @@ if tRemap[sStage] == PREFSMAN:GetPreference("SongsPerPlay") then
 else
 	sStage = sStage;
 end;
+
+local Stage = Def.ActorFrame{
+	Def.Sprite{
+		OnCommand=function(s)
+			if GAMESTATE:IsCourseMode() then
+				s:Load(THEME:GetPathG("","_shared/message/1st"))
+			else
+				s:Load(THEME:GetPathG("","_shared/message/"..ToEnumShortString(sStage)))
+			end
+		end,
+	};
+};
+
 ----------------------------------------------------------------------------
 return Def.ActorFrame {
 	--InitCommand=function(s) s:zoom(0.667)
@@ -43,10 +56,9 @@ return Def.ActorFrame {
 			self:zoomy(0);
 		end;
 	};
-	Def.Sprite{
+	Stage..{
 	InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+5;zoom,1);
 	OnCommand=function(self)
-	self:Load(THEME:GetPathG("","_shared/message/"..ToEnumShortString(sStage) ));
 	self:diffusealpha(1):linear(0.1):diffusealpha(1)
 	:zoomx(1.1):zoomy(1.2):linear(0.1)
 	:zoomx(1.2):zoomy(1.1):linear(0.15)
@@ -55,10 +67,9 @@ return Def.ActorFrame {
 	:sleep(0.8):linear(0.04):diffusealpha(0.2):zoomx(1.8*2):zoomy(0);
 	end;
 	};
-	Def.Sprite{
+	Stage..{
 	InitCommand=cmd(x,SCREEN_CENTER_X-0;y,SCREEN_CENTER_Y;zoom,0.9;blend,Blend.Add);
 	OnCommand=function(self)
-	self:Load(THEME:GetPathG("","_shared/message/"..ToEnumShortString(sStage) ));
 	self:diffusealpha(0.5):zoom(1.5):linear(0.1):diffusealpha(0.5)
 	:zoomx(1.1):zoomy(1.2):linear(0.15)
 	:zoomx(1.5):zoomy(1.8):linear(0.15)

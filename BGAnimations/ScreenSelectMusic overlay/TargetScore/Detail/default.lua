@@ -126,20 +126,22 @@ return Def.ActorFrame{
 					if scores[1] then
 						topscore = scores[1];
 							assert(topscore);
-						local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
-						local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
+						local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")
+									  +topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
+									  +topscore:GetTapNoteScore("TapNoteScore_HitMine")
+									  +topscore:GetTapNoteScore("TapNoteScore_W5")
 						local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
 						local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
 						local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
 						local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
-						if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
+						if (misses) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
 							if (greats+perfects) == 0 then
 								self:Load(THEME:GetPathG("","Grade/MarvelousFullcombo_ring"))
 							elseif greats == 0 then
 								self:Load(THEME:GetPathG("","Grade/PerfectFullcombo_ring"))
-							elseif (misses+boos+goods) == 0 then
+							elseif (misses+goods) == 0 then
 								self:Load(THEME:GetPathG("","Grade/GreatFullcombo_ring"))
-							elseif (misses+boos) == 0 then
+							elseif (misses) == 0 then
 								self:Load(THEME:GetPathG("","Grade/GoodFullcombo_ring"))
 							end;
 							self:visible(true):spin():effectmagnitude(0,0,170)

@@ -10,20 +10,32 @@
 20 - DDR A3\Kiyarora eisei no kiseki
 20 - DDR A3\Kyoka suigetsurou (DDR EDITION)
 20 - DDR A3\Koi no hyoketsu otenba yukemuri Cirno onsen
+20 - DDR A3\Comet skater
+20 - DDR A3\Confeito concerto
 20 - DDR A3\Saisoku saikou shutter girl
 20 - DDR A3\Sayonara heaven
+20 - DDR A3\Shuwa Spa Daisakusen
 20 - DDR A3\SHIN HEBI HIME
 20 - DDR A3\Scarlet keisatsu no ghetto patrol 24 ji
+20 - DDR A3\Senkyakubanrai moumantai!
+20 - DDR A3\Chikuwa parfait da yo CKP (Yvya Remix)
 20 - DDR A3\Chucchu Machu Picchu
+20 - DDR A3\Tokai seifuku Girls
 20 - DDR A3\Tokonyatsu tropical
+20 - DDR A3\Trance dance anarcky
+20 - DDR A3\Nanairo light
 20 - DDR A3\Nanahoshi
 20 - DDR A3\Perfect eater
 20 - DDR A3\Vajra
+20 - DDR A3\Hashire melonpan
+20 - DDR A3\Hou
 20 - DDR A3\Positive dance time
 20 - DDR A3\Poppin' candy fever!
+20 - DDR A3\Polaris no uta
 20 - DDR A3\Mixed nuts
 20 - DDR A3\Myu, myu, Mullru
 20 - DDR A3\Murasakibana
+20 - DDR A3\Meumeupettantan!! (ZAQUVA Remix)
 20 - DDR A3\Mentanpindoradora
 20 - DDR A3\Yasaimashi ninniku abura oome
 20 - DDR A3\Yoidore shirazu
@@ -31,6 +43,7 @@
 20 - DDR A3\Respec fujin
 20 - DDR A3\Ryoushi no umi no Lindwurm
 20 - DDR A3\Lilieze to enryuu Laevateinn
+20 - DDR A3\Rinne no karasu
 20 - DDR A3\Renaikansoku -2021 manatsu no ending ver.-
 20 - DDR A3\Wakusei lollipop
 
@@ -38,6 +51,7 @@
 20 - DDR A3\Abrupt Madness
 20 - DDR A3\Acid,Tribal & Dance (DDR EDITION)
 20 - DDR A3\ALBIDA
+20 - DDR A3\Ambivalent Vermilia
 20 - DDR A3\Anthurium
 20 - DDR A3\Are U Ready
 20 - DDR A3\Aria
@@ -46,6 +60,7 @@
 20 - DDR A3\Be With You (Still Miss you)
 20 - DDR A3\Beluga
 20 - DDR A3\Black Emperor
+20 - DDR A3\BLUE FOG, SILVER BULLET
 20 - DDR A3\BONE BORN
 20 - DDR A3\BREAKING THE FUTURE
 20 - DDR A3\BREDLI
@@ -56,12 +71,16 @@
 20 - DDR A3\Chromatic Burst
 20 - DDR A3\Closer to my Heart (jun remix)
 20 - DDR A3\Come Back to Me (Feel It)
+20 - DDR A3\Come To m1dy
 20 - DDR A3\Complete Game Victory
 20 - DDR A3\Concertino in Blue
 20 - DDR A3\concon
+20 - DDR A3\Continue to the real world
 20 - DDR A3\Crystarium
 20 - DDR A3\Curry Up
 20 - DDR A3\Dance Phenomena
+20 - DDR A3\Dance With The Dead
+20 - DDR A3\DDR System Songs+Replicant Mix
 20 - DDR A3\Death by Glamour
 20 - DDR A3\Debug Dance
 20 - DDR A3\Deep tenDon Reflex
@@ -71,9 +90,13 @@
 20 - DDR A3\Drive My Heart
 20 - DDR A3\DUAL STRIKER
 20 - DDR A3\Easy Peasy
+20 - DDR A3\Electronic Sports Complex
+20 - DDR A3\EMOTiON TRiPPER
 20 - DDR A3\Environ [De-SYNC] (feat. lythe)
 20 - DDR A3\Eon Break
+20 - DDR A3\Euphoric Fragmentation
 20 - DDR A3\Finale
+20 - DDR A3\Finally Dive
 20 - DDR A3\Fleur
 20 - DDR A3\Flip Flap
 20 - DDR A3\GERBERA
@@ -87,13 +110,18 @@
 20 - DDR A3\Go To The Oasis
 20 - DDR A3\Good Sound United
 20 - DDR A3\GRADIUS REMIX (UUDDLRLRBA Ver.)
+20 - DDR A3\GROOVE 04
+20 - DDR A3\HANIPAGANDA
 20 - DDR A3\Heavens and the Earth
 20 - DDR A3\Hold Tight
+20 - DDR A3\Indigo Nocturne
+20 - DDR A3\INFINITE WORLD
 20 - DDR A3\insist
 20 - DDR A3\I WANT YOUR LOVE (Darwin remix)
 20 - DDR A3\I-W-U (I Want U)
 20 - DDR A3\Jungle Dance
 20 - DDR A3\JUST BELIEVE
+20 - DDR A3\Kill The Night
 20 - DDR A3\Kilonova
 20 - DDR A3\KING
 20 - DDR A3\Last Summer
@@ -104,13 +132,21 @@
 20 - DDR A3\little steps
 20 - DDR A3\Look at the Sky
 20 - DDR A3\Lose Your Sense
+20 - DDR A3\LOVE EAST
 20 - DDR A3\LOVE SHINE (Body Grooverz 2006 mix)
 20 - DDR A3\MANA
+20 - DDR A3\mathematical good-bye
 20 - DDR A3\MA-TSU-RI
 20 - DDR A3\Megalara Garuda
 20 - DDR A3\MEGALOVANIA
+20 - DDR A3\melody H4CKER
+20 - DDR A3\memory DATAMOSHER
 20 - DDR A3\Mess With My Emotions
+20 - DDR A3\Metamorphic
 20 - DDR A3\Musician
+20 - DDR A3\My Drama
+20 - DDR A3\New Millennium
+20 - DDR A3\Next FUTURE
 20 - DDR A3\Not Alone
 20 - DDR A3\ON-DO
 20 - DDR A3\On the Night of a Still Wind
@@ -127,10 +163,12 @@
 20 - DDR A3\Racing with Time (NAOKI's 999 remix)
 20 - DDR A3\Rave in the Shell
 20 - DDR A3\Rise As One
+20 - DDR A3\ROCK THE PARTY
 20 - DDR A3\SAY A PRAYER
 20 - DDR A3\SAYONARA disco light
 20 - DDR A3\Sector
 20 - DDR A3\Settin' the Scene
+20 - DDR A3\SISYPHUS
 20 - DDR A3\SMASH
 20 - DDR A3\Snow Garland Fairy
 20 - DDR A3\Something Comforting
@@ -150,21 +188,28 @@
 20 - DDR A3\Teleportation
 20 - DDR A3\THE ANCIENT KING IS BACK
 20 - DDR A3\the beat
+20 - DDR A3\Throw Out
 20 - DDR A3\Too Late Snow
 20 - DDR A3\Towards The Horizon
 20 - DDR A3\TRUE LOVE (Clubstar's True Club Mix)
 20 - DDR A3\Unity
 20 - DDR A3\Unreality
+20 - DDR A3\Urban Life
 20 - DDR A3\Valanga
 20 - DDR A3\VALLIS-NERIA
 20 - DDR A3\VOLAQUAS
 20 - DDR A3\WARNING WARNING WARNING
 20 - DDR A3\We Will Live Together
+20 - DDR A3\White Stream
 20 - DDR A3\Wolf's Rain
 20 - DDR A3\Worst Plan
 20 - DDR A3\Wowie Zowie!
 20 - DDR A3\Wuv U
 20 - DDR A3\You You You
+
+20 - DDR A3\3y3s
+20 - DDR A3\9th Outburst
+20 - DDR A3\[ ]DENTITY
 
 ---DDR GRAND PRIX
 
@@ -174,15 +219,20 @@
 19 - DDR GRAND PRIX\Orion wo nazoru
 19 - DDR GRAND PRIX\Kaikai kitan
 19 - DDR GRAND PRIX\Kaibutsu
+19 - DDR GRAND PRIX\Kagachi
 19 - DDR GRAND PRIX\Gurenge
 19 - DDR GRAND PRIX\Gunjou
 19 - DDR GRAND PRIX\Connect
+19 - DDR GRAND PRIX\Sakazuki
 19 - DDR GRAND PRIX\Sakuranbo
 19 - DDR GRAND PRIX\Joyful
 19 - DDR GRAND PRIX\JoJo ~Sono Chi no Sadame~
 19 - DDR GRAND PRIX\Suimin busoku
+19 - DDR GRAND PRIX\Setsujou danka
 19 - DDR GRAND PRIX\Sousei no Aquarion
+19 - DDR GRAND PRIX\Sorairo days
 19 - DDR GRAND PRIX\Tsukematsukeru
+19 - DDR GRAND PRIX\Tsumi to batsu
 19 - DDR GRAND PRIX\Dry flower
 19 - DDR GRAND PRIX\Natsumatsuri
 19 - DDR GRAND PRIX\Byoushin wo kamu
@@ -196,16 +246,23 @@
 19 - DDR GRAND PRIX\Luka luka night fever
 19 - DDR GRAND PRIX\Renai revolution 21
 19 - DDR GRAND PRIX\Wasurena
+
+19 - DDR GRAND PRIX\Beyond The Earth
 19 - DDR GRAND PRIX\BRIGHT STREAM
+19 - DDR GRAND PRIX\DIAVOLO
+19 - DDR GRAND PRIX\Fly Like You
 19 - DDR GRAND PRIX\HOT LIMIT
 19 - DDR GRAND PRIX\Lemon
 19 - DDR GRAND PRIX\LOVE & JOY -Risk Junk MIX-
 19 - DDR GRAND PRIX\only my railgun
 19 - DDR GRAND PRIX\POP STAR
 19 - DDR GRAND PRIX\Pretender
+19 - DDR GRAND PRIX\quaver
+19 - DDR GRAND PRIX\Red. by Full Metal Jacket
 19 - DDR GRAND PRIX\resonance
 19 - DDR GRAND PRIX\SOUVENIR
 19 - DDR GRAND PRIX\Trickster
+19 - DDR GRAND PRIX\TYCOON
 19 - DDR GRAND PRIX\10nen sakura
 
 ---DDR A20 PLUS
@@ -498,7 +555,7 @@
 16 - DDR A\Youkoso Japari Park e
 16 - DDR A\Rinnetensei
 16 - DDR A\Luminous days
-16 - DDR A\Renai kansoku
+16 - DDR A\Renaikansoku
 16 - DDR A\Role-playing game
 16 - DDR A\Rokuchounen to ichiya monogatari
 16 - DDR A\Roshin yuukai
@@ -1900,6 +1957,67 @@
 
 03 - DDR 3rdMIX\20,NOVEMBER (D.D.R. version)
 
+---DDR 2ndMIX CLUB VER.2
+
+02 - DDR 2ndMIX CLUB VER.2\CHOTTO KIITENA (ZANSHIN-NA MIX)
+
+02 - DDR 2ndMIX CLUB VER.2\Be in my paradise
+02 - DDR 2ndMIX CLUB VER.2\BEGINNING-OF-LIFE
+02 - DDR 2ndMIX CLUB VER.2\Deep clear eyes
+02 - DDR 2ndMIX CLUB VER.2\DEEP IN YOU
+02 - DDR 2ndMIX CLUB VER.2\diving money
+02 - DDR 2ndMIX CLUB VER.2\g.m.d
+02 - DDR 2ndMIX CLUB VER.2\GAMBOL
+02 - DDR 2ndMIX CLUB VER.2\gentle stress
+02 - DDR 2ndMIX CLUB VER.2\GRADIUSIC CYBER
+02 - DDR 2ndMIX CLUB VER.2\Into the world
+02 - DDR 2ndMIX CLUB VER.2\LOVE SO GROOVY
+02 - DDR 2ndMIX CLUB VER.2\Macho Gang
+02 - DDR 2ndMIX CLUB VER.2\OVERDOSER
+02 - DDR 2ndMIX CLUB VER.2\patsenner
+02 - DDR 2ndMIX CLUB VER.2\PERFECT FREE
+02 - DDR 2ndMIX CLUB VER.2\Prince on a star
+02 - DDR 2ndMIX CLUB VER.2\Queen's Jamaica (astria mix)
+02 - DDR 2ndMIX CLUB VER.2\RUGGED ASH
+02 - DDR 2ndMIX CLUB VER.2\Salamander (Beat Crush mix)
+02 - DDR 2ndMIX CLUB VER.2\ska a go go
+02 - DDR 2ndMIX CLUB VER.2\THE EARTH LIGHT
+02 - DDR 2ndMIX CLUB VER.2\22DUNK
+02 - DDR 2ndMIX CLUB VER.2\5.1.1
+
+02 - DDR 2ndMIX CLUB VER.2\BRILLIANT 2U (CLUB VER.)
+02 - DDR 2ndMIX CLUB VER.2\Deep clear eyes (CLUB ANOTHER VER.)
+02 - DDR 2ndMIX CLUB VER.2\GRADIUSIC CYBER (CLUB ANOTHER VER.)
+02 - DDR 2ndMIX CLUB VER.2\KEEP ON MOVIN' (CLUB VER.)
+02 - DDR 2ndMIX CLUB VER.2\PARANOiA MAX (CLUB VER.)
+02 - DDR 2ndMIX CLUB VER.2\R3 (CLUB ANOTHER VER.)
+02 - DDR 2ndMIX CLUB VER.2\ska a go go (CLUB ANOTHER VER.)
+02 - DDR 2ndMIX CLUB VER.2\special energy (CLUB ANOTHER VER.)
+02 - DDR 2ndMIX CLUB VER.2\22DUNK (CLUB ANOTHER VER.)
+
+02 - DDR 2ndMIX CLUB VER.2\LOVE SO GROOVY (CLUB 2P VER.)
+02 - DDR 2ndMIX CLUB VER.2\OVERDOSER (CLUB 2P VER.)
+02 - DDR 2ndMIX CLUB VER.2\20,november (CLUB 2P VER.)
+
+02 - DDR 2ndMIX CLUB VER.2\PARANOiA MAX~DIRTY MIX~ (CLUB ANOTHER VER. )
+02 - DDR 2ndMIX CLUB VER.2\PARANOiA MAX~DIRTY MIX~ (CLUB ANOTHER VER. 2)
+
+---DDR 2ndMIX CLUB VER.1
+
+02 - DDR 2ndMIX CLUB VER.1\been so long
+02 - DDR 2ndMIX CLUB VER.1\celebrate
+02 - DDR 2ndMIX CLUB VER.1\Do you love me
+02 - DDR 2ndMIX CLUB VER.1\Dr. LOVE
+02 - DDR 2ndMIX CLUB VER.1\Jam Jam Reggae
+02 - DDR 2ndMIX CLUB VER.1\LUV TO ME (disco mix)
+02 - DDR 2ndMIX CLUB VER.1\melt in my arms
+02 - DDR 2ndMIX CLUB VER.1\R3
+02 - DDR 2ndMIX CLUB VER.1\special energy
+02 - DDR 2ndMIX CLUB VER.1\The rhyme brokers
+02 - DDR 2ndMIX CLUB VER.1\The Theme from Flo-jack
+02 - DDR 2ndMIX CLUB VER.1\YOU MAKE ME
+02 - DDR 2ndMIX CLUB VER.1\20,november
+
 ---DDR 2ndMIX
 
 02 - DDR 2ndMIX\AM-3P
@@ -1950,6 +2068,7 @@
 11 - DDR X\HOW TO PLAY
 16 - DDR A\Lesson by DJ
 18 - DDR A20 PLUS\LET'S CHECK YOUR LEVEL!
+21 - DDR WORLD\Steps to the Star
 
 ---DDR HP
 

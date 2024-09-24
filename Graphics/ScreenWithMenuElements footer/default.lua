@@ -2,7 +2,7 @@ local t = Def.ActorFrame{};
 local screenName = Var "LoadingScreen"
 
 local footerTextImage
-if screenName == "ScreenSelectMusic" then
+if screenName == "ScreenSelectMusic" or screenName == "ScreenSelectCourse" then
 	footerTextImage = Language().."selmus"
 elseif screenName == "ScreenEvaluationNormal" then
 	footerTextImage = Language().."eval"

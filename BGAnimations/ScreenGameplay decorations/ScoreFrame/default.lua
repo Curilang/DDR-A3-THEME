@@ -59,65 +59,47 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 				LoadActor("BPMDisplay")..{ 
 					InitCommand=function(s) s:x(122):y(IsReverse(pn) and -2.6 or 1.5):visible(ShowBPMDisplay()) end,
 				};
-			Def.ActorFrame{
-				InitCommand=function(s) s:y(IsReverse(pn) and -5 or 0) end,
+				Def.ActorFrame{
+				InitCommand=function(self)
+					local steps;
+					if GAMESTATE:IsCourseMode() then
+						steps = ToEnumShortString(GAMESTATE:GetCurrentTrail(pn):GetDifficulty());
+					else
+						steps = ToEnumShortString(GAMESTATE:GetCurrentSteps(pn):GetDifficulty());
+					end
+					local diff = {
+						["Beginner"] = -44,
+						["Easy"] = -60,
+						["Medium"] = -46,
+						["Hard"] = -57,
+						["Challenge"] = -41,
+						["Edit"] = -47,
+					};
+					self:xy(diff[steps],IsReverse(pn) and -5 or 0)
+				end;
 				Def.BitmapText{
 					Font="_commador extended 32px",
-					InitCommand=function(s) s:halign(1):zoomy(0.6):zoomx(0.76):playcommand("Set") end,
+					Name="Diff Label",
+					InitCommand=function(s) s:zoomy(0.6):zoomx(0.76):y(3.5) end,
+					SetCommand=function(s) s:halign(1)
+						local diff = GAMESTATE:GetCurrentSteps(pn):GetDifficulty();
+						s:settext(THEME:GetString("CustomDifficulty",ToEnumShortString(diff))):uppercase(true):diffuse(CustomDifficultyToColor(diff))
+					end;
+					CurrentSongChangedMessageCommand=function(s) s:queuecommand("Set") end,
+				};
+				Def.BitmapText{
+					Font="_impact 32px",
+					Name = "Difficulty Meter";
+					InitCommand=function(s) s:xy(15,2):zoomx(0.87):zoomy(0.68) end,
 					SetCommand=function(s)
-						local diff = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
-						local sDifficulty = ToEnumShortString(diff);
-						if diff then
-							s:settext(THEME:GetString("CustomDifficulty",sDifficulty)):diffuse(CustomDifficultyToColor(diff))
-							s:maxwidth(sDifficulty == 'Edit' and 126 or 200)
-                            local meter = tonumber(GAMESTATE:GetCurrentSteps(pn):GetMeter())
-							local sDiffWidth = 0;
-		                    local sMeterWidth = 0;
-							
-								if meter <= 0  then  sMeterWidth = 18;
-							elseif meter <= 9  then  sMeterWidth = 18 ;
-							elseif meter <= 99 then  sMeterWidth = 0;
-							else                     sMeterWidth = -18; end;
-								if sDifficulty == 'Beginner' 	then sDiffWidth = 80;
-                            elseif sDifficulty == 'Easy' 		then sDiffWidth = 45;
-                            elseif sDifficulty == 'Medium' 		then sDiffWidth = 78;
-                            elseif sDifficulty == 'Hard' 		then sDiffWidth = 58;
-                            elseif sDifficulty == 'Challenge' 	then sDiffWidth = 89;
-                            else 									 sDiffWidth = 78; end;
-                            
-							local totalWidth = sDiffWidth+sMeterWidth;
-                            local additionXPos = totalWidth/2-42;
-                            
-							s:x(-43+additionXPos):y(3.5)
-                        end
-                    end
-                };
-				--Number
-                Def.BitmapText{
-                    Font="_impact 32px",
-                    InitCommand=function(s) s:halign(0):zoomx(1):zoomx(0.9):zoomy(0.68) end,
-                    SetCommand=function(s)
-                        local meter = GAMESTATE:GetCurrentSteps(pn):GetMeter();
-                        local diff = GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
-                        local sDifficulty = ToEnumShortString(diff)
-
-
-							local sDiffWidth = 0;
-		                    local sMeterWidth = 0;
-								if meter <= 0  then  sMeterWidth = 18;
-							elseif meter <= 9  then  sMeterWidth = 18 ;
-							elseif meter <= 99 then  sMeterWidth = 0;
-							else                     sMeterWidth = -18; end;
-								if sDifficulty == 'Beginner' 	then sDiffWidth = 85;
-                            elseif sDifficulty == 'Easy' 		then sDiffWidth = 52;
-                            elseif sDifficulty == 'Medium' 		then sDiffWidth = 84;
-                            elseif sDifficulty == 'Hard' 		then sDiffWidth = 64;
-                            elseif sDifficulty == 'Challenge' 	then sDiffWidth = 89;
-                            else 									 sDiffWidth = 89; end;
-                            local totalWidth = sDiffWidth+sMeterWidth;
-                            local additionXPos = totalWidth/2-42;
-                        s:settext(meter):x(-41+additionXPos):y(2)
-                    end,
+						local meter = GAMESTATE:GetCurrentSteps(pn):GetMeter()
+						if meter % 1 == 0 then
+							s:settext(meter)
+						else
+							s:settext(string.format("%.1f", meter))
+						end
+					end;
+					CurrentSongChangedMessageCommand=function(s) s:queuecommand("Set") end,
 				};
 			};
 		};
@@ -132,7 +114,6 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 			Texture=THEME:GetPathG("","_shared/EX"),
 			InitCommand=function(s) s:xy(-83,yval+1):visible(IsEXScore()) end,
 		};
-		
     };
 end
 

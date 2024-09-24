@@ -108,7 +108,7 @@ end
 
 function VisualDelaySeconds()
 	-- up to 1s of visual delay, because some TVs are really slow
-	return offsetMS("VisualDelaySeconds", -1000, 1000)
+	return offsetMS("VisualDelaySeconds", -50, 50)
 end
 
 --Code by SimplyLove
