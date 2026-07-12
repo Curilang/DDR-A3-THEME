@@ -1,6 +1,19 @@
 local pn = ...;
 local t = Def.ActorFrame {};
+-- Calories burned "today", read from the profile's per-day CalorieData map.
+-- On OutFox that map isn't populated, so GetCaloriesBurnedToday() returns 0;
+-- in that case fall back to summing the calories of every stage played this
+-- launch so the readout still works. (STATSMAN:GetAccumStageStats() does not
+-- exist on this build, so iterate GetPlayedStageStats -- i=1 is the latest.)
 local CaloriesToday = PROFILEMAN:GetProfile(pn):GetCaloriesBurnedToday();
+if CaloriesToday <= 0 then
+	for i = 1, STATSMAN:GetStagesPlayed() do
+		local ss = STATSMAN:GetPlayedStageStats(i);
+		if ss then
+			CaloriesToday = CaloriesToday + ss:GetPlayerStageStats(pn):GetCaloriesBurned();
+		end
+	end
+end
 
 local CaloriesPercent;
 	if CaloriesToday >= 0 and CaloriesToday <= 5 then
